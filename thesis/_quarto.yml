@@ -1,0 +1,70 @@
+project:
+  type: book
+  output-dir: ../
+
+book:
+  title: Counting the dead
+  author:
+    name: Theo Rashid
+    url: https://theorashid.github.io/
+  cover-image: images/logo.png
+  downloads: [pdf]
+  abstract: "People died in England and we modelled the death rates."
+  chapters:
+    - index.qmd
+    - Chapters/Chapter2.qmd
+    - Chapters/Chapter3.qmd
+    - Chapters/Chapter4.qmd
+    - Chapters/Chapter5.qmd
+    - Chapters/Chapter6.qmd
+    - Chapters/Chapter7.qmd
+    - references.qmd
+  appendices:
+    - Appendices/AppendixA.qmd
+
+  site-url: https://theorashid.github.io/thesis
+  repo-url: https://github.com/theorashid/thesis
+  repo-actions: [edit, source, issue]
+  search: true
+
+thesis:
+  supervisor:
+    name: Majid Ezzati
+    url: https://www.imperial.ac.uk/people/majid.ezzati
+  degree-name: Doctor of Philosophy
+  university: Imperial College London
+  department: Department of Epidemiology and Biostatistics
+  group: Environmental Health Group
+  faculty: School of Public Health
+  declaration: "Frontmatter/declaration.tex"
+  quotation:
+    text: "Next year, you finish your PhD."
+    attribution: James Bennett
+  acknowledgements: "Frontmatter/acknowledgements.tex"
+  abbreviations: "Frontmatter/abbreviations.tex"
+  symbols: "Frontmatter/symbols.tex"
+  dedication: "Frontmatter/dedication.tex"
+
+bibliography: [example.bib]
+
+execute:
+  echo: false
+  code-overflow: wrap
+
+# urlcolor changes the url color in the body of the PDF
+# linkcolor changes color of internal links (like to figures)
+# toclinkcolor changes color of toc, lof and lot links
+format:
+  quarto-thesis-pdf: 
+    urlcolor: blue
+    toclinkcolor: black
+    toc-depth: 2
+  docx:
+    toc: true
+    toc-depth: 2
+    always_allow_html: true
+  html:
+    theme: [cosmo, assets/theme.scss] 
+    toc: true
+    toc-depth: 3
+

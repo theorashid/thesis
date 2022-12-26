@@ -1,0 +1,3 @@
+[submodule "thesis-analysis"]
+	path = thesis/thesis-analysis
+	url = git@github.com:theorashid/thesis-analysis.git
