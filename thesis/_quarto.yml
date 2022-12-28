@@ -9,7 +9,7 @@ book:
     url: https://theorashid.github.io/
   cover-image: images/logo.png
   downloads: [pdf]
-  abstract: "People died in England and we modelled the death rates."
+  abstract: "People died in England and we modelled the death rates. This took longer than expected."
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
@@ -34,7 +34,7 @@ thesis:
   degree-name: Doctor of Philosophy
   university: Imperial College London
   department: Department of Epidemiology and Biostatistics
-  group: Environmental Health Group
+  group: School of Public Health
   faculty: School of Public Health
   declaration: "Frontmatter/declaration.tex"
   quotation:
