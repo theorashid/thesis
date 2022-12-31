@@ -112,10 +112,6 @@ The paper size used in the template is A4, which is the standard size in Europe.
 
 When you render your Quarto thesis to PDF, it will process \LaTeX{} table code just fine. However, if you are doing that, I am guessing you would be writing your thesis in \LaTeX{} not Quarto. So I will not discuss \LaTeX{} tables. Instead here is how you create tables using R. Python and Julia users, you'll have your own table packages but the idea will be similar.
 
-The `#|` is what sets up our cross-references and you can then reference the table as `@tbl-cars`.
-
-This is @tbl-cars.
-
 See the Quarto manual for full examples and instructions.
 
 
@@ -123,9 +119,11 @@ See the Quarto manual for full examples and instructions.
 
 Again we write in Quarto (markdown) not \LaTeX{} for our figures. You can write in \LaTeX{} if you really want but it would only be interpreted for the PDF output.
 
-The `#|` is what sets up our cross-references and you can then reference the table as `@fig-cars`.
+![icon](assets/favicon.png){#fig-icon}
 
-This is @fig-cars.
+The `#|` is what sets up our cross-references and you can then reference the table as `@fig-icon`.
+
+This is @fig-icon.
 
 See the Quarto manual for full examples and instructions.
 

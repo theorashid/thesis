@@ -67,14 +67,14 @@
     "href": "index.html#tables",
     "title": "Counting the dead",
     "section": "1.10 Tables",
-    "text": "1.10 Tables\nWhen you render your Quarto thesis to PDF, it will process table code just fine. However, if you are doing that, I am guessing you would be writing your thesis in not Quarto. So I will not discuss tables. Instead here is how you create tables using R. Python and Julia users, you’ll have your own table packages but the idea will be similar.\nThe #| is what sets up our cross-references and you can then reference the table as @tbl-cars.\nThis is ?tbl-cars.\nSee the Quarto manual for full examples and instructions."
+    "text": "1.10 Tables\nWhen you render your Quarto thesis to PDF, it will process table code just fine. However, if you are doing that, I am guessing you would be writing your thesis in not Quarto. So I will not discuss tables. Instead here is how you create tables using R. Python and Julia users, you’ll have your own table packages but the idea will be similar.\nSee the Quarto manual for full examples and instructions."
   },
   {
     "objectID": "index.html#figures",
     "href": "index.html#figures",
     "title": "Counting the dead",
     "section": "1.11 Figures",
-    "text": "1.11 Figures\nAgain we write in Quarto (markdown) not for our figures. You can write in if you really want but it would only be interpreted for the PDF output.\nThe #| is what sets up our cross-references and you can then reference the table as @fig-cars.\nThis is ?fig-cars.\nSee the Quarto manual for full examples and instructions.\n\n1.11.1 Typesetting mathematics\nIf your thesis is going to contain heavy mathematical content, will make it look beautiful, for HTML or PDF output.\nThe Not So Short Introduction to LaTeX should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, A Short Math Guide to LaTeX."
+    "text": "1.11 Figures\nAgain we write in Quarto (markdown) not for our figures. You can write in if you really want but it would only be interpreted for the PDF output.\n\n\n\nFigure 1.1: icon\n\n\nThe #| is what sets up our cross-references and you can then reference the table as @fig-icon.\nThis is Figure 1.1.\nSee the Quarto manual for full examples and instructions.\n\n1.11.1 Typesetting mathematics\nIf your thesis is going to contain heavy mathematical content, will make it look beautiful, for HTML or PDF output.\nThe Not So Short Introduction to LaTeX should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, A Short Math Guide to LaTeX."
   },
   {
     "objectID": "index.html#in-closing",
