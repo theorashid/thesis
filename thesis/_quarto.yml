@@ -8,6 +8,7 @@ book:
     name: Theo Rashid
     url: https://theorashid.github.io/
   cover-image: images/logo.png
+  favicon: assets/favicon.png
   downloads: [pdf]
   abstract: "People died in England and we modelled the death rates. This took longer than expected."
   chapters:
