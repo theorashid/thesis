@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ../
+  output-dir: _thesis/
 
 book:
   title: Counting the dead
