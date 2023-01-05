@@ -25,13 +25,12 @@ book:
 
   site-url: https://theorashid.github.io/thesis
   repo-url: https://github.com/theorashid/thesis
-  repo-actions: [edit, source, issue]
-  search: true
+  repo-actions: [issue]
+  search: false
 
 thesis:
   supervisor:
     name: Majid Ezzati
-    url: https://www.imperial.ac.uk/people/majid.ezzati
   degree-name: Doctor of Philosophy
   university: Imperial College London
   department: Department of Epidemiology and Biostatistics
@@ -40,7 +39,7 @@ thesis:
   declaration: "Frontmatter/declaration.tex"
   quotation:
     text: "Next year, you finish your PhD."
-    attribution: James Bennett
+    attribution: James Bennett, 2022
   acknowledgements: "Frontmatter/acknowledgements.tex"
   abbreviations: "Frontmatter/abbreviations.tex"
   symbols: "Frontmatter/symbols.tex"

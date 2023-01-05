@@ -29,11 +29,15 @@ $endif$
 \end{minipage}
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
-\emph{Supervisor:} \\
+\emph{Supervisors:} \\
 $if(thesis.supervisor.url)$%
 \href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
 $else$%
 \supname
+
+James Bennett
+
+Seth Flaxman
 $endif$
 \end{flushright}
 \end{minipage}\\[3cm]
@@ -144,23 +148,23 @@ $if(thesis.abbreviations)$
 
 $endif$
 
-$if(thesis.constants)$
-%----------------------------------------------------------------------------------------
-%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
-%----------------------------------------------------------------------------------------
+% $if(thesis.constants)$
+% %----------------------------------------------------------------------------------------
+% %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+% %----------------------------------------------------------------------------------------
 
-\input{"$thesis.constants$"}
+% \input{"$thesis.constants$"}
 
-$endif$
+% $endif$
 
-$if(thesis.symbols)$
-%----------------------------------------------------------------------------------------
-%	SYMBOLS
-%----------------------------------------------------------------------------------------
+% $if(thesis.symbols)$
+% %----------------------------------------------------------------------------------------
+% %	SYMBOLS
+% %----------------------------------------------------------------------------------------
 
-\input{"$thesis.symbols$"}
+% \input{"$thesis.symbols$"}
 
-$endif$
+% $endif$
 
 $if(thesis.dedication)$
 %----------------------------------------------------------------------------------------
