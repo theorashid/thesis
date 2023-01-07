@@ -346,21 +346,21 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\tttypeout{\abstractname}
 		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
-		\begin{center}
-			{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+		\begin{flushleft}
+			% {\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+			% \bigskip
+			{\huge\abstractname \par}
 			\bigskip
-			{\huge\textit{\abstractname} \par}
-			\bigskip
-			{\normalsize \facname \par}% Faculty name
-			{\normalsize \deptname \par}% Department name
-			\bigskip
-			{\normalsize \degreename\par}% Degree name
-			\bigskip
-			{\normalsize\bfseries \@title \par}% Thesis title
-			\medskip
-			{\normalsize \byname{} \authorname \par}% Author name
-			\bigskip
-		\end{center}
+			% {\normalsize \facname \par}% Faculty name
+			% {\normalsize \deptname \par}% Department name
+			% \bigskip
+			% {\normalsize \degreename\par}% Degree name
+			% \bigskip
+			% {\normalsize\bfseries \@title \par}% Thesis title
+			% \medskip
+			% {\normalsize \byname{} \authorname \par}% Author name
+			% \bigskip
+		\end{flushleft}
 	}
 	{
 		\vfill\null
@@ -372,21 +372,21 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\tttypeout{\abstractname}
 	#1%added to be able to have abstract more than one page long
 	\thispagestyle{empty}
-	\begin{center}
-		{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+	\begin{flushleft}
+		% {\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+		% \bigskip
+		{\huge\abstractname \par}
 		\bigskip
-		{\huge\textit{\abstractname} \par}
-		\bigskip
-		{\normalsize \facname \par}% Faculty name
-		{\normalsize \deptname \par}% Department name
-		\bigskip
-		{\normalsize \degreename\par}% Degree name
-		\bigskip
-		{\normalsize\bfseries \@title \par}% Thesis title
-		\medskip
-		{\normalsize \byname{} \authorname \par}% Author name
-		\bigskip
-	\end{center}
+		% {\normalsize \facname \par}% Faculty name
+		% {\normalsize \deptname \par}% Department name
+		% \bigskip
+		% {\normalsize \degreename\par}% Degree name
+		% \bigskip
+		% {\normalsize\bfseries \@title \par}% Thesis title
+		% \medskip
+		% {\normalsize \byname{} \authorname \par}% Author name
+		% \bigskip
+	\end{flushleft}
 }
 {
 	\vfill\null
@@ -413,7 +413,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\acknowledgementname}
 		\thispagestyle{plain}
-		\begin{center}{\huge\textit{\acknowledgementname}\par}\end{center}
+		\begin{flushleft}{\huge\acknowledgementname\par}\end{flushleft}
 	}
 	{
 		\vfil\vfil\null
