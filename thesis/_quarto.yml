@@ -38,8 +38,8 @@ thesis:
   faculty: School of Public Health
   declaration: "Frontmatter/declaration.tex"
   quotation:
-    text: "Next year, you finish your PhD."
-    attribution: James Bennett, 2022
+    text: "Nobody is going to read your thesis."
+    attribution: Kyle Foreman
   acknowledgements: "Frontmatter/acknowledgements.tex"
   abbreviations: "Frontmatter/abbreviations.tex"
   symbols: "Frontmatter/symbols.tex"
