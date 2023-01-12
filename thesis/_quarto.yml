@@ -45,7 +45,7 @@ thesis:
   symbols: "Frontmatter/symbols.tex"
   dedication: "Frontmatter/dedication.tex"
 
-bibliography: [example.bib]
+bibliography: [thesis.bib]
 
 execute:
   echo: false
