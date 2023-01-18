@@ -429,6 +429,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{copyright}{}{
+		\tttypeout{\copyrightname}
 		\addchap*{\copyrightname}
 		}{}%
 }{
@@ -436,8 +437,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\copyrightname}
 		\thispagestyle{plain}
-		\null\vfil
-		{\noindent\huge\bfseries\copyrightname\par\vspace{10pt}}
+		\begin{flushleft}{\huge\copyrightname\par}\end{flushleft}
 	}{}
 }
 
