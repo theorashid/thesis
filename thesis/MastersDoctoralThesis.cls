@@ -421,6 +421,27 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 %----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\newcommand{\copyrightname}{Copyright}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\copyrightname}{Copyright}
+
+\ifbool{consistentlayout}{
+	\DeclareDocumentEnvironment{copyright}{}{
+		\addchap*{\copyrightname}
+		}{}%
+}{
+	\DeclareDocumentEnvironment{copyright}{}{
+		\checktoopen
+		\tttypeout{\copyrightname}
+		\thispagestyle{plain}
+		\null\vfil
+		{\noindent\huge\bfseries\copyrightname\par\vspace{10pt}}
+	}{}
+}
+
+%----------------------------------------------------------------------------------------
 %	DECLARATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
 

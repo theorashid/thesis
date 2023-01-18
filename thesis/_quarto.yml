@@ -36,14 +36,13 @@ thesis:
   department: Department of Epidemiology and Biostatistics
   group: School of Public Health
   faculty: School of Public Health
+  copyright: "Frontmatter/copyright.tex"
   declaration: "Frontmatter/declaration.tex"
   quotation:
     text: "Nobody is going to read your thesis."
     attribution: Kyle Foreman
   acknowledgements: "Frontmatter/acknowledgements.tex"
   abbreviations: "Frontmatter/abbreviations.tex"
-  symbols: "Frontmatter/symbols.tex"
-  dedication: "Frontmatter/dedication.tex"
 
 bibliography: [thesis.bib]
 
