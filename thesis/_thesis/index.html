@@ -21,6 +21,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -283,6 +302,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="bibliography-and-citations" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="bibliography-and-citations"><span class="header-section-number">1.8</span> Bibliography and Citations</h2>
 <p>Citations will be added and formatted automatically for you.</p>
+<p>Practice reference <span class="citation" data-cites="rashidLifeExpectancyRisk2021">(<a href="references.html#ref-rashidLifeExpectancyRisk2021" role="doc-biblioref">Rashid et al. 2021</a>)</span> Lorem ipsum dolor sit amet <span class="citation" data-cites="bennettFutureLifeExpectancy2015 bennettContributionsDiseasesInjuries2018 yuSpatiotemporalAnalysisInequalities2021">(<a href="references.html#ref-bennettFutureLifeExpectancy2015" role="doc-biblioref">Bennett et al. 2015</a>, <a href="references.html#ref-bennettContributionsDiseasesInjuries2018" role="doc-biblioref">2018</a>; <a href="references.html#ref-yuSpatiotemporalAnalysisInequalities2021" role="doc-biblioref">Yu et al. 2021</a>)</span></p>
 <p>If you use the RStudio IDE, then you can link Zotero to RStudio and Quarto will find your citations for you when you enter <code>@</code>. This is in the visual editor mode. Make sure to search for videos on how to do this as using Zotero libraries will make your citation and bibliography management much much easier.</p>
 <p>In the text use <code>@smith2000</code> to produce Smith (2000) add use <code>[@smith2000, @jones1999]</code> to produce (Smith 2000; Jones 1999). See the natbib cheatsheet for how to do other types of formatting for your in text citations. The bibliography style (<code>classoption: "authoryear"</code>) is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online.</p>
 <section id="a-note-on-bibtex" class="level4" data-number="1.8.0.1">
@@ -335,6 +355,20 @@ ul.task-list li input[type="checkbox"] {
 <p>and heavily shortened and adapted for <a href="https://quarto.org/">Quarto</a> by <a href="https://eeholmes.github.io">Eli Holmes</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="doc-biblioentry">
+Bennett, James E., Guangquan Li, Kyle Foreman, Nicky Best, Vasilis Kontis, Clare Pearson, Peter Hambly, and Majid Ezzati. 2015. <span>“The Future of Life Expectancy and Life Expectancy Inequalities in <span>England</span> and <span>Wales</span>: <span>Bayesian</span> Spatiotemporal Forecasting.”</span> <em>The Lancet</em> 386 (9989): 163–70. <a href="https://doi.org/10.1016/S0140-6736(15)60296-3">https://doi.org/10.1016/S0140-6736(15)60296-3</a>.
+</div>
+<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="doc-biblioentry">
+Bennett, James E., Jonathan Pearson-Stuttard, Vasilis Kontis, Simon Capewell, Ingrid Wolfe, and Majid Ezzati. 2018. <span>“Contributions of Diseases and Injuries to Widening Life Expectancy Inequalities in <span>England</span> from 2001 to 2016: A Population-Based Analysis of Vital Registration Data.”</span> <em>The Lancet Public Health</em> 3 (12): e586–97. <a href="https://doi.org/10.1016/S2468-2667(18)30214-7">https://doi.org/10.1016/S2468-2667(18)30214-7</a>.
+</div>
+<div id="ref-rashidLifeExpectancyRisk2021" class="csl-entry" role="doc-biblioentry">
+Rashid, Theo, James E. Bennett, Christopher J. Paciorek, Yvonne Doyle, Jonathan Pearson-Stuttard, Seth Flaxman, Daniela Fecht, et al. 2021. <span>“Life Expectancy and Risk of Death in 6791 Communities in <span>England</span> from 2002 to 2019: High-Resolution Spatiotemporal Analysis of Civil Registration Data.”</span> <em>The Lancet Public Health</em> 6 (11): e805–16. <a href="https://doi.org/10.1016/S2468-2667(21)00205-X">https://doi.org/10.1016/S2468-2667(21)00205-X</a>.
+</div>
+<div id="ref-yuSpatiotemporalAnalysisInequalities2021" class="csl-entry" role="doc-biblioentry">
+Yu, Jessica, Laura Dwyer-Lindgren, James Bennett, Majid Ezzati, Paul Gustafson, Martino Tran, and Michael Brauer. 2021. <span>“A Spatiotemporal Analysis of Inequalities in Life Expectancy and 20 Causes of Mortality in Sub-Neighbourhoods of <span>Metro Vancouver</span>, <span>British Columbia</span>, <span>Canada</span>, 1990.”</span> <em>Health &amp; Place</em> 72 (November): 102692. <a href="https://doi.org/10.1016/j.healthplace.2021.102692">https://doi.org/10.1016/j.healthplace.2021.102692</a>.
+</div>
+</div>
 </section>
 </section>
 

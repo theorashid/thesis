@@ -166,10 +166,16 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#small-area-analysis-of-mortality" id="toc-small-area-analysis-of-mortality" class="nav-link active" data-scroll-target="#small-area-analysis-of-mortality"><span class="toc-section-number">2.1</span>  Small area analysis of mortality</a>
+  <li><a href="#the-small-area-health-statistics-unit" id="toc-the-small-area-health-statistics-unit" class="nav-link active" data-scroll-target="#the-small-area-health-statistics-unit"><span class="toc-section-number">2.1</span>  The Small Area Health Statistics Unit</a>
   <ul class="collapse">
-  <li><a href="#cause-specific-mortality-modelling-in-england" id="toc-cause-specific-mortality-modelling-in-england" class="nav-link" data-scroll-target="#cause-specific-mortality-modelling-in-england"><span class="toc-section-number">2.1.1</span>  Cause-specific mortality modelling in England</a></li>
+  <li><a href="#disease-mapping" id="toc-disease-mapping" class="nav-link" data-scroll-target="#disease-mapping"><span class="toc-section-number">2.1.1</span>  Disease mapping</a></li>
   </ul></li>
+  <li><a href="#bayesian-and-disease-mapping-finer-scales" id="toc-bayesian-and-disease-mapping-finer-scales" class="nav-link" data-scroll-target="#bayesian-and-disease-mapping-finer-scales"><span class="toc-section-number">2.2</span>  (Bayesian) and disease mapping (finer scales)</a>
+  <ul class="collapse">
+  <li><a href="#small-area-analysis-of-mortality-over-space-but-also-time-age" id="toc-small-area-analysis-of-mortality-over-space-but-also-time-age" class="nav-link" data-scroll-target="#small-area-analysis-of-mortality-over-space-but-also-time-age"><span class="toc-section-number">2.2.1</span>  Small area analysis of mortality (over space, but also time age)</a></li>
+  </ul></li>
+  <li><a href="#cause-specific-analyses" id="toc-cause-specific-analyses" class="nav-link" data-scroll-target="#cause-specific-analyses"><span class="toc-section-number">2.3</span>  Cause-specific analyses</a></li>
+  <li><a href="#inqualities-in-the-uk" id="toc-inqualities-in-the-uk" class="nav-link" data-scroll-target="#inqualities-in-the-uk"><span class="toc-section-number">2.4</span>  Inqualities in the UK</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -193,12 +199,66 @@ div.csl-indent {
 
 </header>
 
-<section id="small-area-analysis-of-mortality" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="small-area-analysis-of-mortality"><span class="header-section-number">2.1</span> Small area analysis of mortality</h2>
+<section id="the-small-area-health-statistics-unit" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-small-area-health-statistics-unit"><span class="header-section-number">2.1</span> The Small Area Health Statistics Unit</h2>
+<p>In 1983, a documentary on the fallout produced from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community. This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease. The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to <em>ad hoc</em> queries on local health hazards. The Small Area Health Statistics Unit (SAHSU) was established in 1987 <span class="citation" data-cites="elliottSmallAreaHealth1992">(<a href="../references.html#ref-elliottSmallAreaHealth1992" role="doc-biblioref">P. Elliott et al. 1992</a>)</span>.</p>
+<p>Beyond producing substantive research studies on environment and health, a core aim of SAHSU was to develop small area statistical methodology. In particular, methods of:</p>
+<ul>
+<li><em>Disease mapping</em>. Summarising the spatial variation in risk.</li>
+<li><em>Geographic correlation studies</em>. Is there a correlation between disease risk and environmental variables?</li>
+<li><em>Point source type studies</em>, Is there an increased risk close to an environmental hazard?</li>
+<li><em>Clustering</em>. Does a disease to produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.</li>
+</ul>
+<p>The focus for many of the studies were rare diseases at small areas, so there was a need for statistical smoothing, in particular Bayesian methods <span class="citation" data-cites="bestComparisonBayesianSpatial2005 wakefieldIssuesStatisticalAnalysis1999 elliottSpatialEpidemiologyMethods2001">(<a href="../references.html#ref-bestComparisonBayesianSpatial2005" role="doc-biblioref">Best, Richardson, and Thomson 2005</a>; <a href="../references.html#ref-wakefieldIssuesStatisticalAnalysis1999" role="doc-biblioref">Wakefield and Elliott 1999</a>; <a href="../references.html#ref-elliottSpatialEpidemiologyMethods2001" role="doc-biblioref">Paul Elliott et al. 2001</a>)</span>.</p>
+<p>Elliot 1992. Pilot study was a point source. Collect deaths at postcode level. Docks near Plymouth. Dockyard workers, mesothelioma and asbestosis related to industrial exposure and asbestos. Circular bands drawn around Plymouth docks. Clear increase in risk within 3km of the docks.</p>
+<p>Aylin 1999, building the facility. Point source</p>
+<p>Move beyond exposure studying in circles, distance as proxy for exposure, directly model the exposure surface</p>
+<p>Kidney risk near plants Hodgson 2004. Exposure to Mercury Hodgson 2006.</p>
+<p>Chlorination congenital anomalies Whitaker 2004, Nieuwenhuijsen 2008, stillbirths Toldeano 2009, low birth weight Toledano 2009, Toledano 2011</p>
+<p>Between 2001 and 2009 the Small Area Health Statistics Unit - SAHSU (based at Imperial College) published results from the most extensive study ever conducted into health effects of landfill sites. This work was initiated due to public concern over whether humans are exposed to toxic chemicals in landfill (which accounts for over 80% of municipal waste in Britain) and suffer adverse health consequences as a result [1-5]. The rates of birth defects, low birthweight, stillbirths, and of certain cancers in populations living within 2km of landfill sites were studied. Landfill reproductive health effects Elliot 2001, Jarup 2002, Morris 2003, Elliot 2005, Down’s Jarup 2006, Jarup 2007, Elliot 2009</p>
+<p>Telephone masts childhood cancers 2011</p>
+<p>HES aircraft noise Hansell 2013. Road traffic noise London Halonen 2015</p>
+<p>Incinerators study and reproductive health https://www.imperial.ac.uk/school-public-health/epidemiology-and-biostatistics/small-area-health-statistics-unit/our-research/incinerators-study/ Ghosh 2018, Parkes 2020</p>
+<p>Environment and Health Atlas for England and Wales, fourteen health outcomes, six environmental exposures, spatial variation in long-term (25 years: 1985 -2009), ward level</p>
+<p>Health Impacts of Bioaerosols from Large Scale Biocomposting Waste Facilities Douglas 2019</p>
+<section id="disease-mapping" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="disease-mapping"><span class="header-section-number">2.1.1</span> Disease mapping</h3>
+<p>Best 2005 focuses on disease mapping. Discuss the method of each paper</p>
+<p>Aylin 1999, Mapped statistically smoothed diseases Kensington, Chelsea and Westminster. Directly standardised</p>
+<p>Disease mapping. Methods in Best 2005. Cancer mapping: brain in west midlands Eaton 1997, testicular Toledano 2001, prostate Jarup 2002. CVD risk Asaria 2012, Asaria 2017. Model for small-area trends in cause-specific and all-cause mortality. Bennett 2015, Bennett 2018.</p>
+<p>My studies</p>
+<p>Over space and time. Ability to reliably detect excess risk depends on size of risk and expected numbers (small areas). Li et al Biostatistics 2012, Boulieri et al Spatial Spatio-temp Epidemiol 2016</p>
+<p>Methodology developed generally in 1990s-2000s spatial epidemiology book. Point sources, exposure. Elliot 2008. Best etc book on spatial epi, particularly bayesian methods</p>
+</section>
+</section>
+<section id="bayesian-and-disease-mapping-finer-scales" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="bayesian-and-disease-mapping-finer-scales"><span class="header-section-number">2.2</span> (Bayesian) and disease mapping (finer scales)</h2>
+<p>Correlation matrix MVN, using centroids, function of distance (Spatial epi book application to disease mapping). Gaussian Markov Random Field (CAR). BYM model. Gaussian processes. Hierarchcial model, Foreman 2012. Exploit hierarchical structure</p>
+<p>Statistics of spatial modelling. Gaussian processes etc Kyle’s thesis.</p>
+<section id="small-area-analysis-of-mortality-over-space-but-also-time-age" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="small-area-analysis-of-mortality-over-space-but-also-time-age"><span class="header-section-number">2.2.1</span> Small area analysis of mortality (over space, but also time age)</h3>
+<p>Population issue, measuring between census, migration. Look at sahsu spatial epi book, Wakefield 1999. Births, deaths and migration for population between census years</p>
+<p>Poeple who have calculated SMR. <strong>Indirect</strong> model vs direct model (calculate age specific and use life tables) of mortality</p>
+<p>United States LDL King county 2015, LDL 2016</p>
+<p>United Kingdom Bennett 2015</p>
+<p>Australia, Stephens 2013 NSW</p>
+<p>Canada, Yu 2022</p>
+<p>South Korea</p>
+<p>SALURBAL. Santiago Chile Bilal 2019</p>
+<p>Rotterdam Jonker 2012</p>
+<p>Rasulo, D., Bajekal, M., Yar, M., 2007. Inequalities in health expectancies in England and Wales–small area analysis from the 2001 Census. Health Stat Q 34 (35), 35.</p>
+<p>London wards DALY Congdon 2014</p>
 <p>Practice reference <span class="citation" data-cites="rashidLifeExpectancyRisk2021">(<a href="../references.html#ref-rashidLifeExpectancyRisk2021" role="doc-biblioref">Rashid et al. 2021</a>)</span> Lorem ipsum dolor sit amet <span class="citation" data-cites="bennettFutureLifeExpectancy2015 bennettContributionsDiseasesInjuries2018 yuSpatiotemporalAnalysisInequalities2021">(<a href="../references.html#ref-bennettFutureLifeExpectancy2015" role="doc-biblioref">Bennett et al. 2015</a>, <a href="../references.html#ref-bennettContributionsDiseasesInjuries2018" role="doc-biblioref">2018</a>; <a href="../references.html#ref-yuSpatiotemporalAnalysisInequalities2021" role="doc-biblioref">Yu et al. 2021</a>)</span>, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.</p>
-<section id="cause-specific-mortality-modelling-in-england" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="cause-specific-mortality-modelling-in-england"><span class="header-section-number">2.1.1</span> Cause-specific mortality modelling in England</h3>
+</section>
+</section>
+<section id="cause-specific-analyses" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="cause-specific-analyses"><span class="header-section-number">2.3</span> Cause-specific analyses</h2>
+<p>See Kyle’s thesis</p>
 <p>Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.</p>
+</section>
+<section id="inqualities-in-the-uk" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="inqualities-in-the-uk"><span class="header-section-number">2.4</span> Inqualities in the UK</h2>
+<p>People modelling over space Bennett 2015 Deprivation Bennett 2018 Marmot Class Wilkinson and Whitehead</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -208,14 +268,25 @@ Bennett, James E., Guangquan Li, Kyle Foreman, Nicky Best, Vasilis Kontis, Clare
 <div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="doc-biblioentry">
 Bennett, James E., Jonathan Pearson-Stuttard, Vasilis Kontis, Simon Capewell, Ingrid Wolfe, and Majid Ezzati. 2018. <span>“Contributions of Diseases and Injuries to Widening Life Expectancy Inequalities in <span>England</span> from 2001 to 2016: A Population-Based Analysis of Vital Registration Data.”</span> <em>The Lancet Public Health</em> 3 (12): e586–97. <a href="https://doi.org/10.1016/S2468-2667(18)30214-7">https://doi.org/10.1016/S2468-2667(18)30214-7</a>.
 </div>
+<div id="ref-bestComparisonBayesianSpatial2005" class="csl-entry" role="doc-biblioentry">
+Best, Nicky, Sylvia Richardson, and Andrew Thomson. 2005. <span>“A Comparison of <span>Bayesian</span> Spatial Models for Disease Mapping.”</span> <em>Statistical Methods in Medical Research</em> 14 (1): 35–59. <a href="https://doi.org/10.1191/0962280205sm388oa">https://doi.org/10.1191/0962280205sm388oa</a>.
+</div>
+<div id="ref-elliottSpatialEpidemiologyMethods2001" class="csl-entry" role="doc-biblioentry">
+Elliott, Paul, Jon Wakefield, Nicky Best, and David Briggs. 2001. <em>Spatial Epidemiology: Methods and Applications</em>. <span>Oxford University Press</span>.
+</div>
+<div id="ref-elliottSmallAreaHealth1992" class="csl-entry" role="doc-biblioentry">
+Elliott, P., A. J. Westlake, M. Hills, I. Kleinschmidt, L. Rodrigues, P. McGale, K. Marshall, and G. Rose. 1992. <span>“The <span>Small Area Health Statistics Unit</span>: A National Facility for Investigating Health Around Point Sources of Environmental Pollution in the <span>United Kingdom</span>.”</span> <em>Journal of Epidemiology &amp; Community Health</em> 46 (4): 345–49. <a href="https://doi.org/10.1136/jech.46.4.345">https://doi.org/10.1136/jech.46.4.345</a>.
+</div>
 <div id="ref-rashidLifeExpectancyRisk2021" class="csl-entry" role="doc-biblioentry">
 Rashid, Theo, James E. Bennett, Christopher J. Paciorek, Yvonne Doyle, Jonathan Pearson-Stuttard, Seth Flaxman, Daniela Fecht, et al. 2021. <span>“Life Expectancy and Risk of Death in 6791 Communities in <span>England</span> from 2002 to 2019: High-Resolution Spatiotemporal Analysis of Civil Registration Data.”</span> <em>The Lancet Public Health</em> 6 (11): e805–16. <a href="https://doi.org/10.1016/S2468-2667(21)00205-X">https://doi.org/10.1016/S2468-2667(21)00205-X</a>.
+</div>
+<div id="ref-wakefieldIssuesStatisticalAnalysis1999" class="csl-entry" role="doc-biblioentry">
+Wakefield, Jon, and Paul Elliott. 1999. <span>“Issues in the Statistical Analysis of Small Area Health Data.”</span> <em>Statistics in Medicine</em> 18 (17-18): 2377–99. <a href="https://doi.org/10.1002/(SICI)1097-0258(19990915/30)18:17/18<2377::AID-SIM263>3.0.CO;2-G">https://doi.org/10.1002/(SICI)1097-0258(19990915/30)18:17/18&lt;2377::AID-SIM263&gt;3.0.CO;2-G</a>.
 </div>
 <div id="ref-yuSpatiotemporalAnalysisInequalities2021" class="csl-entry" role="doc-biblioentry">
 Yu, Jessica, Laura Dwyer-Lindgren, James Bennett, Majid Ezzati, Paul Gustafson, Martino Tran, and Michael Brauer. 2021. <span>“A Spatiotemporal Analysis of Inequalities in Life Expectancy and 20 Causes of Mortality in Sub-Neighbourhoods of <span>Metro Vancouver</span>, <span>British Columbia</span>, <span>Canada</span>, 1990.”</span> <em>Health &amp; Place</em> 72 (November): 102692. <a href="https://doi.org/10.1016/j.healthplace.2021.102692">https://doi.org/10.1016/j.healthplace.2021.102692</a>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

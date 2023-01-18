@@ -86,6 +86,8 @@ Add your chapters and appendices to `_quarto.yml`. Note that the spacing is impo
 
 Citations will be added and formatted automatically for you.
 
+Practice reference [@rashidLifeExpectancyRisk2021] Lorem ipsum dolor sit amet [@bennettFutureLifeExpectancy2015; @bennettContributionsDiseasesInjuries2018; @yuSpatiotemporalAnalysisInequalities2021]
+
 If you use the RStudio IDE, then you can link Zotero to RStudio and Quarto will find your citations for you when you enter `@`. This is in the visual editor mode. Make sure to search for videos on how to do this as using Zotero libraries will make your citation and bibliography management much much easier.
 
 In the text use `@smith2000` to produce Smith (2000) add use `[@smith2000, @jones1999]` to produce (Smith 2000; Jones 1999). See the natbib cheatsheet for how to do other types of formatting for your in text citations. The bibliography style (`classoption: "authoryear"`) is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online. 
