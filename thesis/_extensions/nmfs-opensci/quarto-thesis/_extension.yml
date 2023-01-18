@@ -5,7 +5,7 @@ contributes:
   format:
     pdf:
       documentclass: MastersDoctoralThesis
-      classoption: ["11pt", "english", "singlespacing", "headsepline"]
+      classoption: ["11pt", "english", "doublespacing", "headsepline"]
       format-resources:
         - MastersDoctoralThesis.cls
       template-partials: 
