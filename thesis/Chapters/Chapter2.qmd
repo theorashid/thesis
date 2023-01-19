@@ -1,58 +1,37 @@
 # Background {#sec-Chapter2}
 
-## The Small Area Health Statistics Unit
+## Small Area Health Statistics (Unit)
 
 In 1983, a documentary on the fallout produced from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
 This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
 The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to _ad hoc_ queries on local health hazards.
 The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottSmallAreaHealth1992].
 
-Beyond producing substantive research studies on environment and health, a core aim of SAHSU was to develop small area statistical methodology. In particular, methods of:
+Beyond producing substantive research studies on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
 
-- _Disease mapping_. Summarising the spatial variation in risk.
+- _Point source type studies_. Is there an increased risk close to an environmental hazard?
 - _Geographic correlation studies_. Is there a correlation between disease risk and environmental variables?
-- _Point source type studies_, Is there an increased risk close to an environmental hazard?
 - _Clustering_. Does a disease to produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
+- _Disease mapping_. Summarising the spatial variation in risk.
 
-The focus for many of the studies were rare diseases at small areas, so there was a need for statistical smoothing, in particular Bayesian methods [@bestComparisonBayesianSpatial2005; @wakefieldIssuesStatisticalAnalysis1999; @elliottSpatialEpidemiologyMethods2001].
+In a pilot study for SAHSU, @elliottSmallAreaHealth1992 investigated the mortality from mesothelioma and asbestosis near the Plymouth docks.
+Death registrations with postcode information were held by SAHSU.
+Both diseases are related to industrial exposure and asbestos, so concentric circular bands were drawn around the Plymouth dockyards as a way to approximate the exposure from a point source of environmental pollution.
+There was a clear increase in risk within $3km$ of the docks.
+A similar distance-based approach was adopted to look at excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999], kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]
+In response to public concern over exposure to toxic chemicals in landfill, SAHSU conducted the most extensive study ever into health effects of landfill sites.
+Postocdes within a $2km$ buffer of a landfill site were classified as exposed.
+Compared to those living beyond $2km$, SAHSU found a small unexplained excess of congenital anomalies [@elliottRiskAdverseBirth2001], no increase in rates of cancer [@jarupCancerRisksPopulations2002], and no excess risk of Down syndrome [@jarupSyndromeBirthsLandfill2007].
 
-Elliot 1992. Pilot study was a point source. Collect deaths at postcode level. Docks near Plymouth. Dockyard workers, mesothelioma and asbestosis related to industrial exposure and asbestos. Circular bands drawn around Plymouth docks. Clear increase in risk within 3km of the docks.
-
-Aylin 1999, building the facility. Point source
-
-Move beyond exposure studying in circles, distance as proxy for exposure, directly model the exposure surface
-
-Kidney risk near plants Hodgson 2004. Exposure to Mercury Hodgson 2006.
-
-Chlorination congenital anomalies Whitaker 2004, Nieuwenhuijsen 2008, stillbirths Toldeano 2009, low birth weight Toledano 2009, Toledano 2011
-
-Between 2001 and 2009 the Small Area Health Statistics Unit - SAHSU (based at Imperial College) published results from the most extensive study ever conducted into health effects of landfill sites. This work was initiated due to public concern over whether humans are exposed to toxic chemicals in landfill (which accounts for over 80% of municipal waste in Britain) and suffer adverse health consequences as a result [1-5]. The rates of birth defects, low birthweight, stillbirths, and of certain cancers in populations living within 2km of landfill sites were studied. Landfill reproductive health effects Elliot 2001, Jarup 2002, Morris 2003, Elliot 2005, Down's Jarup 2006, Jarup 2007, Elliot 2009
-
-Telephone masts childhood cancers 2011
-
-HES aircraft noise Hansell 2013. Road traffic noise London Halonen 2015
-
-Incinerators study and reproductive health https://www.imperial.ac.uk/school-public-health/epidemiology-and-biostatistics/small-area-health-statistics-unit/our-research/incinerators-study/ Ghosh 2018, Parkes 2020
-
-Environment and Health Atlas for England and Wales, fourteen health outcomes, six environmental exposures, spatial variation in long-term (25 years: 1985 -2009), ward level
-
-Health Impacts of Bioaerosols from Large Scale Biocomposting Waste Facilities Douglas 2019
+Distance from source is, however, only a basic model for the exposure, which can often exhibit more complex, directional spatial patterns.
+A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assess the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base station during pregnancy [@elliottMobilePhoneBase2010], noise from aircrafts near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and PM10 from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
+SAHSU published an environment and health atlas for England and Wales, showing the geographic patters of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
 
 ### Disease mapping
 
-Best 2005 focuses on disease mapping. Discuss the method of each paper
+The focus for many of the studies were rare diseases at small areas, so there was a need for statistical smoothing, in particular Bayesian methods [@bestComparisonBayesianSpatial2005; @elliottSpatialEpidemiologyMethods2001].
 
-Aylin 1999, Mapped statistically smoothed diseases Kensington, Chelsea and Westminster. Directly standardised
-
-Disease mapping. Methods in Best 2005. Cancer mapping: brain in west midlands Eaton 1997, testicular Toledano 2001, prostate Jarup 2002. CVD risk Asaria 2012, Asaria 2017. Model for small-area trends in cause-specific and all-cause mortality. Bennett 2015, Bennett 2018.
-
-My studies
-
-Over space and time. Ability to reliably detect excess risk depends on size of risk and expected numbers (small areas). Li et al Biostatistics 2012, Boulieri et al Spatial Spatio-temp Epidemiol 2016
-
-Methodology developed generally in 1990s-2000s spatial epidemiology book. Point sources, exposure. Elliot 2008. Best etc book on spatial epi, particularly bayesian methods
-
-## (Bayesian) and disease mapping (finer scales)
+Best 2005 focuses on disease mapping. Discuss the different methods proposed
 
 Correlation matrix MVN, using centroids, function of distance (Spatial epi book application to disease mapping).
 Gaussian Markov Random Field (CAR). BYM model.
@@ -61,31 +40,44 @@ Hierarchcial model, Foreman 2012. Exploit hierarchical structure
 
 Statistics of spatial modelling. Gaussian processes etc Kyle's thesis.
 
-### Small area analysis of mortality (over space, but also time age)
+What method did they use?
+
+Aylin 1999 @aylinNationalFacilitySmall1999, Mapped statistically smoothed diseases Kensington, Chelsea and Westminster. Directly standardised
+
+Disease mapping. Methods in Best 2005. Cancer mapping: brain in west midlands Eaton 1997, testicular Toledano 2001, prostate Jarup 2002. CVD risk Asaria 2012, Asaria 2017. Model for small-area trends in cause-specific and all-cause mortality.
+
+Studies which vary over time. Bennett 2015, Bennett 2018.
+
+Over space and time. Ability to reliably detect excess risk depends on size of risk and expected numbers (small areas). Li et al Biostatistics 2012, Boulieri et al Spatial Spatio-temp Epidemiol 2016
+
+### Small area analyses of mortality (over space, but also time age)
 
 Population issue, measuring between census, migration. Look at sahsu spatial epi book, Wakefield 1999. Births, deaths and migration for population between census years
 
 Poeple who have calculated SMR. __Indirect__ model vs direct model (calculate age specific and use life tables) of mortality
 
-United States LDL King county 2015, LDL 2016
-
-United Kingdom Bennett 2015
-
-Australia, Stephens 2013 NSW
-
-Canada, Yu 2022
-
-South Korea
-
-SALURBAL. Santiago Chile Bilal 2019
+Over space:
 
 Rotterdam Jonker 2012
 
+Australia, Stephens 2013 NSW
+
+South Korea
+
 Rasulo, D., Bajekal, M., Yar, M., 2007. Inequalities in health expectancies in England and Wales–small area analysis from the 2001 Census. Health Stat Q 34 (35), 35.
+
+SALURBAL. Santiago Chile Bilal 2019
+
+Over space and time:
+United States LDL King county 2015, LDL 2016
+
+United Kingdom Bennett 2015 [@bennettFutureLifeExpectancy2015]
+
+Canada, Yu 2022 [@yuSpatiotemporalAnalysisInequalities2021]
 
 London wards DALY Congdon 2014
 
-Practice reference [@rashidLifeExpectancyRisk2021] Lorem ipsum dolor sit amet [@bennettFutureLifeExpectancy2015; @bennettContributionsDiseasesInjuries2018; @yuSpatiotemporalAnalysisInequalities2021], consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Practice reference [@rashidLifeExpectancyRisk2021] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
 
 ## Cause-specific analyses
 
@@ -93,9 +85,21 @@ See Kyle's thesis
 
 Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
 
-## Inqualities in the UK
+## Health inequalities in the UK
 
-People modelling over space Bennett 2015
-Deprivation Bennett 2018
-Marmot
-Class Wilkinson and Whitehead
+Whitehall study Marmot 1991
+Class Wilkinson. Income distribution and life expectancy, 1997
+Class Whitehead
+Marmot report 1 and 2
+GBD paper
+People modelling over space Bennett 2015 @bennettFutureLifeExpectancy2015
+Deprivation Bennett 2018 @bennettContributionsDiseasesInjuries2018
+
+Effect of austerity:
+Whitehead M. Investigating the impact of the English health inequalities strategy: time trend analysis.
+Austerity measures hit the sickest hardest BMJ
+Dorling D. Why is life expectancy in England and Wales ‘stalling’?
+Goodman PS. In Britain, austerity is changing everything. May 28, 2018. The New York Times
+Stalling life expectancy and rising inequalities in England
+Local government funding and life expectancy in England: a longitudinal ecological study
+Dorling opendemocracy
