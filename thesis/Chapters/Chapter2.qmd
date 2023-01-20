@@ -1,6 +1,6 @@
 # Background {#sec-Chapter2}
 
-## Small Area Health Statistics (Unit)
+## Small area health statistics (unit)
 
 In 1983, a documentary on the fallout produced from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
 This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
@@ -29,20 +29,58 @@ SAHSU published an environment and health atlas for England and Wales, showing t
 
 ### Disease mapping
 
-The focus for many of the studies were rare diseases at small areas, so there was a need for statistical smoothing, in particular Bayesian methods [@bestComparisonBayesianSpatial2005; @elliottSpatialEpidemiologyMethods2001].
+The focus for many of the studies at SAHSU were rare diseases at small areas.
+The data for the number of cases, or number of deaths, in a given small area is likely to be zero or near zero.
+This sparseness issue is even more pertinant when the study population is statified by age group.
+Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in the risk.
+In these cases, there is a need for statistical smoothing techniques to obtain stable estimates of rates by sharing information between strata.
+@aylinNationalFacilitySmall1999 mapped statistically-smoothed diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothing towards the mean of the risks across the region.
+Later studies at SAHSU focussed on models with explicit spatial dependence, which are designed to weight the influence of nearby areas more than those further away.
 
-Best 2005 focuses on disease mapping. Discuss the different methods proposed
+Broadly, there are three main categories for modelling spatial effects.
+Firstly, we can treat a space a continous surface.
+Second, we can use areal models with spatial neighbourhood dependence.
+Thirdly, we can model a nested hierarchy of geographical units.
 
-Correlation matrix MVN, using centroids, function of distance (Spatial epi book application to disease mapping).
-Gaussian Markov Random Field (CAR). BYM model.
-Gaussian processes.
-Hierarchcial model, Foreman 2012. Exploit hierarchical structure
+In the context disease mapping, events are usually aggregated to small areas rather than assigned specific geographical coordinates.
+@wakefieldIssuesStatisticalAnalysis1999 model aggregated counts as realisations of a Poisson process, in which the  by specify the expected number of cases, i.e. the mean of a Poisson distribution, is some continuous surface generating the cases integrated over the area.
+The continuous surface was some function of spatially-referenced covariates.
+@kelsallModelingSpatialVariation2002 describe an alterative model, where the log-transformed risk surface is modelled by a Gaussian process, whose correlation function depends on distance.
+
+$$
+\int_{A_i}{\lambda (\mathbf{x})}
+$$ {#eq-ctl}
+
+@bestComparisonBayesianSpatial2005 provide a review of the use of hierarchical models with spatial dependence that have been used for disease mapping.
+In particular, SAHSU focus on Bayesian estimation, and different classes of spatial prior distributions.
+
+The first prior proposed for spatial effects $\mathbf{S} = {S_1, ..., S_n}$ is the multivariate normal
+$$
+\mathbf{S} \sim \mathcal{N}(\mathbf{\mu}, \mathbf{\Sigma}),
+$$ {#eq-MVN}
+
+where $\mathbf{\Sigma} = \sigma^2 \mathbf{\Omega}$ and $\mathbf{\Omega}$ defines the correlation between spatial effects.
+A common choice for the structure of the correlation matrix is to assume a function that decays with the distance between the centroids of the areas, so that places nearby in space share similar disease profiles.
+An example in @elliottSpatialEpidemiologyMethods2001 chooses the exponential decay function to map cancer risk in northwest England.
+
+A more popular prior is the conditional autoregressive (CAR) prior, or Markov random field. These form a joint distribution as in @eq-MVN, but the covariance is usually defined instead in terms of the preicision matrix
+$$
+\mathbf{P} = \mathbf{\Sigma}^{-1} = \mathbf{D}(\mathbb{1} - \rho)\mathbf{A},
+$$
+where $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ described the amount of correlation. This can be seen as a trade off between independence between areas when $\rho = 0$, and full dependence when $\rho = 1$.
+The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR).
+Besag et al. proposed the model (hereafter called BYM)
+$$
+S_i = U_i + V_i,
+$$ {#eq-BYM}
+where $U_i$ follow an ICAR distribution, and $V_i$ are iid spatially unstructured effects.
+Here are some papers by SAHSU which used BYM
+
+Thirdly, we can model a nested hierarchy of geographical units Hierarchcial model, Foreman 2012. Exploit hierarchical structure
 
 Statistics of spatial modelling. Gaussian processes etc Kyle's thesis.
 
 What method did they use?
-
-Aylin 1999 @aylinNationalFacilitySmall1999, Mapped statistically smoothed diseases Kensington, Chelsea and Westminster. Directly standardised
 
 Disease mapping. Methods in Best 2005. Cancer mapping: brain in west midlands Eaton 1997, testicular Toledano 2001, prostate Jarup 2002. CVD risk Asaria 2012, Asaria 2017. Model for small-area trends in cause-specific and all-cause mortality.
 
