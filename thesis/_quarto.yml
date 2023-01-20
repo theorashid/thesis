@@ -54,7 +54,7 @@ execute:
 # linkcolor changes color of internal links (like to figures)
 # toclinkcolor changes color of toc, lof and lot links
 format:
-  quarto-thesis-pdf: 
+  quarto-thesis-pdf:
     urlcolor: blue
     toclinkcolor: black
     toc-depth: 2
