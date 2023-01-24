@@ -27,66 +27,64 @@ Distance from source is, however, only a basic model for the exposure, which can
 A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assess the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base station during pregnancy [@elliottMobilePhoneBase2010], noise from aircrafts near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and PM10 from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
 SAHSU published an environment and health atlas for England and Wales, showing the geographic patters of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
 
-### Disease mapping
+### Disease mapping at SAHSU
 
-The focus for many of the studies at SAHSU were rare diseases at small areas.
-The data for the number of cases, or number of deaths, in a given small area is likely to be zero or near zero.
-This sparseness issue is even more pertinant when the study population is statified by age group.
+Many of the studies at SAHSU focus on rare diseases at small areas.
+The data for the number of cases, or number of deaths, in a region are likely to small numbers.
+This sparseness issue is even more pertinant when the population is also statified by age group.
 Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in the risk.
-In these cases, there is a need for statistical smoothing techniques to obtain stable estimates of rates by sharing information between strata.
-@aylinNationalFacilitySmall1999 mapped statistically-smoothed diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothing towards the mean of the risks across the region.
-Later studies at SAHSU focussed on models with explicit spatial dependence, which are designed to weight the influence of nearby areas more than those further away.
+There is a need for statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
+@aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean of the risks across the region.
+SAHSU thereafter published a plethora of studies for disease mapping models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 
-Broadly, there are three main categories for modelling spatial effects.
-Firstly, we can treat a space a continous surface.
-Second, we can use areal models with spatial neighbourhood dependence.
-Thirdly, we can model a nested hierarchy of geographical units.
+There are three main categories for modelling spatial effects.
+First, we can treat space a continous surface, such as Gaussian processes or splines.
+Second, we can use areal models, which make use of spatial neighbourhood structure of the units.
+Thirdly, we can explicitly build effects based on a nested hierarchy of geographical units, for example between state, county and census tract in the US.
 
-In the context disease mapping, events are usually aggregated to small areas rather than assigned specific geographical coordinates.
-@wakefieldIssuesStatisticalAnalysis1999 model aggregated counts as realisations of a Poisson process, in which the  by specify the expected number of cases, i.e. the mean of a Poisson distribution, is some continuous surface generating the cases integrated over the area.
-The continuous surface was some function of spatially-referenced covariates.
+In the context of disease mapping, events are usually aggregated to areas rather than assigned specific geographical coordinates.
+@wakefieldIssuesStatisticalAnalysis1999 model aggregated counts as realisations of a Poisson process, in which the expected number of cases is calculated by integrating a continuous surface that generates the cases integrated over the area.
+The surface was some function of spatially-referenced covariates.
 @kelsallModelingSpatialVariation2002 describe an alterative model, where the log-transformed risk surface is modelled by a Gaussian process, whose correlation function depends on distance.
 
-$$
-\int_{A_i}{\lambda (\mathbf{x})}
-$$ {#eq-ctl}
-
-@bestComparisonBayesianSpatial2005 provide a review of the use of hierarchical models with spatial dependence that have been used for disease mapping.
-In particular, SAHSU focus on Bayesian estimation, and different classes of spatial prior distributions.
+@bestComparisonBayesianSpatial2005 provide a review of the use of hierarchical models with spatial dependence for disease mapping.
+In particular, the authors focus on Bayesian estimation, and different classes of spatial prior distributions.
 
 The first prior proposed for spatial effects $\mathbf{S} = {S_1, ..., S_n}$ is the multivariate normal
 $$
-\mathbf{S} \sim \mathcal{N}(\mathbf{\mu}, \mathbf{\Sigma}),
+\mathbf{S} \sim \mathcal{N}(\pmb{\mu}, \pmb{\Sigma}),
 $$ {#eq-MVN}
 
-where $\mathbf{\Sigma} = \sigma^2 \mathbf{\Omega}$ and $\mathbf{\Omega}$ defines the correlation between spatial effects.
-A common choice for the structure of the correlation matrix is to assume a function that decays with the distance between the centroids of the areas, so that places nearby in space share similar disease profiles.
+where $\pmb{\mu}$ is the mean effect vector, $\pmb{\Sigma} = \sigma^2 \pmb{\Omega}$ and $\pmb{\Omega}$ is a symmetric, positive semi-definite matrix defining the correlation between spatial units.
+A common choice when specifying the structure of the correlation matrix is to assume a function that decays with the distance between the centroids of the areas, so that places nearby in space share similar disease profiles.
+Note, this is mathematically equivalent to the practical implementation of a Gaussian process, whcih uses a finite set of points.
 An example in @elliottSpatialEpidemiologyMethods2001 chooses the exponential decay function to map cancer risk in northwest England.
 
-A more popular prior is the conditional autoregressive (CAR) prior, or Markov random field. These form a joint distribution as in @eq-MVN, but the covariance is usually defined instead in terms of the preicision matrix
+A more popular prior is the conditional autoregressive (CAR) prior, also known as a Gaussian Markov random field.
+These form a joint distribution as in @eq-MVN, but the covariance is usually defined instead in terms of the preicision matrix
 $$
-\mathbf{P} = \mathbf{\Sigma}^{-1} = \mathbf{D}(\mathbb{1} - \rho)\mathbf{A},
+\mathbf{P} = \pmb{\Sigma}^{-1} = \tau(\mathbf{D} - \rho \mathbf{A}),
 $$
-where $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ described the amount of correlation. This can be seen as a trade off between independence between areas when $\rho = 0$, and full dependence when $\rho = 1$.
-The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR).
-Besag et al. proposed the model (hereafter called BYM)
+where $\tau$ controls the overall precision of the effects, $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ describes the amount of correlation.
+This can be seen as a tuning the degree of spatial dependence, where $\rho = 0$ implies independence between areas, and $\rho = 1$ full dependence.
+The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR) model.
+@besagBayesianImageRestoration1991 proposed the model (hereafter called BYM)
 $$
 S_i = U_i + V_i,
 $$ {#eq-BYM}
-where $U_i$ follow an ICAR distribution, and $V_i$ are iid spatially unstructured effects.
-Here are some papers by SAHSU which used BYM
+where $U_i$ follow an ICAR distribution, and $V_i$ are independent and identically distributed random effects.
+The BYM distribution was employed to model spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
 
-Thirdly, we can model a nested hierarchy of geographical units Hierarchcial model, Foreman 2012. Exploit hierarchical structure
+Further disease mapping studies at SAHSU have also looked at age patterns and trends over time of disease.
+@asariaTrendsInequalitiesCardiovascular2012 analysed cardiovasuclar disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
+@bennettFutureLifeExpectancy2015 considered a model to estimate spatial, age group and temporal effects jointly for all-cause mortality in England at the district level.
 
-Statistics of spatial modelling. Gaussian processes etc Kyle's thesis.
-
-What method did they use?
-
-Disease mapping. Methods in Best 2005. Cancer mapping: brain in west midlands Eaton 1997, testicular Toledano 2001, prostate Jarup 2002. CVD risk Asaria 2012, Asaria 2017. Model for small-area trends in cause-specific and all-cause mortality.
-
-Studies which vary over time. Bennett 2015, Bennett 2018.
-
-Over space and time. Ability to reliably detect excess risk depends on size of risk and expected numbers (small areas). Li et al Biostatistics 2012, Boulieri et al Spatial Spatio-temp Epidemiol 2016
+In building models which consider the hierarchy of geographical units, these relationships are often incorporated into the model as a nested hierarchy of random effects.
+These models account for which spatial units lie within common administrative boundaries, but, by design, there is no knowledge of spatial distance included.
+This is often a desirable property of the model for certain geographies, like states in the US, which are administrative.
+Policy is decided at these geographies, so there is reason to believe these boundaries may have a greater effect on health outcomes than spatial structure.
+Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled as such, in this case exploiting the hierarchy global, subregion, region and country.
+Note, although these models group by geographical region, these models are not spatial as they do not contain any information on the position relative to other units.
 
 ### Small area analyses of mortality (over space, but also time age)
 
