@@ -75,9 +75,14 @@ $$ {#eq-BYM}
 where $U_i$ follow an ICAR distribution, and $V_i$ are independent and identically distributed random effects.
 The BYM distribution was employed to model spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
 
-Further disease mapping studies at SAHSU have also looked at age patterns and trends over time of disease.
+Further disease mapping studies at SAHSU using spatially structured effects have also extended the methdology to look at age patterns and trends over time of disease.
 @asariaTrendsInequalitiesCardiovascular2012 analysed cardiovasuclar disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
-@bennettFutureLifeExpectancy2015 considered a model to estimate spatial, age group and temporal effects jointly for all-cause mortality in England at the district level.
+@bennettFutureLifeExpectancy2015 considered a model to jointly forecast all-cause mortality for districts in England, age groups and years.
+The model used BYM spatial effects and random walk effects over age and time to capture non-linear relationships.
+It is also possible to borrow information across causes of death, as applied in @foremanSmallAreaForecasts2017 on forecasting cause-specific mortality for states in the US.
+Random walk effects were again used to non-linear temporal effects, a CAR prior was used for spatial effects, and a multivariate normal where the covariance matrix describes the correlation structure between the 15 cause groups.
+The model did not, however, share information between age groups.
+Although this is not directly a SAHSU study, the model was developed by a several people in the department.
 
 In building models which consider the hierarchy of geographical units, these relationships are often incorporated into the model as a nested hierarchy of random effects.
 These models account for which spatial units lie within common administrative boundaries, but, by design, there is no knowledge of spatial distance included.
@@ -100,42 +105,96 @@ Australia, Stephens 2013 NSW
 
 South Korea
 
-Rasulo, D., Bajekal, M., Yar, M., 2007. Inequalities in health expectancies in England and Wales–small area analysis from the 2001 Census. Health Stat Q 34 (35), 35.
-
 SALURBAL. Santiago Chile Bilal 2019
 
 Over space and time:
+Entire country level
 United States LDL King county 2015, LDL 2016
 
 United Kingdom Bennett 2015 [@bennettFutureLifeExpectancy2015]
 
+At the city level
+
 Canada, Yu 2022 [@yuSpatiotemporalAnalysisInequalities2021]
+
+Specific small area to the UK:
+Rasulo, D., Bajekal, M., Yar, M., 2007. Inequalities in health expectancies in England and Wales–small area analysis from the 2001 Census. Health Stat Q 34 (35), 35.
+
+Congdon
 
 London wards DALY Congdon 2014
 
-Practice reference [@rashidLifeExpectancyRisk2021] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Practice reference [@rashidLifeExpectancyRisk2021]
 
 ## Cause-specific analyses
 
-See Kyle's thesis
+Research into the decomposition of mortality into all diseases and injuries began in the mid-twentieth century. 
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+Moriyama in the US. Series by Moriyama and others at the US Public Health Service. 1900-40s, 25 groups of causes of deaths. "One of their key findings was that as public health interventions – such as improvements in water and sanitation and the expanded use of immunizations and quarantines – increased, the burden of mortality began shifting away from communicable diseases such as tuberculosis, pneumonia, typhoid, and measles, and toward non-communicable and chronic conditions such as cardiovascular disease and cancers"
+
+Omran in the England.
+"This apparent shift from communicable to non-communicable causes of death was further formalized and expanded upon by Abdel Omran, who in the 1960s and 70s analyzed several centuries’ worth of vital registration data for England (Omran, 1971) – and later the US (Omran, 1977a, 1977b) – in formulating . This theory combined observations on the changing composition of mortality with trends observed in other fields such as economics, demography, and sociology to posit that as a society develops economically and technologically, deaths from more easily preventable diseases subside. As more people live longer, fertility then declines, the mean age of the population increases, and non-communicable diseases (NCDs) take on greater prominence among the causes of death."
+What did he find
+He termed this the Epidemiologic Transition theory
+Then later in the US.
+
+Preston comparing different countries
+
+Salomon 2002. Specifically talking about Group 1 2 and 3
+
+Specific to cancer Gersten 2002
+
+The burden of mortality decomposition studies has been the remit of the Global Burden of Disease (GBD) studies since 1990 study (Murray and Lopez 1996), usually cross-sectional but sometimes done with trends. Focus on burdens of disease and premature death (example Ezzati 2008).
 
 ## Health inequalities in the UK
 
-Whitehall study Marmot 1991
-Class Wilkinson. Income distribution and life expectancy, 1997
-Class Whitehead
-Marmot report 1 and 2
-GBD paper
-People modelling over space Bennett 2015 @bennettFutureLifeExpectancy2015
-Deprivation Bennett 2018 @bennettContributionsDiseasesInjuries2018
+While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation suffers still vast, preventible inequalities in mortality and morbidity.
+There are several ways to stratify the UK population and comapare inequalities between subgroups.
+Here, we focus on class, income, geography, and deprivation.
 
-Effect of austerity:
-Whitehead M. Investigating the impact of the English health inequalities strategy: time trend analysis.
-Austerity measures hit the sickest hardest BMJ
-Dorling D. Why is life expectancy in England and Wales ‘stalling’?
-Goodman PS. In Britain, austerity is changing everything. May 28, 2018. The New York Times
-Stalling life expectancy and rising inequalities in England
-Local government funding and life expectancy in England: a longitudinal ecological study
-Dorling opendemocracy
+The notion of class is prominent in UK society, but health outcomes between classes are difficult to separate from other risk factors such as hazards in manual labour or smoking rates.
+The Whitehall study of 1967 followed 17,530 men working in the civil service and recorded their mortality over a 10-year period.
+@marmotInequalitiesDeathSpecific1984 found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and unskilled manual workers.
+They found, in general, a strong inverse association between grade and mortality – a term Marmot has coined a "social gradient".
+The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be fully explained by smoking or industrial exposure alone.
+There authors concluded be other factors inherent to social class (defined here by employment), which explain the mortality differences.
+A second cohort of Whitehall employees from 1985 to 1988, this time including women as well as men, were screened and asked to answer questions on self-reported ill-health.
+@marmotHealthInequalitiesBritish1991 found the social gradient in health had persisted in the 20 years separating the studies.
+In 2008, Marmot was asked by the Secretary of State to conduct a review into the state of health inequalities in England and to use the evidence to design policy for reducing these inequalities.
+A key plot in the first Marmot Review, released in 2010, depicted the social gradient in mortality for regions in England by socio-economic classification of jobs [].
+
+Income data is not a routinely collected statistic in the UK. Nevertheless, using a small survey of 7000 people on three measures of morbidity, @wilkinsonIncomeDistributionLife1992 showed health improved sharply from the lowest to the middle of the income range.
+
+In 2015, the GBD Study released its first subational estimates of mortality, starting with the UK and Japan.
+@steelChangesHealthCountries2018 assess these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
+In a study on forecasting subnational life expectancy in England and Wales, @bennettFutureLifeExpectancy2015 estimated a 8.2 year range in life expectancy for men and 7.1 year range for women in 2012 between 375 districts.
+The lowest life expectancies were seen in urban northern England, and the highest in the south and London's affluent districts.
+Within London itself, male and female life expectancy showed 5-6 years of variation.
+
+There have been substantial efforts in the UK to measure the deprivation of an area, with the standard deprivation indicator in England since the 2000s is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA) covering income, unemployement, health, crime and environmental data sources [@EnglishIndicesDeprivation2019].
+The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, whcih exhibit a strong social gradient [@marmotMarmotReviewFair2010].
+The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham did better than expected for that level of deprivation [@steelChangesHealthCountries2018].
+@bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
+They found since 2011, "the rise in female life expectancy has reversed in the two most deprived deciles, and has stalled in the third, fourth, and fifth most deprived deciles but has continued in better-off deciles."
+The second Marmot Review in 2020 also found female life expectancy declined in the most deprived decile between the periods 2010-12 and 2016-18 [@marmotMarmotReview102020].
+Digging further into these trends by region, the report found this trend was seen in all regions except London, the West Midlands and the North West, and that male life expectancy in the bottom decile also decreased in the North East, Yorkshire and the Humber and the East of England.
+
+Since the turn of the millenium, there have been two periods of contrasting health policy in the UK.
+The early 2000s saw the implementation of the English health inequalities strategy under New Labour, with explicit goals of reducing geographical inequalities in life expectancy.
+The strategy saw a large increase in public spending targeting the social determinants of health, with policies on supporting families, tackling deprivation, and preventative healthcare.
+@barrInvestigatingImpactEnglish2017 analysed the trends in life expectancy for different quantiles of deprivation and provided evidence that the strategy acheived its aim of reducing the gap in life expectancy between the 20% most-deprived areas and the rest of the English population.
+
+Following the change in government in 2010, the strategy came to an end.
+The Conservative government implemented a series of widespread cuts to public services, collectively known as austerity.
+The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
+These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
+Although difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in life expectancy of the district in the study period 2013-17.
+As written in the _The New York Times_, "after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty" [@goodmanBritainAusterityChanging2018] – a comparison only compounded by the Brexit vote in 2018.
+
+Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies.
+In an international study comparing mortality trends in England and Wales to 22 comparator countries @leonTrendsLifeExpectancy2019 show, however, that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
+
+After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
+Unsurprisingly, England and Wales suffering one of the highest excess deaths tolls relative to other industrialised countries [@kontisMagnitudeDemographicsDynamics2020].
+At the current time of writing in 2023, the health service is yet to recover, with waiting lists for operations and waiting times for emergency care unhealthily high [@dorlingHowAusterityCaused2023].
+There is no suggestion that the picture of health and health inequalities in the UK should improve in the coming years.
