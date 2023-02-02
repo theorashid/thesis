@@ -61,6 +61,7 @@ format:
     urlcolor: blue
     toclinkcolor: black
     toc-depth: 2
+    cover-image: "assets/imperial.pdf"
   docx:
     toc: true
     toc-depth: 2

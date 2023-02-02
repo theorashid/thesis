@@ -7,16 +7,21 @@
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
+$if(cover-image)$
+\includegraphics[width = 4cm]{$cover-image$}\\[0.5cm] % University/department logo
+$endif$
 \begin{center}
 
-\vspace*{.06\textheight}
-{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+% \begin{flushleft}
+% \deptname\\ % Research group name and department name
+% \groupname\\
+% {\Large \bfseries \univname}\\[2cm] % University name
+% \end{flushleft}
 
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1.5cm] % Horizontal line
- 
+\HRule \\[0.4cm]
+{ \huge \bfseries \ttitle}\\ % Title of your document
+\HRule \\[1.5cm]
+
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Author:}\\
@@ -26,6 +31,7 @@ $else$
 \authorname
 $endif$
 \end{flushleft}
+
 \end{minipage}
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
@@ -36,24 +42,16 @@ $else$%
 \supname
 $endif$
 \end{flushright}
-\end{minipage}\\[3cm]
- 
-\vfill
+\end{minipage}\\[4cm]
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\
-\deptname\\[2cm] % Research group name and department name
- 
-\vfill
+\vfill % Fill the rest of the page with whitespace
 
-{\large January 2023}\\[4cm] % Date
+Submitted in fulfillment of the requirements\\
+for the degree of \degreename\\[0.5cm]
+\deptname, \groupname\\[0.5cm] % Research group name and department name
 
-$if(cover-image)$
-\includegraphics{$cover-image$} % University/department logo
-$endif$
+February 2023\\[0.5cm] % Date
  
-\vfill
 \end{center}
 \end{titlepage}
 
