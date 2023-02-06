@@ -1,11 +1,47 @@
 # The model {#sec-Chapter3}
 
+## The data
+
+Same dataset for each
+By age + sex, log scale
+Age specific and Life expectancy male and female over time
+Colour geom_tile plot
+PCA for age (Alexander)
+Death rate 2002-19 by district
+
+### Other data sources
+
+Population data from ONS.
+Estimates, modelled for inter-censal years using births, deaths, migration
+
+IMD data
+Focus on income, education, – not health
+Aggregate to 
+
 ## Model
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Why we model? Robust estimates
+Explanation of death rates, small numbers, zero population, variability
+Regression, statistical smoothing
+Same model
 
-### Contributions to open source
+As complex a model as possible, capture as more variation
+"Full" model
+More parameters is harder to fit, fewer parameters makes inference easier
+Models are overspecified, like Bayesian neural networks (AGW paper)
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+## Inference
 
-### NumPyro quicker than nimble
+Choice made to do sampling – gold standard
+Approximate inference state-of-the-art for spatial models, INLA, scales badly with the number of effects
+
+Start with NIMBLE, group has experience with BUGS
+Gibbs sampling, finds conjugate relationships where they exist
+R interface but C++ backend, scales well to a large problem like this
+
+Move to numpyro.
+Created CAR distribution, contributed to open source
+Sampling faster, more efficient NUTS
+Sampling on GPU, much faster
+Tried VI methods in numpyro, such as laplace approx, but failed to converge to sensible values
+
