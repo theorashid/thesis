@@ -341,55 +341,27 @@ KOMA-script documentation for details.}]{fancyhdr}
 	}%
 	{}%end alt-abstract
 }{%
-	\DeclareDocumentEnvironment{abstract}{ O{\null\vfill} }{
+	\DeclareDocumentEnvironment{abstract}{ O{} }{
 		\checktoopen
 		\tttypeout{\abstractname}
 		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
-		\begin{flushleft}
-			% {\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-			% \bigskip
-			{\huge\abstractname \par}
-			\bigskip
-			% {\normalsize \facname \par}% Faculty name
-			% {\normalsize \deptname \par}% Department name
-			% \bigskip
-			% {\normalsize \degreename\par}% Degree name
-			% \bigskip
-			% {\normalsize\bfseries \@title \par}% Thesis title
-			% \medskip
-			% {\normalsize \byname{} \authorname \par}% Author name
-			% \bigskip
-		\end{flushleft}
+		\begin{flushleft}{\huge\abstractname\par}\end{flushleft}
 	}
 	{
-		\vfill\null
+		\vfil\vfil\null
 	}
 }
 
-\DeclareDocumentEnvironment{extraAbstract}{ O{\null\vfill} }{
+\DeclareDocumentEnvironment{extraAbstract}{ O{} }{
 	\checktoopen
 	\tttypeout{\abstractname}
 	#1%added to be able to have abstract more than one page long
 	\thispagestyle{empty}
-	\begin{flushleft}
-		% {\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-		% \bigskip
-		{\huge\abstractname \par}
-		\bigskip
-		% {\normalsize \facname \par}% Faculty name
-		% {\normalsize \deptname \par}% Department name
-		% \bigskip
-		% {\normalsize \degreename\par}% Degree name
-		% \bigskip
-		% {\normalsize\bfseries \@title \par}% Thesis title
-		% \medskip
-		% {\normalsize \byname{} \authorname \par}% Author name
-		% \bigskip
-	\end{flushleft}
+	\begin{flushleft}{\huge\abstractname\par}\end{flushleft}
 }
 {
-	\vfill\null
+	\vfil\vfil\null
 }
 
 %----------------------------------------------------------------------------------------
@@ -458,8 +430,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\authorshipname}
 		\thispagestyle{plain}
-		\null\vfil
-		{\noindent\huge\bfseries\authorshipname\par\vspace{10pt}}
+		\begin{flushleft}{\huge\authorshipname\par}\end{flushleft}
 	}{}
 }
 
