@@ -30,10 +30,7 @@ book:
 
 thesis:
   supervisor:
-    name: |
-      Majid Ezzati\
-      James E Bennett\
-      Seth Flaxman
+    name: Majid Ezzati, James E Bennett, Seth Flaxman
   degree-name: Doctor of Philosophy
   university: Imperial College London
   department: Department of Epidemiology and Biostatistics

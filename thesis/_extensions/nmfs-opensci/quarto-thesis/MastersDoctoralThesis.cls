@@ -20,6 +20,7 @@
 % LPPL v1.3c (http://www.latex-project.org/lppl)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adapted by Theo Rashid
 
 %----------------------------------------------------------------------------------------
 %	CLASS DEFINITION AND PARAMETERS
@@ -246,8 +247,6 @@
 \usepackage{xcolor} % Required for specifying custom colours
 
 \colorlet{mdtRed}{red!50!black}
-
-
 
 %----------------------------------------------------------------------------------------
 %	PENALTIES

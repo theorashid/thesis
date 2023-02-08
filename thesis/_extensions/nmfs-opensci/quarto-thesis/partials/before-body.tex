@@ -7,52 +7,24 @@
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
-$if(cover-image)$
-\includegraphics[width = 4cm]{$cover-image$}\\[0.5cm] % University/department logo
-$endif$
-\begin{center}
+\thispagestyle{empty}%
+\null\vskip1cm%
+\centerline{\includegraphics[width=6cm]{$cover-image$}}
+\vfill
+\begin{flushleft}\fontsize{24}{28}\sf
+    \textbf{\expandafter{\ttitle}}\\
+    \fontsize{18}{20}\sf
+    \authorname\\
+    \vfill
+    \fontsize{13}{15}\sf
+    \emph{Supervisors:} \supname
 
-% \begin{flushleft}
-% \deptname\\ % Research group name and department name
-% \groupname\\
-% {\Large \bfseries \univname}\\[2cm] % University name
-% \end{flushleft}
+    A thesis submitted for the degree of \degreename\\
 
-\HRule \\[0.4cm]
-{ \huge \bfseries \ttitle}\\ % Title of your document
-\HRule \\[1.5cm]
+    \deptname, \groupname
 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-$if(author.url)$
-\href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
-$else$
-\authorname
-$endif$
+    February 2023
 \end{flushleft}
-
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisors:} \\
-$if(thesis.supervisor.url)$%
-\href{$thesis.supervisor.url$}{\supname} % Supervisor name - remove the \href bracket to remove the link  
-$else$%
-\supname
-$endif$
-\end{flushright}
-\end{minipage}\\[4cm]
-
-\vfill % Fill the rest of the page with whitespace
-
-Submitted in fulfillment of the requirements\\
-for the degree of \degreename\\[0.5cm]
-\deptname, \groupname\\[0.5cm] % Research group name and department name
-
-February 2023\\[0.5cm] % Date
- 
-\end{center}
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
