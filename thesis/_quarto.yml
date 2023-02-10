@@ -45,6 +45,7 @@ thesis:
   abbreviations: "Frontmatter/abbreviations.tex"
 
 bibliography: [thesis.bib]
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa-single-spaced.csl"
 
 execute:
   echo: false
