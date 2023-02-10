@@ -13,10 +13,18 @@ Death rate 2002-19 by district
 
 Population data from ONS.
 Estimates, modelled for inter-censal years using births, deaths, migration
+The mid-2020 Small Area population estimates covered by this bulletin are fully consistent with population estimates for higher levels of geography including local authorities, regions and the national total for England and Wales.
+https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualsmallareapopulationestimates/latest
+The description of the methodology in the following sections uses the example of creating rolled-forward mid-2020 Lower layer Super Output Area (LSOA) estimates. For example, we produced the mid-2020 LSOA estimates using the mid-2019 LSOA estimates as the population base.
+Middle layer Super Output Area (MSOA) estimates are created in a similar manner using derived MSOA quinary age-by-sex change ratios and are constrained to local authority mid-year estimates.
+Change ratios were calculated by quinary age group and sex for the patient register data. The change ratios are calculated by dividing for each dataset the mid-2020 count by quinary age and sex by the mid-2019 count by quinary age and sex. For example, a mid-2020 count of 50 divided by a mid-2019 count of 40 gives a change ratio of 1.25.
+The ratios are then constrained to the mid-2020 MSOA estimates (less mid-2020 special population), which have been constrained to the local authority mid-2020 estimates less mid-2020 special population.
+The number of patients registered on GP lists in each OA at the mid-year point is used as a proxy for the true size of the population at the same point in time.
 
 IMD data
 Focus on income, education, – not health
-Aggregate to 
+Aggregate to different geographies
+map of IMD for London (LSOA), and IMD for England (MSOA) in 2019
 
 ## Model
 
