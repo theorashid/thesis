@@ -2,7 +2,7 @@
 
 ## Welcome and Thank You
 
-Welcome to this \LaTeX{} Thesis Template, using the \LaTeX{} typesetting system and [Quarto](quarto.org) and based on the \LaTeX{} thesis template MastersDoctoralThesis version 2.0 downloaded from [LaTeXTemplates](http://www.LaTeXTemplates.com). 
+Welcome to this \LaTeX{} Thesis Template, using the \LaTeX{} typesetting system and [Quarto](https://quarto.org/) and based on the \LaTeX{} thesis template MastersDoctoralThesis version 2.0 downloaded from [LaTeXTemplates](http://www.LaTeXTemplates.com). 
 This LaTeX document class was authored by Vel (vel@latextemplates.com) and Johannes Böttcher based on a style file by Steve R. Gunn from the University of Southampton (UK), department of Electronics and Computer Science.
 
 
