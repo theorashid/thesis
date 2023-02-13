@@ -126,7 +126,7 @@ London wards DALY Congdon 2014
 
 Practice reference [@rashidLifeExpectancyRisk2021]
 
-## Mortality by specific causes of death
+## Mortality by specific causes of death (counting the dead and what they died from)
 
 In the mid-twentieth century, a team in the US Public Health Service, led by Iwao Moriyama, began looking into the decomposition of mortality for the first half of the century into all diseases and injuries.
 Notably, @moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes, and found as the US saw overall downward trend in mortality, leading causes of death changed from communicable diseases, such as tuberculosis and diptheria, toward non-communicable, "chronic disease of older ages", such as heart diseases and cancers.
@@ -136,17 +136,21 @@ By comparing vital registration data over several centuries, Abdel Omran observe
 
 1. _The Age of Pestilence and Famine_. Mortality is high and largely governed by malthusian "positive checks" – epidemics, famines, and wars.
 2. _The Age of Receding Pandemics_. Mortality decreases as epidemics become less frequent. 
-3. _THe Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
+3. _The Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
 
 He termed this the _Epidemiologic Transition theory_. @omranEpidemiologicTransitionTheory1971 explained that England and Wales took the classic transition path followed by western societies, whereby socioeconomic factors such as improvements to living standards are crucial in causing easily preventable diseases to subside and shifting towards the third phase of the transition, and medical and other public health technology only help society much later in the final stage.
 
-Preston comparing different countries
+Around the same time as Omran, Samuel Preston collated cause-specific mortality data for a huge number of populations, spanning 48 nations and nearly a century [@prestonInternationalComparisonExcessive1970; @prestonStructureChangeCauses1974].
+This would enable international comparisons of groups of causes of death over different time periods, and a deeper understanding of the upward trends in life expectancy.
+In particular, by plotting cause-specific disease rates against overall mortality, @prestonStructureChangeCauses1974 saw that, over time, the contribution of infectious diseases to a particular _level_ of mortality had become ever smaller.
+That is to say, as mortality declines, the contribution from infectious diseases also declines.
+Preston attributed this to an accerlating rate of medical progress guided by the "germ theory of disease", which public health and science were not able to replicate for NCDs.
+Preston also traced the excess deaths in older males observed in western societies to cardiovascular diseases, cancer and bronchitis – a direct result of dramatic increases in cigarette smoking [@prestonInternationalComparisonExcessive1970].
 
-Salomon 2002. Specifically talking about Group 1 2 and 3
-
-Specific to cancer Gersten 2002
-
-The burden of mortality decomposition studies has been the remit of the Global Burden of Disease (GBD) studies since 1990 study (Murray and Lopez 1996), usually cross-sectional but sometimes done with trends. Focus on burdens of disease and premature death (example Ezzati 2008).
+Since its first edition in 1990, the subject of international comparisons of the cause-specific composition of mortality has been the remit of the Global Burden of Disease (GBD) studies [@murrayGlobalBurdenDisease1996].
+The studies aim to quantify and compare the burden of diseases, injuries, and risk factors, usually through cross-sectional methods but occasionally by examining trends and subnational populations (for example, @ezzatiReversalFortunesTrends2008 and @dwyer-lindgrenInequalitiesLifeExpectancy2017).
+An important innovation of the GBD study was the introduction of a hierarchical classification of groups of causes, with the broadest level divided into three groups: communicable, maternal, perinatal, and nutritional diseases (Group 1), NCDs (Group 2), and injuries (Group 3).
+@salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century, finding the majority of the change in cause structure occurs among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
 
 ## Health inequalities in the UK
 

@@ -1,5 +1,7 @@
 # The model {#sec-Chapter3}
 
+Bayesian workflow
+
 ## The data
 
 Same dataset for each
