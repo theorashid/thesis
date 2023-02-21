@@ -1,4 +1,4 @@
 # Overview {#sec-Chapter1}
 
-Thesis title is adapted from @mathersCountingDeadWhat2005.
+Thesis title is adapted from @mathersCountingDeadWhat2005: _Counting the dead and what they died from_.
 

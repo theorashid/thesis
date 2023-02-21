@@ -3,14 +3,14 @@ project:
   output-dir: _thesis/
 
 book:
-  title: Counting the dead
+  title: Modelling the dead and what they died from
   author:
     name: Theo Rashid
     url: https://theorashid.github.io/
   cover-image: assets/favicon.png
   favicon: assets/favicon.png
   downloads: [pdf]
-  abstract: "People died in England and we modelled the death rates. This took longer than expected."
+  abstract: "People died in England and we modelled the all cause and cause-specific death rates. This took longer than expected."
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
