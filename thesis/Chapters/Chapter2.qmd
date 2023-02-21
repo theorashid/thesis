@@ -91,40 +91,35 @@ Policy is decided at these geographies, so there is reason to believe these boun
 Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled as such, in this case exploiting the hierarchy global, subregion, region and country.
 Note, although these models group by geographical region, these models are not spatial as they do not contain any information on the position relative to other units.
 
-### Small area analyses of mortality (over space, but also time age)
+### Small area analyses of mortality
 
-Population issue, measuring between census, migration. Look at sahsu spatial epi book, Wakefield 1999. Births, deaths and migration for population between census years
+In order to compare the health status between areas, health authorities require a measure of mortality that collapses age-specific information into a single number.
+Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate but are not easily understood by laypeople.
+Directly standardised methods, in contrast, require knowledge of the full age structure of death rates rather than just the total number of deaths.
+Age-standardised death rates, however, suffer the same interpretability issue as the standardised mortality ratio, and are only comparable between studies if the same reference population is used.
+An alternative choice is life expectancy.
+@silcocksLifeExpectancySummary2001 explain that life expectancy is a "more intuitive and immediate measure of the mortality experience of a population, [and] is likely to have greater impact... than other measures that are incomprehensible to most people."
+For studies of small geographies where there are often small number issues, the calculation of life expectancy is either extremely unstable or impossible [@jonkerComparisonBayesianRandomEffects2012].
 
-Poeple who have calculated SMR. __Indirect__ model vs direct model (calculate age specific and use life tables) of mortality
+The estimation of death rates requires two data sources: deaths counts and popualtions.
+Modern vital registrations systems are complete and accurate, so data on deaths are usually reliable and comprehensive.
+On the other hand, although usually treated as a known quantity, the population denominator is often problematic.
+Populations for small geographies are only recorded during a decennial census, and estimates are generated for the years in between using limited survey data on births, deaths and migration.
+And although the census is considered the "gold standard", it is subject to enumaration errors, particularly for areas with special populations such as students or armed forced @elliottSpatialEpidemiologyMethods2001.
 
-Over space:
+Beyond the population issue, finer scale studies are restricted by data availability.
+Where data are available, there is still the need to overcome small number issues before feeding death rates through the life table.
+@eayresEvaluationMethodologiesSmall2004 recommend a minimum population size of 5000 when using traditional life table methods, below which the error estimates in life expectancy become so large that any comparison between subgroups becomes meaningless.
+One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data (cite ONS and PHE, @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
+Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce lower bias and smaller, more accuate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009, @jonkerComparisonBayesianRandomEffects2012].
 
-Rotterdam Jonker 2012
+@jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach to stabilitising estimates for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap in life expectancy for women and men. @stephensLifeExpectancyEstimation2013 employed the same model for 153 administrative areas in New South Wales, Australia.
 
-Australia, Stephens 2013 NSW
+Bayesian spatial models for mortality have been scaled up to relatively small areas for entire countries, and also consider trends in these regions over time. @bennettFutureLifeExpectancy2015 forecasted life expectancy for 375 districts in England and Wales using an ensemble of spatiotemproal models trained over a 31 year period, and @dwyer-lindgrenInequalitiesLifeExpectancy2017 explored mortality trends 3110 US counties from 1980 to 2014.
 
-South Korea
+There have also been studies on specific cities at a finer resolution. In order to obtain better estimates for disability-free life expectancy, @congdonModellingChangesSmall2014 consider both ill-health and mortality in a joint likelihood with spatial effects for 625 wards in London, finding more than a two-fold variation in the percent of life spent in disability for men. @bilalInequalitiesLifeExpectancy2019 looked at 266 subcity units for six large cities in Latin America. As there is no contiguous boundary in this case, a random effects model for each city was used instead of a spatial model. The largest difference between the top and bottom decile of life expectancy at birth was 17.7 years for women in Santiago, Chile.
 
-SALURBAL. Santiago Chile Bilal 2019
-
-Over space and time:
-Entire country level
-United States LDL King county 2015, LDL 2016
-
-United Kingdom Bennett 2015 [@bennettFutureLifeExpectancy2015]
-
-At the city level
-
-Canada, Yu 2022 [@yuSpatiotemporalAnalysisInequalities2021]
-
-Specific small area to the UK:
-Rasulo, D., Bajekal, M., Yar, M., 2007. Inequalities in health expectancies in England and Wales–small area analysis from the 2001 Census. Health Stat Q 34 (35), 35.
-
-Congdon
-
-London wards DALY Congdon 2014
-
-Practice reference [@rashidLifeExpectancyRisk2021]
+Two studies in North America have looked below the county level, at census tracts, with wide ranging popualtion sizes as small as 40. @dwyer-lindgrenVariationLifeExpectancy2017 studies trends for life expectancy and many causes of death for 397 tracts in King County, Washington, uncovering an 18.3 year gap in life expectancy for men. Using the same model for Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found widening inequalities over time and a difference of 9.5 years for men.
 
 ## Mortality by specific causes of death (counting the dead and what they died from)
 
@@ -135,10 +130,13 @@ The success of the reduction – and in the case of typhoid fever, near-eliminat
 By comparing vital registration data over several centuries, Abdel Omran observed this shift of mortality from communicable to non-communicable diseases (NCDs) in many countries [@omranEpidemiologicTransitionTheory1971; @omranCenturyEpidemiologicTransition1977]. Specifically, although the pace and determinants of the transition varied between countries, Omran formalised three common successive stages of the shift in mortality:
 
 1. _The Age of Pestilence and Famine_. Mortality is high and largely governed by malthusian "positive checks" – epidemics, famines, and wars.
-2. _The Age of Receding Pandemics_. Mortality decreases as epidemics become less frequent. 
+2. _The Age of Receding Pandemics_. Mortality decreases as epidemics become less frequent, but infectious diseases remain the leading causes of death. 
 3. _The Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
 
 He termed this the _Epidemiologic Transition theory_. @omranEpidemiologicTransitionTheory1971 explained that England and Wales took the classic transition path followed by western societies, whereby socioeconomic factors such as improvements to living standards are crucial in causing easily preventable diseases to subside and shifting towards the third phase of the transition, and medical and other public health technology only help society much later in the final stage.
+Later, @olshanskyFourthStageEpidemiologic1986 would propose a fourth stage to the theory, _the Age of Delayed Degenerative Diseases_, in which the structure of causes of death is stable, but the age at which degenerative diseases kill is postponed, thus causing decreasing in older age mortality.
+There are, however, questions around the universality and unidirectionality of the theory, with many examples in which age-specific death rates for population subgroups have risen over time, most notably the HIV/AIDS pandemic [@gaylinRefocusingLensEpidemiologic1997].
+@gerstenCancerTransitionJapan2002 also criticise the lack of attention Omran's theory pays towards the role infection in chronic and degenerative diseases, in particular certain cancers.
 
 Around the same time as Omran, Samuel Preston collated cause-specific mortality data for a huge number of populations, spanning 48 nations and nearly a century [@prestonInternationalComparisonExcessive1970; @prestonStructureChangeCauses1974].
 This would enable international comparisons of groups of causes of death over different time periods, and a deeper understanding of the upward trends in life expectancy.
