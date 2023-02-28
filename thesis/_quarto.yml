@@ -57,6 +57,7 @@ execute:
 format:
   quarto-thesis-pdf:
     urlcolor: blue
+    linkcolor: blue
     toclinkcolor: black
     toc-depth: 2
     cover-image: "assets/imperial.pdf"

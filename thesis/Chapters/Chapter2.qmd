@@ -64,7 +64,7 @@ A more popular prior is the conditional autoregressive (CAR) prior, also known a
 These form a joint distribution as in @eq-MVN, but the covariance is usually defined instead in terms of the preicision matrix
 $$
 \mathbf{P} = \pmb{\Sigma}^{-1} = \tau(\mathbf{D} - \rho \mathbf{A}),
-$$
+$$ {#eq-CAR-prec}
 where $\tau$ controls the overall precision of the effects, $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ describes the amount of correlation.
 This can be seen as a tuning the degree of spatial dependence, where $\rho = 0$ implies independence between areas, and $\rho = 1$ full dependence.
 The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR) model.
