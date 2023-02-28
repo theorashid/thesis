@@ -55,7 +55,7 @@ No policies are created using these units [@2011CensusGeographies2022].
 ### Counts of the living
 
 This second data sources we require are populations counts.
-These are taken from mid-year population estimates of the usual resident population by the ONS [@MiddleSuperOutput2021; @LowerLayerSuper2021].
+These are taken from mid-year population estimates of the usual resident population by the ONS [@MiddleLayerSuper2021; @LowerLayerSuper2021].
 The ONS estimates inter-censal populations on a rolling basis, updating the previous year's value using the change in the population in the GP patient registration data as an indicator of the true population change.
 The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England [@PopulationEstimatesOutput2021].
 
