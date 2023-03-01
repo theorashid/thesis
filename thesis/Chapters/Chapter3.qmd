@@ -67,11 +67,17 @@ We used data for the following measures of socioeconomic deprivation from the En
 - Employment deprivation (referred to as _unemployment_ hereafter). The proportion of the relevant population of the geography involuntarily excluded from the labour market due to unemployment, sickness or disability, or caring responsibilities.
 - Education, skills and training deprivation (referred to as _low education_ hereafter). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.
 
-The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data. The data are produced at the LSOA level [@EnglishIndicesDeprivation2019].
+The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data.
+The data are produced at the LSOA level [@EnglishIndicesDeprivation2019].
 
-IMD data are not available for every year. The analysis period for the thesis is 2002 to 2019, so we used data for these measures for 2004, as data for 2002 were not available, and 2019. The 2004 data on deprivation domains were reported for LSOA boundaries from the 2001 census. We mapped these data to the 2011 census LSOA boundaries, which was the reporting unit for the 2019 data, as follows: First, for deprivation, we assigned the 2001 LSOA score to all postcodes contained within it. We then overlayed the 2011 LSOA boundaries, and averaged the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.
+IMD data are not available for every year.
+The analysis period for the thesis is 2002 to 2019, so we used data for these measures for 2004, as data for 2002 were not available, and 2019.
+The 2004 data on deprivation domains were reported for LSOA boundaries from the 2001 census.
+We mapped these data to the 2011 census LSOA boundaries by assigning the 2001 LSOA score to all postcodes contained within it, then overlaying the 2011 LSOA boundaries, and averaging the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.
 
-The definition of the indicators can change over time. Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts cannot be simply expressed as a proportion of the population. Therefore, we used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
+The definition of the indicators can change over time.
+Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts cannot be simply expressed as a proportion of the population.
+Therefore, we used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
 
 The data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
 
@@ -98,16 +104,24 @@ The downside of this approach is that more parameters is harder to fit, and fewe
 
 ## Inference
 
-The choice was made early in the PhD to use sampling methods for inference, as this is the "gold standard" with aymptotic guarantees of the true posterior.
-Approximate inference state-of-the-art for spatial models, INLA, scales badly with the number of effects
+The decision was made early in the PhD to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that the sequence of samples will asmyptotically converge to the true posterior.
+Furthermore, the state-of-the-art approximate inference package for spatial models, INLA, scales badly with the number of effects, and hence would struggle with the models of dimensionality in this thesis.
 
-Start with NIMBLE, group has experience with BUGS
-Gibbs sampling, finds conjugate relationships where they exist
-R interface but C++ backend, scales well to a large problem like this
+Bayesian models are specified in a probabilistic programming language.
+The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
+`NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which the group has a lot of experience with, as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
+`NIMBLE` has an `R` interface but compiles models to `C++` for speed and scalability.
+It also increases the efficiency of Gibbs sampling efficiently by automatically finding conjugate relationships between parameters in the model and marginalising over them wherever possible.
+An added advantage is that the group has a close relationship with the lead developer of `NIMBLE`.
 
-Tried a lot of different PPLs in R, python and Julia [cite repo].
-Sampling faster, more efficient NUTS
-Move to NumPyro, cite batching paper.
-Sampling on GPU, much faster
-Created CAR distribution, contributed to open source
-Tried VI methods in NumPyro, such as laplace approx, but failed to converge to sensible values without heavy customisation of variational function
+Nevertheless, Bayesian inference is difficult to scale, and some of the models in this thesis had in excess of $10^6$ parameters and took `NIMBLE` between 10 and 14 days to collect enough samples of the posterior.
+One of the main issues with `NIMBLE` was that the vast majority of the parameters in the model could not exploit efficient conjugate samplers, and instead used variants of basic Metropolis-Hastings samplers, which, despite numerous efforts at tuning, were inefficient.
+Although `NIMBLE` could execute a reasonable number of samples per second, the MCMC chains were struggling to explore the posterior quickly so the _effective_ sample size per second was low.
+This is a common problem in spatial and spatiotemporal models, where the parameters are correlated by design.
+To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent).
+
+I spent a lot of time trying different probabilsitic programming languages across `R`, `python` and `Julia`, in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@rashidProbabilisticprogrammingpackages2022].
+In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is faster for large models [@laoTfpMcmcModern2020].
+The major downside was that `NumPyro` had not been used extensively by the spatial community, so I had to implement the CAR distribution from @eq-CAR-prec, which has since been contributed to the source code.
+Rewriting the model in `NumPyro` and sampling on a GPU cut the required runtime down to around a day.
+`NumPyro` also has built-in methods for approximate variational inference, such as the Laplace approximation, but these failed to converge to sensible values for these models without heavy customisation of variational function, so I stuck with sampling methods.
