@@ -61,12 +61,19 @@ The LSOA populations are fully consistent with estimates for higher levels in th
 
 ### Deprivation data
 
-IMD data
-7 domains of deprivation
-Choose 3 of the main 4 domains, but not health
-Focus on income, education, – not health
-Aggregate to different geographies
-map of IMD for London (LSOA), and IMD for England (MSOA) in 2019 [@EnglishIndicesDeprivation2019].
+We used data for the following measures of socioeconomic deprivation from the English Indices of Deprivation:
+
+- Income deprivation (referred to as _poverty_ hereafter). The proportion of the geographical population claiming income-related benefits due to being out of work or having low earnings.
+- Employment deprivation (referred to as _unemployment_ hereafter). The proportion of the relevant population of the geography involuntarily excluded from the labour market due to unemployment, sickness or disability, or caring responsibilities.
+- Education, skills and training deprivation (referred to as _low education_ hereafter). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.
+
+The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data. The data are produced at the LSOA level [@EnglishIndicesDeprivation2019].
+
+IMD data are not available for every year. The analysis period for the thesis is 2002 to 2019, so we used data for these measures for 2004, as data for 2002 were not available, and 2019. The 2004 data on deprivation domains were reported for LSOA boundaries from the 2001 census. We mapped these data to the 2011 census LSOA boundaries, which was the reporting unit for the 2019 data, as follows: First, for deprivation, we assigned the 2001 LSOA score to all postcodes contained within it. We then overlayed the 2011 LSOA boundaries, and averaged the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.
+
+The definition of the indicators can change over time. Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts cannot be simply expressed as a proportion of the population. Therefore, we used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
+
+The data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
 
 ## Modelling the dead
 
