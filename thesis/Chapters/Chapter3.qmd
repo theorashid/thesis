@@ -4,17 +4,18 @@
 
 This thesis is primarily concerned with modelling death rates for small areas in England.
 This requires two data sources: counts of deaths, and populations counts.
-The dataset is
+The dataset is de-identified civil registration data for all deaths in England from 2002 to 2019.
 In other words, every death in England from 2002 to 2019.
 
-Data comes with information on postcode of residence
+The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU, which has the required security protocols as individual death records are identifiable data.
+The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner's report to identify underlying cause of death.
 
-Data is extracted from ONS, held by SAHSU.
-Security, deaths are identifiable.
-Data updated every year, depends on extract date.
-Mostly complete, but some deaths still come through later if waiting on coroner's report to identify cause
+Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis.
+For eacha anlysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older.
+There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
+Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
 
-In the spirit of the Bayesian workflow, prior to fitting model, exploratory data analysis total mortality varies over different cross sections: sex, age, space, time.
+Before to fitting any models, it's good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
 
 Look at different cross sections, slice by age, space and time
 By age + sex, log scale, death rates in 2019
@@ -22,7 +23,7 @@ Colour geom_tile plot age-specific death rates over time, trans = log
 Life expectancy male and female over time
 e0 aggregated 2002-19 by district
 
-Here, taken slices, but the aim is to calculate death rates for each sex-age-space-time unit
+Here, we have taken slices, but the aim is to calculate death rates for each sex-age-space-time unit
 
 ### Geographies of England
 
@@ -49,7 +50,7 @@ For stability, we chose the district boundaries from 2020.
 LSOAs are a type of census geography made up of around four or five smaller units called Output Areas (OAs).
 OAs are the smallest building block for census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
 MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries.
-OAs, LSOAs, and MSOAs are all statisitcal units are designed by the Office for National Statistics (ONS) purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
+OAs, LSOAs, and MSOAs are all statisitcal units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
 No policies are created using these units [@2011CensusGeographies2022].
 
 ### Counts of the living
