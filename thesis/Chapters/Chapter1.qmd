@@ -5,5 +5,3 @@ Thesis title is adapted from @mathersCountingDeadWhat2005: _Counting the dead an
 ## Objectives
 
 ## Structure of the thesis
-
-Code for [models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and this [thesis](https://github.com/theorashid/thesis) can be found on GitHub.

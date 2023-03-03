@@ -12,6 +12,9 @@ Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum an
 
 ### Results
 
+Map plot
+Link to [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/) 
+
 ### Discussion
 
 Studies at the MSOA level national @congdonGeographicalPatternsDrugRelated2019; @congdonDiabetesRiskIndex2020

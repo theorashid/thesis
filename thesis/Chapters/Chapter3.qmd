@@ -126,3 +126,11 @@ In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because 
 The major downside was that `NumPyro` had not been used extensively by the spatial community, so I had to implement the CAR distribution from @eq-CAR-prec, which has since been contributed to the source code.
 Rewriting the model in `NumPyro` and sampling on a GPU cut the required runtime down to around a day.
 `NumPyro` also has built-in methods for approximate variational inference, such as the Laplace approximation, but these failed to converge to sensible values for these models without heavy customisation of variational function, so I stuck with sampling methods.
+
+## Clean code and open source
+
+I am strong believer in open source science, and I have put a lot of attention into open sourcing the code for all analyses during the PhD.
+With open science, not only do we faciliate the scientific method as our process and results are reviewed scientific method, but we also allow people in the future to easily reuse and build on our models.
+It can also generate interest from researchers in different fields using similar models and from developers looking to challenge their software on complicated research questions, both of which I have seen first-hand during the course of my studies.
+The code is clean, version-controlled and follows best practices for scientific software engineering wherever possible.
+As well as code contributed to open source projects along the way, the code for [statistical models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and the [thesis istelf](https://github.com/theorashid/thesis) can be found on GitHub.
