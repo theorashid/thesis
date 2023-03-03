@@ -91,7 +91,7 @@ Policy is decided at these geographies, so there is reason to believe these boun
 Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled as such, in this case exploiting the hierarchy global, subregion, region and country.
 Note, although these models group by geographical region, these models are not spatial as they do not contain any information on the position relative to other units.
 
-### Small area analyses of mortality
+## Small area analyses of mortality
 
 In order to compare the health status between areas, health authorities require a measure of mortality that collapses age-specific information into a single number.
 Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate but are not easily understood by laypeople.

@@ -59,11 +59,11 @@ format:
     urlcolor: blue
     linkcolor: blue
     toclinkcolor: black
-    toc-depth: 2
+    toc-depth: 3
     cover-image: "assets/imperial.pdf"
   docx:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     always_allow_html: true
   html:
     theme: [cosmo, assets/theme.scss]
