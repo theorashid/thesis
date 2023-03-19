@@ -1,22 +1,219 @@
-# Small: Life expectancy trends in England, LPH {#sec-Chapter4}
+# Small: Life expectancy trends in England at the MSOA level {#sec-Chapter4}
 
 ## Overview
 
-## Introduction
+This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+## Methods
 
-### Methods
+I performed a high-­resolution spatiotemporal analysis of civil registration data in which we extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date XX)
+Deaths were stratified by 19 age groups ($0, 1–4, 5–9, ..., 80–84, 85+$) and 6791 MSOAs.
+I did not use 129 death records ($<0.001%$) for which sex was not recorded.
+In 48 (0.001%) age­ MSOA-­year combinations, the number of deaths exceeded population.
+Most of these were in people aged 85 years and older. In these cases, the population was set equal to the number of deaths.
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+I used a Bayesian hierarchical model to obtain stable estimates of death rates by sharing information across age groups, MSOAs, and years.
+I conducted all analyses separately by female and male sexes because mortality and trends differ by sex.
+In the model, the number of deaths in age group $a (=1,...,19)$, MSOA $s (=1,...,6791)$ and year $t (= 1,...,18)$ follows a negative binomial distribution
+$$
+\text{deaths}_{ast} = \text{Negative Binomial}(p_{ast}, r).
+$$ {#eq-ch-4-likelihood-1}
+The parameter $p_{ast}$ is
+$$
+p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
+$$ {#eq-ch-4-likelihood-2}
+where $r \geq 0$ is the overdispersion parameter, which accounts for extra variability not captured by other components in the model, and $m_{ast}$ is the death rate.
+The negative binomial likelihood can be thought of as a generalisation of a Poisson likelihood, which allows for overdispersion, with larger values of $r$ indicating more similarity to a Poisson distribution.
+A Poisson distribution is a suitable approximation for rare events, and we found that mortality at the MSOA-level was sufficiently rare such that the death rate never neared 1.
 
-### Results
+Log-transformed death rates were modelled as a function of time, age group and MSOA.
+The model contains terms to capture the overall level and rate of change of mortality, as well as age-specific and MSOA-specific terms to allow deviations from these terms.
+Specifically, log-transformed death rates are modelled as
+$$
+\log{m_{ast}} = \alpha_0 + \beta_0 t + \alpha_{1s} + \beta_{1s} t + \alpha_{2a} + \beta_{2a} t + \xi_{as} + \nu_{st} + \gamma_{at},
+$$ {#eq-ch-4-model}
+where $\alpha_0$ is the overall intercept across all age groups and MSOAs.
+$\beta_0$ quantifies the overall trend (over time) across all age groups and MSOAs.
+$\alpha_{1s}$ and $\beta_{1s}$ measure deviation from the overall intercept and trend terms, respectively, for each MSOA.
+$\alpha_{2a}$ and $\beta_{2a}$ measure deviation from the global level and trend, respectively, for each age group.
+We used first-order random walk priors on $\alpha_{2a}$ and $\beta_{2a}$ so that they vary smoothly over adjacent age groups, with the form $A_a \sim \mathcal{N}(A_{a-1}, \sigma_A^2)$ for both age-specific terms $\alpha_{2a}$ and $\beta_{2a}$.
+We constrained $\alpha_{21} = 0$ and $\beta_{21} = 0$ so each random walk was identifiable and centred on the corresponding overall term.
 
-Map plot
-Link to [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/) 
+$\xi_{as}$ is an age group-MSOA interaction term, which quantifies MSOA-specific deviations from the overall age group structure given by $\alpha_{2a}$.
+This allows different MSOAs to have different age-specific mortality patterns, and each age group’s death rate to have a different spatial pattern.
+This interaction term was modelled as $\mathcal{N}(0, \sigma_\xi^2)$.
+
+$\nu_{st}$ and $\gamma_{at}$ are first-order random walks over time that allow MSOA- and age group-specific non-linearity in the time trends.
+For each MSOA and age group, they were modelled via similar priors to those above with $\nu_{s1} = \gamma_{a1} = 0$ so that the terms were identifiable.
+
+For the main analysis, the MSOA intercepts and slopes, $\alpha_{1s}$ and $\beta_{1s}$, were modelled as nested hierarchical random effects, with MSOAs nested in districts, which were, in turn, nested in regions.
+The regional terms are centred on zero to allow the spatial effects to be identifiable.
+
+For comparison, we also modelled the spatial effects using a BYM model, as in @eq-BYM.
+The CAR component of the model requires all spatial units to have neighbours.
+Thus, the MSOAs containing the Isle of Wight, Hayling Island, the Isles of Scilly and Canvey Island were each joined to the nearest mainland MSOA based on road or ferry connections.
+
+The results of the spatial model were virtually identical to the hierarchical random effects model (correlation coefficient $0.999$ for female and male sexes; mean difference $0.03$ years for women and $0.009$ years for men; mean absolute difference $0.07$ years for women and $0.09$ years for men for life expectancy estimates from the two approaches).
+We present results from the hierarchical model for two reasons.
+First, it allows neighbouring MSOAs that fall in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy implementation.
+Second, the hierarchical model was computationally less demanding with run times about 1.4 times faster than the spatial model.
+
+All standard deviation parameters of the random effects had $\sigma \sim \mathcal{U}(0, 2)$ priors.
+For the global intercept and slope, we used the diffuse prior $\mathcal{N}(0, \sigma^2=100000)$.
+The overdispersion parameter r had the prior $\mathcal{U}(0, 50)$.
+
+@tbl-ch-4-model shows all model parameters, their priors and dimensions.
+
+| Parameter | Symbol          | Prior                | Dimension                 |
+| --------- | --------------- | -------------------- | ------------------------- |
+| Overall intercept    | 9               |                      |                           |
+| Overall slope  | 314             |                      |                           |
+| Regional intercept      | 6791            | 7985 (5760–11917)    |                           |
+| LSOA      | 32844           |                      |                           |
+
+: Specification of the Bayesian statistical model. {#tbl-ch-4-model}
+
+Inference was performed using Markov chain Monte Carlo in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
+We monitored convergence using trace plots and the R-hat diagnostic [@vehtariRanknormalizationFoldingLocalization2021] and thinned post burn-in samples to reduce memory and storage use.
+For females we ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters.
+For males, due to slower mixing, we ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.
+
+In 2017, the MSOA in Kensington and Chelsea, London where Grenfell Tower is located had 119 deaths, compared with 48 in 2016 and 51 in 2018.
+The additional deaths were caused by a fire in a high­rise residential building.
+This outlier year led to unstable estimates of the long­term trend in life expectancy in this MSOA, and also slightly changed estimates in other MSOAs in the district.
+To avoid this instability, when applying the statistical model, we replaced the number of deaths for this year with the mean of those in 2016 and 2018 for each age and sex group.
+When making estimates for 2017, the difference between actual and interpolated deaths was added back to the posterior estimates so that these deaths were counted in the corresponding year.
+To our knowledge, this was the only spatially-specific long-tailed mortality event in England over the study period.
+
+We calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods [@prestonDemographyMeasuringModeling2001].
+We used the Kannisto­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table.
+
+The reported 95% credible intervals (CrIs) represent the 2.5th to 97.5th percentiles of the posterior distribution of estimated life expectancies.
+We also report the posterior probability that the estimated change over time in an MSOA represents an increase versus a decrease in life expectancy.
+Posterior probability represents the inherent uncertainty in life expectancy trends.
+In an MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there is around a 100% posterior probability of an increase, and hence around a 0% probability of a decrease, and vice versa.
+Posterior probabilities more distant from 50% indicate more certainty.
+
+## Results
+
+In 2019, there was a 20.6 year (95% CrI 17.5–24.2) gap for women between the MSOA with the highest life expectancy (an MSOA in Camden, London; 95.4 years (92.4–98.7)) and the MSOA with the lowest life expectancy (an MSOA in Leeds; 74.7 years (73.4–76.2)).
+The gap was 27.0 years (23.4–31.1) for men, between an MSOA in Kensington and Chelsea, London (95.3 years [92.1–99.3]) and an MSOA in Blackpool (68.3 years (66.9–69.6)).
+The difference between the first and 99th percentiles of life expectancy in 2019 was 14.2 years (95% CrI 13.9–14.5) for women and 13.6 years (13.4–13.9) for men.
+
+![Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019.[CITE WORLD BANK]](../thesis-analysis/thesis_analysis/england/figures/distribution.pdf){#fig-ch-4-distribution}
+
+When all MSOAs were ranked on the basis of their life expectancy, the difference between successively ranked MSOAs was particularly large for the approximately 5% of MSOAs with the lowest and highest life expectancy (seen as the sharper decline or rise at the two ends of the ranked life expectancy curve in @fig-ch-4-distribution), indicating distinct groups at extreme advantage and disadvantage.
+
+The 124 (1.8%) of 6791 MSOAs with the lowest female life expectancy and 262 (3.9%) MSOAs with the lowest male life expectancy in 2019 were located in urban areas, particularly in the north, including Blackpool, Leeds, Liverpool, Manchester, and Newcastle.
+Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts.
+
+![Comparison of female and male life expectancy and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-sex-comp}
+
+![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a CARTOGRAM, see APPENDIX FIGURE.]](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-level}
+
+Female and male life expectancy were correlated across MSOAs with a correlation coefficient of 0.87 (@fig-ch-4-sex-comp).
+Female life expectancy was higher than male life expectancy in all but 15 MSOAs.
+The female advantage was more than 5 years in 1498 (22.1%) of 6791 MSOAs and 1–5 years in another 5187 (76.4%).
+From 2002 to 2019, a decline in life expectancy was more probable than an increase in 124 mostly urban MSOAs of 6791 (1.8% of all MSOAs) for women, with posterior probabilities of greater than 80% that these were true declines in 34 of these.
+The largest estimated decline of 3.0 years (95% CrI 0.9–5.3; posterior probability of the estimated decline being a true decline 99.6%) occurred in an MSOA in Leeds (@fig-ch-4-map-pp-change, @fig-ch-4-map-change).
+
+![Geography of change in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-change}
+
+![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-pp-change}
+
+Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs.
+Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 64%).
+For the other MSOAs, the increase ranged from less than 1 year in 31 MSOAs to more than 7 years in 114 MSOAs.
+The largest increases in female and male life expectancies were seen in some MSOAs in and around London (e.g., in the London Borough of Camden).
+In 5,133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (figure 4), leading to a closing of the life expectancy gap between female and male sexes.
+The life expectancy increase from 2002 to 2019 was smaller in MSOAs where life expectancy had been lower in 2002, and vice versa, especially for women, which led to a larger life expectancy inequality across MSOAs in 2019 than in 2002 (@fig-ch-4-scatter-time, @fig-ch-4-inequality-time).
+
+![Distribution of MSOA life expectancies in each year from 2002 to 2019. Each point shows one MSOA and the upper and lower lines show the first and 99th percentiles of life expectancy. The height of the shaded area is the first to 99th percentile range. The central line shows national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/scatter_time.pdf){#fig-ch-4-scatter-time}
+
+Specifically, the aforementioned 20.6 year (95% CrI 17.5–24.2) gap for women and 27.0 year (23.4–31.1) gap for men between the lowest and highest MSOA life expectancies in 2019 were larger than those in 2002 by 4.3 years (–1.3 to 9.3) for women and 7.7 years (4.0 to 11.7) for men.
+Similarly, the gap between the first and 99th percentiles of MSOA life expectancy for women increased from 10.7 years (95% CrI 10.4–10.9) in 2002 to reach 14.2 years (13.9–14.5) in 2019, and for men increased from 11.5 years (11.3–11.7) in 2002 to 13.6 years (13.4–13.9) in 2019.
+
+![Maximum (highest) to minimum (lowest) and 99th to first percentile differences in life expectancy across 6791 MSOAs, 2002–19. The large difference in 2017 is due to the low life expectancy in the MSOA where the deaths in the Grenfell Tower (Kensington and Chelsea, London) fire took place.](../thesis-analysis/thesis_analysis/england/figures/inequality_time.pdf){#fig-ch-4-inequality-time}
+
+When broken down by time period, the vast majority of MSOAs saw a life expectancy increase in 2002–06 and 2006–10 (@fig-ch-4-change).
+By contrast, women in 351 (5.2%) MSOAs had a median posterior change in life expectancy in 2010–14 that was negative.
+By 2014–19, the number of MSOAs with a negative median posterior change had risen to 1270 (18.7%) for women, with men in 784 (11.5%) MSOAs also showing a decline.
+These MSOAs tended to be places in which life expectancy was already low.
+
+![Change in MSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one MSOA. MSOAs are coloured by their life expectancy at the beginning of each period (eg, for 2014–19, they are coloured by life expectancy in 2014).](../thesis-analysis/thesis_analysis/england/figures/change.pdf){#fig-ch-4-change}
+
+Life expectancy at birth was inversely associated with the extent of unemployment, poverty, and low education in MSOA in 2002 and 2019 (@fig-ch-4-imd).
+
+![MSOA life expectancy in relation to measures of socioeconomic deprivation in the MSOA in 2002 and 2019. The socioeconomic measures are poverty, unemployment, and education. The lines show the smooth relationship fitted with locally estimated scatterplot smoothing for each year.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-imd}
+
+There was substantial variation in life expectancy across MSOAs at any level of poverty or unemployment seen in the vertical spread of points in figure 6.
+From 2002 to 2019, there were, on average, smaller gains in life expectancy in the MSOAs with the highest levels of unemployment, poverty, and low education than in those in the lowest levels, especially for women.
+
+Similar to life expectancy, there were large inequalities in the probability of surviving from birth to 80 years, which ranged from 42% to 87% in women and 27% to 85% in men across MSOAs in 2019.
+These large survival inequalities were present at every stage of the life­course including childhood and early adolescence (0–15 years), young adulthood (15–30 years), working ages (30–70 years), and older ages (70–80 years) (@fig-ch-4-q-change).
+Specifically, the probability of dying at different stages of the life­course in the 99th percentile of MSOAs was between 2.6 and 3.1 times that of the first percentile for female and male sexes in 2019.
+From 2002 to 2019, the relative inequality across MSOAs (ie, ratio of the 99th to the first percentile) in the probabilities of dying increased at every stage of the life course; the absolute inequality (ie, difference between the 99th and first percentiles) decreased slightly in all combinations except for working age women (30–70 years).
+Within childhood and adolescence, there were particularly large inequalities in infant mortality (0 to $<12$ months), with a ratio of the 99th to the first percentile of MSOAs being 3.2 for female and male sexes in 2019.
+Infant mortality increased from 2014 to 2019 in 1378 (20.3%) MSOAs for girls and 888 (13.0%) for boys, many of which experienced a decline in life expectancy.
+
+![Probability of dying in specific ages in 6,791 middle-layer super output areas (MSOA) in England in 2002 and 2019. Each point shows one MSOA. The vertical axis uses a log scale so that the large differences in survival across ages can be seen.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-q-change}
 
 ### Discussion
 
+Our high­-resolution analysis over space and time shows that life expectancy has not only ceased to increase but has declined in many communities in England since 2010.
+The decline has accelerated since 2014, affecting the female population of 18·7% of MSOAs and the male population of 11·5% of MSOAs.
+In 1·8% of MSOAs, women have had a long­term decline in life expectancy over two decades. MSOAs that have gained the least in longevity since 2002 were those that started with the lowest life expectancy, located in northern urban areas with high levels of poverty and unemployment, and with relatively low education.
+Conversely, those MSOAs with higher life expectancies in 2002 had some of the largest gains.
+As a result, England has seen widening inequalities in longevity, with the life expectancy gap surpassing 20 years for women and 27 years for men.
+
+The main strength of our study is the presentation of high-­resolution data for mortality and longevity across England over a period of substantial change in economic, health, and social care policy.
+By applying a hierarchical model based on patterns of mortality over age, space, and time, we obtained robust yearly estimates of mortality and life expectancy, together with the uncertainty in these estimates, for small areas.
+By contrast, studies that had not used a coherent model produced unstable (i.e., very large uncertainty) or implausible life expectancy estimates in some MSOAs, despite having aggregated deaths over 5 years, nor could they analyse trends at the MSOA level.[CHECK IF CORRECT ONS @HealthExpectanciesBirth2015, @LocalHealthSmall2021]
+Comparison of estimates at MSOA and district level shows that the estimated MSOA life expectancy range was about 1·8 times the district-­level range for women and 2·0 times the district­level range for men in 2019.
+A limitation of our work is that we did not analyse underlying causes of death at MSOA level, which would reveal the diseases and injuries driving the differences in mortality trends.
+We did not break down age beyond 85 years, which might mask some differences in old­age mortality and survival patterns.
+Although MSOAs have small populations and are designed to have some socioeconomic homogeneity, there are inevitable variations in socioeconomic status and health within them.
+
+To understand life expectancy inequalities in relation to individual socioeconomic characteristics requires linking health and other data such as census records, education, and taxes, as done in countries like New Zealand and Sweden.
+Furthermore, the people who live in each MSOA can change due to both within­-country and international migration.
+
+REDO MIGRATION USING LINKED DATA @vandijkUsingLinkedConsumer2021
+Migration estimates for geographical units with consistent boundaries are only available at the district level for 2012–17 years explained only 8% of the variation in life expectancy change for women and 16% for men at the national level.
+Studies in both the UK [] and USA [CITE Ezzati] have also shown that migration is not sufficient to explain the trends in health and health inequalities, and that these trends are largely due to real changes in population health. Even if rising inequalities are partly due to health, ­selective migration, this phenomenon has social and economic origins that should be addressed through employment opportunities, affordable housing, high-­quality education, and health care.
+
+Population and mortality statistics in the UK are generated independently from one another. As a result, we encountered a situation of having more deaths than population in a small percentage (0·001%) of age-­MSOA­ year combinations, a phenomenon that was more common in those aged 85 years and older.
+This finding might be due to errors in population estimates in years between censuses or because some people (e.g., those living in long­term care facilities such as care homes), are counted in one MSOA for the population statistic but have their death registered in another.
+Furthermore, care home residents might have relocated from other MSOAs, with different socioeconomic characteristics from that in which the care home is located. This factor could atten­ uate the association between socioeconomic variables and life expectancy.
+The extent of this underestimation is modest; however, because a large part of life expectancy variation is due to deaths at earlier ages, when people are less likely to live and die in care homes.[Bennett 2015?]
+
+Our life expectancy estimates in specific years are similar to the snapshots presented by the Office for National Statistics [CITE ONS and PHE] and Public Health England, with correlation coefficients of 0·92–0·95 and mean dif­ferences of –0·004 to 0·19 years.
+However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
+In terms of trends, national studies have recorded a slowdown in mortality improvement since 2010, [Office for National Statistics. Changing trends in mortality in England and Wales: 1990 to 2018. 2020 https://www.ons.gov.uk/ peoplepopulationandcommunity/birthsdeathsandmarriages/ deaths/articles/changingtrendsinmortalityinenglandandwales1990 to2017/1990to2018] and those that grouped small­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles.[Marmot 2020, Bennett 2018]
+By analysing trends at the MSOA level, we could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
 Studies at the MSOA level national @congdonGeographicalPatternsDrugRelated2019; @congdonDiabetesRiskIndex2020
+
+Over the period of this analysis, from 2002 to 2019, national life expectancy increased in high­income countries in Australasia, Europe, and North America.
+Female life expectancy has stagnated or declined in various intervals since 2010 in the UK (84% of the UK population in 2019 lived in England) and in some other high-­income countries including France, Germany, Italy, and the USA;20,21 the UK and USA have had some of the poorest performances in terms of the duration or extent of slowdown or reversal in longevity gain.21,22
+The comparative performance of high­income countries’ longevity trends has been attributed to differences in risk factors such as smoking, health care, and social inequalities.21,22
+Since the 2008 economic crisis, there has also been attention on how cuts to social and health services in austerity budgets might have affected health in different countries.21–24
+
+To our knowledge, nationwide trend data for small-­area life expectancy are available only in the USA.
+The declining life expectancy in numerous English MSOAs since 2014, especially those that already had a low life expectancy, resembles a trend spanning nearly three decades in the USA in two ways.18,25,26
+First, in both countries, there is substantial variation in life expectancy at any level of poverty, which might be due to geographical variations in health behaviours, the public health programmes that influence these behaviours or otherwise prevent disease, and health services.26–30
+The second similarity in small­area life expectancy trends is that the decline in life expectancy was more widespread in women than in men.18
+Historically, women and men had similar life expectancies in high­income nations before a rise in traffic injuries and diseases associated with specific occupations and health behaviours such as smoking and alcohol use created a male mortality disadvantage in the 20th century.31
+The closing of female and male life expectancy in the late 20th century and early 21st century in many high­income nations32 is partly due to the dynamics of smoking, which peaked later in women than in men, and affects causes of death such as respiratory diseases and lung cancer that have stagnated or even increased in women in deprived communities.7,21
+However, it is rare for the convergence of female and male life expectancies to occur in the form of female life expectancy decline,18,33 which might be due to a combination of the worsening economic, psychosocial (eg, poverty, stress, and domestic violence), and behavioural (smoking and alcohol use) determinants of mortality in English women.
+
+There has been much attention on how poverty and the underfunding of public health have been associated with the large and unequal mortality toll from the COVID­19 pandemic in England and the USA.3–5
+Our results show that numerous communities in England had begun to have a decline in longevity before the pandemic, mirroring an earlier trend in the USA.
+In both countries, the decline in life expectancy was associated with the economic trends of unemployment and insecure and low­wage employment following late 20th century deindustrialisation.
+In England, these economic trends led to a larger loss of jobs in the north than in London and the southeast,1,4,10,34–36 where improvements in state education have given students, including from poorer areas, skills for jobs in a changing economy.37,38
+These long­term changes were followed by a reduction in social support and welfare payments and in funding to the local governments during the austerity period, which increased poverty, including in­work poverty,4,39–44 such that by 2018–19, one in five people in the UK lived in poverty.45
+These cuts also had larger effects in the north than in London and southern parts of the country and worsened the effects of loss of secure employment.10,36,41,46,47
+Poverty and reduced funding to services increase mortality through health behaviours such as smoking and alcohol use, poor nutrition and living environment, psychosocial pathways, and lower provision or use of preventive and curative health care.
+
+The real­term cuts in public health spending have also been larger in the north and northeast of England,50,51 where life expectancy lags.
+Smoking cessation and health checks, which affect diseases with substantial contribution to mortality inequalities,7 had larger than average funding cuts.52
 
 ### Summary

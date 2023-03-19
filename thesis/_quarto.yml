@@ -7,7 +7,7 @@ book:
   author:
     name: Theo Rashid
     url: https://theorashid.github.io/
-  cover-image: assets/favicon.png
+  cover-image: thesis-analysis/thesis_analysis/eda/figures/age_mx_void.png
   favicon: assets/favicon.png
   downloads: [pdf]
   abstract: "People died in England and we modelled the all cause and cause-specific death rates. This took longer than expected."

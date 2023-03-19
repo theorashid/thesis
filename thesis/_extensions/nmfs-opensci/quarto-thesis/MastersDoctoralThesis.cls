@@ -202,7 +202,7 @@
 \RequirePackage{booktabs} % Required for better table rules
 
 \RequirePackage{caption} % Required for customising the captions
-\captionsetup{justification=centerlast,font=small,labelfont=sc,margin=50pt}
+\captionsetup{justification=justified,font=small,labelfont=sc,margin=50pt}
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS

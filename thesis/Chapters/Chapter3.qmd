@@ -15,9 +15,17 @@ For eacha anlysis, deaths were stratified into the following age groups: 0, 1–
 There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
 Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
 
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_void.png)
+
 Before to fitting any models, it's good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
 
-Look at different cross sections, slice by age, space and time
+![District-level life expectancy for total deaths from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.pdf){#fig-ch-3-district}
+
+![Age-specific death rates for England based on total deaths from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf)
+
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf)
+
+Look at different cross sections, slice by age, space and time @fig-ch-3-district
 By age + sex, log scale, death rates in 2019
 Colour geom_tile plot age-specific death rates over time, trans = log
 Life expectancy male and female over time
@@ -32,12 +40,12 @@ This thesis is concerned only with England, as Scotland, Wales, and Northern Ire
 The geographies used here in England form a nested hierarchy of spatial units from regions, districts, Middle-layer Super Output Areas (MSOAs), Lower-layer Super Output Areas (LSOAs).
 The numbers of each of the units are summarised in @tbl-geography.
 
-| Geography | Number of units |
-| --------- | --------------- |
-| region    | 9               |
-| district  | 314             |
-| MSOA      | 6791            |
-| LSOA      | 32844           |
+| Geography | Number of units | Median (5th - 9th percentile) population in 2019 |
+| --------- | --------------- | ------------------------------------------------ |
+| region    | 9               |                                                  |
+| district  | 314             |                                                  |
+| MSOA      | 6791            | 7985 (5760–11917)                                |
+| LSOA      | 32844           |                                                  |
 
 : The different geographical units of England used in thesis and their numbers. {#tbl-geography}
 
@@ -81,6 +89,10 @@ Further, the indicator used for measuring education, skills and training depriva
 Therefore, we used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
 
 The data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
+
+### Migration data
+
+linked migration data @vandijkUsingLinkedConsumer2021
 
 ## Modelling the dead
 
