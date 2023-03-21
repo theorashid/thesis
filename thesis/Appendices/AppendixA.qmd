@@ -1,15 +1,5 @@
-# Frequently Asked Questions {#sec-appA}
+# Supporting information for MSOA life expectancy {#sec-appA}
 
-## How do I change the colors of links?
+This is an alternative version of @fig-ch-4-map-level, using a hex cartogram where every MSOA has equal size. Hence, London, which has a lot of small MSOAs, takes up a larger proportion of the map. For an interactive version of the original figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).
 
-Pass in `urlcolor: ` in yaml. Or set these in the include-in-header file.
-
-\noindent If you want to completely hide the links, you can use:
-
-{\small\verb!\hypersetup{allcolors=.}!}, or even better: 
-
-{\small\verb!\hypersetup{hidelinks}!}.
-
-\noindent If you want to have obvious links in the PDF but not the printed text, use:
-
-{\small\verb!\hypersetup{colorlinks=false}!}.
+![Cartogram of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_hex_carto.pdf){#fig-app-a-carto-level}

@@ -15,7 +15,7 @@ For eacha anlysis, deaths were stratified into the following age groups: 0, 1–
 There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
 Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
 
-![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_void.png)
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf)
 
 Before to fitting any models, it's good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
 

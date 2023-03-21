@@ -1,8 +1,10 @@
 # Small: Life expectancy trends in England at the MSOA level {#sec-Chapter4}
 
+This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author. The figures have been reproduced for the thesis, and the text has been updated but remains much the same as the original.
+
 ## Overview
 
-This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author.
+
 
 ## Methods
 
@@ -109,7 +111,7 @@ Many of the MSOAs with the highest life expectancy, especially for men, were in 
 
 ![Comparison of female and male life expectancy and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-sex-comp}
 
-![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a CARTOGRAM, see APPENDIX FIGURE.]](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-level}
+![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a hex-cartogram of life expectancy in 2019, see @fig-app-a-carto-level.]](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-4-map-level}
 
 Female and male life expectancy were correlated across MSOAs with a correlation coefficient of 0.87 (@fig-ch-4-sex-comp).
 Female life expectancy was higher than male life expectancy in all but 15 MSOAs.
@@ -117,9 +119,9 @@ The female advantage was more than 5 years in 1498 (22.1%) of 6791 MSOAs and 1�
 From 2002 to 2019, a decline in life expectancy was more probable than an increase in 124 mostly urban MSOAs of 6791 (1.8% of all MSOAs) for women, with posterior probabilities of greater than 80% that these were true declines in 34 of these.
 The largest estimated decline of 3.0 years (95% CrI 0.9–5.3; posterior probability of the estimated decline being a true decline 99.6%) occurred in an MSOA in Leeds (@fig-ch-4-map-pp-change, @fig-ch-4-map-change).
 
-![Geography of change in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-change}
+![Geography of change in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change.pdf){#fig-ch-4-map-change}
 
-![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-map-pp-change}
+![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-4-map-pp-change}
 
 Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs.
 Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 64%).
@@ -144,7 +146,7 @@ These MSOAs tended to be places in which life expectancy was already low.
 
 Life expectancy at birth was inversely associated with the extent of unemployment, poverty, and low education in MSOA in 2002 and 2019 (@fig-ch-4-imd).
 
-![MSOA life expectancy in relation to measures of socioeconomic deprivation in the MSOA in 2002 and 2019. The socioeconomic measures are poverty, unemployment, and education. The lines show the smooth relationship fitted with locally estimated scatterplot smoothing for each year.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-imd}
+![MSOA life expectancy in relation to measures of socioeconomic deprivation in the MSOA in 2002 and 2019. The socioeconomic measures are poverty, unemployment, and education. The lines show the smooth relationship fitted with locally estimated scatterplot smoothing for each year.](../thesis-analysis/thesis_analysis/england/figures/IMD.pdf){#fig-ch-4-imd}
 
 There was substantial variation in life expectancy across MSOAs at any level of poverty or unemployment seen in the vertical spread of points in figure 6.
 From 2002 to 2019, there were, on average, smaller gains in life expectancy in the MSOAs with the highest levels of unemployment, poverty, and low education than in those in the lowest levels, especially for women.
@@ -156,7 +158,7 @@ From 2002 to 2019, the relative inequality across MSOAs (ie, ratio of the 99th t
 Within childhood and adolescence, there were particularly large inequalities in infant mortality (0 to $<12$ months), with a ratio of the 99th to the first percentile of MSOAs being 3.2 for female and male sexes in 2019.
 Infant mortality increased from 2014 to 2019 in 1378 (20.3%) MSOAs for girls and 888 (13.0%) for boys, many of which experienced a decline in life expectancy.
 
-![Probability of dying in specific ages in 6,791 middle-layer super output areas (MSOA) in England in 2002 and 2019. Each point shows one MSOA. The vertical axis uses a log scale so that the large differences in survival across ages can be seen.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-4-q-change}
+![Probability of dying in specific ages in 6,791 middle-layer super output areas (MSOA) in England in 2002 and 2019. Each point shows one MSOA. The vertical axis uses a log scale so that the large differences in survival across ages can be seen.](../thesis-analysis/thesis_analysis/england/figures/q_change.pdf){#fig-ch-4-q-change}
 
 ### Discussion
 
