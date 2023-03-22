@@ -209,7 +209,7 @@ div.csl-indent {
 <h2 data-number="3.1" class="anchored" data-anchor-id="counts-of-the-dead"><span class="header-section-number">3.1</span> Counts of the dead</h2>
 <p>This thesis is primarily concerned with modelling death rates for small areas in England. This requires two data sources: counts of deaths, and populations counts. The dataset is de-identified civil registration data for all deaths in England from 2002 to 2019. In other words, every death in England from 2002 to 2019.</p>
 <p>The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU, which has the required security protocols as individual death records are identifiable data. The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner’s report to identify underlying cause of death.</p>
-<p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For eacha anlysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="UserGuideMortality2022">(<a href="../references.html#ref-UserGuideMortality2022" role="doc-biblioref"><span>“User guide to mortality statistics,”</span> 2022</a>)</span>.</p>
+<p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="UserGuideMortality2022">(<a href="../references.html#ref-UserGuideMortality2022" role="doc-biblioref"><span>“User guide to mortality statistics,”</span> 2022</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx.webp" class="img-fluid figure-img"></p>
@@ -242,7 +242,7 @@ div.csl-indent {
 <p>Having already introduced the term “district” in Figure XXs, I’ll briefly show the lay of the land in terms of geographies used in this thesis. This thesis is concerned only with England, as Scotland, Wales, and Northern Ireland have their own separate deprivation data which are not comparable. The geographies used here in England form a nested hierarchy of spatial units from regions, districts, Middle-layer Super Output Areas (MSOAs), Lower-layer Super Output Areas (LSOAs). The numbers of each of the units are summarised in <a href="#tbl-geography">Table&nbsp;<span>3.1</span></a>.</p>
 <div id="tbl-geography" class="anchored">
 <table class="table">
-<caption>Table&nbsp;3.1: The different geographical units of England used in thesis and their numbers.</caption>
+<caption>Table&nbsp;3.1: The number of each geographical unit of England used in thesis and their populations in 2019.</caption>
 <colgroup>
 <col style="width: 12%">
 <col style="width: 20%">
@@ -259,22 +259,22 @@ div.csl-indent {
 <tr class="odd">
 <td>region</td>
 <td>9</td>
-<td></td>
+<td>5,934,037 (3,536336-9,092,877)</td>
 </tr>
 <tr class="even">
 <td>district</td>
 <td>314</td>
-<td></td>
+<td>140,271 (68,238-380,483)</td>
 </tr>
 <tr class="odd">
 <td>MSOA</td>
 <td>6791</td>
-<td>7985 (5760–11917)</td>
+<td>7,985 (5,760–11,917)</td>
 </tr>
 <tr class="even">
 <td>LSOA</td>
 <td>32844</td>
-<td></td>
+<td>1,620 (1,235-2,468)</td>
 </tr>
 </tbody>
 </table>

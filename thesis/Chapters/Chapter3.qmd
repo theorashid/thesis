@@ -11,7 +11,7 @@ The data is extracted from the Office for National Statistics (ONS) database and
 The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner's report to identify underlying cause of death.
 
 Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis.
-For eacha anlysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older.
+For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older.
 There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
 Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
 
@@ -42,12 +42,12 @@ The numbers of each of the units are summarised in @tbl-geography.
 
 | Geography | Number of units | Median (5th - 9th percentile) population in 2019 |
 | --------- | --------------- | ------------------------------------------------ |
-| region    | 9               |                                                  |
-| district  | 314             |                                                  |
-| MSOA      | 6791            | 7985 (5760–11917)                                |
-| LSOA      | 32844           |                                                  |
+| region    | 9               | 5,934,037 (3,536336-9,092,877)                   |
+| district  | 314             | 140,271 (68,238-380,483)                         |
+| MSOA      | 6791            | 7,985 (5,760–11,917)                             |
+| LSOA      | 32844           | 1,620 (1,235-2,468)                              |
 
-: The different geographical units of England used in thesis and their numbers. {#tbl-geography}
+: The number of each geographical unit of England used in thesis and their populations in 2019. {#tbl-geography}
 
 England is divided into 9 regions (London, North West, West Midlands, etc).
 Within these regions, there are 314 local authority districts.

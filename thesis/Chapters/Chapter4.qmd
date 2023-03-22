@@ -8,11 +8,12 @@ This chapter is based on the peer-reviewed publication _Life expectancy and risk
 
 ## Methods
 
-I performed a high-­resolution spatiotemporal analysis of civil registration data in which we extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date XX)
+I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date 25^{th} June 2021)
 Deaths were stratified by 19 age groups ($0, 1–4, 5–9, ..., 80–84, 85+$) and 6791 MSOAs.
 I did not use 129 death records ($<0.001%$) for which sex was not recorded.
 In 48 (0.001%) age­ MSOA-­year combinations, the number of deaths exceeded population.
-Most of these were in people aged 85 years and older. In these cases, the population was set equal to the number of deaths.
+Most of these were in people aged 85 years and older.
+In these cases, the population was set equal to the number of deaths.
 
 I used a Bayesian hierarchical model to obtain stable estimates of death rates by sharing information across age groups, MSOAs, and years.
 I conducted all analyses separately by female and male sexes because mortality and trends differ by sex.
