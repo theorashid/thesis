@@ -19,6 +19,7 @@ book:
     - Chapters/Chapter5.qmd
     - Chapters/Chapter6.qmd
     - Chapters/Chapter7.qmd
+    - Chapters/Chapter8.qmd
     - references.qmd
   appendices:
     - Appendices/AppendixA.qmd
