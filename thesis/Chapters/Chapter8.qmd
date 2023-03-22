@@ -11,7 +11,7 @@ Highest resolution in a joint model, with error estimates
 
 ## Public health and policy implications
 
-### Future work
+## Future work
 
 Only care about LHS of equation.
 Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like 
@@ -32,4 +32,4 @@ Obviously increase in infectious disease, but were injuries reduced?
 Were cancer outcomes worse due to missed surgeries?
 Is there a longer term effect due to strain on emergency services?
 
-### Conclusions
+## Conclusions

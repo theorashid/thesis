@@ -221,7 +221,21 @@
     "href": "Chapters/Chapter8.html#public-health-and-policy-implications",
     "title": "8  Discussion",
     "section": "8.3 Public health and policy implications",
-    "text": "8.3 Public health and policy implications\n\n8.3.1 Future work\nOnly care about LHS of equation. Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like Very familiar with research, was on a paper But ultimately, the working environment was not conducive to methods development Cluster offline, only a command line This is health data – Understand why people still use Scottish lip cancer and reference data A lot of time spent scaling the models Future research can incorporate new models Joint likelihood for causes (e.g Best et al.), using multiple surface, or something more flexible like Kronecker GP Packages don’t exist yet, but should be there in near future\nSince 2019, Covid Produce a forecast of mortality Run the counterfactual, as we did in Kontis at the weekly national level, but for district level and annual See how the cause-composition changed Obviously increase in infectious disease, but were injuries reduced? Were cancer outcomes worse due to missed surgeries? Is there a longer term effect due to strain on emergency services?\n\n\n8.3.2 Conclusions"
+    "text": "8.3 Public health and policy implications"
+  },
+  {
+    "objectID": "Chapters/Chapter8.html#future-work",
+    "href": "Chapters/Chapter8.html#future-work",
+    "title": "8  Discussion",
+    "section": "8.4 Future work",
+    "text": "8.4 Future work\nOnly care about LHS of equation. Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like Very familiar with research, was on a paper But ultimately, the working environment was not conducive to methods development Cluster offline, only a command line This is health data – Understand why people still use Scottish lip cancer and reference data A lot of time spent scaling the models Future research can incorporate new models Joint likelihood for causes (e.g Best et al.), using multiple surface, or something more flexible like Kronecker GP Packages don’t exist yet, but should be there in near future\nSince 2019, Covid Produce a forecast of mortality Run the counterfactual, as we did in Kontis at the weekly national level, but for district level and annual See how the cause-composition changed Obviously increase in infectious disease, but were injuries reduced? Were cancer outcomes worse due to missed surgeries? Is there a longer term effect due to strain on emergency services?"
+  },
+  {
+    "objectID": "Chapters/Chapter8.html#conclusions",
+    "href": "Chapters/Chapter8.html#conclusions",
+    "title": "8  Discussion",
+    "section": "8.5 Conclusions",
+    "text": "8.5 Conclusions"
   },
   {
     "objectID": "references.html",
