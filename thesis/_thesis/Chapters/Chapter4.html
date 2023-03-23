@@ -161,6 +161,11 @@ div.csl-indent {
   <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -241,178 +246,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <p>For comparison, I also modelled the spatial effects using a BYM model, as in <a href="Chapter2.html#eq-BYM">Equation&nbsp;<span>2.3</span></a>. The CAR component of the model requires all spatial units to have neighbours. Thus, the MSOAs containing the Isle of Wight, Hayling Island, the Isles of Scilly and Canvey Island were each joined to the nearest mainland MSOA based on road or ferry connections.</p>
 <p>The results of the spatial model were virtually identical to the hierarchical random effects model (correlation coefficient <span class="math inline">\(0.999\)</span> for female and male sexes; mean difference <span class="math inline">\(0.03\)</span> years for women and <span class="math inline">\(0.009\)</span> years for men; mean absolute difference <span class="math inline">\(0.07\)</span> years for women and <span class="math inline">\(0.09\)</span> years for men for life expectancy estimates from the two approaches). I present results from the hierarchical model for two reasons. First, it allows neighbouring MSOAs that fall in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy implementation. Second, the hierarchical model was computationally less demanding with run times about 1.4 times faster than the spatial model.</p>
 <p>All standard deviation parameters of the random effects had <span class="math inline">\(\sigma \sim \mathcal{U}(0, 2)\)</span> priors. For the global intercept and slope, we used the diffuse prior <span class="math inline">\(\mathcal{N}(0, \sigma^2=10^5)\)</span>. The overdispersion parameter <span class="math inline">\(r\)</span> had the prior <span class="math inline">\(\mathcal{U}(0, 50)\)</span>.</p>
-<p><a href="#tbl-ch-4-model">Table&nbsp;<span>4.1</span></a> shows all model parameters, their priors and dimensions.</p>
-<div id="tbl-ch-4-model" class="anchored">
-<table class="table">
-<caption>Table&nbsp;4.1: Specification of the Bayesian statistical model.</caption>
-<colgroup>
-<col style="width: 28%">
-<col style="width: 13%">
-<col style="width: 37%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter name</th>
-<th>Symbol</th>
-<th>Prior</th>
-<th>Dimension</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Overall intercept</td>
-<td><span class="math inline">\(\alpha_0\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,\sigma^2=10^5\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Overall slope</td>
-<td><span class="math inline">\(\beta_0\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,\sigma^2=10^5\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Regional intercept</td>
-<td><span class="math inline">\(\alpha_{1r}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1r}}}^2\right)\)</span></td>
-<td>9</td>
-</tr>
-<tr class="even">
-<td>Regional intercept standard deviation</td>
-<td><span class="math inline">\(\sigma_{\alpha_{1r}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>District intercept</td>
-<td><span class="math inline">\(\alpha_{1d}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1d}}}^2\right)\)</span></td>
-<td>314</td>
-</tr>
-<tr class="even">
-<td>District intercept standard deviation</td>
-<td><span class="math inline">\(\sigma_{\alpha_{1d}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>MSOA intercept</td>
-<td><span class="math inline">\(\alpha_{1s}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1s}}}^2\right)\)</span></td>
-<td>6791</td>
-</tr>
-<tr class="even">
-<td>MSOA intercept standard deviation</td>
-<td><span class="math inline">\(\sigma_{\alpha_{1s}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Regional slope</td>
-<td><span class="math inline">\(\beta_{1r}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1r}}}^2\right)\)</span></td>
-<td>9</td>
-</tr>
-<tr class="even">
-<td>Regional slope standard deviation</td>
-<td><span class="math inline">\(\sigma_{\beta_{1r}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>District slope</td>
-<td><span class="math inline">\(\beta_{1d}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1d}}}^2\right)\)</span></td>
-<td>314</td>
-</tr>
-<tr class="even">
-<td>District slope standard deviation</td>
-<td><span class="math inline">\(\sigma_{\beta_{1d}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>MSOA slope</td>
-<td><span class="math inline">\(\beta_{1s}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1s}}}^2\right)\)</span></td>
-<td>6791</td>
-</tr>
-<tr class="even">
-<td>MSOA slope standard deviation</td>
-<td><span class="math inline">\(\sigma_{\beta_{1s}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Age group intercept</td>
-<td><span class="math inline">\(\alpha_{2a}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)\)</span></td>
-<td>18</td>
-</tr>
-<tr class="even">
-<td>Age group intercept standard deviation</td>
-<td><span class="math inline">\(\sigma_{\alpha_{2a}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Age group slope</td>
-<td><span class="math inline">\(\beta_{2a}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)\)</span></td>
-<td>18</td>
-</tr>
-<tr class="even">
-<td>Age group slope standard deviation</td>
-<td><span class="math inline">\(\sigma_{\beta_{2a}}\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Age group MSOA interaction</td>
-<td><span class="math inline">\(\xi_{as}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(0,\sigma_\xi^2\right)\)</span></td>
-<td>19 x 6791</td>
-</tr>
-<tr class="even">
-<td>Age group MSOA interaction standard deviation</td>
-<td><span class="math inline">\(\sigma_\xi\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>MSOA random walk over time</td>
-<td><span class="math inline">\(\nu_{st}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(\nu_{s,t-1},\sigma_\nu^2\right)\)</span></td>
-<td>6791 x 17</td>
-</tr>
-<tr class="even">
-<td>MSOA random walk over time standard deviation</td>
-<td><span class="math inline">\(\sigma_\nu\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Age group random walk over time</td>
-<td><span class="math inline">\(\gamma_{at}\)</span></td>
-<td><span class="math inline">\(\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)\)</span></td>
-<td>19 x 17</td>
-</tr>
-<tr class="even">
-<td>Age group random walk over time standard deviation</td>
-<td><span class="math inline">\(\sigma_\gamma\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,2\right)\)</span></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Overdispersion parameter</td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(\mathcal{U}\left(0,50\right)\)</span></td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><a href="../Appendices/AppendixB.html#tbl-ap-ch4-model">Table&nbsp;<span>B.1</span></a> shows all model parameters, their priors and dimensions.</p>
 <p>Inference was performed using Markov chain Monte Carlo in <code>NIMBLE</code> package <span class="citation" data-cites="devalpineNIMBLEMCMCParticle2022 devalpineProgrammingModelsWriting2017">(<a href="../references.html#ref-devalpineNIMBLEMCMCParticle2022" role="doc-biblioref">de Valpine et al., 2022</a>, <a href="../references.html#ref-devalpineProgrammingModelsWriting2017" role="doc-biblioref">2017</a>)</span>. I monitored convergence using trace plots and the R-hat diagnostic <span class="citation" data-cites="vehtariRanknormalizationFoldingLocalization2021">(<a href="../references.html#ref-vehtariRanknormalizationFoldingLocalization2021" role="doc-biblioref">Vehtari et al., 2021</a>)</span> and thinned post burn-in samples to reduce memory and storage use. For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters. For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.</p>
 <p>In 2017, the MSOA in Kensington and Chelsea, London where Grenfell Tower is located had 119 deaths, compared with 48 in 2016 and 51 in 2018. The additional deaths were caused by a fire in a high­rise residential building. This outlier year led to unstable estimates of the long­term trend in life expectancy in this MSOA, and also slightly changed estimates in other MSOAs in the district. To avoid this instability, when applying the statistical model, I replaced the number of deaths for this year with the mean of those in 2016 and 2018 for each age and sex group. When making estimates for 2017, the difference between actual and interpolated deaths was added back to the posterior estimates so that these deaths were counted in the corresponding year. The Grenfell Tower fire incident was, to the best of our knowledge, the only spatially-specific, long-tailed mortality event in England over the study period.</p>
 <p>I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods <span class="citation" data-cites="prestonDemographyMeasuringModeling2001">(<a href="../references.html#ref-prestonDemographyMeasuringModeling2001" role="doc-biblioref">Preston et al., 2001</a>)</span>. I used the Kannisto­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table.</p>

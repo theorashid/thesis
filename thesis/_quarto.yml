@@ -23,6 +23,7 @@ book:
     - references.qmd
   appendices:
     - Appendices/AppendixA.qmd
+    - Appendices/AppendixB.qmd
 
   site-url: https://theorashid.github.io/thesis
   repo-url: https://github.com/theorashid/thesis

@@ -70,37 +70,7 @@ All standard deviation parameters of the random effects had $\sigma \sim \mathca
 For the global intercept and slope, we used the diffuse prior $\mathcal{N}(0, \sigma^2=10^5)$.
 The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
-@tbl-ch-4-model shows all model parameters, their priors and dimensions.
-
-| Parameter name                                     | Symbol                 | Prior                                                             | Dimension                            |
-|----------------------------------------------------|------------------------|-------------------------------------------------------------------|--------------------------------------|
-| Overall intercept                                  | $\alpha_0$             | $\mathcal{N}\left(0,\sigma^2=10^5\right)$                       | 1                                    |
-| Overall slope                                      | $\beta_0$              | $\mathcal{N}\left(0,\sigma^2=10^5\right)$                       | 1                                    |
-| Regional intercept                                 | $\alpha_{1r}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1r}}}^2\right)$              | 9                                    |
-| Regional intercept standard deviation              | $\sigma_{\alpha_{1r}}$ | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| District intercept                                 | $\alpha_{1d}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1d}}}^2\right)$              | 314                                  |
-| District intercept standard deviation              | $\sigma_{\alpha_{1d}}$ | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| MSOA intercept                                     | $\alpha_{1s}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1s}}}^2\right)$              | 6791                                |
-| MSOA intercept standard deviation                  | $\sigma_{\alpha_{1s}}$ | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Regional slope                                     | $\beta_{1r}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1r}}}^2\right)$               | 9                                    |
-| Regional slope standard deviation                  | $\sigma_{\beta_{1r}}$  | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| District slope                                     | $\beta_{1d}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1d}}}^2\right)$               | 314                                  |
-| District slope standard deviation                  | $\sigma_{\beta_{1d}}$  | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| MSOA slope                                         | $\beta_{1s}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1s}}}^2\right)$               | 6791                                |
-| MSOA slope standard deviation                      | $\sigma_{\beta_{1s}}$  | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Age group intercept                                | $\alpha_{2a}$          | $\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)$ | 18                                   |
-| Age group intercept standard deviation             | $\sigma_{\alpha_{2a}}$ | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Age group slope                                    | $\beta_{2a}$           | $\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)$   | 18                                   |
-| Age group slope standard deviation                 | $\sigma_{\beta_{2a}}$  | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Age group MSOA interaction                         | $\xi_{as}$             | $\mathcal{N}\left(0,\sigma_\xi^2\right)$                          | 19 x 6791                           |
-| Age group MSOA interaction standard deviation      | $\sigma_\xi$           | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| MSOA random walk over time                         | $\nu_{st}$             | $\mathcal{N}\left(\nu_{s,t-1},\sigma_\nu^2\right)$                | 6791 x 17                           |
-| MSOA random walk over time standard deviation      | $\sigma_\nu$           | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Age group random walk over time                    | $\gamma_{at}$          | $\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)$          | 19 x 17                              |
-| Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{U}\left(0,2\right)$                                     | 1                                    |
-| Overdispersion parameter                           | $r$                    | $\mathcal{U}\left(0,50\right)$                                    | 1                                    |
-
-: Specification of the Bayesian statistical model. {#tbl-ch-4-model}
+@tbl-ap-ch4-model shows all model parameters, their priors and dimensions.
 
 Inference was performed using Markov chain Monte Carlo in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
 I monitored convergence using trace plots and the R-hat diagnostic [@vehtariRanknormalizationFoldingLocalization2021] and thinned post burn-in samples to reduce memory and storage use.
