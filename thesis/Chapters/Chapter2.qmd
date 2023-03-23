@@ -190,6 +190,7 @@ The strategy saw a large increase in public spending targeting the social determ
 
 Following the change in government in 2010, the strategy came to an end.
 The Conservative government implemented a series of widespread cuts to public services, collectively known as austerity.
+The cuts were geographically unequal, with cuts to local government particularly severe to local authorities with an old industrial base [@grayDepthsCutsUneven2018].
 The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
 These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
 Although difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in life expectancy of the district in the study period 2013-17.

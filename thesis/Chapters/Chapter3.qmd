@@ -44,8 +44,8 @@ The numbers of each of the units are summarised in @tbl-geography.
 | --------- | --------------- | ------------------------------------------------ |
 | region    | 9               | 5,934,037 (3,536336-9,092,877)                   |
 | district  | 314             | 140,271 (68,238-380,483)                         |
-| MSOA      | 6791            | 7,985 (5,760–11,917)                             |
-| LSOA      | 32844           | 1,620 (1,235-2,468)                              |
+| MSOA      | 6791            | 7985 (5760–11,917)                               |
+| LSOA      | 32844           | 1620 (1235-2468)                                 |
 
 : The number of each geographical unit of England used in thesis and their populations in 2019. {#tbl-geography}
 
