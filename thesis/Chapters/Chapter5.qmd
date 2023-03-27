@@ -1,19 +1,83 @@
 # Smaller: Life expectancy inequality in London at the LSOA level {#sec-Chapter5}
 
+This chapter is based on the peer-reviewed publication _Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data_, published in _The Lancet Regional Health Europe_ [CITE when it comes out], for which I was joint first author.
+The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level.
+Unlike the original text, I will focus only on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.
+
 ## Overview
 
-London wards, joint modelling of disability free and total life expectancy in census years, obtain better DFLE @congdonModellingChangesSmall2014
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
 
 ## Methods
 
-extract date 17^{th} November 2022
+### Mortality and population data
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021)
+Deaths were stratified by 19 age groups ($0, 1–4, 5–9, ..., 80–84, 85+$) and 4835 LSOAs.
+These LSOAs fit inside 33 districts: London's 32 boroughs and the City of London.
+I did not use 16 death records ($0.002%$) for which sex was not recorded.
+In 3267 (0.099%) age­-LSOA-­year combinations, the number of deaths exceeded population.
+In 88% of these combinations the deaths exceeded population by only one or two, and 96% of these combinations were in people aged 80 years and older.
+In these cases, the population was set equal to the number of deaths.
+
+### House price estimates
+
+We scraped data from real estate website Rightmove for all London postcodes, obtaining 2.1 million sales records for years 2002–2019.
+We used postcode to map homes to 24,131 (96.4% of 25,031) OAs in London which belonged to 4830 LSOAs (>99% of 4835).
+The 900 (3.6%) OAs with no sales over this period tended to be places with higher proportions of rented housing, especially rented social housing.
+
+We then used a mixed-effects model to estimate the house price at OA level.
+The model was formulated to take into account how prices vary in relation to location, time and characteristics of the property. 
+Specifically, the model included effects for the following: OA and district of the house, quarter of year in which the transaction took place, price, type of house (flat, terraced, semi-detached, detached house), status of land ownership (freehold (owns the property and the land upon which the property is built), leasehold (owns the property but not the land, which is leased)), whether the property is an existing property or newly constructed, and number of bedrooms, and interactions between the effects.
+Further details can be found in the paper [cite paper].
+We used the median of all constituent OAs for each LSOA's price.
+Here, I present the price estimates for a two-bedroom leasehold existing (not newly constructed) flat sold in the spring season. Two-bedroom leasehold flats were the most common type of sale during the study period with 19.7% of sales.
+
+### Statistical analysis
+
+The model was the same as @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likehlihood,
+$$
+\text{deaths}_{ast} = \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
+$$ {#eq-ch-45-likelihood}
+where $m_{ast}$ is the death rate and $\rho \geq 0$ is the overdispersion parameter.
+I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for @eq-ch-4-likelihood-1 that deaths are rare events.
+In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible in the real world.
+The beta-binomial likelihod is a generalisation to the binomial distribution that allows for overdispersion.
+The death rates were logit-transformed and the model structure is otherwise the same as @eq-ch-4-model, but using nested hierarchical random effects with LSOAs nested in MSOAs, which were nested in districts.
+A $\rho \sim \exp (0.1)$ hyperpriors was used for the overdisperion term, and $\sigma \sim \mathcal{N}^+(1)$ for the standard deviation parameters, as recommended by the Stan development team [@PriorChoiceRecommendations2020].
+
+@tbl-ap-ch5-model shows all model parameters, their priors and dimensions.
+
+I again used `NIMBLE` for MCMC [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017], with four chains of 80,000 iterations, discarding the first 30,000, thinning the remainder by 200 and checking for covergence using trace plots and R-hat [@vehtariRanknormalizationFoldingLocalization2021].
+
+The local effect of the Grenfell Tower fire was even more pronounced at the LSOA level.
+In 2017, the LSOA in Kensington and Chelsea where Grenfell Tower is located had 75 deaths, compared to less than 15 in 2016 and 2018.
+The additional deaths were caused by a fire in a high­rise residential building.
+I used the same treatment as in @sec-Chapter4 to remove the outlier from the modelling stage and add the excess mortality in at a later stage before calculating life expectancies.
+
+To investigate the extent that life expectancy change is accompanied with changes in the characteristics of LSOA populations, I report the Spearman's (rank) correlations of change in price with the following characteristics, separately for each decile of house price in 2002:
+
+- Change in house price.
+- Change in households living in the LSOA during the period 2002–2019 as measured by population turnover.
+- Change in share of the LSOA population in the age groups 0–14, 15–29, 30–69 and 70+ years.
+- Change in rank of LSOA in terms of the poverty, unemployment and low education measures of deprivation.
+
+Scores of deprivation variables are not comparable between years, so I only consider the change in ranking.
+In order to use a consistent measure of correlation, and account for potential non-linear associations, I used Spearman's rank correlation for all variables.
 
 ## Results
 
+### Inequalities in life expectancy
+
+### Change in life expectancy
+
 ## Discussion
+
+### Strengths and limitations
+
+### Comparison with previous literature
+
+LDL, Yu, Bilal, Jonker
+
+London wards, joint modelling of disability free and total life expectancy in census years, obtain better DFLE @congdonModellingChangesSmall2014
 
 ## Summary

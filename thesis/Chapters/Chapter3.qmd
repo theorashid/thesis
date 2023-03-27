@@ -92,6 +92,7 @@ The data for geographies larger than LSOAs in @tbl-geography were created by ran
 
 ### Migration data
 
+We also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre. The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data.
 linked migration data @vandijkUsingLinkedConsumer2021
 
 ## Modelling the dead

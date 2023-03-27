@@ -14,7 +14,7 @@ The figures have been reproduced for the thesis, and the text has been updated b
 I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021)
 Deaths were stratified by 19 age groups ($0, 1–4, 5–9, ..., 80–84, 85+$) and 6791 MSOAs.
 I did not use 129 death records ($<0.001%$) for which sex was not recorded.
-In 48 (0.001%) age­ MSOA-­year combinations, the number of deaths exceeded population.
+In 48 (0.001%) age­-MSOA-­year combinations, the number of deaths exceeded population.
 Most of these were in people aged 85 years and older.
 In these cases, the population was set equal to the number of deaths.
 
@@ -72,7 +72,7 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 @tbl-ap-ch4-model shows all model parameters, their priors and dimensions.
 
-Inference was performed using Markov chain Monte Carlo in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
+Inference was performed using MCMC in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
 I monitored convergence using trace plots and the R-hat diagnostic [@vehtariRanknormalizationFoldingLocalization2021] and thinned post burn-in samples to reduce memory and storage use.
 For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters.
 For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.
