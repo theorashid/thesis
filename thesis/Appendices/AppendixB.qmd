@@ -37,27 +37,27 @@ This appendix contains full information on the parameters of each model.
 | Overall intercept                                  | $\alpha_0$             | $\mathcal{N}\left(0,\sigma^2=10^5\right)$                       | 1                                    |
 | Overall slope                                      | $\beta_0$              | $\mathcal{N}\left(0,\sigma^2=10^5\right)$                       | 1                                    |
 | District intercept                                 | $\alpha_{1d}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1d}}}^2\right)$              | 33                                   |
-| District intercept standard deviation              | $\sigma_{\alpha_{1d}}$ | $\mathcal{N}^+(1)                                     | 1                                    |
+| District intercept standard deviation              | $\sigma_{\alpha_{1d}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
 | MSOA intercept                                 | $\alpha_{1m}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1m}}}^2\right)$              | 983                                  |
-| MSOA intercept standard deviation              | $\sigma_{\alpha_{1m}}$ | $\mathcal{N}^+(1)                                     | 1                                    |
+| MSOA intercept standard deviation              | $\sigma_{\alpha_{1m}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
 | LSOA intercept                                     | $\alpha_{1s}$          | $\mathcal{N}\left(0,{\sigma_{\alpha_{1s}}}^2\right)$              | 4835                                |
-| LSOA intercept standard deviation                  | $\sigma_{\alpha_{1s}}$ | $\mathcal{N}^+(1)                                     | 1                                    |
+| LSOA intercept standard deviation                  | $\sigma_{\alpha_{1s}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
 | District slope                                     | $\beta_{1d}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1d}}}^2\right)$               | 33                                   |
-| District slope standard deviation                  | $\sigma_{\beta_{1d}}$  | $\mathcal{N}^+(1)                                     | 1                                    |
+| District slope standard deviation                  | $\sigma_{\beta_{1d}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
 | MSOA slope                                     | $\beta_{1m}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1m}}}^2\right)$               | 983                                  |
-| MSOA slope standard deviation                  | $\sigma_{\beta_{1m}}$  | $\mathcal{N}^+(1)                                     | 1                                    |
+| MSOA slope standard deviation                  | $\sigma_{\beta_{1m}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
 | LSOA slope                                         | $\beta_{1s}$           | $\mathcal{N}\left(0,{\sigma_{\beta_{1s}}}^2\right)$               | 4835                                |
-| LSOA slope standard deviation                      | $\sigma_{\beta_{1s}}$  | $\mathcal{N}^+(1)                                     | 1                                    |
+| LSOA slope standard deviation                      | $\sigma_{\beta_{1s}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Age group intercept                                | $\alpha_{2a}$          | $\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)$ | 18                                   |
-| Age group intercept standard deviation             | $\sigma_{\alpha_{2a}}$ | $\mathcal{N}^+(1)                                     | 1                                    |
+| Age group intercept standard deviation             | $\sigma_{\alpha_{2a}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Age group slope                                    | $\beta_{2a}$           | $\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)$   | 18                                   |
-| Age group slope standard deviation                 | $\sigma_{\beta_{2a}}$  | $\mathcal{N}^+(1)                                     | 1                                    |
+| Age group slope standard deviation                 | $\sigma_{\beta_{2a}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Age group LSOA interaction                         | $\xi_{as}$             | $\mathcal{N}\left(0,\sigma_\xi^2\right)$                          | 19 x 4835                           |
-| Age group LSOA interaction standard deviation      | $\sigma_\xi$           | $\mathcal{N}^+(1)                                     | 1                                    |
+| Age group LSOA interaction standard deviation      | $\sigma_\xi$           | $\mathcal{N}^+(1)$                                     | 1                                    |
 | LSOA random walk over time                         | $\nu_{st}$             | $\mathcal{N}\left(\nu_{s,t-1},\sigma_\nu^2\right)$                | 4835 x 17                           |
-| LSOA random walk over time standard deviation      | $\sigma_\nu$           | $\mathcal{N}^+(1)                                     | 1                                    |
+| LSOA random walk over time standard deviation      | $\sigma_\nu$           | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Age group random walk over time                    | $\gamma_{at}$          | $\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)$          | 19 x 17                              |
-| Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{N}^+(1)                                     | 1                                    |
+| Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Overdispersion parameter                           | $\rho$                 | $\exp (0.1)$                                    | 1                                    |
 
 : Specification of the Bayesian statistical model in @eq-ch-5-likelihood. {#tbl-ap-ch5-model}

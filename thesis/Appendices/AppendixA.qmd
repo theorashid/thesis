@@ -1,5 +1,79 @@
-# Hex-cartogram of life expectancy in 2019 at the MSOA level {#sec-appA}
+# Life table methods {#sec-appA}
 
-This is an alternative version of @fig-ch-4-map-level, using a hexagon-based cartogram where every MSOA has equal size. Hence, London, which has a lot of small MSOAs, takes up a larger proportion of the map. For an interactive version of the original figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).
+Most of the content in this appendix is taken directly from @prestonDemographyMeasuringModeling2001, but I have reproduced it here for reference and for completeness.
 
-![Cartogram of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_hex_carto.pdf){#fig-app-a-carto-level}
+## Period life tables
+
+Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort as died.
+Instead, demographers use period (or "current") life tables, which consider what would happen to a hypothetical cohort that are subjected to the deaths rates in each age group at an exact period in time.
+Life tables can be constructed using discrete age bands starting at age $x$ and ending at age $x+n$.
+We supply the age-specific death rates, ${}_{n}m_{x}$, and the average person-years lived by those dying in the interval, ${}_{n}a_{x}$, and the life table calculates the mean age at death – the life expectancy, $e_x$.
+
+We start with a hypotethical cohort of size $l_0 = 100,000$ and sequentially apply the probability of dying in each age group, calculated as
+$$
+{}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
+$$ {#eq-app-a-prob-dying}
+The open interval ${}_{\infty}q_{x} = 1$, as nobody is immortal.
+Using the probability of surviving in each age group, ${}_{n}p_{x} = 1 - {}_{n}q_{x}$, the number of survivors is given by
+$$
+l_{x+n} = l_x \cdot {}_{n}p_{x}.
+$$ {#eq-app-a-life-table-1}
+
+The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died weighted by ${}_{n}a_{x}$
+$$
+{}_{n}L_{x} = n l_x \cdot + {}_{n}a_{x} l_{x} {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
+$$ {#eq-app-a-life-table-2}
+
+and the total number of person-years lived above $x$ is
+$$
+T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
+$$ {#eq-app-a-life-table-2}
+
+Then, life expectancy is given by diving the number of person-years lived by the number of people who will live them
+$$
+e_x = \frac{T_x}{l_x}.
+$$ {#eq-app-a-life-table-2}
+
+Throughout the thesis, I only consider life expectancy at birth.
+
+### The very young ages and the very old ages
+
+On average, it's a good approximation is to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n /2$.
+But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy.
+Coale and Demeny used regression on a series of international datasets to recommend suitable values for ${}_{1}a_{0}$ and ${}_{4}a_{1}$ instead of the midpoint [@coaleRegionalModelLife1983].
+
+The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations.
+In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table and adjust ${}_{n}a_{x}$ above 70 years [@thatcherSurvivorRatioMethod2002].
+
+## Probability of dying
+
+The probability of dying from a specific cause of death, $i$, is calculated as in @eq-app-a-prob-dying.
+Equally, we can subtract the probability of surviving to that age group, $1 - \prod_x {}_{n}p^i_{x}$.
+Note, even for the smallest death rates, ${}_{\infty}q^i_{x} = 1$ – if you live to infinity, you'll die of it eventually.
+
+## Cause-specific decomposition of differences in life expectancy
+
+@arriagaMeasuringExplainingChange1984 proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as
+$$
+{}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
+$$ {#eq-app-a-arriaga-age}
+
+We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates:
+$$
+{}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}
+$$ {#eq-app-a-arriaga-cause}
+
+Arriaga showed the sum of the age- and cause-specific contributions are equal to the difference in life expectancy,
+$$
+e_0(2) - e_0(1) = \sum_x {}_{n}\Delta_{x} = \sum_x \sum_i {}_{n}\Delta^i_{x}.
+$$ {#eq-app-a-arriaga-sum}
+
+So, we can collapse over age groups to get the cause-specific contributions to life expectancy as $\sum_x {}_{n}\Delta^i_{x}$.
+
+## Mean age at death
+
+The mean age at death among those who died from a specific cause of death was calculated as
+$$
+\text{mean age at death} = \frac{\sum_x {}_{n}d_{x} \cdot {}_{n}a_{x}}{\sum_x {}_{n}d_{x}},
+$$ {#eq-app-a-mean-age-death}
+where ${}_{n}d_{x}$ is the number of deaths in an age band, calculated as the product of the death rate and the population.

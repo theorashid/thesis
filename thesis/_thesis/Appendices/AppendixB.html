@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../Appendices/AppendixC.html" rel="next">
 <link href="../Appendices/AppendixA.html" rel="prev">
 <link href="../assets/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -56,6 +57,7 @@ ul.task-list li input[type="checkbox"] {
 </head>
 
 <body class="nav-sidebar floating">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -138,12 +140,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
   </div>
 </li>
       </ul>
@@ -347,6 +354,177 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </div>
+<div id="tbl-ap-ch5-model" class="anchored">
+<table class="table">
+<caption>Table&nbsp;B.2: Specification of the Bayesian statistical model in <a href="../Chapters/Chapter5.html#eq-ch-5-likelihood">Equation&nbsp;<span>5.1</span></a>.</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 13%">
+<col style="width: 37%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter name</th>
+<th>Symbol</th>
+<th>Prior</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overall intercept</td>
+<td><span class="math inline">\(\alpha_0\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,\sigma^2=10^5\right)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Overall slope</td>
+<td><span class="math inline">\(\beta_0\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,\sigma^2=10^5\right)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>District intercept</td>
+<td><span class="math inline">\(\alpha_{1d}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1d}}}^2\right)\)</span></td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td>District intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{1d}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>MSOA intercept</td>
+<td><span class="math inline">\(\alpha_{1m}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1m}}}^2\right)\)</span></td>
+<td>983</td>
+</tr>
+<tr class="even">
+<td>MSOA intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{1m}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>LSOA intercept</td>
+<td><span class="math inline">\(\alpha_{1s}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\alpha_{1s}}}^2\right)\)</span></td>
+<td>4835</td>
+</tr>
+<tr class="even">
+<td>LSOA intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{1s}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>District slope</td>
+<td><span class="math inline">\(\beta_{1d}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1d}}}^2\right)\)</span></td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td>District slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{1d}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>MSOA slope</td>
+<td><span class="math inline">\(\beta_{1m}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1m}}}^2\right)\)</span></td>
+<td>983</td>
+</tr>
+<tr class="even">
+<td>MSOA slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{1m}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>LSOA slope</td>
+<td><span class="math inline">\(\beta_{1s}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,{\sigma_{\beta_{1s}}}^2\right)\)</span></td>
+<td>4835</td>
+</tr>
+<tr class="even">
+<td>LSOA slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{1s}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group intercept</td>
+<td><span class="math inline">\(\alpha_{2a}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)\)</span></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>Age group intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{2a}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group slope</td>
+<td><span class="math inline">\(\beta_{2a}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)\)</span></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>Age group slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{2a}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group LSOA interaction</td>
+<td><span class="math inline">\(\xi_{as}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,\sigma_\xi^2\right)\)</span></td>
+<td>19 x 4835</td>
+</tr>
+<tr class="even">
+<td>Age group LSOA interaction standard deviation</td>
+<td><span class="math inline">\(\sigma_\xi\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>LSOA random walk over time</td>
+<td><span class="math inline">\(\nu_{st}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\nu_{s,t-1},\sigma_\nu^2\right)\)</span></td>
+<td>4835 x 17</td>
+</tr>
+<tr class="even">
+<td>LSOA random walk over time standard deviation</td>
+<td><span class="math inline">\(\sigma_\nu\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group random walk over time</td>
+<td><span class="math inline">\(\gamma_{at}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)\)</span></td>
+<td>19 x 17</td>
+</tr>
+<tr class="even">
+<td>Age group random walk over time standard deviation</td>
+<td><span class="math inline">\(\sigma_\gamma\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Overdispersion parameter</td>
+<td><span class="math inline">\(\rho\)</span></td>
+<td><span class="math inline">\(\exp (0.1)\)</span></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
@@ -484,13 +662,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../Appendices/AppendixA.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../Appendices/AppendixC.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

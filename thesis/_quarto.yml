@@ -24,6 +24,7 @@ book:
   appendices:
     - Appendices/AppendixA.qmd
     - Appendices/AppendixB.qmd
+    - Appendices/AppendixC.qmd
 
   site-url: https://theorashid.github.io/thesis
   repo-url: https://github.com/theorashid/thesis

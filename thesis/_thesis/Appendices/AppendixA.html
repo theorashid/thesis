@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelling the dead and what they died from - Appendix A — Hex-cartogram of life expectancy in 2019 at the MSOA level</title>
+<title>Modelling the dead and what they died from - Appendix A — Life table methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -52,16 +71,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Appendix A — Hex-cartogram of life expectancy in 2019 at the MSOA level</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix A — Life table methods</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -138,12 +159,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
   </div>
 </li>
       </ul>
@@ -153,14 +179,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#period-life-tables" id="toc-period-life-tables" class="nav-link active" data-scroll-target="#period-life-tables"><span class="toc-section-number">A.1</span>  Period life tables</a>
+  <ul class="collapse">
+  <li><a href="#the-very-young-ages-and-the-very-old-ages" id="toc-the-very-young-ages-and-the-very-old-ages" class="nav-link" data-scroll-target="#the-very-young-ages-and-the-very-old-ages"><span class="toc-section-number">A.1.1</span>  The very young ages and the very old ages</a></li>
+  </ul></li>
+  <li><a href="#probability-of-dying" id="toc-probability-of-dying" class="nav-link" data-scroll-target="#probability-of-dying"><span class="toc-section-number">A.2</span>  Probability of dying</a></li>
+  <li><a href="#cause-specific-decomposition-of-differences-in-life-expectancy" id="toc-cause-specific-decomposition-of-differences-in-life-expectancy" class="nav-link" data-scroll-target="#cause-specific-decomposition-of-differences-in-life-expectancy"><span class="toc-section-number">A.3</span>  Cause-specific decomposition of differences in life expectancy</a></li>
+  <li><a href="#mean-age-at-death" id="toc-mean-age-at-death" class="nav-link" data-scroll-target="#mean-age-at-death"><span class="toc-section-number">A.4</span>  Mean age at death</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-appA" class="quarto-section-identifier d-none d-lg-block">Appendix A — Hex-cartogram of life expectancy in 2019 at the MSOA level</span></h1>
+<h1 class="title"><span id="sec-appA" class="quarto-section-identifier d-none d-lg-block">Appendix A — Life table methods</span></h1>
 </div>
 
 
@@ -175,15 +213,61 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is an alternative version of <a href="../Chapters/Chapter4.html#fig-ch-4-map-level">Figure&nbsp;<span>4.2</span></a>, using a hexagon-based cartogram where every MSOA has equal size. Hence, London, which has a lot of small MSOAs, takes up a larger proportion of the map. For an interactive version of the original figure, see the <a href="https://equitablehealthycities.org/focus-cities/london/mortality-map-england/">visualistion</a>.</p>
-<div id="fig-app-a-carto-level" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../thesis-analysis/thesis_analysis/england/figures/map_hex_carto.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;A.1: Cartogram of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.</figcaption><p></p>
-</figure>
+<p>Most of the content in this appendix is taken directly from <span class="citation" data-cites="prestonDemographyMeasuringModeling2001">Preston et al. (<a href="../references.html#ref-prestonDemographyMeasuringModeling2001" role="doc-biblioref">2001</a>)</span>, but I have reproduced it here for reference and for completeness.</p>
+<section id="period-life-tables" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="period-life-tables"><span class="header-section-number">A.1</span> Period life tables</h2>
+<p>Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort as died. Instead, demographers use period (or “current”) life tables, which consider what would happen to a hypothetical cohort that are subjected to the deaths rates in each age group at an exact period in time. Life tables can be constructed using discrete age bands starting at age <span class="math inline">\(x\)</span> and ending at age <span class="math inline">\(x+n\)</span>. We supply the age-specific death rates, <span class="math inline">\({}_{n}m_{x}\)</span>, and the average person-years lived by those dying in the interval, <span class="math inline">\({}_{n}a_{x}\)</span>, and the life table calculates the mean age at death – the life expectancy, <span class="math inline">\(e_x\)</span>.</p>
+<p>We start with a hypotethical cohort of size <span class="math inline">\(l_0 = 100,000\)</span> and sequentially apply the probability of dying in each age group, calculated as <span id="eq-app-a-prob-dying"><span class="math display">\[
+{}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
+\tag{A.1}\]</span></span> The open interval <span class="math inline">\({}_{\infty}q_{x} = 1\)</span>, as nobody is immortal. Using the probability of surviving in each age group, <span class="math inline">\({}_{n}p_{x} = 1 - {}_{n}q_{x}\)</span>, the number of survivors is given by <span id="eq-app-a-life-table-1"><span class="math display">\[
+l_{x+n} = l_x \cdot {}_{n}p_{x}.
+\tag{A.2}\]</span></span></p>
+<p>The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died weighted by <span class="math inline">\({}_{n}a_{x}\)</span> <span id="eq-app-a-life-table-2"><span class="math display">\[
+{}_{n}L_{x} = n l_x \cdot + {}_{n}a_{x} l_{x} {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
+\tag{A.3}\]</span></span></p>
+<p>and the total number of person-years lived above <span class="math inline">\(x\)</span> is <span id="eq-app-a-life-table-2"><span class="math display">\[
+T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
+\tag{A.4}\]</span></span></p>
+<p>Then, life expectancy is given by diving the number of person-years lived by the number of people who will live them <span id="eq-app-a-life-table-2"><span class="math display">\[
+e_x = \frac{T_x}{l_x}.
+\tag{A.5}\]</span></span></p>
+<p>Throughout the thesis, I only consider life expectancy at birth.</p>
+<section id="the-very-young-ages-and-the-very-old-ages" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="the-very-young-ages-and-the-very-old-ages"><span class="header-section-number">A.1.1</span> The very young ages and the very old ages</h3>
+<p>On average, it’s a good approximation is to assume deaths occur halfway through the age interval: <span class="math inline">\({}_{n}a_{x} = n /2\)</span>. But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy. Coale and Demeny used regression on a series of international datasets to recommend suitable values for <span class="math inline">\({}_{1}a_{0}\)</span> and <span class="math inline">\({}_{4}a_{1}\)</span> instead of the midpoint <span class="citation" data-cites="coaleRegionalModelLife1983">(<a href="../references.html#ref-coaleRegionalModelLife1983" role="doc-biblioref"><strong>coaleRegionalModelLife1983?</strong></a>)</span>.</p>
+<p>The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations. In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table and adjust <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years <span class="citation" data-cites="thatcherSurvivorRatioMethod2002">(<a href="../references.html#ref-thatcherSurvivorRatioMethod2002" role="doc-biblioref"><strong>thatcherSurvivorRatioMethod2002?</strong></a>)</span>.</p>
+</section>
+</section>
+<section id="probability-of-dying" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="probability-of-dying"><span class="header-section-number">A.2</span> Probability of dying</h2>
+<p>The probability of dying from a specific cause of death, <span class="math inline">\(i\)</span>, is calculated as in <a href="#eq-app-a-prob-dying">Equation&nbsp;<span>A.1</span></a>. Equally, we can subtract the probability of surviving to that age group, <span class="math inline">\(1 - \prod_x {}_{n}p^i_{x}\)</span>. Note, even for the smallest death rates, <span class="math inline">\({}_{\infty}q^i_{x} = 1\)</span> – if you live to infinity, you’ll die of it eventually.</p>
+</section>
+<section id="cause-specific-decomposition-of-differences-in-life-expectancy" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="cause-specific-decomposition-of-differences-in-life-expectancy"><span class="header-section-number">A.3</span> Cause-specific decomposition of differences in life expectancy</h2>
+<p><span class="citation" data-cites="arriagaMeasuringExplainingChange1984">(<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref"><strong>arriagaMeasuringExplainingChange1984?</strong></a>)</span> proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as <span id="eq-app-a-arriaga-age"><span class="math display">\[
+{}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
+\tag{A.6}\]</span></span></p>
+<p>We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates: <span id="eq-app-a-arriaga-cause"><span class="math display">\[
+{}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}
+\tag{A.7}\]</span></span></p>
+<p>Arriaga showed the sum of the age- and cause-specific contributions are equal to the difference in life expectancy, <span id="eq-app-a-arriaga-sum"><span class="math display">\[
+e_0(2) - e_0(1) = \sum_x {}_{n}\Delta_{x} = \sum_x \sum_i {}_{n}\Delta^i_{x}.
+\tag{A.8}\]</span></span></p>
+<p>So, we can collapse over age groups to get the cause-specific contributions to life expectancy as <span class="math inline">\(\sum_x {}_{n}\Delta^i_{x}\)</span>.</p>
+</section>
+<section id="mean-age-at-death" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="mean-age-at-death"><span class="header-section-number">A.4</span> Mean age at death</h2>
+<p>The mean age at death among those who died from a specific cause of death was calculated as <span id="eq-app-a-mean-age-death"><span class="math display">\[
+\text{mean age at death} = \frac{\sum_x {}_{n}d_{x} \cdot {}_{n}a_{x}}{\sum_x {}_{n}d_{x}},
+\tag{A.9}\]</span></span> where <span class="math inline">\({}_{n}d_{x}\)</span> is the number of deaths in an age band, calculated as the product of the death rate and the population.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-prestonDemographyMeasuringModeling2001" class="csl-entry" role="doc-biblioentry">
+Preston SH, Heuveline P, Guillot M. 2001. Demography: <span>Measuring</span> and <span>Modeling Population Processes</span>. <span>Blackwell Publishing</span>.
 </div>
-
-
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

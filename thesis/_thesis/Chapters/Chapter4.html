@@ -77,6 +77,7 @@ div.csl-indent {
 
 <body class="nav-sidebar floating">
 
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -158,12 +159,17 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
   </div>
 </li>
       </ul>
@@ -228,7 +234,7 @@ div.csl-indent {
 <h2 data-number="4.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">4.2</span> Methods</h2>
 <section id="mortality-and-population-data" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="mortality-and-population-data"><span class="header-section-number">4.2.1</span> Mortality and population data</h3>
-<p>I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021) Deaths were stratified by 19 age groups (<span class="math inline">\(0, 1–4, 5–9, ..., 80–84, 85+\)</span>) and 6791 MSOAs. I did not use 129 death records (<span class="math inline">\(&lt;0.001%\)</span>) for which sex was not recorded. In 48 (0.001%) age­ MSOA-­year combinations, the number of deaths exceeded population. Most of these were in people aged 85 years and older. In these cases, the population was set equal to the number of deaths.</p>
+<p>I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021) Deaths were stratified by 19 age groups (<span class="math inline">\(0, 1–4, 5–9, ..., 80–84, 85+\)</span>) and 6791 MSOAs. I did not use 129 death records (<span class="math inline">\(&lt;0.001%\)</span>) for which sex was not recorded. In 48 (0.001%) age­-MSOA-­year combinations, the number of deaths exceeded population. Most of these were in people aged 85 years and older. In these cases, the population was set equal to the number of deaths.</p>
 </section>
 <section id="statistical-analysis" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="statistical-analysis"><span class="header-section-number">4.2.2</span> Statistical analysis</h3>
@@ -247,9 +253,9 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <p>The results of the spatial model were virtually identical to the hierarchical random effects model (correlation coefficient <span class="math inline">\(0.999\)</span> for female and male sexes; mean difference <span class="math inline">\(0.03\)</span> years for women and <span class="math inline">\(0.009\)</span> years for men; mean absolute difference <span class="math inline">\(0.07\)</span> years for women and <span class="math inline">\(0.09\)</span> years for men for life expectancy estimates from the two approaches). I present results from the hierarchical model for two reasons. First, it allows neighbouring MSOAs that fall in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy implementation. Second, the hierarchical model was computationally less demanding with run times about 1.4 times faster than the spatial model.</p>
 <p>All standard deviation parameters of the random effects had <span class="math inline">\(\sigma \sim \mathcal{U}(0, 2)\)</span> priors. For the global intercept and slope, we used the diffuse prior <span class="math inline">\(\mathcal{N}(0, \sigma^2=10^5)\)</span>. The overdispersion parameter <span class="math inline">\(r\)</span> had the prior <span class="math inline">\(\mathcal{U}(0, 50)\)</span>.</p>
 <p><a href="../Appendices/AppendixB.html#tbl-ap-ch4-model">Table&nbsp;<span>B.1</span></a> shows all model parameters, their priors and dimensions.</p>
-<p>Inference was performed using Markov chain Monte Carlo in <code>NIMBLE</code> package <span class="citation" data-cites="devalpineNIMBLEMCMCParticle2022 devalpineProgrammingModelsWriting2017">(<a href="../references.html#ref-devalpineNIMBLEMCMCParticle2022" role="doc-biblioref">de Valpine et al., 2022</a>, <a href="../references.html#ref-devalpineProgrammingModelsWriting2017" role="doc-biblioref">2017</a>)</span>. I monitored convergence using trace plots and the R-hat diagnostic <span class="citation" data-cites="vehtariRanknormalizationFoldingLocalization2021">(<a href="../references.html#ref-vehtariRanknormalizationFoldingLocalization2021" role="doc-biblioref">Vehtari et al., 2021</a>)</span> and thinned post burn-in samples to reduce memory and storage use. For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters. For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.</p>
+<p>Inference was performed using MCMC in <code>NIMBLE</code> package <span class="citation" data-cites="devalpineNIMBLEMCMCParticle2022 devalpineProgrammingModelsWriting2017">(<a href="../references.html#ref-devalpineNIMBLEMCMCParticle2022" role="doc-biblioref">de Valpine et al., 2022</a>, <a href="../references.html#ref-devalpineProgrammingModelsWriting2017" role="doc-biblioref">2017</a>)</span>. I monitored convergence using trace plots and the R-hat diagnostic <span class="citation" data-cites="vehtariRanknormalizationFoldingLocalization2021">(<a href="../references.html#ref-vehtariRanknormalizationFoldingLocalization2021" role="doc-biblioref">Vehtari et al., 2021</a>)</span> and thinned post burn-in samples to reduce memory and storage use. For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters. For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.</p>
 <p>In 2017, the MSOA in Kensington and Chelsea, London where Grenfell Tower is located had 119 deaths, compared with 48 in 2016 and 51 in 2018. The additional deaths were caused by a fire in a high­rise residential building. This outlier year led to unstable estimates of the long­term trend in life expectancy in this MSOA, and also slightly changed estimates in other MSOAs in the district. To avoid this instability, when applying the statistical model, I replaced the number of deaths for this year with the mean of those in 2016 and 2018 for each age and sex group. When making estimates for 2017, the difference between actual and interpolated deaths was added back to the posterior estimates so that these deaths were counted in the corresponding year. The Grenfell Tower fire incident was, to the best of our knowledge, the only spatially-specific, long-tailed mortality event in England over the study period.</p>
-<p>I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods <span class="citation" data-cites="prestonDemographyMeasuringModeling2001">(<a href="../references.html#ref-prestonDemographyMeasuringModeling2001" role="doc-biblioref">Preston et al., 2001</a>)</span>. I used the Kannisto­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table.</p>
+<p>I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>The reported 95% credible intervals (CrIs) represent the 2.5th to 97.5th percentiles of the posterior distribution of estimated life expectancies. I also report the posterior probability that the estimated change over time in an MSOA represents an increase versus a decrease in life expectancy. Posterior probability represents the inherent uncertainty in life expectancy trends. In an MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there is around a 100% posterior probability of an increase, and hence around a 0% probability of a decrease, and vice versa. Posterior probabilities more distant from 50% indicate more certainty.</p>
 </section>
 </section>
@@ -268,7 +274,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <div id="fig-ch-4-map-level" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/map_level.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></figcaption><p></p>
 </figure>
 </div>
 <p>The 124 (1.8%) of 6791 MSOAs with the lowest female life expectancy and 262 (3.9%) MSOAs with the lowest male life expectancy in 2019 were located in urban areas, particularly in the north, including Blackpool, Leeds, Liverpool, Manchester, and Newcastle. Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts (<a href="#fig-ch-4-map-level">Figure&nbsp;<span>4.2</span></a>).</p>
@@ -423,9 +429,6 @@ Marmot MG, Allen J, Boyce T, Goldblatt P, Morrison J. 2020. Marmot <span>Review<
 <div id="ref-mcelreathStatisticalRethinking2020" class="csl-entry" role="doc-biblioentry">
 McElreath R. 2020. Statistical <span>Rethinking</span>, Second. ed. <span>CRC Press</span>.
 </div>
-<div id="ref-prestonDemographyMeasuringModeling2001" class="csl-entry" role="doc-biblioentry">
-Preston SH, Heuveline P, Guillot M. 2001. Demography: <span>Measuring</span> and <span>Modeling Population Processes</span>. <span>Blackwell Publishing</span>.
-</div>
 <div id="ref-rashidLifeExpectancyRisk2021" class="csl-entry" role="doc-biblioentry">
 Rashid T, Bennett JE, Paciorek CJ, Doyle Y, Pearson-Stuttard J, Flaxman S, Fecht D, Toledano MB, Li G, Daby HI, Johnson E, Davies B, Ezzati M. 2021. Life expectancy and risk of death in 6791 communities in <span>England</span> from 2002 to 2019: High-resolution spatiotemporal analysis of civil registration data. <em>The Lancet Public Health</em> <strong>6</strong>:e805–e816. doi:<a href="https://doi.org/10.1016/S2468-2667(21)00205-X">10.1016/S2468-2667(21)00205-X</a>
 </div>
@@ -442,8 +445,9 @@ Vehtari A, Gelman A, Simpson D, Carpenter B, Bürkner P-C. 2021. Rank-normalizat
 <hr>
 <ol>
 <li id="fn1"><p>The name “negative binomial” is quite difficult to understand in this context. A better, but less popular name, is the gamma-Poisson distribution. Here, the story is simpler: we have a mixture of Poisson distributions where the rate parameters of the Poisson distributions follow a gamma distribution <span class="citation" data-cites="mcelreathStatisticalRethinking2020">(<a href="../references.html#ref-mcelreathStatisticalRethinking2020" role="doc-biblioref">McElreath, 2020</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>For an interactive version of this figure, see the <a href="https://equitablehealthycities.org/focus-cities/london/mortality-map-england/">visualistion</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>For a hex-cartogram of life expectancy in 2019, see <a href="../Appendices/AppendixA.html#fig-app-a-carto-level">Figure&nbsp;<span>A.1</span></a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="../Appendices/AppendixA.html"><span>Appendix&nbsp;A</span></a> for full details on demographic methods used in this thesis.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For an interactive version of this figure, see the <a href="https://equitablehealthycities.org/focus-cities/london/mortality-map-england/">visualistion</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>For a hex-cartogram of life expectancy in 2019, see <a href="../Appendices/AppendixC.html#fig-app-c-carto-level">Figure&nbsp;<span>C.1</span></a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

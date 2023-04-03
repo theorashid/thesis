@@ -37,7 +37,7 @@ Here, I present the price estimates for a two-bedroom leasehold existing (not ne
 The model was the same as @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likehlihood,
 $$
 \text{deaths}_{ast} = \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
-$$ {#eq-ch-45-likelihood}
+$$ {#eq-ch-5-likelihood}
 where $m_{ast}$ is the death rate and $\rho \geq 0$ is the overdispersion parameter.
 I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for @eq-ch-4-likelihood-1 that deaths are rare events.
 In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible in the real world.
@@ -53,6 +53,7 @@ The local effect of the Grenfell Tower fire was even more pronounced at the LSOA
 In 2017, the LSOA in Kensington and Chelsea where Grenfell Tower is located had 75 deaths, compared to less than 15 in 2016 and 2018.
 The additional deaths were caused by a fire in a high­rise residential building.
 I used the same treatment as in @sec-Chapter4 to remove the outlier from the modelling stage and add the excess mortality in at a later stage before calculating life expectancies.
+I defined life expectancy inequality as the difference between 2.5th and 97.5th percentiles of LSOA life expectancies.
 
 To investigate the extent that life expectancy change is accompanied with changes in the characteristics of LSOA populations, I report the Spearman's (rank) correlations of change in price with the following characteristics, separately for each decile of house price in 2002:
 
@@ -68,11 +69,73 @@ In order to use a consistent measure of correlation, and account for potential n
 
 ### Inequalities in life expectancy
 
-### Change in life expectancy
+Life expectancy at birth for London increased from 80.9 (95% CrI 80.8–81.0) years in 2002 to 85.4 (85.3–85.5) years in 2019 for women, and from 76.1 (76.0–76.2) years to 81.6 (81.5–81.7) years for men.
+Life expectancy inequality (difference between 2.5th and 97.5th percentiles) was 19.1 (18.4–19.7) years for women and 17.2 (CrI 16.7–17.8) years for men, in 2019 which is a substantial increase from 11.1 (10.7–11.5) years for women and 11.6 (CrI 11.3–12.0) years for men in 2002.
+The corresponding estimates for life expectancy inequality in 2019 calculated using MSOA level analysis in @sec-Chapter4 were 10.8 (10.3–11.3) years for women and 11.0 (10.5–11.6) years for men.
+
+![Map of life expectancy and the distribution of life expectancy in London in 2019. The areas in white have a life expectancy equal to the overall London life expectancy.](../thesis-analysis/thesis_analysis/london/figures/map_level.pdf){#fig-ch-5-map-level}
+
+Life expectancy in 2019 was highest in LSOAs in central London districts of Kensington and Chelsea, Westminster, City of London and Camden, in the southwest (Richmond upon Thames and Kingston upon Thames) and parts of the northwest (e.g., parts of Harrow and Barnet), with life expectancy in many LSOAs surpassing 90 years (@fig-ch-5-map-level).
+Low life expectancy was spread in LSOAs throughout the city but was more common in outer east and southeast London.
+
+### Change in life expectancy and inequality
+
+![Geography of change in life expectancy in London from 2002 to 2019.](../thesis-analysis/thesis_analysis/london/figures/map_change.pdf){#fig-ch-5-map-change}
+
+There was large variation across London in how much life expectancy increased from 2002 to 2019, ranging from <2 years in 537 (11.1%) LSOAs for women and 214 (4.4%) for men to >10 years in 220 (4.6%) for women and 211 (4.4%) for men (@fig-ch-5-map-change).
+In 134 (2.8%) LSOAs for women and 32 (0.7%) for men, life expectancy may have declined, with a posterior probability of a decline greater than 80% in 41 (0.8%) and 14 (0.3%) LSOAs for women and men, respectively.
+Life expectancy increased more in LSOAs in central and inner east and south London than in outer areas.
+
+![Change in LSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one LSOA. :SOAs are coloured by their life expectancy at the beginning of each period.](../thesis-analysis/thesis_analysis/london/figures/change.pdf){#fig-ch-5-change}
+
+The rate of increase in life expectancy was smaller after 2010 compared to the earlier years for both sexes (@fig-ch-5-change), and the number of LSOAs in which life expectancy may have fallen was larger, especially from 2010 to 2014.
+The slow-down or reversal of LSOA life expectancy after 2010 is consistent with the pattern seen throughout England's MSOAs in @sec-Chapter4, which may be partly due to increase in poverty due to low-wage employment and cuts in services in the austerity era.
+However, the progressive worsening of life expectancy gain and loss from 2010–2014 to 2014–2019 which was seen in other parts of England did not happen in London (@fig-ch-5-change).
+
+::: {#fig-ch-5-geofacet layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/london/figures/women_geofacet.pdf){#fig-ch-5-geofacet-women}
+
+![Men](../thesis-analysis/thesis_analysis/london/figures/men_geofacet.pdf){#fig-ch-5-geofacet-men}
+
+Life expectancy at birth and inequality in life expectancy within London's 33 local authority districts from 2002 to 2019.
+Each panel plots life expectancy against life expectancy inequality over time for all 33 districts, and highlights the trend line for the district which is named at the top of the panel.
+The districts are arranged according to their approximate location in Greater London.
+The large decline in life expectancy in Kensington and Chelsea in 2017 is due to the deaths caused by the fire in Grenfell Tower.
+:::
+
+There was substantial variation in the size of life expectancy increase over short distances.
+As a result of this spatial heterogeneity, life expectancy inequality increased not only in London as a whole, but also in every district in London alongside increasing average life expectancy (@fig-ch-5-geofacet and @fig-ch-5-ridges).
+
+::: {#fig-ch-5-ridges layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/london/figures/women_ridges.pdf){#fig-ch-5-ridges-women}
+
+![Men](../thesis-analysis/thesis_analysis/london/figures/men_ridges.pdf){#fig-ch-5-ridges-men}
+
+Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts.
+Districts are ordered by the median life expectancy in 2002.
+:::
+
+By 2019, female and male life expectancies had a 2.5th–97.5th percentile range that was >12 years in every district, and >20 years in three districts for men and two for women.
+In 2002, within district inequality had been >12 years in only two districts for men and none for women.
+At the same time, the difference between districts with the highest and lowest life expectancy increased from 5.9 (5.2–7.7) years in 2002 to 8.5 (5.9–11.9) years in 2019 for females, and from 6.8 (5.9–8.7) years to 10.9 (8.2–14.2) years for males indicating that the rise in life expectancy inequality took place both within and between districts.
+
+![Spearman correlation between change in life expectancy and change from 2002 to 2019 in sociodemographic characteristics of the population of London Lower-layer Super Output Areas (LSOAs). LSOAs were grouped by decile of house prices in 2002 and correlations were calculated separately for each decile. Correlations close to zero imply the lack of a relationship between the ranks of the variables.](../thesis-analysis/thesis_analysis/london/figures/correlation.pdf){#fig-ch-5-correlation}
+
+Life expectancy increase was also associated with changes in the LSOA resident population and their socioeconomic characteristics (@fig-ch-5-correlation).
+The association was weaker in the women and in LSOAs that were already expensive in 2002.
+There was some association between increase in life expectancy and increase in house price for the LSOAs that were least expensive in 2002.
+Although there was no obvious pattern between life expectancy increases and the share of households who had not lived there in 2002, male life expectancy was also associated with a larger rise in the share of population in working ages (30–69 years), and a larger decline in the share of population in young adulthood (15–29 years).
+The LSOAs that improved their rankings in terms of education and skills, poverty and employment experienced the largest increases in life expectancy.
+
+### House price
 
 ## Discussion
 
 ### Strengths and limitations
+
+I defined life expectancy inequality as the difference between 2.5th and 97.5th percentiles of LSOA life expectancies rather than min-max
 
 ### Comparison with previous literature
 
