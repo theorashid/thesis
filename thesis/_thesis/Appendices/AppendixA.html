@@ -234,8 +234,8 @@ e_x = \frac{T_x}{l_x}.
 <p>Throughout the thesis, I only consider life expectancy at birth.</p>
 <section id="the-very-young-ages-and-the-very-old-ages" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="the-very-young-ages-and-the-very-old-ages"><span class="header-section-number">A.1.1</span> The very young ages and the very old ages</h3>
-<p>On average, it’s a good approximation is to assume deaths occur halfway through the age interval: <span class="math inline">\({}_{n}a_{x} = n /2\)</span>. But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy. Coale and Demeny used regression on a series of international datasets to recommend suitable values for <span class="math inline">\({}_{1}a_{0}\)</span> and <span class="math inline">\({}_{4}a_{1}\)</span> instead of the midpoint <span class="citation" data-cites="coaleRegionalModelLife1983">(<a href="../references.html#ref-coaleRegionalModelLife1983" role="doc-biblioref"><strong>coaleRegionalModelLife1983?</strong></a>)</span>.</p>
-<p>The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations. In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table and adjust <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years <span class="citation" data-cites="thatcherSurvivorRatioMethod2002">(<a href="../references.html#ref-thatcherSurvivorRatioMethod2002" role="doc-biblioref"><strong>thatcherSurvivorRatioMethod2002?</strong></a>)</span>.</p>
+<p>On average, it’s a good approximation is to assume deaths occur halfway through the age interval: <span class="math inline">\({}_{n}a_{x} = n /2\)</span>. But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy. Coale and Demeny used regression on a series of international datasets to recommend suitable values for <span class="math inline">\({}_{1}a_{0}\)</span> and <span class="math inline">\({}_{4}a_{1}\)</span> instead of the midpoint <span class="citation" data-cites="coaleRegionalModelLife1983">(<a href="../references.html#ref-coaleRegionalModelLife1983" role="doc-biblioref">Coale et al., 1983</a>)</span>.</p>
+<p>The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations. In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table and adjust <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years <span class="citation" data-cites="thatcherSurvivorRatioMethod2002">(<a href="../references.html#ref-thatcherSurvivorRatioMethod2002" role="doc-biblioref">Thatcher et al., 2002</a>)</span>.</p>
 </section>
 </section>
 <section id="probability-of-dying" class="level2" data-number="A.2">
@@ -244,7 +244,7 @@ e_x = \frac{T_x}{l_x}.
 </section>
 <section id="cause-specific-decomposition-of-differences-in-life-expectancy" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="cause-specific-decomposition-of-differences-in-life-expectancy"><span class="header-section-number">A.3</span> Cause-specific decomposition of differences in life expectancy</h2>
-<p><span class="citation" data-cites="arriagaMeasuringExplainingChange1984">(<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref"><strong>arriagaMeasuringExplainingChange1984?</strong></a>)</span> proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as <span id="eq-app-a-arriaga-age"><span class="math display">\[
+<p><span class="citation" data-cites="arriagaMeasuringExplainingChange1984">Arriaga (<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref">1984</a>)</span> proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as <span id="eq-app-a-arriaga-age"><span class="math display">\[
 {}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
 \tag{A.6}\]</span></span></p>
 <p>We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates: <span id="eq-app-a-arriaga-cause"><span class="math display">\[
@@ -263,8 +263,17 @@ e_0(2) - e_0(1) = \sum_x {}_{n}\Delta_{x} = \sum_x \sum_i {}_{n}\Delta^i_{x}.
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-arriagaMeasuringExplainingChange1984" class="csl-entry" role="doc-biblioentry">
+Arriaga EE. 1984. Measuring and <span>Explaining</span> the <span>Change</span> in <span>Life Expectancies</span>. <em>Demography</em> <strong>21</strong>:83–96. doi:<a href="https://doi.org/10.2307/2061029">10.2307/2061029</a>
+</div>
+<div id="ref-coaleRegionalModelLife1983" class="csl-entry" role="doc-biblioentry">
+Coale AJ, Demeny P, Vaughan B. 1983. Regional <span>Model Life Tables</span> and <span>Stable Populations</span>, Second. ed. <span>Academic Press</span>.
+</div>
 <div id="ref-prestonDemographyMeasuringModeling2001" class="csl-entry" role="doc-biblioentry">
 Preston SH, Heuveline P, Guillot M. 2001. Demography: <span>Measuring</span> and <span>Modeling Population Processes</span>. <span>Blackwell Publishing</span>.
+</div>
+<div id="ref-thatcherSurvivorRatioMethod2002" class="csl-entry" role="doc-biblioentry">
+Thatcher AR, Kannisto V, Andreev KF. 2002. The <span>Survivor Ratio Method</span> for <span>Estimating Numbers</span> at <span>High Ages</span>. <em>Demographic Research</em> <strong>6</strong>:1–18. doi:<a href="https://doi.org/10.4054/DemRes.2002.6.1">10.4054/DemRes.2002.6.1</a>
 </div>
 </div>
 </section>
