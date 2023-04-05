@@ -1,50 +1,58 @@
 # Background {#sec-Chapter2}
 
+## Overview
+
+The section begins with a brief history of the Small Area Health Statistics Unit (SAHSU), who manage the mortality data used in the thesis.
+In particular, I will focus on spatial methods, which were developed at the unit and I extend upon in the thesis, in the context of disease mapping studies of SAHSU.
+
+There is a section on literature from the UK and beyond looking at mortality for small subnational regions, followed by a history of separating total mortality into different causes of death and the epidemiologic transition theory.
+
+I will finish by exploring the picture of inequalities in UK over the past few decades through to the present, focussing on class, income, geography, and deprivation.
+
 ## Small area health statistics (unit)
 
-In 1983, a documentary on the fallout produced from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
+In 1983, a documentary on the fallout from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
 This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
 The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to _ad hoc_ queries on local health hazards.
 The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottSmallAreaHealth1992].
 
-Beyond producing substantive research studies on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
+Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
 
 - _Point source type studies_. Is there an increased risk close to an environmental hazard?
-- _Geographic correlation studies_. Is there a correlation between disease risk and environmental variables?
-- _Clustering_. Does a disease to produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
+- _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables?
+- _Clustering_. Does a disease produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
 - _Disease mapping_. Summarising the spatial variation in risk.
 
-In a pilot study for SAHSU, @elliottSmallAreaHealth1992 investigated the mortality from mesothelioma and asbestosis near the Plymouth docks.
-Death registrations with postcode information were held by SAHSU.
-Both diseases are related to industrial exposure and asbestos, so concentric circular bands were drawn around the Plymouth dockyards as a way to approximate the exposure from a point source of environmental pollution.
-There was a clear increase in risk within $3km$ of the docks.
-A similar distance-based approach was adopted to look at excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999], kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]
-In response to public concern over exposure to toxic chemicals in landfill, SAHSU conducted the most extensive study ever into health effects of landfill sites.
-Postocdes within a $2km$ buffer of a landfill site were classified as exposed.
-Compared to those living beyond $2km$, SAHSU found a small unexplained excess of congenital anomalies [@elliottRiskAdverseBirth2001], no increase in rates of cancer [@jarupCancerRisksPopulations2002], and no excess risk of Down syndrome [@jarupSyndromeBirthsLandfill2007].
+In a pilot study for SAHSU, @elliottSmallAreaHealth1992 investigated the mortality near the Plymouth docks from mesothelioma and asbestosis – both of which are related to industrial exposure and asbestos.
+Death registrations with postcode information were held by SAHSU, and concentric circular bands were drawn around the Plymouth dockyards as a way to approximate the exposure from a point source of environmental pollution.
+There was a clear increase in risk within 3km of the docks.
+A similar distance-based approach was adopted to look at excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999], and kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004].
+In response to public concern over exposure to toxic chemicals in waste materials, SAHSU conducted the most extensive study ever into the health effects of landfill sites.
+Postocdes within a 2km buffer of a landfill site were classified as exposed.
+Compared to those living beyond 2km, SAHSU found a small unexplained excess of congenital anomalies [@elliottRiskAdverseBirth2001], no increase in rates of cancer [@jarupCancerRisksPopulations2002], and no excess risk of Down syndrome [@jarupSyndromeBirthsLandfill2007].
 
-Distance from source is, however, only a basic model for the exposure, which can often exhibit more complex, directional spatial patterns.
-A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assess the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base station during pregnancy [@elliottMobilePhoneBase2010], noise from aircrafts near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and PM10 from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
-SAHSU published an environment and health atlas for England and Wales, showing the geographic patters of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
+Distance from source is, however, only a basic model for the exposure, which can exhibit more complex, directional spatial patterns.
+A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assess the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010], noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
+SAHSU published an environment and health atlas for England and Wales, showing the spatial patterns of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
 
 ### Disease mapping at SAHSU
 
-Many of the studies at SAHSU focus on rare diseases at small areas.
-The data for the number of cases, or number of deaths, in a region are likely to small numbers.
-This sparseness issue is even more pertinant when the population is also statified by age group.
-Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in the risk.
+Many of the studies at SAHSU focus on prevalence or mortality from rare diseases at small areas.
+The number of cases, or number of deaths, in a region are likely to small numbers.
+This sparseness issue is even more pertinant when the population is further statified by age group.
+Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in risk.
 There is a need for statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
-@aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean of the risks across the region.
-SAHSU thereafter published a plethora of studies for disease mapping models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
+@aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean risk across the region.
+Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 
 There are three main categories for modelling spatial effects.
-First, we can treat space a continous surface, such as Gaussian processes or splines.
+First, we can treat space a continous surface, as with Gaussian processes or splines.
 Second, we can use areal models, which make use of spatial neighbourhood structure of the units.
 Thirdly, we can explicitly build effects based on a nested hierarchy of geographical units, for example between state, county and census tract in the US.
 
 In the context of disease mapping, events are usually aggregated to areas rather than assigned specific geographical coordinates.
-@wakefieldIssuesStatisticalAnalysis1999 model aggregated counts as realisations of a Poisson process, in which the expected number of cases is calculated by integrating a continuous surface that generates the cases integrated over the area.
-The surface was some function of spatially-referenced covariates.
+@wakefieldIssuesStatisticalAnalysis1999 model aggregated counts as realisations of a Poisson process, in which the expected number of cases is calculated by integrating a continuous surface that generates the cases over the area of the spatial unit.
+The surface was a function of spatially-referenced covariates.
 @kelsallModelingSpatialVariation2002 describe an alterative model, where the log-transformed risk surface is modelled by a Gaussian process, whose correlation function depends on distance.
 
 @bestComparisonBayesianSpatial2005 provide a review of the use of hierarchical models with spatial dependence for disease mapping.
@@ -57,7 +65,7 @@ $$ {#eq-MVN}
 
 where $\pmb{\mu}$ is the mean effect vector, $\pmb{\Sigma} = \sigma^2 \pmb{\Omega}$ and $\pmb{\Omega}$ is a symmetric, positive semi-definite matrix defining the correlation between spatial units.
 A common choice when specifying the structure of the correlation matrix is to assume a function that decays with the distance between the centroids of the areas, so that places nearby in space share similar disease profiles.
-Note, this is mathematically equivalent to the practical implementation of a Gaussian process, whcih uses a finite set of points.
+Note, this is mathematically equivalent to the practical implementation of a Gaussian process, which uses a finite set of points.
 An example in @elliottSpatialEpidemiologyMethods2001 chooses the exponential decay function to map cancer risk in northwest England.
 
 A more popular prior is the conditional autoregressive (CAR) prior, also known as a Gaussian Markov random field.
@@ -66,7 +74,7 @@ $$
 \mathbf{P} = \pmb{\Sigma}^{-1} = \tau(\mathbf{D} - \rho \mathbf{A}),
 $$ {#eq-CAR-prec}
 where $\tau$ controls the overall precision of the effects, $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ describes the amount of correlation.
-This can be seen as a tuning the degree of spatial dependence, where $\rho = 0$ implies independence between areas, and $\rho = 1$ full dependence.
+This can be seen as tuning the degree of spatial dependence, where $\rho = 0$ implies independence between areas, and $\rho = 1$ full dependence.
 The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR) model.
 @besagBayesianImageRestoration1991 proposed the model (hereafter called BYM)
 $$
@@ -75,68 +83,67 @@ $$ {#eq-BYM}
 where $U_i$ follow an ICAR distribution, and $V_i$ are independent and identically distributed random effects.
 The BYM distribution was employed to model spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
 
-Further disease mapping studies at SAHSU using spatially structured effects have also extended the methdology to look at age patterns and trends over time of disease.
+Further disease mapping studies at SAHSU using spatially structured effects have also extended the methdology to look at age patterns and trends over time.
 @asariaTrendsInequalitiesCardiovascular2012 analysed cardiovasuclar disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
-@bennettFutureLifeExpectancy2015 considered a model to jointly forecast all-cause mortality for districts in England, age groups and years.
+@bennettFutureLifeExpectancy2015 designed a model to jointly forecast all-cause mortality for districts in England, age groups and years.
 The model used BYM spatial effects and random walk effects over age and time to capture non-linear relationships.
-It is also possible to borrow information across causes of death, as applied in @foremanSmallAreaForecasts2017 on forecasting cause-specific mortality for states in the US.
-Random walk effects were again used to non-linear temporal effects, a CAR prior was used for spatial effects, and a multivariate normal where the covariance matrix describes the correlation structure between the 15 cause groups.
+It is also possible to borrow information across causes of death, as applied in @foremanSmallAreaForecasts2017 to forecast cause-specific mortality for states in the US.
+Random walk effects were again used for temporal non-linearities, a CAR prior was used for spatial effects, and a multivariate normal prior for causes of death whereby the covariance matrix describes the correlation structure between the 15 cause groups.
 The model did not, however, share information between age groups.
-Although this is not directly a SAHSU study, the model was developed by a several people in the department.
 
-In building models which consider the hierarchy of geographical units, these relationships are often incorporated into the model as a nested hierarchy of random effects.
-These models account for which spatial units lie within common administrative boundaries, but, by design, there is no knowledge of spatial distance included.
+The relationships between different levels of a hierarchy of geographical units are often incorporated into models as a nested hierarchy of random effects.
+These models account for when spatial units lie within common administrative boundaries.
 This is often a desirable property of the model for certain geographies, like states in the US, which are administrative.
 Policy is decided at these geographies, so there is reason to believe these boundaries may have a greater effect on health outcomes than spatial structure.
-Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled as such, in this case exploiting the hierarchy global, subregion, region and country.
-Note, although these models group by geographical region, these models are not spatial as they do not contain any information on the position relative to other units.
+Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, subregion, region and country.
+Note, although these models group by geographical region, these models are not _spatial_ as they do not contain any information on the relative position of the areas.
 
 ## Small area analyses of mortality
 
 In order to compare the health status between areas, health authorities require a measure of mortality that collapses age-specific information into a single number.
-Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate but are not easily understood by laypeople.
+Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate, but are not easily understood by laypeople.
 Directly standardised methods, in contrast, require knowledge of the full age structure of death rates rather than just the total number of deaths.
 Age-standardised death rates, however, suffer the same interpretability issue as the standardised mortality ratio, and are only comparable between studies if the same reference population is used.
-An alternative choice is life expectancy.
+An alternative choice is _life expectancy_.
 @silcocksLifeExpectancySummary2001 explain that life expectancy is a "more intuitive and immediate measure of the mortality experience of a population, [and] is likely to have greater impact... than other measures that are incomprehensible to most people."
-For studies of small geographies where there are often small number issues, the calculation of life expectancy is either extremely unstable or impossible [@jonkerComparisonBayesianRandomEffects2012].
 
 The estimation of death rates requires two data sources: deaths counts and popualtions.
 Modern vital registrations systems are complete and accurate, so data on deaths are usually reliable and comprehensive.
 On the other hand, although usually treated as a known quantity, the population denominator is often problematic.
-Populations for small geographies are only recorded during a decennial census, and estimates are generated for the years in between using limited survey data on births, deaths and migration.
-And although the census is considered the "gold standard", it is subject to enumaration errors, particularly for areas with special populations such as students or armed forced @elliottSpatialEpidemiologyMethods2001.
+Populations for small geographies are only recorded during a decennial census, and estimates are generated for the years in-between using limited survey data on births, deaths and migration.
+And although the census is considered the "gold standard", it is subject to enumaration errors, particularly for areas with special populations such as students or armed forces [@elliottSpatialEpidemiologyMethods2001].
 
 Beyond the population issue, finer scale studies are restricted by data availability.
 Where data are available, there is still the need to overcome small number issues before feeding death rates through the life table.
-@eayresEvaluationMethodologiesSmall2004 recommend a minimum population size of 5000 when using traditional life table methods, below which the error estimates in life expectancy become so large that any comparison between subgroups becomes meaningless.
-One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@HealthExpectanciesBirth2015, @LocalHealthSmall2021, @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
-Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce lower bias and smaller, more accuate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009, @jonkerComparisonBayesianRandomEffects2012].
+@eayresEvaluationMethodologiesSmall2004 recommend a minimum population size of 5000 when using traditional life table methods, below which the calculation of life expectancy is unstable, impossible, or the error estimates become so large that any comparison between subgroups becomes meaningless.
+One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@HealthExpectanciesBirth2015; @LocalHealthSmall2021; @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
+Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce more accuate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009; @jonkerComparisonBayesianRandomEffects2012].
 
-@jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach to stabilitising estimates for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap in life expectancy for women and men. @stephensLifeExpectancyEstimation2013 employed the same model for 153 administrative areas in New South Wales, Australia.
+@jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap in life expectancy for women and men.
+@stephensLifeExpectancyEstimation2013 employed the same model for 153 administrative areas in New South Wales, Australia.
 
-Bayesian spatial models for mortality have been scaled up to relatively small areas for entire countries, and also consider trends in these regions over time. @bennettFutureLifeExpectancy2015 forecasted life expectancy for 375 districts in England and Wales using an ensemble of spatiotemproal models trained over a 31 year period, and @dwyer-lindgrenInequalitiesLifeExpectancy2017 explored mortality trends 3110 US counties from 1980 to 2014.
+Bayesian spatial models for mortality have been scaled to small areas for entire countries, and also consider trends in these regions over time. @bennettFutureLifeExpectancy2015 forecasted life expectancy for 375 districts in England and Wales using an ensemble of spatiotemporal models trained over a 31 year period, and @dwyer-lindgrenInequalitiesLifeExpectancy2017 explored mortality trends 3110 US counties from 1980 to 2014.
 
-There have also been studies on specific cities at a finer resolution. In order to obtain better estimates for disability-free life expectancy, @congdonModellingChangesSmall2014 consider both ill-health and mortality in a joint likelihood with spatial effects for 625 wards in London, finding more than a two-fold variation in the percent of life spent in disability for men. @bilalInequalitiesLifeExpectancy2019 looked at 266 subcity units for six large cities in Latin America. As there is no contiguous boundary in this case, a random effects model for each city was used instead of a spatial model. The largest difference between the top and bottom decile of life expectancy at birth was 17.7 years for women in Santiago, Chile.
+There have also been studies on specific cities at a finer resolution. In order to improve estimates for disability-free life expectancy, @congdonModellingChangesSmall2014 considered both ill-health and mortality in a joint likelihood with spatial effects for 625 wards in London, finding more than a two-fold variation in the percent of life spent in disability for men. @bilalInequalitiesLifeExpectancy2019 looked at 266 subcity units for six large cities in Latin America. As there is no contiguous boundary in this case, a random effects model for each city was used instead of a spatial model. The largest difference between the top and bottom decile of life expectancy at birth was 17.7 years for women in Santiago, Chile.
 
-Two studies in North America have looked below the county level, at census tracts, with wide ranging popualtion sizes as small as 40. @dwyer-lindgrenVariationLifeExpectancy2017 studies trends for life expectancy and many causes of death for 397 tracts in King County, Washington, uncovering an 18.3 year gap in life expectancy for men. Using the same model for Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found widening inequalities over time and a difference of 9.5 years for men.
+Two studies in North America have looked below the county level, at census tracts, with wide-ranging popualtion sizes as small as 40. @dwyer-lindgrenVariationLifeExpectancy2017 studies trends for life expectancy and many causes of death for 397 tracts in King County, Washington, uncovering an 18.3 year gap in life expectancy for men. Using the same model for Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found widening inequalities over time and a difference of 9.5 years for men.
 
-## Mortality by specific causes of death (counting the dead and what they died from)
+## Mortality by specific causes of death (counting what they died from)
 
-In the mid-twentieth century, a team in the US Public Health Service, led by Iwao Moriyama, began looking into the decomposition of mortality for the first half of the century into all diseases and injuries.
-Notably, @moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes, and found as the US saw overall downward trend in mortality, leading causes of death changed from communicable diseases, such as tuberculosis and diptheria, toward non-communicable, "chronic disease of older ages", such as heart diseases and cancers.
-The success of the reduction – and in the case of typhoid fever, near-elimination – of infectious diseases was attributed to the strategy of the health officer in the early 1900s, who was preoccupied with improving water and sanitation, and public health intervations such immunisation and quartantines.
+In the mid-twentieth century, a team in the US Public Health Service, led by Iwao Moriyama, began looking into the cause-specific composition of mortality into all diseases and injuries for the first half of the century.
+Notably, @moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes, and found as the US saw an overall downward trend in mortality, the leading causes of death changed from communicable diseases, such as tuberculosis and diptheria, toward non-communicable, "chronic diseases of older ages", such as heart diseases and cancers.
+The success of the reduction – and in the case of typhoid fever, near-elimination – of infectious diseases was attributed to the strategy of the health officer in the early 1900s, who was focussed on improving water and sanitation, and public health intervations such immunisation and quartantines.
 
-By comparing vital registration data over several centuries, Abdel Omran observed this shift of mortality from communicable to non-communicable diseases (NCDs) in many countries [@omranEpidemiologicTransitionTheory1971; @omranCenturyEpidemiologicTransition1977]. Specifically, although the pace and determinants of the transition varied between countries, Omran formalised three common successive stages of the shift in mortality:
+By comparing vital registration data over several centuries, Abdel Omran observed this shift of mortality from communicable to non-communicable diseases (NCDs) in many countries [@omranEpidemiologicTransitionTheory1971; @omranCenturyEpidemiologicTransition1977]. Although the pace and determinants of the transition varied between countries, Omran formalised three common successive stages of the shift in mortality:
 
 1. _The Age of Pestilence and Famine_. Mortality is high and largely governed by malthusian "positive checks" – epidemics, famines, and wars.
 2. _The Age of Receding Pandemics_. Mortality decreases as epidemics become less frequent, but infectious diseases remain the leading causes of death. 
 3. _The Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
 
 He termed this the _Epidemiologic Transition theory_. @omranEpidemiologicTransitionTheory1971 explained that England and Wales took the classic transition path followed by western societies, whereby socioeconomic factors such as improvements to living standards are crucial in causing easily preventable diseases to subside and shifting towards the third phase of the transition, and medical and other public health technology only help society much later in the final stage.
-Later, @olshanskyFourthStageEpidemiologic1986 would propose a fourth stage to the theory, _the Age of Delayed Degenerative Diseases_, in which the structure of causes of death is stable, but the age at which degenerative diseases kill is postponed, thus causing decreasing in older age mortality.
+Later, @olshanskyFourthStageEpidemiologic1986 would propose a fourth stage to the theory, _the Age of Delayed Degenerative Diseases_, in which the structure of causes of death is stable, but the age at which degenerative diseases kill is postponed, thus decreasing older age mortality.
 There are, however, questions around the universality and unidirectionality of the theory, with many examples in which age-specific death rates for population subgroups have risen over time, most notably the HIV/AIDS pandemic [@gaylinRefocusingLensEpidemiologic1997].
-@gerstenCancerTransitionJapan2002 also criticise the lack of attention Omran's theory pays towards the role infection in chronic and degenerative diseases, in particular certain cancers.
+@gerstenCancerTransitionJapan2002 also criticise the lack of attention Omran's theory pays towards the role of infection in chronic and degenerative diseases, in particular certain cancers.
 
 Around the same time as Omran, Samuel Preston collated cause-specific mortality data for a huge number of populations, spanning 48 nations and nearly a century [@prestonInternationalComparisonExcessive1970; @prestonStructureChangeCauses1974].
 This would enable international comparisons of groups of causes of death over different time periods, and a deeper understanding of the upward trends in life expectancy.
@@ -146,9 +153,9 @@ Preston attributed this to an accerlating rate of medical progress guided by the
 Preston also traced the excess deaths in older males observed in western societies to cardiovascular diseases, cancer and bronchitis – a direct result of dramatic increases in cigarette smoking [@prestonInternationalComparisonExcessive1970].
 
 Since its first edition in 1990, the subject of international comparisons of the cause-specific composition of mortality has been the remit of the Global Burden of Disease (GBD) studies [@murrayGlobalBurdenDisease1996].
-The studies aim to quantify and compare the burden of diseases, injuries, and risk factors, usually through cross-sectional methods but occasionally by examining trends and subnational populations (for example, @ezzatiReversalFortunesTrends2008 and @dwyer-lindgrenInequalitiesLifeExpectancy2017).
+The studies aim to quantify and compare the burden of diseases, injuries, and risk factors, usually through cross-sectional methods but occasionally by examining trends and subnational populations [@ezzatiReversalFortunesTrends2008; @dwyer-lindgrenInequalitiesLifeExpectancy2017].
 An important innovation of the GBD study was the introduction of a hierarchical classification of groups of causes, with the broadest level divided into three groups: communicable, maternal, perinatal, and nutritional diseases (Group 1), NCDs (Group 2), and injuries (Group 3).
-@salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century, finding the majority of the change in cause structure occurs among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
+@salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century, finding the majority of the change in cause structure occurred among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
 
 ## Health inequalities in the UK
 
@@ -161,13 +168,13 @@ The Whitehall study of 1967 followed 17,530 men working in the civil service and
 @marmotInequalitiesDeathSpecific1984 found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and unskilled manual workers.
 They found, in general, a strong inverse association between grade and mortality – a term Marmot has coined a "social gradient".
 The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be fully explained by smoking or industrial exposure alone.
-There authors concluded be other factors inherent to social class (defined here by employment), which explain the mortality differences.
+The authors concluded there must be other factors inherent to social class (defined here by employment), which explain the mortality differences.
 A second cohort of Whitehall employees from 1985 to 1988, this time including women as well as men, were screened and asked to answer questions on self-reported ill-health.
 @marmotHealthInequalitiesBritish1991 found the social gradient in health had persisted in the 20 years separating the studies.
-In 2008, Marmot was asked by the Secretary of State to conduct a review into the state of health inequalities in England and to use the evidence to design policy for reducing these inequalities.
-A key plot in the first Marmot Review, released in 2010, depicted the social gradient in mortality for regions in England by socio-economic classification of jobs [].
+In 2008, Marmot was asked by the Secretary of State to conduct a review into the state of health inequalities in the UK and to use the evidence to design policy for reducing these inequalities.
+A key plot in the first Marmot Review, released in 2010, depicted the social gradient in mortality for regions in England by socio-economic classification of employment [@marmotMarmotReviewFair2010].
 
-Income data is not a routinely collected statistic in the UK. Nevertheless, using a small survey of 7000 people on three measures of morbidity, @wilkinsonIncomeDistributionLife1992 showed health improved sharply from the lowest to the middle of the income range.
+Income is not a routinely collected statistic in the UK. Nevertheless, using a small survey of 7000 people on three measures of morbidity, @wilkinsonIncomeDistributionLife1992 showed health improved sharply from the lowest to the middle of the income range.
 
 In 2015, the GBD Study released its first subational estimates of mortality, starting with the UK and Japan.
 @steelChangesHealthCountries2018 assess these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
@@ -175,13 +182,14 @@ In a study on forecasting subnational life expectancy in England and Wales, @ben
 The lowest life expectancies were seen in urban northern England, and the highest in the south and London's affluent districts.
 Within London itself, male and female life expectancy showed 5-6 years of variation.
 
-There have been substantial efforts in the UK to measure the deprivation of an area, with the standard deprivation indicator in England since the 2000s is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA) covering income, unemployement, health, crime and environmental data sources [@EnglishIndicesDeprivation2019].
-The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, whcih exhibit a strong social gradient [@marmotMarmotReviewFair2010].
+There have been substantial efforts in the UK to measure the deprivation of an area.
+Since 2004, the standard deprivation indicator in England  is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA) covering income, unemployement, health, crime and environmental data sources [@EnglishIndicesDeprivation2019].
+The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
 The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham did better than expected for that level of deprivation [@steelChangesHealthCountries2018].
 @bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
-They found since 2011, "the rise in female life expectancy has reversed in the two most deprived deciles, and has stalled in the third, fourth, and fifth most deprived deciles but has continued in better-off deciles."
+They found since 2011, although national life expectancy has continued to increase, the rise in female life expectancy has reversed in the two most deprived deciles.
 The second Marmot Review in 2020 also found female life expectancy declined in the most deprived decile between the periods 2010-12 and 2016-18 [@marmotMarmotReview102020].
-Digging further into these trends by region, the report found this trend was seen in all regions except London, the West Midlands and the North West, and that male life expectancy in the bottom decile also decreased in the North East, Yorkshire and the Humber and the East of England.
+Digging further into these trends by region, the report found this trend was seen in all regions except London, the West Midlands and the North West, and that male life expectancy in the bottom decile also decreased in the North East, Yorkshire and the Humber, and the East of England.
 
 Since the turn of the millenium, there have been two periods of contrasting health policy in the UK.
 The early 2000s saw the implementation of the English health inequalities strategy under New Labour, with explicit goals of reducing geographical inequalities in life expectancy.
@@ -189,18 +197,18 @@ The strategy saw a large increase in public spending targeting the social determ
 @barrInvestigatingImpactEnglish2017 analysed the trends in life expectancy for different quantiles of deprivation and provided evidence that the strategy acheived its aim of reducing the gap in life expectancy between the 20% most-deprived areas and the rest of the English population.
 
 Following the change in government in 2010, the strategy came to an end.
-The Conservative government implemented a series of widespread cuts to public services, collectively known as austerity.
-The cuts were geographically unequal, with cuts to local government particularly severe to local authorities with an old industrial base [@grayDepthsCutsUneven2018].
+The Conservative government implemented a widespread series of cuts to public services, collectively known as austerity.
+The cuts were geographically unequal, with reductions to funding for local governments particularly severe to local authorities with an old industrial base [@grayDepthsCutsUneven2018].
 The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
 These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
-Although difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in life expectancy of the district in the study period 2013-17.
+Although it is difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in district-level life expectancy from 2013 to 2017.
 As written in the _The New York Times_, "after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty" [@goodmanBritainAusterityChanging2018] – a comparison only compounded by the Brexit vote in 2016.
 
 Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies.
-In an international study comparing mortality trends in England and Wales to 22 comparator countries @leonTrendsLifeExpectancy2019 show, however, that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
-More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 for 12 European countries, then through to 2022: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britian"[@BritainHasEndured2023].
+However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 show that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
+More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britian"[@BritainHasEndured2023].
 
 After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
-Unsurprisingly, England and Wales suffering one of the highest excess deaths tolls relative to other industrialised countries [@kontisMagnitudeDemographicsDynamics2020].
+Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other industrialised countries [@kontisMagnitudeDemographicsDynamics2020].
 At the current time of writing in 2023, the health service is yet to recover, with waiting lists for operations and waiting times for emergency care unhealthily high [@dorlingHowAusterityCaused2023].
 There is no suggestion that the picture of health and health inequalities in the UK should improve in the coming years.
