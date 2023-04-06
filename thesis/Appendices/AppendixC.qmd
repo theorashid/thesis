@@ -1,5 +1,5 @@
 # Hex-cartogram of life expectancy in 2019 at the MSOA level {#sec-appC}
 
-This is an alternative version of @fig-ch-4-map-level, using a hexagon-based cartogram where every MSOA has equal size. Hence, London, which has a lot of small MSOAs, takes up a larger proportion of the map. For an interactive version of the original figure, see the [visualistion](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).
+This is an alternative version of @fig-ch-4-map-level, using a hexagon-based cartogram where every MSOA has equal size. Hence, London, which has a lot of small MSOAs, takes up a larger proportion of the map. For an interactive version of the original figure, see the [visualisation](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).
 
 ![Cartogram of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_hex_carto.pdf){#fig-app-c-carto-level}

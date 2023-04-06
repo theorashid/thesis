@@ -1,46 +1,53 @@
 # Some notes on the data and the models {#sec-Chapter3}
 
+## Overview
+
+This chapter presents the datasets, data cleaning, and modelling choices that are common between the proceeding chapters.
+
 ## Counts of the dead
 
 This thesis is primarily concerned with modelling death rates for small areas in England.
 This requires two data sources: counts of deaths, and populations counts.
-The dataset is de-identified civil registration data for all deaths in England from 2002 to 2019.
+The counts of deaths come from de-identified civil registration data for all deaths in England from 2002 to 2019.
 In other words, every death in England from 2002 to 2019.
 
-The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU, which has the required security protocols as individual death records are identifiable data.
-The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner's report to identify underlying cause of death.
+The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data.
+The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner's report to identify the underlying cause of death.
 
 Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis.
 For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older.
 There are also a series of ICD-10 (International Classification of Dieases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
-Here, we focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
-
-![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf)
+Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
 
 Before to fitting any models, it's good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
 
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf){#fig-ch-3-age}
+
+The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (@fig-ch-3-age).
+Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.
+
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf){#fig-ch-3-age-broad}
+
+@fig-ch-3-age-broad looks at the trends over time for wider age groups.
+I did not use the 5-year age groups because the number of deaths for certain age groups at single years were small, and any data presented should be non-disclosive in accordance with SAHSU's data sharing agreement.
+In general, death rates have decreased from 2002 to 2019 in all age groups, but with slowing progress in young adulthood and working ages (30-69 years).
+Likewise, life expectancy has improved throughout the study period, but has stalled since around 2010 for both sexes. 
+
 ![District-level life expectancy for total deaths from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.pdf){#fig-ch-3-district}
 
-![Age-specific death rates for England based on total deaths from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf)
+@fig-ch-3-district shows the geography of life expectancy after aggregating deaths over the entire study period by district.
+For both sexes, the picture is similar: pockets of low life expectancy in the urban northwest, northeast, west midlands, and coastal areas east of London.
 
-![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf)
-
-Look at different cross sections, slice by age, space and time @fig-ch-3-district
-By age + sex, log scale, death rates in 2019
-Colour geom_tile plot age-specific death rates over time, trans = log
-Life expectancy male and female over time
-e0 aggregated 2002-19 by district
-
-Here, we have taken slices, but the aim is to calculate death rates for each sex-age-space-time unit
+Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.
 
 ### Geographies of England
 
-Having already introduced the term "district" in Figure XXs, I'll briefly show the lay of the land in terms of geographies used in this thesis.
-This thesis is concerned only with England, as Scotland, Wales, and Northern Ireland have their own separate deprivation data which are not comparable.
-The geographies used here in England form a nested hierarchy of spatial units from regions, districts, Middle-layer Super Output Areas (MSOAs), Lower-layer Super Output Areas (LSOAs).
-The numbers of each of the units are summarised in @tbl-geography.
+Having already introduced the term "district" in @fig-ch-3-district, I'll set out the lay of the land in terms of geographies used in this thesis.
+This thesis is concerned only with England, as Scotland, Wales, and Northern Ireland each have their own separate deprivation data which are not comparable.
+The geographies in England form a nested hierarchy of spatial units from regions to districts to Middle-layer Super Output Areas (MSOAs) to Lower-layer Super Output Areas (LSOAs).
+The number of units for each geography are summarised in @tbl-geography.
 
-| Geography | Number of units | Median (5th - 9th percentile) population in 2019 |
+| Geography | Number of units | Median (5<sup>th</sup> - 95<sup>th</sup> percentile) population in 2019 |
 | --------- | --------------- | ------------------------------------------------ |
 | region    | 9               | 5,934,037 (3,536336-9,092,877)                   |
 | district  | 314             | 140,271 (68,238-380,483)                         |
@@ -52,14 +59,14 @@ The numbers of each of the units are summarised in @tbl-geography.
 England is divided into 9 regions (London, North West, West Midlands, etc).
 Within these regions, there are 314 local authority districts.
 Districts are administative geographies formed from a mixture of London boroughs, metropolitan and non-metropolitan distrcts, and unitary autorities.
-They are responsible for local policies, and therefore subject to local government restructuring and bounary changes.
-For stability, we chose the district boundaries from 2020.
+They are responsible for local policies, and are therefore subject to local government restructuring and boundary changes.
+For stability, I chose the district boundaries from 2020 throughout.
 
 LSOAs are a type of census geography made up of around four or five smaller units called Output Areas (OAs).
-OAs are the smallest building block for census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
+OAs are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
 MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries.
 OAs, LSOAs, and MSOAs are all statisitcal units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
-No policies are created using these units [@2011CensusGeographies2022].
+No policies are created using these boundaries [@2011CensusGeographies2022].
 
 ### Counts of the living
 
@@ -70,30 +77,31 @@ The LSOA populations are fully consistent with estimates for higher levels in th
 
 ### Deprivation data
 
-We used data for the following measures of socioeconomic deprivation from the English Indices of Deprivation:
+I used data for the following measures of socioeconomic deprivation from the English Indices of Deprivation:
 
-- Income deprivation (referred to as _poverty_ hereafter). The proportion of the geographical population claiming income-related benefits due to being out of work or having low earnings.
-- Employment deprivation (referred to as _unemployment_ hereafter). The proportion of the relevant population of the geography involuntarily excluded from the labour market due to unemployment, sickness or disability, or caring responsibilities.
-- Education, skills and training deprivation (referred to as _low education_ hereafter). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.
+- Income deprivation (also referred to as _poverty_). The proportion of the geographical population claiming income-related benefits due to being out of work or having low earnings.
+- Employment deprivation (also referred to as _unemployment_). The proportion of the relevant population of the geography involuntarily excluded from the labour market due to unemployment, sickness or disability, or caring responsibilities.
+- Education, skills and training deprivation (also referred to as _low education_). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.
 
 The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data.
 The data are produced at the LSOA level [@EnglishIndicesDeprivation2019].
 
 IMD data are not available for every year.
-The analysis period for the thesis is 2002 to 2019, so we used data for these measures for 2004, as data for 2002 were not available, and 2019.
+The analysis period for the thesis is 2002 to 2019, so I used data for these measures for 2004, as data for 2002 were not available, and 2019.
 The 2004 data on deprivation domains were reported for LSOA boundaries from the 2001 census.
-We mapped these data to the 2011 census LSOA boundaries by assigning the 2001 LSOA score to all postcodes contained within it, then overlaying the 2011 LSOA boundaries, and averaging the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.
+I mapped these data to the 2011 census LSOA boundaries by assigning the 2001 LSOA score to all postcodes contained within it, then overlaying the 2011 LSOA boundaries, and averaging the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.
 
 The definition of the indicators can change over time.
-Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts cannot be simply expressed as a proportion of the population.
-Therefore, we used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
+Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts and cannot be simply expressed as a proportion of the population.
+Therefore, I used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
 
-The data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
+The deprivation data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
 
 ### Migration data
 
-We also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre. The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data.
-linked migration data @vandijkUsingLinkedConsumer2021
+I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre.
+The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data [@vandijkUsingLinkedConsumer2021].
+Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs [@EnglishIndicesDeprivation2019].
 
 ## Modelling the dead
 
@@ -105,45 +113,44 @@ $$
 $$ {#eq-death-rate}
 where $\hat{m}_{ast}$ is the death rate.
 When the number of deaths becomes small, however, the empirical death rate presents an apparent variability from year to year, or from spatial unit to spatial unit, which is larger than the true differences in the risk of death.
-The problem is exarcerbated for young ages or rare diseases, where the number of deaths might be zero, or for smaller geographical units, where the population might be zero.
-Thus, we use Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.
-An added advantage of the Bayesian paradigm is the robust error estimates.
+The problem is exarcerbated for the young ages or rare diseases, where the number of deaths might be zero, or for smaller geographical units, where the population might be zero.
+Thus, I have used Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.
+An added advantage of the Bayesian paradigm is the robust estimation of error.
 
 This is a regression task.
 We simply want to smooth over the data – the models aren't being used for prediction.
-We tried to design as complex a model as possible, to capture as much of the true variation in the data as possible using epidemiologcial knowledge to choose plausible effects.
-In other words, the model is "full", enough paramaters to capture all the true variability.
-Models are overspecified, like Bayesian neural networks (AGW paper)
-The downside of this approach is that more parameters is harder to fit, and fewer parameters, or parsimonious models, makes Bayesian inference easier.
+I tried to design a model that captures as much of the true variation in the data as possible using epidemiologcial knowledge to choose plausible effects.
+In other words, the model is "full", with enough paramaters to capture all the true variability.
+The downside of this approach is that models with more parameters are harder to fit, whereas models with fewer parameters, or parsimonious models, make Bayesian inference easier but can mask some of the variance.
 
 ## Inference
 
 The decision was made early in the PhD to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that the sequence of samples will asmyptotically converge to the true posterior.
-Furthermore, the state-of-the-art approximate inference package for spatial models, INLA, scales badly with the number of effects, and hence would struggle with the models of dimensionality in this thesis.
+Furthermore, the state-of-the-art approximate inference package for spatial models, INLA, scales badly with the number of effects, and hence would struggle with the high dimensionality of the models in this thesis.
 
 Bayesian models are specified in a probabilistic programming language.
 The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
-`NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which the group has a lot of experience with, as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
+`NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which my research group has a lot of experience with, as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
 `NIMBLE` has an `R` interface but compiles models to `C++` for speed and scalability.
-It also increases the efficiency of Gibbs sampling efficiently by automatically finding conjugate relationships between parameters in the model and marginalising over them wherever possible.
-An added advantage is that the group has a close relationship with the lead developer of `NIMBLE`.
+It also increases the efficiency of Gibbs sampling by automatically finding conjugate relationships between parameters in the model and marginalising over them wherever possible.
+The group also has a close relationship with the lead developer of `NIMBLE`.
 
-Nevertheless, Bayesian inference is difficult to scale, and some of the models in this thesis had in excess of $10^6$ parameters and took `NIMBLE` between 10 and 14 days to collect enough samples of the posterior.
+Nevertheless, Bayesian inference is difficult to scale, and some of the models in this thesis had in excess of $10^6$ parameters and took `NIMBLE` between 10 and 14 days to collect enough posterior samples.
 One of the main issues with `NIMBLE` was that the vast majority of the parameters in the model could not exploit efficient conjugate samplers, and instead used variants of basic Metropolis-Hastings samplers, which, despite numerous efforts at tuning, were inefficient.
-Although `NIMBLE` could execute a reasonable number of samples per second, the MCMC chains were struggling to explore the posterior quickly so the _effective_ sample size per second was low.
+Although `NIMBLE` could execute a reasonable number of samples per second, the MCMC chains were struggling to explore the posterior efficiently so the _effective_ sample size per second was low.
 This is a common problem in spatial and spatiotemporal models, where the parameters are correlated by design.
 To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent).
 
 I spent a lot of time trying different probabilsitic programming languages across `R`, `python` and `Julia`, in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@rashidProbabilisticprogrammingpackages2022].
 In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is faster for large models [@laoTfpMcmcModern2020].
-The major downside was that `NumPyro` had not been used extensively by the spatial community, so I had to implement the CAR distribution from @eq-CAR-prec, which has since been contributed to the source code.
-Rewriting the model in `NumPyro` and sampling on a GPU cut the required runtime down to around a day.
+The major downside was that `NumPyro` had not been used extensively by the spatial modelling community, so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code.
+Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to around a day.
 `NumPyro` also has built-in methods for approximate variational inference, such as the Laplace approximation, but these failed to converge to sensible values for these models without heavy customisation of variational function, so I stuck with sampling methods.
 
 ## Clean code and open source
 
-I am strong believer in open source science, and I have put a lot of attention into open sourcing the code for all analyses during the PhD.
-With open science, not only do we faciliate the scientific method as our process and results are reviewed scientific method, but we also allow people in the future to easily reuse and build on our models.
+I am strong believer in open source science, and I have put a lot of attention into open sourcing code for all analyses during the PhD.
+With open science, not only do we faciliate the scientific method as our process and results are transparent, but we also allow future researchers to reuse and build on our models easily.
 It can also generate interest from researchers in different fields using similar models and from developers looking to challenge their software on complicated research questions, both of which I have seen first-hand during the course of my studies.
-The code is clean, version-controlled and follows best practices for scientific software engineering wherever possible.
+The code is clean, version-controlled and follows best practices for scientific software engineering.
 As well as code contributed to open source projects along the way, the code for [statistical models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and the [thesis istelf](https://github.com/theorashid/thesis) can be found on GitHub.
