@@ -1,4 +1,4 @@
-# Some notes on the data and the models {#sec-Chapter3}
+# Counting and modelling the dead {#sec-Chapter3}
 
 ## Overview
 
