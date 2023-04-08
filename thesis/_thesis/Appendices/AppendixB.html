@@ -153,6 +153,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -520,6 +525,111 @@ ul.task-list li input[type="checkbox"] {
 <td>Overdispersion parameter</td>
 <td><span class="math inline">\(\rho\)</span></td>
 <td><span class="math inline">\(\exp (0.1)\)</span></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-ap-ch6-model" class="anchored">
+<table class="table">
+<caption>Table&nbsp;B.3: Specification of the Bayesian statistical model in <a href="../Chapters/Chapter6.html#eq-ch-6-likelihood">Equation&nbsp;<span>6.1</span></a>.</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 13%">
+<col style="width: 37%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter name</th>
+<th>Symbol</th>
+<th>Prior</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overall intercept</td>
+<td><span class="math inline">\(\alpha_0\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,10\right)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Overall slope</td>
+<td><span class="math inline">\(\beta_0\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,10\right)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>District intercept</td>
+<td><span class="math inline">\(\alpha_{1s}\)</span></td>
+<td>ICAR</td>
+<td>314</td>
+</tr>
+<tr class="even">
+<td>District intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{1s}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>District slope</td>
+<td><span class="math inline">\(\beta_{1s}\)</span></td>
+<td>ICAR</td>
+<td>314</td>
+</tr>
+<tr class="even">
+<td>District slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{1s}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group intercept</td>
+<td><span class="math inline">\(\alpha_{2a}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)\)</span></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>Age group intercept standard deviation</td>
+<td><span class="math inline">\(\sigma_{\alpha_{2a}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group slope</td>
+<td><span class="math inline">\(\beta_{2a}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)\)</span></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>Age group slope standard deviation</td>
+<td><span class="math inline">\(\sigma_{\beta_{2a}}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group district interaction</td>
+<td><span class="math inline">\(\xi_{as}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(0,\sigma_\xi^2\right)\)</span></td>
+<td>19 x 314</td>
+</tr>
+<tr class="even">
+<td>Age group district interaction standard deviation</td>
+<td><span class="math inline">\(\sigma_\xi\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Age group random walk over time</td>
+<td><span class="math inline">\(\gamma_{at}\)</span></td>
+<td><span class="math inline">\(\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)\)</span></td>
+<td>19 x 17</td>
+</tr>
+<tr class="even">
+<td>Age group random walk over time standard deviation</td>
+<td><span class="math inline">\(\sigma_\gamma\)</span></td>
+<td><span class="math inline">\(\mathcal{N}^+(1)\)</span></td>
 <td>1</td>
 </tr>
 </tbody>

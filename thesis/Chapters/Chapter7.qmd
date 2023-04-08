@@ -4,7 +4,17 @@
 
 ## Methods
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+The methodology for this section if the same as @sec-Chapter6, but I have stratified cancer groups further.
+I used the top ten leading cancer causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual group comprising all other cancer deaths.
+As a result, the residual group in this chapter is smaller than in @sec-Chapter6.
+The full list of ICD-10 codes for each cause group can be found in @tbl-ap-ch6-cancers.
+
+I ran a model for a combined group of all cancer deaths, which resulted in near-identical median estimates of probability of dying to those created by summing the age-district-year-cause specific death rates over all the cancer groups (correlation coefficient across all years 0.99 for both sexes).
+I present results from the model as the credible intervals are directly estimated.
+
+The primary reporting outcome is, again, the unconditional probability of dying between birth and 80 years of age.
+I also report the mean age at death among those who died of that cause.
+Details on the calculations for both the probability of dying and the mean age at death can be found in @sec-appA.
 
 ## Results
 

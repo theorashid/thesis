@@ -61,3 +61,22 @@ This appendix contains full information on the parameters of each model.
 | Overdispersion parameter                           | $\rho$                 | $\exp (0.1)$                                    | 1                                    |
 
 : Specification of the Bayesian statistical model in @eq-ch-5-likelihood. {#tbl-ap-ch5-model}
+
+| Parameter name                                     | Symbol                 | Prior                                                             | Dimension                            |
+|----------------------------------------------------|------------------------|-------------------------------------------------------------------|--------------------------------------|
+| Overall intercept                                  | $\alpha_0$             | $\mathcal{N}\left(0,10\right)$                       | 1                                    |
+| Overall slope                                      | $\beta_0$              | $\mathcal{N}\left(0,10\right)$                       | 1                                    |
+| District intercept                                 | $\alpha_{1s}$          | ICAR             | 314                                   |
+| District intercept standard deviation              | $\sigma_{\alpha_{1s}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
+| District slope                                     | $\beta_{1s}$           | ICAR               | 314                                   |
+| District slope standard deviation                  | $\sigma_{\beta_{1s}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
+| Age group intercept                                | $\alpha_{2a}$          | $\mathcal{N}\left(\alpha_{2,a-1},{\sigma_{\alpha_{2a}}}^2\right)$ | 18                                   |
+| Age group intercept standard deviation             | $\sigma_{\alpha_{2a}}$ | $\mathcal{N}^+(1)$                                     | 1                                    |
+| Age group slope                                    | $\beta_{2a}$           | $\mathcal{N}\left(\beta_{2,a-1},{\sigma_{\beta_{2a}}}^2\right)$   | 18                                   |
+| Age group slope standard deviation                 | $\sigma_{\beta_{2a}}$  | $\mathcal{N}^+(1)$                                     | 1                                    |
+| Age group district interaction                         | $\xi_{as}$             | $\mathcal{N}\left(0,\sigma_\xi^2\right)$                          | 19 x 314                           |
+| Age group district interaction standard deviation      | $\sigma_\xi$           | $\mathcal{N}^+(1)$                                     | 1                                    |
+| Age group random walk over time                    | $\gamma_{at}$          | $\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)$          | 19 x 17                              |
+| Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{N}^+(1)$                                     | 1                                    |
+
+: Specification of the Bayesian statistical model in @eq-ch-6-likelihood. {#tbl-ap-ch6-model}

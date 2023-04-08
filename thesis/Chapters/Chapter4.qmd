@@ -38,7 +38,7 @@ Log-transformed death rates were modelled as a function of time, age group and M
 The model contains terms to capture the overall level and trend over time of mortality, as well as age-specific and MSOA-specific terms to allow deviations from these terms.
 Specifically, log-transformed death rates are modelled as
 $$
-\log{m_{ast}} = \alpha_0 + \beta_0 t + \alpha_{1s} + \beta_{1s} t + \alpha_{2a} + \beta_{2a} t + \xi_{as} + \nu_{st} + \gamma_{at},
+\log({m_{ast}}) = \alpha_0 + \beta_0 t + \alpha_{1s} + \beta_{1s} t + \alpha_{2a} + \beta_{2a} t + \xi_{as} + \nu_{st} + \gamma_{at},
 $$ {#eq-ch-4-model}
 where $\alpha_0$ is the overall intercept across all age groups and MSOAs.
 $\beta_0$ quantifies the overall trend (over time) across all age groups and MSOAs.

@@ -1,0 +1,61 @@
+# Groups of causes of death {#sec-appD}
+
+| Cause                              | ICD-10 codes                                           |
+|------------------------------------|--------------------------------------------------------|
+| Trachea, bronchus and lung cancers | C33-C34                                                |
+| Breast cancer                      | C50                                                    |
+| Prostate cancer                    | C61                                                    |
+| Colorectal cancers                 | C18-C21                                                |
+| Pancreatic cancer                  | C25                                                    |
+| Ovarian cancer                     | C56                                                    |
+| Lymphomas, multiple myeloma        | C81-C90, C96                                           |
+| Oesophageal cancer                 | C15                                                    |
+| All other cancers                  | C00-C14, C16-C17, C22-24, C26-C32, C37-C41, C43-C49, C51-C54, C57-C67, C48-C81, C91-C95, C97, D00-D48 |
+| Ischaemic heart disease            | I20-I25                                                |
+| Stroke                             | I60-I69                                                |
+| All other CVD                      | I00-I19, I26-I59, I70-I99                              |
+| Alzheimer's and other dementias    | F00-F03, G30                                           |
+| COPD                               | J40-44                                                 |
+| Diabetes mellitus, nephritis and nephrosis | E10-14, N00-19                                 |
+| Liver cirrhosis                    | K70, K74                                               |
+| All other NCD                      | D55-D648, D65-D89, E03-E07, E15-E16, E20-E34, E65-E88, F01-F99, G06-G13, G15-G98, H00-H61, H68-H93, J30-J39, J45-J98, K00-K14, K20-K69, K71-K73, K75-K92, L00-L98, M00-M99, N20-64, N75-N99, Q00-Q99, R95, X41-X42, X45 |
+| Lower respiratory infections       | J09-18, J20-J22                                        |
+| All other IMPN                     | A00-99, B00-99, D50-53, D649, E00-E02, E40-46, E50-54, G00, G03-G04, G14, H65-H66, N70-N73, J00-J06, O00-O99, P00-P96, Z353 |
+| Injuries                           | U00-U01, U509, V00-V99, W00-W99, X00-X40, X43-X44, X46-X99, Y00-Y01, Y10-Y36, Y381, Y40-Y86, Y870-Y872, Y88-Y89 |
+
+: Groups of causes of death used in the district-level cause-specific analysis in @sec-Chapter6 with ICD-10 codes. {#tbl-ap-ch6-causes}
+
+Ovarian cancer (women) and prostate cancer (men) are sex specific.
+Liver cirrhosis was not in the top 12 leading causes of death for women, so it was included within all other NCD.
+
+The residual groups (all other cancers, all other CVD, all other NCD, all other IMPN) also contained deaths from the "ill-defined diseases" GHE group (R00-R94, R96-R99, U07, U99).
+There were 196,055 deaths from ill-defined diseases.
+These were proportionately assigned between the residual groups.
+
+Causes of death with the ICD-10 code S00-S99 or T00-T99 are not valid underlying causes of death.
+These were all neonatal deths, which are not assigned an underlying cause of death, and were imputing using the code in the first position on the death record.
+These deaths were classified as injuries.
+
+| Cancer                             | ICD-10 codes                                           |
+|------------------------------------|--------------------------------------------------------|
+| Trachea, bronchus and lung cancers | C33-C34                                                |
+| Breast cancer                      | C50                                                    |
+| Prostate cancer                    | C61                                                    |
+| Colorectal cancers                 | C18-C21                                                |
+| Pancreatic cancer                  | C25                                                    |
+| Ovarian cancer                     | C56                                                    |
+| Lymphomas, multiple myeloma        | C81-C90, C96                                           |
+| Oesophageal cancer                 | C15                                                    |
+| Bladder cancer                     | C67                                                    |
+| Leukaemia                          | C91-C95                                                |
+| Corpus uteri cancer                | C54                                                    |
+| Stomach cancer                     | C16                                                    |
+| Liver cancer                       | C22                                                    |
+| All other cancers                  | C00-C14, C17, C23-24, C26-C32, C37-C41, C43-C49, C51-C53, C57-C66, C48-C81, C97 D00-D48 |
+
+: Groups of causes of death used in the district-level cancer analysis in @sec-Chapter7 with ICD-10 codes. {#tbl-ap-ch6-cancers}
+
+The residual group also contained deaths from the "ill-defined diseases" GHE group (R00-R94, R96-R99, U07, U99), which were proportionately assigned between the residual groups for cancers, non-communicable diseases, cardiovascular diseases and infections as part of a wider study on causes of death in England. The residual group also includes breast cancer for men. Ovary cancer, corpus uteri cancer (women) and prostate cancer (men) are sex specific. Bladder cancer and liver cancer were not leading cancers for women, so they are included in the residual group.
+
+The next leading cancers in the residual group of all other cancers were bladder cancer, brain and nervous system cancers, and liver cancer for women, and brain and nervous system cancers, mesothelioma, and melanoma and other skin cancers for men.
+
