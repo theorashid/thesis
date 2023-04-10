@@ -74,11 +74,82 @@ In the following sections, I will write in turn on each of the wider cause group
 
 ### Cardiovascular diseases
 
+::: {#fig-ch-6-map-ihd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Ischaemic_heart_disease.pdf){#fig-ch-6-map-ihd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Ischaemic_heart_disease.pdf){#fig-ch-6-map-ihd-men}
+
+Probability of dying from ischaemic heart disease between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-ch-6-map-stroke layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Cerebrovascular_disease.pdf){#fig-ch-6-map-stroke-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Cerebrovascular_disease.pdf){#fig-ch-6-map-stroke-men}
+
+Probability of dying from a stroke between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-ch-6-map-other-cvd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_CVD.pdf){#fig-ch-6-map-other-cvd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_CVD.pdf){#fig-ch-6-map-other-cvd-men}
+
+Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+Isle of Wight, heart failure?
+
 2,712,895 (31.4%)
 
 ### Non-communicable diseases
 
 2,508,844 (29.0%)
+
+::: {#fig-ch-6-map-alzheimer layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Alzheimer_and_other_dementias.pdf){#fig-ch-6-map-alzheimer-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Alzheimer_and_other_dementias.pdf){#fig-ch-6-map-alzheimer-men}
+
+Probability of dying from Alzheimer's and other dementias between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+Aging populating, more total deaths. Lower prob of dying before 80
+
+::: {#fig-ch-6-map-COPD layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Chronic_obstructive_pulmonary_disease.pdf){#fig-ch-6-map-COPD-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Chronic_obstructive_pulmonary_disease.pdf){#fig-ch-6-map-COPD-men}
+
+Probability of dying from COPD between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-ch-6-map-diabetes layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Diabetes_mellitus_nephritis_and_nephrosis.pdf){#fig-ch-6-map-diabetes-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Diabetes_mellitus_nephritis_and_nephrosis.pdf){#fig-ch-6-map-diabetes-men}
+
+Probability of dying from diabetes mellitus, nephritis and nephrosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-ch-6-map-other-ncd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_NCD.pdf){#fig-ch-6-map-other-ncd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_NCD.pdf){#fig-ch-6-map-other-ncd-men}
+
+Probability of dying from all other NCDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+![Probability of dying for men from liver cirrhosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/causes/figures/male_map_Cirrhosis_of_the_liver.pdf){#fig-ch-6-map-liver-cirrhosis-men}
+
+London liver cirrhosis decreasing
 
 ### Cancers
 
@@ -95,11 +166,62 @@ This is the focus of @sec-Chapter7.
 
 666,783 (7.7)
 
-### Injuries
+::: {#fig-ch-6-map-respiratory layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Lower_respiratory_infections.pdf){#fig-ch-6-map-respiratory-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Lower_respiratory_infections.pdf){#fig-ch-6-map-respiratory-men}
+
+Probability of dying from lower respiratory infections between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-ch-6-map-other-IMPN layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_infections_maternal_perinatal_and_nutritional_conditions.pdf){#fig-ch-6-map-other-IMPN-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_infections_maternal_perinatal_and_nutritional_conditions.pdf){#fig-ch-6-map-other-IMPN-men}
+
+Probability of dying from all other infections, maternal, perinatal and nutritional conditions between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+### Injuries
 
 295,034 (3.4)
 
+::: {#fig-ch-6-map-injuries layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_External_causes.pdf){#fig-ch-6-map-injuries-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_External_causes.pdf){#fig-ch-6-map-injuries-men}
+
+Probability of dying from injuries between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+Coastal areas, urban northwest
+
 ### Contribution to life expectancy change
+
+::: {#fig-ch-6-contribution layout-ncol=2}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2019.pdf){#fig-ch-6-contribution-women-2002-2019}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2019.pdf){#fig-ch-6-contribution-men-2002-2019}
+
+Contributions of deaths from different causes to life expectancy inequality between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the average contribution across all districts for each cause, by taking the mean over each cause.
+:::
+
+::: {#fig-ch-6-contribution-split layout-ncol=2}
+
+![Women, 2002-10](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2010.pdf){#fig-ch-6-contribution-women-2002-2010}
+
+![Women, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2010_2019.pdf){#fig-ch-6-contribution-women-2010-2019}
+
+![Men, 2002-10](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2010.pdf){#fig-ch-6-contribution-men-2002-2010}
+
+![Men, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2010_2019.pdf){#fig-ch-6-contribution-men-2010-2019}
+
+Contributions of deaths from different causes to life expectancy inequality between the district populations in 2002 and 2010, and the populations in 2010 and 2019, in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the average contribution across all districts for each cause, by taking the mean over each cause.
+:::
 
 ## Discussion
 
