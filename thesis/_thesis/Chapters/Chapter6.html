@@ -196,7 +196,7 @@ div.csl-indent {
   <li><a href="#cardiovascular-diseases" id="toc-cardiovascular-diseases" class="nav-link" data-scroll-target="#cardiovascular-diseases"><span class="toc-section-number">6.3.2</span>  Cardiovascular diseases</a></li>
   <li><a href="#non-communicable-diseases" id="toc-non-communicable-diseases" class="nav-link" data-scroll-target="#non-communicable-diseases"><span class="toc-section-number">6.3.3</span>  Non-communicable diseases</a></li>
   <li><a href="#cancers" id="toc-cancers" class="nav-link" data-scroll-target="#cancers"><span class="toc-section-number">6.3.4</span>  Cancers</a></li>
-  <li><a href="#materal-perinatal-nutritional-and-infectious-causes" id="toc-materal-perinatal-nutritional-and-infectious-causes" class="nav-link" data-scroll-target="#materal-perinatal-nutritional-and-infectious-causes"><span class="toc-section-number">6.3.5</span>  Materal, perinatal, nutritional and infectious causes</a></li>
+  <li><a href="#maternal-perinatal-nutritional-and-infectious-causes" id="toc-maternal-perinatal-nutritional-and-infectious-causes" class="nav-link" data-scroll-target="#maternal-perinatal-nutritional-and-infectious-causes"><span class="toc-section-number">6.3.5</span>  Maternal, perinatal, nutritional and infectious causes</a></li>
   <li><a href="#injuries" id="toc-injuries" class="nav-link" data-scroll-target="#injuries"><span class="toc-section-number">6.3.6</span>  Injuries</a></li>
   <li><a href="#contribution-to-life-expectancy-change" id="toc-contribution-to-life-expectancy-change" class="nav-link" data-scroll-target="#contribution-to-life-expectancy-change"><span class="toc-section-number">6.3.7</span>  Contribution to life expectancy change</a></li>
   </ul></li>
@@ -239,7 +239,7 @@ div.csl-indent {
 \tag{6.1}\]</span></span> A beta-binomial was trialled but did not improve model fit. The model is as follows: <span id="eq-ch-6-model"><span class="math display">\[
 \text{logit}({m_{ast}}) = \alpha_0 + \beta_0 t + \alpha_{1s} + \beta_{1s} t + \alpha_{2a} + \beta_{2a} t + \xi_{as} + \gamma_{at},
 \tag{6.2}\]</span></span> where the terms have the same meanings as <a href="Chapter4.html#eq-ch-4-model">Equation&nbsp;<span>4.3</span></a>. This is the same as model <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>, but without a random walk for each spatial unit, which was tested but did not improve the fit despite adding a lot of complexity.</p>
-<p>Spatial effects were modelled using a ICAR effect rather than the nested hierarchy of random effects seen in <a href="Chapter4.html"><span>Chapter&nbsp;4</span></a> and <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. The geographies here only allow a two-tier hierarchy with only nine regions mapping to 314 districts, which was less preferable than a spatial model.</p>
+<p>Spatial effects were modelled using a ICAR effect rather than the nested hierarchy of random effects seen in <a href="Chapter4.html"><span>Chapter&nbsp;4</span></a> and <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. The geographies here only allow a two-tier hierarchy with only nine regions mapping to 314 districts, which was less preferable than a spatial model. The ICAR model requires all spatial units to have neighbours. Thus, the districts containing the Isle of Wight and the Isles of Scilly were each joined to the nearest mainland district based on road or ferry connections.</p>
 <p>All model parameters, their priors and dimensions are in <a href="../Appendices/AppendixB.html#tbl-ap-ch6-model">Table&nbsp;<span>B.3</span></a>.</p>
 <p>I fitted the model in the probabilistic programming language NumPyro <span class="citation" data-cites="phanComposableEffectsFlexible2019">(<a href="../references.html#ref-phanComposableEffectsFlexible2019" role="doc-biblioref">Phan et al., 2019</a>)</span> and obtained 1,000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates. Where possible, non-centred parameterisations were used in the model to improve the efficiency of the NUTS samplers. I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution of model parameters.</p>
 <p>I ran a model for a combined group of all deaths to calculate life expectancy in each district. Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.</p>
@@ -251,7 +251,7 @@ div.csl-indent {
 <h2 data-number="6.3" class="anchored" data-anchor-id="results"><span class="header-section-number">6.3</span> Results</h2>
 <section id="all-causes" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="all-causes"><span class="header-section-number">6.3.1</span> All causes</h3>
-<p>There were 4,465,948 (48.4%) deaths in women and 4,182,108 (51.6%) in men in England from 2002 to 2019. <!-- 1,533,703 (62.5%) of these deaths occurred in people aged younger than 80 years of age. --> <a href="#fig-ch-6-treemap">Figure&nbsp;<span>6.1</span></a> shows the leading causes of death for each sex.</p>
+<p>There were 4,465,948 (48.4%) deaths in women and 4,182,108 (51.6%) in men in England from 2002 to 2019. 3,972,286 (45.9%) of these deaths occurred in people aged younger than 80 years of age. <a href="#fig-ch-6-treemap">Figure&nbsp;<span>6.1</span></a> shows the leading causes of death for each sex.</p>
 <div id="fig-ch-6-treemap" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/causes/figures/treemap.webp" class="img-fluid figure-img"></p>
@@ -262,6 +262,8 @@ div.csl-indent {
 </section>
 <section id="cardiovascular-diseases" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="cardiovascular-diseases"><span class="header-section-number">6.3.2</span> Cardiovascular diseases</h3>
+<p>Although mortality from CVD has more than halved since the 1980s in England, it remained the wider cause group with the largest proportion of deaths at 2,712,895 (31.4%). The highest probability of dying in 2019 for any sex-cause-district combination was for ischaemic heart disease in Manchester at 0.13 (0.12-0.13) (<a href="#fig-ch-6-map-ihd">Figure&nbsp;<span>6.2</span></a>).</p>
+<p><span class="citation" data-cites="asariaTrendsInequalitiesCardiovascular2012">Asaria et al. (<a href="../references.html#ref-asariaTrendsInequalitiesCardiovascular2012" role="doc-biblioref">2012</a>)</span> found CVD mortality followed a persistent downward trend in nearly all wards in England from 1982 to 2006. Both ischaemic heart disease (<a href="#fig-ch-6-map-ihd">Figure&nbsp;<span>6.2</span></a>) and stroke mortality (<a href="#fig-ch-6-map-stroke">Figure&nbsp;<span>6.3</span></a>) have continued to follow this trend through to 2019 at the district level. These reflect improvements in reducing and controlling risk factors such as high blood pressure and high blood cholesterol, organisational changes to the NHS such that acute CVD episodes are treated in specific centres, improvements in the treatment of CVD including coronary angiographies and stent insertion, and public health campaigns such as FAST (Face drooping, Arm weakness, Speech difficulties, Time) so the general public know when to seek emergency help.</p>
 <div id="fig-ch-6-map-ihd" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -337,12 +339,11 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.4: Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
-<p>Isle of Wight, heart failure?</p>
-<p>2,712,895 (31.4%)</p>
+<p>All other CVD also shows a downward trend, with the expections of Hastings and, more noticeably, the Isle of Wight. Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code <span class="citation" data-cites="murrayGlobalBurdenDisease1996">(<a href="../references.html#ref-murrayGlobalBurdenDisease1996" role="doc-biblioref">Murray and Lopez, 1996</a>)</span> – since around 2012, suggesting these trends result from poor coding practice.</p>
 </section>
 <section id="non-communicable-diseases" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="non-communicable-diseases"><span class="header-section-number">6.3.3</span> Non-communicable diseases</h3>
-<p>2,508,844 (29.0%)</p>
+<p>Non-communicable diseases were reposible for 2,508,844 (29.0%) deaths from 2002 to 2019 (<a href="#fig-ch-6-treemap">Figure&nbsp;<span>6.1</span></a>).</p>
 <div id="fig-ch-6-map-alzheimer" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -368,7 +369,8 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.5: Probability of dying from Alzheimer’s and other dementias between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
-<p>Aging populating, more total deaths. Lower prob of dying before 80</p>
+<p>Alzheimer’s and other dementias saw the largest increases of any cause, with all districts observing an increase for both sexes (<a href="#fig-ch-6-map-alzheimer">Figure&nbsp;<span>6.5</span></a>). It was also one of the most unequal causes of death, with a 4.1- and 3.6-fold difference for women and men between the highest and lowest districts in 2019. This reflects that, beyond age and family history, the main risk factors for Alzheimer’s and other dementias are the same as for CVD (smoking, obesity, diabetes, high blood pressure, high cholesterol).</p>
+<p>Some part of this trend may be due to increased diagnosis and coding of deaths as dementias, with doctors increasingly assigning mental and neurological conditions as the underlying cause of death rather than simply “dying of old age”. It is worth noting that given only 96,109 (14.5% of 663,692) of deaths from Alzheimer’s and other dementias occur in those under 80 years, the probability of dying between birth and 80 is probably not the best metric for summarising this particular disease.</p>
 <div id="fig-ch-6-map-COPD" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -394,6 +396,7 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.6: Probability of dying from COPD between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
+<p>Chronic obstructive pulmonary disease (COPD) was had the largest geographical variation of any disease for women, with a 6.0-fold variation (4.4-fold for men). The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)). This is a result of the main risk factor, tobacco smoking, peaking later in women than in men. The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).</p>
 <div id="fig-ch-6-map-diabetes" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -419,6 +422,15 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.7: Probability of dying from diabetes mellitus, nephritis and nephrosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
+<p>Mortality from diabetes decreased in every district for both sexes (<a href="#fig-ch-6-map-diabetes">Figure&nbsp;<span>6.7</span></a>), matching trends at the national level in the literature <span class="citation" data-cites="pearson-stuttardTrendsPredominantCauses2021">(<a href="../references.html#ref-pearson-stuttardTrendsPredominantCauses2021" role="doc-biblioref">Pearson-Stuttard et al., 2021</a>)</span>. Those who are African-Caribbean, Black African, Chinese or South Asian are more at risk, and the highest probabilities of dying for each sex were in east London – one of the most ethnically diverse areas in the country. Specifically, the borough of Newham had the highest mortality for both sexes (0.01 (0.01-0.01) for women and 0.02 (0.01-0.02) for men).</p>
+<div id="fig-ch-6-map-liver-cirrhosis-men" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../thesis-analysis/thesis_analysis/causes/figures/male_map_Cirrhosis_of_the_liver.webp" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.8: Probability of dying for men from liver cirrhosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+</figure>
+</div>
+<p>Liver cirrhosis, an advanced stage of liver damage, was only of the top 12 leading causes of death for men (67,116 (1.6%)) but not for women. It has perhaps the most interesting geography for change of all causes, with contrast between huge decreases in London and increases in the rest of the country, with the largest in the coastal southwest and east. The geography is perhaps indicative of the contrasting dynamics of the two main risk factors for liver cirrhosis: alcohol misuse and hepatitis B/C infection. Alcohol is the main cause of liver disease, and has driven a large proportion of increases in liver cirrhosis throughout Europe <span class="citation" data-cites="blachierBurdenLiverDisease2013">(<a href="../references.html#ref-blachierBurdenLiverDisease2013" role="doc-biblioref">Blachier et al., 2013</a>)</span>. Alcohol is generally consumed less in the capital, with London having the lowest percentage of adults who abstain from drinking alcohol (23.6%) and the lowest percentage of adults who drink over 14 units per week (20.1%) <span class="citation" data-cites="LocalAlcoholProfiles2021">(<a href="../references.html#ref-LocalAlcoholProfiles2021" role="doc-biblioref"><span>“Local <span>Alcohol Profiles</span> for <span>England</span>,”</span> 2021</a>)</span>. On the other hand, prevalence of hepatitis B/C has decreased over the past decades. There has been reduced incidence and vaccination for hepatitis B. Since a large number of people acquired hepatitis C in the 1970s and 1980s, the virus was identified and transmission has reduced <span class="citation" data-cites="blachierBurdenLiverDisease2013">(<a href="../references.html#ref-blachierBurdenLiverDisease2013" role="doc-biblioref">Blachier et al., 2013</a>)</span>.</p>
+<p>All other NCDs had the highest mortality for any disease for women, with the highest probability of dying of 0.09 (0.08-0.09) in Blackpool (<a href="#fig-ch-6-map-other-ncd">Figure&nbsp;<span>6.9</span></a>).</p>
 <div id="fig-ch-6-map-other-ncd" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -441,26 +453,18 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.8: Probability of dying from all other NCDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.9: Probability of dying from all other NCDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
-<div id="fig-ch-6-map-liver-cirrhosis-men" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../thesis-analysis/thesis_analysis/causes/figures/male_map_Cirrhosis_of_the_liver.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.9: Probability of dying for men from liver cirrhosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
-</figure>
-</div>
-<p>London liver cirrhosis decreasing</p>
 </section>
 <section id="cancers" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="cancers"><span class="header-section-number">6.3.4</span> Cancers</h3>
-<p>2,464,500</p>
-<p>Cancers accounted for 28.5% of all deaths</p>
-<p>With over 150 different types of cancer, each with their own anatomical and molecular subtypes, cancer is extremely complex, with specialist workforce for dedicated to each unique cancer. Compared with CVDs and NCDs, which are dominated by their major causes (IHD and stroke, and Alzheimer’s, COPD and diabetes, respectively), cancers have the largest number of individual causes in the top 12. I felt I should go deeper into the cancer story, and pay further attention to more site-specific cancers. This is the focus of <a href="Chapter7.html"><span>Chapter&nbsp;7</span></a>.</p>
+<p>Cancers accounted for 28.5% of all deaths, nearly the same total mortality burden as NCDs. With over 150 different types of cancer, each with their own anatomical and molecular subtypes, cancer is extremely complex, with a specialist workforce dedicated to each unique cancer. Compared with CVDs and NCDs, which are dominated by their major causes (ischaemic heart disease and stroke, and Alzheimer’s, COPD and diabetes, respectively), cancers have the largest number of individual causes in the top 12. I felt I should go deeper into the cancer story, and pay further attention to a wider variety of site-specific cancers. This is the focus of <a href="Chapter7.html"><span>Chapter&nbsp;7</span></a>.</p>
 </section>
-<section id="materal-perinatal-nutritional-and-infectious-causes" class="level3" data-number="6.3.5">
-<h3 data-number="6.3.5" class="anchored" data-anchor-id="materal-perinatal-nutritional-and-infectious-causes"><span class="header-section-number">6.3.5</span> Materal, perinatal, nutritional and infectious causes</h3>
-<p>666,783 (7.7)</p>
+<section id="maternal-perinatal-nutritional-and-infectious-causes" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="maternal-perinatal-nutritional-and-infectious-causes"><span class="header-section-number">6.3.5</span> Maternal, perinatal, nutritional and infectious causes</h3>
+<p>As is the case in most high income countries, which are in the third stage of the epidemiologic transition, there are far fewer deaths (666,783 (7.7%)) from maternal, perinatal, nutritional and infectious causes compared to the NCDs of group 2 (including CVD and cancers). Although notably, these results consider the period before the Covid-19 pandemic, so the cause-composition will have changed to include more deaths from infections over the most recent years.</p>
+<p>Mortality from lower respiratory infections, which include influenza and pneumonia, can vary greatly between years depending on the severity of the virus and whether the flu vaccination prevents the prevalent strain. It also depends on the strength of the immune system of the infected. The ability of the lungs to recover from infection can be degraded by years of industrial exposure or smoking, which perhaps influences the high mortality in the urban northwest (<a href="#fig-ch-6-map-respiratory">Figure&nbsp;<span>6.10</span></a>).</p>
 <div id="fig-ch-6-map-respiratory" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -486,6 +490,7 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.10: Probability of dying from lower respiratory infections between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
+<p>The similar profiles for men and women for the level of mortality from all other IMPN in 2019 (<a href="#fig-ch-6-map-other-IMPN">Figure&nbsp;<span>6.11</span></a>) reflects that the three main causes by number of deaths are other infectious diseases, diarrhoeal diseases, low birth weight rather than maternal conditions. However, the change in probability of dying was greatly different between the sexes, with 71 (22.6%) districts seeing an increase for women, the largest in Barrow-in-Furness (55.6% (-0.8% to 135.2%)), compared to only 5 (0.02%) districts for men. Without further disaggregating this group, it is difficult to suggest drivers of these trends.</p>
 <div id="fig-ch-6-map-other-IMPN" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -514,7 +519,7 @@ div.csl-indent {
 </section>
 <section id="injuries" class="level3" data-number="6.3.6">
 <h3 data-number="6.3.6" class="anchored" data-anchor-id="injuries"><span class="header-section-number">6.3.6</span> Injuries</h3>
-<p>295,034 (3.4)</p>
+<p>Accounting for only 295,034 (3.4%) of total deaths from 2002 to 2019, injuries contribute the smallest proportion of the wider groups of causes of death. The highest mortality in 2019 were in coastal areas, where there are obvious natural hazards, are in the urban northwest (<a href="#fig-ch-6-map-injuries">Figure&nbsp;<span>6.12</span></a>). Blackpool had the highest probability of dying for men at 0.04 (0.04-0.05), which corresponds with the literature on rates of mortality from drugs and suicide <span class="citation" data-cites="congdonGeographicalPatternsDrugRelated2019">(<a href="../references.html#ref-congdonGeographicalPatternsDrugRelated2019" role="doc-biblioref">Congdon, 2019</a>)</span>.</p>
 <div id="fig-ch-6-map-injuries" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -540,7 +545,6 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.12: Probability of dying from injuries between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
-<p>Coastal areas, urban northwest</p>
 </section>
 <section id="contribution-to-life-expectancy-change" class="level3" data-number="6.3.7">
 <h3 data-number="6.3.7" class="anchored" data-anchor-id="contribution-to-life-expectancy-change"><span class="header-section-number">6.3.7</span> Contribution to life expectancy change</h3>
@@ -564,7 +568,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.13: Contributions of deaths from different causes to life expectancy inequality between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the average contribution across all districts for each cause, by taking the mean over each cause.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.13: Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-ch-6-contribution-split" class="quarto-layout-panel">
@@ -605,15 +609,17 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.14: Contributions of deaths from different causes to life expectancy inequality between the district populations in 2002 and 2010, and the populations in 2010 and 2019, in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the average contribution across all districts for each cause, by taking the mean over each cause.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.14: Contributions of deaths from specific causes to life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.</figcaption><p></p>
 </figure>
 </div>
+<p>Decline in life expectancy for 3 districts women women, lung cancer flipped sign but COPD flipped the other way, both smoking related Huge negative in Alzheimer’s Injuries changing sign Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts</p>
 </section>
 </section>
 <section id="discussion" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="discussion"><span class="header-section-number">6.4</span> Discussion</h2>
 <p>Comparison to Bennett 2018 Comparison to GBD 2015 What is causing the epi transition backward that we saw at the MSOA level</p>
 <p>Skew towards older ages, due to how we chose the groups on number of deaths, which itself is skewed towards older ages</p>
+<p>Split into further causes. Maternal, perinatal All other NCD Injuries – intentional or unintentional. Kyle’s work projects increase in intentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc Groups already quite small and smaller numbers</p>
 <p>Migration not as much of an issue Today it remains the case that the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same Local Authority District (LAD).</p>
 </section>
 <section id="summary" class="level2" data-number="6.5">
@@ -623,6 +629,24 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-arriagaMeasuringExplainingChange1984" class="csl-entry" role="doc-biblioentry">
 Arriaga EE. 1984. Measuring and <span>Explaining</span> the <span>Change</span> in <span>Life Expectancies</span>. <em>Demography</em> <strong>21</strong>:83–96. doi:<a href="https://doi.org/10.2307/2061029">10.2307/2061029</a>
+</div>
+<div id="ref-asariaTrendsInequalitiesCardiovascular2012" class="csl-entry" role="doc-biblioentry">
+Asaria P, Fortunato L, Fecht D, Tzoulaki I, Abellan JJ, Hambly P, de Hoogh K, Ezzati M, Elliott P. 2012. Trends and inequalities in cardiovascular disease mortality across 7932 <span>English</span> electoral wards, 1982: <span>Bayesian</span> spatial analysis. <em>International Journal of Epidemiology</em> <strong>41</strong>:1737–1749. doi:<a href="https://doi.org/10.1093/ije/dys151">10.1093/ije/dys151</a>
+</div>
+<div id="ref-blachierBurdenLiverDisease2013" class="csl-entry" role="doc-biblioentry">
+Blachier M, Leleu H, Peck-Radosavljevic M, Valla D-C, Roudot-Thoraval F. 2013. The burden of liver disease in <span>Europe</span>: <span>A</span> review of available epidemiological data. <em>Journal of Hepatology</em> <strong>58</strong>:593–608. doi:<a href="https://doi.org/10.1016/j.jhep.2012.12.005">10.1016/j.jhep.2012.12.005</a>
+</div>
+<div id="ref-congdonGeographicalPatternsDrugRelated2019" class="csl-entry" role="doc-biblioentry">
+Congdon P. 2019. Geographical <span>Patterns</span> in <span>Drug-Related Mortality</span> and <span>Suicide</span>: <span>Investigating Commonalities</span> in <span>English Small Areas</span>. <em>International Journal of Environmental Research and Public Health</em> <strong>16</strong>:1831. doi:<a href="https://doi.org/10.3390/ijerph16101831">10.3390/ijerph16101831</a>
+</div>
+<div id="ref-LocalAlcoholProfiles2021" class="csl-entry" role="doc-biblioentry">
+Local <span>Alcohol Profiles</span> for <span>England</span>. 2021. <em>Public Health England</em>.
+</div>
+<div id="ref-murrayGlobalBurdenDisease1996" class="csl-entry" role="doc-biblioentry">
+Murray CJL, Lopez AD. 1996. The <span>Global Burden</span> of <span>Disease</span>: A comprehensive assessment of mortality and disability from diseases, injuries, and risk factors in 1990 and projected in 2020. <span>World Health Organization</span>.
+</div>
+<div id="ref-pearson-stuttardTrendsPredominantCauses2021" class="csl-entry" role="doc-biblioentry">
+Pearson-Stuttard J, Bennett JE, Cheng YJ, Vamos EP, Cross AJ, Ezzati M, Gregg EW. 2021. Trends in predominant causes of death in individuals with and without diabetes in <span>England</span> from 2001 to 2018: An epidemiological analysis of linked primary care records. <em>The Lancet Diabetes &amp; Endocrinology</em> <strong>9</strong>:165–173. doi:<a href="https://doi.org/10.1016/S2213-8587(20)30431-9">10.1016/S2213-8587(20)30431-9</a>
 </div>
 <div id="ref-phanComposableEffectsFlexible2019" class="csl-entry" role="doc-biblioentry">
 Phan D, Pradhan N, Jankowiak M. 2019. Composable <span>Effects</span> for <span>Flexible</span> and <span>Accelerated Probabilistic Programming</span> in <span>NumPyro</span>. doi:<a href="https://doi.org/10.48550/arXiv.1912.11554">10.48550/arXiv.1912.11554</a>

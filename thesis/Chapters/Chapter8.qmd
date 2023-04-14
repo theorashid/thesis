@@ -13,6 +13,8 @@ Highest resolution in a joint model, with error estimates
 
 ## Future work
 
+Substantive and methodological
+
 Only care about LHS of equation.
 Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like 
 Very familiar with research, was on a paper
