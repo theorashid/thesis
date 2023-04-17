@@ -238,6 +238,10 @@ Probability of dying from injuries between birth and 80 years of age in 314 loca
 
 ### Contribution to life expectancy change
 
+From 2002 to 2019, every district increased in life expectacy for both women and men (@fig-ch-6-contribution).
+This was driven largely by decreases in ischaemic heart disease, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
+In contrast, Alzheimer's and other dementias acted in the other direction, forcing life expectancy gains downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
+
 ::: {#fig-ch-6-contribution layout-ncol=2}
 
 ![Women](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2019.pdf){#fig-ch-6-contribution-women-2002-2019}
@@ -246,6 +250,22 @@ Probability of dying from injuries between birth and 80 years of age in 314 loca
 
 Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.
 :::
+
+In @fig-ch-6-contribution-split, I break the overall trend down into two time periods around the year 2010.
+This both follows the analysis for @fig-ch-4-change, but also it is the year there was a change in government, and a change in fiscal policy towards austerity.
+
+In the period 2010-19, life expectancy progress slowed in England, as dicussed at the MSOA level in @sec-Chapter4, with three districts experiencing a decline in life expectancy.
+For women, lung cancer switched from generally contributing negatively to the change in district life expectancy (@fig-ch-6-contribution-women-2002-2010) to positively (@fig-ch-6-contribution-women-2010-2019)
+The contribution for the other cancer groups was similar for the two time periods.
+There were a larger number of districts with positive contributions for all other NCDs in the second period.
+The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVD) was weaker for the second time period as the negative forcing effect of Alzheimer's and other dementias strengthed massively.
+In the years 2010 to 2019, the _inequality_ in progress between districts was driven largely by Alzheimer's and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
+
+For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period.
+As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from Alzheimer's and other dementias.
+Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts
+Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively.
+In the latter period, ischaemic heart disease, Alzheimer's and other dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
 
 ::: {#fig-ch-6-contribution-split layout-ncol=2}
 
@@ -260,18 +280,18 @@ Contributions of deaths from specific causes to life expectancy difference betwe
 Contributions of deaths from specific causes to life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.
 :::
 
-Decline in life expectancy for 3 districts women
-women, lung cancer flipped sign but COPD flipped the other way, both smoking related
-Huge negative in Alzheimer's
-Injuries changing sign
-Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts
-
 ## Discussion
 
-Comparison to Bennett 2018
-Comparison to GBD 2015
-What is causing the epi transition backward that we saw at the MSOA level
+Huge inequalities in some causes in 2019
+Worrying increases in others
+Found slowing progress driven by these causes
 
+### Strengths and limitations
+
+District level rather than MSOA level
+Numbers get too small
+
+Collapsed over age groups, unlike Bennett 2018
 Skew towards older ages, due to how we chose the groups on number of deaths, which itself is skewed towards older ages
 
 Split into further causes.
@@ -282,5 +302,11 @@ Groups already quite small and smaller numbers
 
 Migration not as much of an issue
 Today it remains the case that the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same Local Authority District (LAD).
+
+### Comparison with previous literature
+
+Comparison to Bennett 2018
+Comparison to GBD 2015
+What is causing the epi transition backward that we saw at the MSOA level
 
 ## Summary
