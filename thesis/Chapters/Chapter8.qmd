@@ -1,17 +1,14 @@
 # Discussion {#sec-Chapter8}
 
-## Comparison with published literature
+## Public health and policy implications of findings
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+What is causing the epi transition backward that we saw at the MSOA level
+Epi transition
 
-## Strengths and limitations
+## Future work
 
 Bayesian methods
 Highest resolution in a joint model, with error estimates
-
-## Public health and policy implications
-
-## Future work
 
 Substantive and methodological
 

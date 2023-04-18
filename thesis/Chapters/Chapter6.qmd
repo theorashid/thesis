@@ -259,13 +259,13 @@ For women, lung cancer switched from generally contributing negatively to the ch
 The contribution for the other cancer groups was similar for the two time periods.
 There were a larger number of districts with positive contributions for all other NCDs in the second period.
 The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVD) was weaker for the second time period as the negative forcing effect of Alzheimer's and other dementias strengthed massively.
-In the years 2010 to 2019, the _inequality_ in progress between districts was driven largely by Alzheimer's and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
+In the years 2010 to 2019, the _inequality_ in progress between districts was driven largely by Alzheimer's and all other NCD, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
 
 For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period.
 As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from Alzheimer's and other dementias.
 Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts
 Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively.
-In the latter period, ischaemic heart disease, Alzheimer's and other dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
+In the latter period, ischaemic heart disease, Alzheimer's and other dementias, and all other NCD were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
 
 ::: {#fig-ch-6-contribution-split layout-ncol=2}
 
@@ -282,32 +282,46 @@ Contributions of deaths from specific causes to life expectancy difference betwe
 
 ## Discussion
 
-Huge inequalities in some causes in 2019
-Worrying increases in others
-Found slowing progress driven by these causes
-
-### Comparison with previous literature
-
-There are two key studies in the literature which break the population of England down into subgroups and look at cause-specific Comparison to Bennett 2018. Deciles, largely similar groups of death
-Comparison to GBD 2015. 150 upper tier local authorities, rather than districts. Broader in space, but using 264 GBD causes of death, more sharing and reliance on covariates in the model
-What is causing the epi transition backward that we saw at the MSOA level
-Did not look at gap in inequality in progress, instead focussed on the gap in inequality
+This analysis revealed huge inequalities in mortality for a wide-ranging variety of causes of death in England.
+In particular, although there were widespread declines in CVDs, there have been huge increases in Alzheimer's and other dementias, which in 2019 became one of the most unequal causes of death, with a 4.1- and 3.6-fold difference for women and men between the highest and lowest districts.
+I found that the slowdown in life expectancy gain since around 2010 has been driven largely by Alzheimer's and other dementias and all other NCD in women, and by ischaemic heart disease, Alzheimer's and other dementias, and all other NCD in men.
 
 ### Strengths and limitations
 
-District level rather than MSOA level
-Numbers get too small
+The work presents trends in cause-specific mortality over a period of substantial policy interest at the district level, and uncovers which causes of death have been driving the slowdown in progress since 2010.
 
-Collapsed over age groups, unlike Bennett 2018
-Skew towards older ages, due to how we chose the groups on number of deaths, which itself is skewed towards older ages
+The study was carried out at the district level rather than MSOA level, which masks substantial heterogeneity and was the motivation for the all-cause mortality study in @sec-Chapter4.
+However, when stratifying further by cause of death, the number of deaths in each age-space-time-cause stratum can be extremely small, even at the district level, which makes the estimation task difficult.
+Furthermore, running a model that takes a day of GPU time to reach convergence for all causes at the MSOA level for 34 cause-sex combinations is extremely computationally demanding.
 
-Split into further causes.
-Maternal, perinatal
-All other NCD
-Injuries – intentional or unintentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc. Risk factor that has remained constant since 2000s
-Groups already quite small and smaller numbers
+This study did not look at age- and cause-specific contributions to life expectancy inequality, unlike @bennettContributionsDiseasesInjuries2018, and instead collapsed over age groups.
+Although this masks some variation, the groups were selected based on the total number of deaths from 2002 to 2019, and are therefore skewed towards older ages, and the age-specific contributions of (e.g.) dementias is not particularly interesting.
 
-Migration not as much of an issue
-Today it remains the case that the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same Local Authority District (LAD).
+There is always the desire the split the residual groups into more and more causes of death.
+For example, there are interesting patterns in the change of all other IMPN (@fig-ch-6-map-other-IMPN-women), and it would be interesting to understand further how the component causes of all other NCD are driving the inequality in progress (@fig-ch-6-contribution-split).
+Moreover, there has been a lot of recent attention in the literature on "deaths of despair" – deaths from drug overdose, suicide or alcoholic liver disease – in the UK [@angusIncreasesDeathsDespair2023] and the US [@caseRisingMorbidityMortality2015], and it would of interest to separate injuries into intentional and unintentional.
+However, the groupings were chosen based on the rule to prevent the number of deaths in each cause from becoming too small.
+
+It would have been desirable, albeit computationally challenging, to run all cause groups in a single joint model.
+When calculating contributions using Arriaga's method, mortality for each cause group was scaled such that the sum across all causes equalled to the estimate for total mortality.
+This would not be necessary if cause-specific mortality were estimated in the same model as the causes of death would adjust amongst each other each iteration to sum to total mortality.
+@foremanSmallAreaForecasts2017 jointly forecasted cause-specific death rates for states in the US, but instead estimated each age group separately.
+
+Unlike @sec-Chapter4 and @sec-Chapter5, migration not as much of an issue at the district level.
+As @vandijkUsingLinkedConsumer2021 explain, "the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same... district."
+
+### Comparison with previous literature
+
+There are two key studies in the literature which break the population of England down into subgroups and look at the cause-composition of mortality: Firstly, from my research group, @bennettContributionsDiseasesInjuries2018 divide the population by deciles of deprivation and look at largely similar groups of causes as in this chapter.
+The authors found the gap in life expectancy between the most and least deprived areas was caused by the large contributions of respiratory diseases, ischaemic heart disease, and a set of preventable and treatable cancers.
+Unlike the present work, the authors broke down further by age, finding that deaths in children younger than 5 years and dementias in older ages drove the inequality between the top and bottom deciles.
+
+Secondly, as one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but looked at a massive 264 causes of deaths, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
+As with @bennettContributionsDiseasesInjuries2018 and the work here, the GBD group found the rate of improvement in life expectancy had slowed since 2010.
+They found, in general, the slowdown was driven by the disappearance of sustained annual improvements from ischaemic heart disease, strokes, as in @fig-ch-6-contribution-split, but also to a lesser extent from colorectal cancer, lung cancer, and breast cancer.
+The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.
+
+Both these studies focus on what causes of death have driven the inequality between subgroups of the population.
+The work in this chapter focuses instead on what causes of death have driven the the _inequality in progress_ between subgroups of the population.
 
 ## Summary

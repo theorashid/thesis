@@ -20,4 +20,7 @@ Details on the calculations for both the probability of dying and the mean age a
 
 ## Discussion
 
+@steelChangesHealthCountries2018
+The authors also singled out London's low mortality for deprivation, which could be low risk factors (particularly tobacco and dietary risks), high educational performance, access to health services, or deprivation indicator itself.
+
 ## Summary
