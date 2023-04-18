@@ -191,12 +191,12 @@ Even if rising inequalities are partly due to health-­selective migration, this
 Population and mortality statistics in the UK are generated independently from one another. As a result, we encountered a situation of having more deaths than population in a small percentage (0.001%) of age-­MSOA­ year combinations, a phenomenon that was more common in those aged 85 years and older.
 This finding might be due to errors in population estimates in years between censuses or because some people (e.g., those living in long­term care facilities such as care homes), are counted in one MSOA for the population statistic but have their death registered in another.
 Furthermore, care home residents might have relocated from other MSOAs, with different socioeconomic characteristics from that in which the care home is located.
-This factor could atten­ uate the association between socioeconomic variables and life expectancy.
+This factor could attenuate the association between socioeconomic variables and life expectancy.
 The extent of this underestimation is modest; however, because a large part of life expectancy variation is due to deaths at earlier ages, when people are less likely to live and die in care homes [@bennettContributionsDiseasesInjuries2018].
 
 ### Comparison with previous literature
 
-The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@HealthExpectanciesBirth2015; @LocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean dif­ferences of –0.004 to 0.19 years.
+The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@HealthExpectanciesBirth2015; @LocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
 However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
 In terms of trends, studies that grouped small ­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
 By analysing trends at the MSOA level, we could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.

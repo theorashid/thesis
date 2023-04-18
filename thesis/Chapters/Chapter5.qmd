@@ -34,20 +34,20 @@ Here, I present the price estimates for a two-bedroom, leasehold, existing (not 
 
 ### Statistical analysis
 
-The model was largely the same as @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likehlihood,
+The model was largely the same as @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likelihood,
 $$
 \text{deaths}_{ast} = \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
 $$ {#eq-ch-5-likelihood}
 where $m_{ast}$ is the death rate and $\rho \geq 0$ is the overdispersion parameter.
 I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for @eq-ch-4-likelihood-1 that deaths are rare events.
 In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible in the real world.
-The beta-binomial likelihod is a generalisation of the binomial distribution that allows for overdispersion.
+The beta-binomial likelihood is a generalisation of the binomial distribution that allows for overdispersion.
 The death rates were logit-transformed and the model structure is otherwise the same as @eq-ch-4-model, but using nested hierarchical random effects with LSOAs nested in MSOAs, which were nested in districts.
-A $\rho \sim \exp (0.1)$ hyperprior was used for the overdisperion term, and $\sigma \sim \mathcal{N}^+(1)$ hyperpriors for the standard deviation parameters, as recommended by the Stan development team [@PriorChoiceRecommendations2020].
+A $\rho \sim \exp (0.1)$ hyperprior was used for the overdispersion term, and $\sigma \sim \mathcal{N}^+(1)$ hyperpriors for the standard deviation parameters, as recommended by the Stan development team [@PriorChoiceRecommendations2020].
 
 @tbl-ap-ch5-model shows all model parameters, their priors and dimensions.
 
-Again, I used `NIMBLE` for MCMC [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017], with four chains of 80,000 iterations, discarding the first 30,000, thinning the remainder by 200 and checking for covergence using trace plots and R-hat [@vehtariRanknormalizationFoldingLocalization2021].
+Again, I used `NIMBLE` for MCMC [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017], with four chains of 80,000 iterations, discarding the first 30,000, thinning the remainder by 200 and checking for convergence using trace plots and R-hat [@vehtariRanknormalizationFoldingLocalization2021].
 
 The local effect of the Grenfell Tower fire was even more pronounced at the LSOA level.
 In 2017, the LSOA in Kensington and Chelsea where Grenfell Tower is located had 75 deaths, compared to less than 15 in 2016 and 2018.

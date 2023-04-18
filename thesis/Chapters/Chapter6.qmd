@@ -43,7 +43,7 @@ Thus, the districts containing the Isle of Wight and the Isles of Scilly were ea
 All model parameters, their priors and dimensions are in @tbl-ap-ch6-model.
 
 I fitted the model in the probabilistic programming language NumPyro [@phanComposableEffectsFlexible2019] and obtained 1,000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates.
-Where possible, non-centred parameterisations were used in the model to improve the efficiency of the NUTS samplers.
+Where possible, non-centred parametrisations were used in the model to improve the efficiency of the NUTS samplers.
 I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution of model parameters.
 
 I ran a model for a combined group of all deaths to calculate life expectancy in each district.
@@ -70,9 +70,9 @@ There were 4,465,948 (48.4%) deaths in women and 4,182,108 (51.6%) in men in Eng
 3,972,286 (45.9%) of these deaths occurred in people aged younger than 80 years of age.
 @fig-ch-6-treemap shows the leading causes of death for each sex.
 
-![Total number of deaths for the 12 leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; materal, perinatal, nutritional and infectious causes; injuries. See @tbl-ap-ch6-causes for ICD-10 codes for each category. ^[For brevity, the group "diabetes mellitus, nephritis and nephrosis" has been shortened to "diabetes".]](../thesis-analysis/thesis_analysis/causes/figures/treemap.pdf){#fig-ch-6-treemap}
+![Total number of deaths for the 12 leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries. See @tbl-ap-ch6-causes for ICD-10 codes for each category. ^[For brevity, the group "diabetes mellitus, nephritis and nephrosis" has been shortened to "diabetes".]](../thesis-analysis/thesis_analysis/causes/figures/treemap.pdf){#fig-ch-6-treemap}
 
-In the following sections, I will write in turn on each of the wider cause groups (CVDs; NCDs; cancers; materal, perinatal, nutritional and infectious causes; injuries) in order of largest proportion of total deaths.
+In the following sections, I will write in turn on each of the wider cause groups (CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries) in order of largest proportion of total deaths.
 
 ### Cardiovascular diseases
 
@@ -110,12 +110,12 @@ Probability of dying from a stroke between birth and 80 years of age in 314 loca
 Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
-All other CVD also shows a downward trend, with the expections of Hastings and, more noticeably, the Isle of Wight.
+All other CVD also shows a downward trend, with the exceptions of Hastings and, more noticeably, the Isle of Wight.
 Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code [@murrayGlobalBurdenDisease1996] – since around 2012, suggesting these trends result from poor coding practice.
 
 ### Non-communicable diseases
 
-Non-communicable diseases were reposible for 2,508,844 (29.0%) deaths from 2002 to 2019 (@fig-ch-6-treemap).
+Non-communicable diseases were responsible for 2,508,844 (29.0%) deaths from 2002 to 2019 (@fig-ch-6-treemap).
 
 ::: {#fig-ch-6-map-alzheimer layout-ncol=1}
 
@@ -238,7 +238,7 @@ Probability of dying from injuries between birth and 80 years of age in 314 loca
 
 ### Contribution to life expectancy change
 
-From 2002 to 2019, every district increased in life expectacy for both women and men (@fig-ch-6-contribution).
+From 2002 to 2019, every district increased in life expectancy for both women and men (@fig-ch-6-contribution).
 This was driven largely by decreases in ischaemic heart disease, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
 In contrast, Alzheimer's and other dementias acted in the other direction, forcing life expectancy gains downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
 
@@ -286,6 +286,13 @@ Huge inequalities in some causes in 2019
 Worrying increases in others
 Found slowing progress driven by these causes
 
+### Comparison with previous literature
+
+There are two key studies in the literature which break the population of England down into subgroups and look at cause-specific Comparison to Bennett 2018. Deciles, largely similar groups of death
+Comparison to GBD 2015. 150 upper tier local authorities, rather than districts. Broader in space, but using 264 GBD causes of death, more sharing and reliance on covariates in the model
+What is causing the epi transition backward that we saw at the MSOA level
+Did not look at gap in inequality in progress, instead focussed on the gap in inequality
+
 ### Strengths and limitations
 
 District level rather than MSOA level
@@ -297,16 +304,10 @@ Skew towards older ages, due to how we chose the groups on number of deaths, whi
 Split into further causes.
 Maternal, perinatal
 All other NCD
-Injuries – intentional or unintentional. Kyle's work projects increase in intentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc
+Injuries – intentional or unintentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc. Risk factor that has remained constant since 2000s
 Groups already quite small and smaller numbers
 
 Migration not as much of an issue
 Today it remains the case that the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same Local Authority District (LAD).
-
-### Comparison with previous literature
-
-Comparison to Bennett 2018
-Comparison to GBD 2015
-What is causing the epi transition backward that we saw at the MSOA level
 
 ## Summary

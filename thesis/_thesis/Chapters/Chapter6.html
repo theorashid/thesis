@@ -200,7 +200,11 @@ div.csl-indent {
   <li><a href="#injuries" id="toc-injuries" class="nav-link" data-scroll-target="#injuries"><span class="toc-section-number">6.3.6</span>  Injuries</a></li>
   <li><a href="#contribution-to-life-expectancy-change" id="toc-contribution-to-life-expectancy-change" class="nav-link" data-scroll-target="#contribution-to-life-expectancy-change"><span class="toc-section-number">6.3.7</span>  Contribution to life expectancy change</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">6.4</span>  Discussion</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">6.4</span>  Discussion</a>
+  <ul class="collapse">
+  <li><a href="#comparison-with-previous-literature" id="toc-comparison-with-previous-literature" class="nav-link" data-scroll-target="#comparison-with-previous-literature"><span class="toc-section-number">6.4.1</span>  Comparison with previous literature</a></li>
+  <li><a href="#strengths-and-limitations" id="toc-strengths-and-limitations" class="nav-link" data-scroll-target="#strengths-and-limitations"><span class="toc-section-number">6.4.2</span>  Strengths and limitations</a></li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">6.5</span>  Summary</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -241,7 +245,7 @@ div.csl-indent {
 \tag{6.2}\]</span></span> where the terms have the same meanings as <a href="Chapter4.html#eq-ch-4-model">Equation&nbsp;<span>4.3</span></a>. This is the same as model <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>, but without a random walk for each spatial unit, which was tested but did not improve the fit despite adding a lot of complexity.</p>
 <p>Spatial effects were modelled using a ICAR effect rather than the nested hierarchy of random effects seen in <a href="Chapter4.html"><span>Chapter&nbsp;4</span></a> and <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. The geographies here only allow a two-tier hierarchy with only nine regions mapping to 314 districts, which was less preferable than a spatial model. The ICAR model requires all spatial units to have neighbours. Thus, the districts containing the Isle of Wight and the Isles of Scilly were each joined to the nearest mainland district based on road or ferry connections.</p>
 <p>All model parameters, their priors and dimensions are in <a href="../Appendices/AppendixB.html#tbl-ap-ch6-model">Table&nbsp;<span>B.3</span></a>.</p>
-<p>I fitted the model in the probabilistic programming language NumPyro <span class="citation" data-cites="phanComposableEffectsFlexible2019">(<a href="../references.html#ref-phanComposableEffectsFlexible2019" role="doc-biblioref">Phan et al., 2019</a>)</span> and obtained 1,000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates. Where possible, non-centred parameterisations were used in the model to improve the efficiency of the NUTS samplers. I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution of model parameters.</p>
+<p>I fitted the model in the probabilistic programming language NumPyro <span class="citation" data-cites="phanComposableEffectsFlexible2019">(<a href="../references.html#ref-phanComposableEffectsFlexible2019" role="doc-biblioref">Phan et al., 2019</a>)</span> and obtained 1,000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates. Where possible, non-centred parametrisations were used in the model to improve the efficiency of the NUTS samplers. I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution of model parameters.</p>
 <p>I ran a model for a combined group of all deaths to calculate life expectancy in each district. Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.</p>
 <p>The primary reporting outcome is the unconditional probability of dying between birth and 80 years of age. Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest. I limited the age range to 80 years because the probability of death in the absence of competing causes equals 100% when the entire life course is considered. The reported 95% credible intervals represent the 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of the posterior distribution of estimated probability of death.</p>
 <p>I calculated the contributions of deaths from each cause of death, in each age group, to the life expectancy change for each district between different time periods using Arriaga’s method, which is widely used to decompose life expectancy differences between populations or population subgroups <span class="citation" data-cites="arriagaMeasuringExplainingChange1984">(<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref">Arriaga, 1984</a>)</span>. Arriaga’s method calculates how much each age group contributes to the life expectancy difference by summing how much death rate differences at that age change the years of life lived both at that age and in subsequent ages through changing the number of survivors. It then partitions the age-specific contributions to the life expectancy gap by cause of death in proportion to the difference in cause-specific death rates between the subgroups. The cause-specific death rates were scaled such that the sum over all causes was equal to the estimate for total mortality. For this analysis, I used the sample mean death rate in each age-district-year-cause combination.</p>
@@ -255,10 +259,10 @@ div.csl-indent {
 <div id="fig-ch-6-treemap" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/causes/figures/treemap.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Total number of deaths for the 12 leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; materal, perinatal, nutritional and infectious causes; injuries. See <a href="../Appendices/AppendixD.html#tbl-ap-ch6-causes">Table&nbsp;<span>D.1</span></a> for ICD-10 codes for each category. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Total number of deaths for the 12 leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries. See <a href="../Appendices/AppendixD.html#tbl-ap-ch6-causes">Table&nbsp;<span>D.1</span></a> for ICD-10 codes for each category. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption><p></p>
 </figure>
 </div>
-<p>In the following sections, I will write in turn on each of the wider cause groups (CVDs; NCDs; cancers; materal, perinatal, nutritional and infectious causes; injuries) in order of largest proportion of total deaths.</p>
+<p>In the following sections, I will write in turn on each of the wider cause groups (CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries) in order of largest proportion of total deaths.</p>
 </section>
 <section id="cardiovascular-diseases" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="cardiovascular-diseases"><span class="header-section-number">6.3.2</span> Cardiovascular diseases</h3>
@@ -339,11 +343,11 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.4: Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
-<p>All other CVD also shows a downward trend, with the expections of Hastings and, more noticeably, the Isle of Wight. Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code <span class="citation" data-cites="murrayGlobalBurdenDisease1996">(<a href="../references.html#ref-murrayGlobalBurdenDisease1996" role="doc-biblioref">Murray and Lopez, 1996</a>)</span> – since around 2012, suggesting these trends result from poor coding practice.</p>
+<p>All other CVD also shows a downward trend, with the exceptions of Hastings and, more noticeably, the Isle of Wight. Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code <span class="citation" data-cites="murrayGlobalBurdenDisease1996">(<a href="../references.html#ref-murrayGlobalBurdenDisease1996" role="doc-biblioref">Murray and Lopez, 1996</a>)</span> – since around 2012, suggesting these trends result from poor coding practice.</p>
 </section>
 <section id="non-communicable-diseases" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="non-communicable-diseases"><span class="header-section-number">6.3.3</span> Non-communicable diseases</h3>
-<p>Non-communicable diseases were reposible for 2,508,844 (29.0%) deaths from 2002 to 2019 (<a href="#fig-ch-6-treemap">Figure&nbsp;<span>6.1</span></a>).</p>
+<p>Non-communicable diseases were responsible for 2,508,844 (29.0%) deaths from 2002 to 2019 (<a href="#fig-ch-6-treemap">Figure&nbsp;<span>6.1</span></a>).</p>
 <div id="fig-ch-6-map-alzheimer" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -548,6 +552,7 @@ div.csl-indent {
 </section>
 <section id="contribution-to-life-expectancy-change" class="level3" data-number="6.3.7">
 <h3 data-number="6.3.7" class="anchored" data-anchor-id="contribution-to-life-expectancy-change"><span class="header-section-number">6.3.7</span> Contribution to life expectancy change</h3>
+<p>From 2002 to 2019, every district increased in life expectancy for both women and men (<a href="#fig-ch-6-contribution">Figure&nbsp;<span>6.13</span></a>). This was driven largely by decreases in ischaemic heart disease, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men. In contrast, Alzheimer’s and other dementias acted in the other direction, forcing life expectancy gains downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.</p>
 <div id="fig-ch-6-contribution" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -571,6 +576,9 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.13: Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.</figcaption><p></p>
 </figure>
 </div>
+<p>In <a href="#fig-ch-6-contribution-split">Figure&nbsp;<span>6.14</span></a>, I break the overall trend down into two time periods around the year 2010. This both follows the analysis for <a href="Chapter4.html#fig-ch-4-change">Figure&nbsp;<span>4.8</span></a>, but also it is the year there was a change in government, and a change in fiscal policy towards austerity.</p>
+<p>In the period 2010-19, life expectancy progress slowed in England, as dicussed at the MSOA level in <a href="Chapter4.html"><span>Chapter&nbsp;4</span></a>, with three districts experiencing a decline in life expectancy. For women, lung cancer switched from generally contributing negatively to the change in district life expectancy (<a href="#fig-ch-6-contribution-women-2002-2010">Figure&nbsp;<span>6.14 (a)</span></a>) to positively (<a href="#fig-ch-6-contribution-women-2010-2019">Figure&nbsp;<span>6.14 (b)</span></a>) The contribution for the other cancer groups was similar for the two time periods. There were a larger number of districts with positive contributions for all other NCDs in the second period. The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVD) was weaker for the second time period as the negative forcing effect of Alzheimer’s and other dementias strengthed massively. In the years 2010 to 2019, the <em>inequality</em> in progress between districts was driven largely by Alzheimer’s and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.</p>
+<p>For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period. As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from Alzheimer’s and other dementias. Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively. In the latter period, ischaemic heart disease, Alzheimer’s and other dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.</p>
 <div id="fig-ch-6-contribution-split" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -612,15 +620,22 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.14: Contributions of deaths from specific causes to life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.</figcaption><p></p>
 </figure>
 </div>
-<p>Decline in life expectancy for 3 districts women women, lung cancer flipped sign but COPD flipped the other way, both smoking related Huge negative in Alzheimer’s Injuries changing sign Reductions in CVD slowing on average – not uniform. Still increasing in lowest districts</p>
 </section>
 </section>
 <section id="discussion" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="discussion"><span class="header-section-number">6.4</span> Discussion</h2>
-<p>Comparison to Bennett 2018 Comparison to GBD 2015 What is causing the epi transition backward that we saw at the MSOA level</p>
-<p>Skew towards older ages, due to how we chose the groups on number of deaths, which itself is skewed towards older ages</p>
-<p>Split into further causes. Maternal, perinatal All other NCD Injuries – intentional or unintentional. Kyle’s work projects increase in intentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc Groups already quite small and smaller numbers</p>
+<p>Huge inequalities in some causes in 2019 Worrying increases in others Found slowing progress driven by these causes</p>
+<section id="comparison-with-previous-literature" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="comparison-with-previous-literature"><span class="header-section-number">6.4.1</span> Comparison with previous literature</h3>
+<p>There are two key studies in the literature which break the population of England down into subgroups and look at cause-specific Comparison to Bennett 2018. Deciles, largely similar groups of death Comparison to GBD 2015. 150 upper tier local authorities, rather than districts. Broader in space, but using 264 GBD causes of death, more sharing and reliance on covariates in the model What is causing the epi transition backward that we saw at the MSOA level Did not look at gap in inequality in progress, instead focussed on the gap in inequality</p>
+</section>
+<section id="strengths-and-limitations" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="strengths-and-limitations"><span class="header-section-number">6.4.2</span> Strengths and limitations</h3>
+<p>District level rather than MSOA level Numbers get too small</p>
+<p>Collapsed over age groups, unlike Bennett 2018 Skew towards older ages, due to how we chose the groups on number of deaths, which itself is skewed towards older ages</p>
+<p>Split into further causes. Maternal, perinatal All other NCD Injuries – intentional or unintentional. Much attention on on deaths of despair Colin Angus, Angus Deaton etc. Risk factor that has remained constant since 2000s Groups already quite small and smaller numbers</p>
 <p>Migration not as much of an issue Today it remains the case that the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same Local Authority District (LAD).</p>
+</section>
 </section>
 <section id="summary" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.5</span> Summary</h2>
