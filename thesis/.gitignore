@@ -1,3 +1,6 @@
 /.quarto/
 /_site/
 /_book/
+
+# ignore the pdf as it is above 100MB
+/_thesis/*.pdf

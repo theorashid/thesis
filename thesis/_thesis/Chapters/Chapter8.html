@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -78,7 +97,6 @@ ul.task-list li input[type="checkbox"] {
       <a href="../">Modelling the dead and what they died from</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/theorashid/thesis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="../Modelling-the-dead-and-what-they-died-from.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -111,12 +129,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality in England at the district level</span></a>
+  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level in England</span></a>
+  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,15 +218,72 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="future-work" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="future-work"><span class="header-section-number">8.2</span> Future work</h2>
-<p>Bayesian methods Highest resolution in a joint model, with error estimates</p>
-<p>Substantive and methodological</p>
-<p>Only care about LHS of equation. Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like Very familiar with research, was on a paper But ultimately, the working environment was not conducive to methods development Cluster offline, only a command line This is health data – Understand why people still use Scottish lip cancer and reference data A lot of time spent scaling the models Future research can incorporate new models Joint likelihood for causes (e.g Best et al.), using multiple surface, or something more flexible like Kronecker GP Packages don’t exist yet, but should be there in near future</p>
-<p>Since 2019, Covid Produce a forecast of mortality Run the counterfactual, as we did in Kontis at the weekly national level, but for district level and annual See how the cause-composition changed Obviously increase in infectious disease, but were injuries reduced? Were cancer outcomes worse due to missed surgeries? Is there a longer term effect due to strain on emergency services?</p>
+<p>There are many possible substantive and methodological extensions to the work presented in this thesis. Firstly, on the substantive side, there is a reason the final year of study period was restricted at 2019 that has nothing to do with the availability of finalised civil registration data for the proceeding years. That is the Covid-19 pandemic. It would be naïve to fit a the same model to an extended time period including the pandemic years, which had such a major influence on mortality patterns. The model relies heavily on linear trends, which would be affected by the final years. Further, pandemics are fat-tailed events, so the <em>Gaussian</em> random walk effects would struggle to capture the shock without affecting the overall variance of the effect.</p>
+<p>Rather than extending the study to include the pandemic years and look at the trends between 2002 and 2023, a more interesting question is to ask “had the pandemic happened, how would mortality be different?” This would be done using a counterfactual analysis: train a model to estimate annual mortality from 2002 to 2019 and produce a forecast for the years from 2020. A team, including myself, has already done this analysis at the national level at a weekly temporal resolution <span class="citation" data-cites="kontisMagnitudeDemographicsDynamics2020 kontisLessonsLearnedLessons2022">(<a href="../references.html#ref-kontisLessonsLearnedLessons2022" role="doc-biblioref">Kontis et al., 2022</a>, <a href="../references.html#ref-kontisMagnitudeDemographicsDynamics2020" role="doc-biblioref">2020</a>)</span>. Here, the task would instead involve forecasts for each sex-age-space-time-cause stratum on annual timescales. The group has been involved in a number of mortality forecasting projects <span class="citation" data-cites="kontisFutureLifeExpectancy2017 bennettFutureLifeExpectancy2015 foremanSmallAreaForecasts2017">(<a href="../references.html#ref-bennettFutureLifeExpectancy2015" role="doc-biblioref">Bennett et al., 2015</a>; <a href="../references.html#ref-foremanSmallAreaForecasts2017" role="doc-biblioref">Foreman et al., 2017</a>; <a href="../references.html#ref-kontisFutureLifeExpectancy2017" role="doc-biblioref">Kontis et al., 2017</a>)</span>. The models are similar to those in this thesis, but would need to be adapted and trained specifically for forecasting purposes, with the possibility of averaging multiple models to reduce bias. The results would allow us to see how the cause-composition of mortality has changed compared to the <em>business as usual</em> scenario. We would obviously expect and increase in deaths infectious disease, but were injuries reduced as the country was locked down in their homes? Did cancer outcomes worsen due to missed surgeries as hospitals were flooded with Covid-19 patients? Is there a longer term effect due to strain on emergency services, which has manifested in longer waiting lists and waiting times for appointments <span class="citation" data-cites="dorlingHowAusterityCaused2023">(<a href="../references.html#ref-dorlingHowAusterityCaused2023" role="doc-biblioref">Dorling, 2023</a>)</span>? And, how have these effects varied for different age groups and different areas of the country?</p>
+<p>One of the major strengths of the thesis was the use of Bayesian methods, at one of the highest resolutions in the literature for a model estimating mortality over space and time. This was largely thanks to recent developments in probabilistic programming, which allow sampling to run on GPUs rather than CPUs, and is generally faster for models with over 10,000 parameters <span class="citation" data-cites="laoTfpMcmcModern2020">(<a href="../references.html#ref-laoTfpMcmcModern2020" role="doc-biblioref">Lao et al., 2020</a>)</span>. The models themselves, which were based on previous work in the group<span class="citation" data-cites="bennettFutureLifeExpectancy2015 bennettContributionsDiseasesInjuries2018">(<a href="../references.html#ref-bennettContributionsDiseasesInjuries2018" role="doc-biblioref">Bennett et al., 2018</a>, <a href="../references.html#ref-bennettFutureLifeExpectancy2015" role="doc-biblioref">2015</a>)</span>, followed traditional statistical approaches using intercepts and linear slopes and adding in random walk effects for non-linearities. However, with models such as <a href="Chapter4.html#eq-ch-4-model">Equation&nbsp;<span>4.3</span></a>, we are actually only interested in the left-hand side of the equation – the death rate – and not at all in the values of the parameters on the right-hand side. There are a vast array of flexible models which can describe complex data without needing to design heavily parametrised structures. These range from Gaussian processes <span class="citation" data-cites="rasmussenGaussianProcessesMachine2006 flaxmanFastHierarchicalGaussian">(<a href="../references.html#ref-flaxmanFastHierarchicalGaussian" role="doc-biblioref">Flaxman et al., n.d.</a>; <a href="../references.html#ref-rasmussenGaussianProcessesMachine2006" role="doc-biblioref">Rasmussen and Williams, 2006</a>)</span>, where the user can use inductive biases and their own knowledge to influence how the model fits the data, to wilder options like neural networks, which completely sacrifice any remaining interpretability of the effects.</p>
+<p>During my PhD, I became very familiar with the literature on Gaussian processes, and was involved on a paper aimed at speeding up inference in spatial settings <span class="citation" data-cites="semenovaPriorVAEEncodingSpatial2022">(<a href="../references.html#ref-semenovaPriorVAEEncodingSpatial2022" role="doc-biblioref">Semenova et al., 2022</a>)</span>. One of the most promising avenues for the task of mortality estimation in this thesis, outlined in <span class="citation" data-cites="flaxmanFastHierarchicalGaussian">Flaxman et al. (<a href="../references.html#ref-flaxmanFastHierarchicalGaussian" role="doc-biblioref">n.d.</a>)</span>, is the use of Kronecker-structured covariance matrices to create hierarchical Gaussian processes. Here, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects. We can exploit the Kronecker structure for faster inference, as we no longer need to invert the full matrix, but only the smaller constituent matrices of each effect. Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> was not conducive to developing novel statistical methods. Also, there was no guarantee the Gaussian process methods would be quicker, as the inversion of a large spatial matrix scales cubically, nor would it produce a result much different from the original model. Instead, I allocated time to scaling existing models and testing new hardware. I think the hierarchical Gaussian process model is much more flexible, requiring less testing of each effect in <a href="Chapter4.html#eq-ch-4-model">Equation&nbsp;<span>4.3</span></a>, and should be the starting point for future research.</p>
+<p>Another methodological extension would be to model causes of death jointly, thereby borrowing strength across <em>causes</em>. Diseases often share common risk factors and similar aetiologies, so there often is some redundancy in specifying a unique spatial surface for each cause. In the disease mapping literature, studies have built spatial models which share spatial components between diseases. Firstly, <span class="citation" data-cites="knorr-heldSharedComponentModel2001">Knorr-Held and Best (<a href="../references.html#ref-knorr-heldSharedComponentModel2001" role="doc-biblioref">2001</a>)</span> considered a model (also described in <span class="citation" data-cites="bestComparisonBayesianSpatial2005">Best et al. (<a href="../references.html#ref-bestComparisonBayesianSpatial2005" role="doc-biblioref">2005</a>)</span>) for two diseases, with disease-specific spatial components and one shared component. <span class="citation" data-cites="heldJointDiseaseMapping2005">Held et al. (<a href="../references.html#ref-heldJointDiseaseMapping2005" role="doc-biblioref">2005</a>)</span> generalised this approach to model any number of diseases as a weighted sum of shared components. Rather than a general approach, both <span class="citation" data-cites="downingJointDiseaseMapping2008">Downing et al. (<a href="../references.html#ref-downingJointDiseaseMapping2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="mahakiJointSpatiotemporalShared2018">Mahaki et al. (<a href="../references.html#ref-mahakiJointSpatiotemporalShared2018" role="doc-biblioref">2018</a>)</span> allocated the spatial components to the diseases <em>a priori</em> based on knowledge of the common risk factors between cancers such as smoking, obesity and alcohol consumption. <span class="citation" data-cites="foremanSmallAreaForecasts2017">Foreman et al. (<a href="../references.html#ref-foremanSmallAreaForecasts2017" role="doc-biblioref">2017</a>)</span> allowed for more variability by modelling interactions between each spatial unit and cause. There is also the option to extend the hierarchical Gaussian process described above with another component covariance matrix describing the correlations between each of the cause groups. Ultimately, the goal would be to run a single joint model that flexibly describes interactions between sexes, age groups, spatial units, time, and causes of death.</p>
 </section>
 <section id="conclusions" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">8.3</span> Conclusions</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="doc-biblioentry">
+Bennett JE, Li G, Foreman K, Best N, Kontis V, Pearson C, Hambly P, Ezzati M. 2015. The future of life expectancy and life expectancy inequalities in <span>England</span> and <span>Wales</span>: <span>Bayesian</span> spatiotemporal forecasting. <em>The Lancet</em> <strong>386</strong>:163–170. doi:<a href="https://doi.org/10.1016/S0140-6736(15)60296-3">10.1016/S0140-6736(15)60296-3</a>
+</div>
+<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="doc-biblioentry">
+Bennett JE, Pearson-Stuttard J, Kontis V, Capewell S, Wolfe I, Ezzati M. 2018. Contributions of diseases and injuries to widening life expectancy inequalities in <span>England</span> from 2001 to 2016: A population-based analysis of vital registration data. <em>The Lancet Public Health</em> <strong>3</strong>:e586–e597. doi:<a href="https://doi.org/10.1016/S2468-2667(18)30214-7">10.1016/S2468-2667(18)30214-7</a>
+</div>
+<div id="ref-bestComparisonBayesianSpatial2005" class="csl-entry" role="doc-biblioentry">
+Best N, Richardson S, Thomson A. 2005. A comparison of <span>Bayesian</span> spatial models for disease mapping. <em>Statistical Methods in Medical Research</em> <strong>14</strong>:35–59. doi:<a href="https://doi.org/10.1191/0962280205sm388oa">10.1191/0962280205sm388oa</a>
+</div>
+<div id="ref-dorlingHowAusterityCaused2023" class="csl-entry" role="doc-biblioentry">
+Dorling D. 2023. How austerity caused the <span>NHS</span> crisis. <em>openDemocracy</em>.
+</div>
+<div id="ref-downingJointDiseaseMapping2008" class="csl-entry" role="doc-biblioentry">
+Downing A, Forman D, Gilthorpe MS, Edwards KL, Manda SO. 2008. Joint disease mapping using six cancers in the <span>Yorkshire</span> region of <span>England</span>. <em>International Journal of Health Geographics</em> <strong>7</strong>:41. doi:<a href="https://doi.org/10.1186/1476-072X-7-41">10.1186/1476-072X-7-41</a>
+</div>
+<div id="ref-flaxmanFastHierarchicalGaussian" class="csl-entry" role="doc-biblioentry">
+Flaxman S, Gelman A, Neill D, Smola A, Vehtari A, Wilson AG. n.d. Fast hierarchical <span>Gaussian</span> processes.
+</div>
+<div id="ref-foremanSmallAreaForecasts2017" class="csl-entry" role="doc-biblioentry">
+Foreman KJ, Li G, Best N, Ezzati M. 2017. <a href="https://www.jstor.org/stable/44681865">Small area forecasts of cause-specific mortality: Application of a <span>Bayesian</span> hierarchical model to <span>US</span> vital registration data</a>. <em>Journal of the Royal Statistical Society Series C (Applied Statistics)</em> <strong>66</strong>:121–139.
+</div>
+<div id="ref-heldJointDiseaseMapping2005" class="csl-entry" role="doc-biblioentry">
+Held L, Natário I, Fenton SE, Rue H, Becker N. 2005. Towards joint disease mapping. <em>Statistical Methods in Medical Research</em> <strong>14</strong>:61–82. doi:<a href="https://doi.org/10.1191/0962280205sm389oa">10.1191/0962280205sm389oa</a>
+</div>
+<div id="ref-knorr-heldSharedComponentModel2001" class="csl-entry" role="doc-biblioentry">
+Knorr-Held L, Best NG. 2001. <a href="https://www.jstor.org/stable/2680535">A <span>Shared Component Model</span> for <span>Detecting Joint</span> and <span>Selective Clustering</span> of <span>Two Diseases</span></a>. <em>Journal of the Royal Statistical Society Series A (Statistics in Society)</em> <strong>164</strong>:73–85.
+</div>
+<div id="ref-kontisFutureLifeExpectancy2017" class="csl-entry" role="doc-biblioentry">
+Kontis V, Bennett JE, Mathers CD, Li G, Foreman K, Ezzati M. 2017. Future life expectancy in 35 industrialised countries: Projections with a <span>Bayesian</span> model ensemble. <em>The Lancet</em> <strong>389</strong>:1323–1335. doi:<a href="https://doi.org/10.1016/S0140-6736(16)32381-9">10.1016/S0140-6736(16)32381-9</a>
+</div>
+<div id="ref-kontisLessonsLearnedLessons2022" class="csl-entry" role="doc-biblioentry">
+Kontis V, Bennett JE, Parks RM, Rashid T, Pearson-Stuttard J, Asaria P, Zhou B, Guillot M, Mathers CD, Khang Y-H, McKee M, Ezzati M. 2022. Lessons learned and lessons missed: Impact of the coronavirus disease 2019 (<span>COVID-19</span>) pandemic on all-cause mortality in 40 industrialised countries and <span>US</span> states prior to mass vaccination. <em>Wellcome Open Research</em> <strong>6</strong>:279. doi:<a href="https://doi.org/10.12688/wellcomeopenres.17253.2">10.12688/wellcomeopenres.17253.2</a>
+</div>
+<div id="ref-kontisMagnitudeDemographicsDynamics2020" class="csl-entry" role="doc-biblioentry">
+Kontis V, Bennett JE, Rashid T, Parks RM, Pearson-Stuttard J, Guillot M, Asaria P, Zhou B, Battaglini M, Corsetti G, McKee M, Di Cesare M, Mathers CD, Ezzati M. 2020. Magnitude, demographics and dynamics of the effect of the first wave of the <span>COVID-19</span> pandemic on all-cause mortality in 21 industrialized countries. <em>Nature Medicine</em> <strong>26</strong>:1919–1928. doi:<a href="https://doi.org/10.1038/s41591-020-1112-0">10.1038/s41591-020-1112-0</a>
+</div>
+<div id="ref-laoTfpMcmcModern2020" class="csl-entry" role="doc-biblioentry">
+Lao J, Suter C, Langmore I, Chimisov C, Saxena A, Sountsov P, Moore D, Saurous RA, Hoffman MD, Dillon JV. 2020. Tfp.mcmc: <span>Modern Markov Chain Monte Carlo Tools Built</span> for <span>Modern Hardware</span>. doi:<a href="https://doi.org/10.48550/arXiv.2002.01184">10.48550/arXiv.2002.01184</a>
+</div>
+<div id="ref-mahakiJointSpatiotemporalShared2018" class="csl-entry" role="doc-biblioentry">
+Mahaki B, Mehrabi Y, Kavousi A, Schmid VJ. 2018. Joint <span class="nocase">Spatio-temporal Shared Component Model</span> with an <span>Application</span> in <span>Iran Cancer Data</span>. <em>Asian Pacific Journal of Cancer Prevention</em> <strong>19</strong>:1553–1560. doi:<a href="https://doi.org/10.22034/APJCP.2018.19.6.1553">10.22034/APJCP.2018.19.6.1553</a>
+</div>
+<div id="ref-rasmussenGaussianProcessesMachine2006" class="csl-entry" role="doc-biblioentry">
+Rasmussen CE, Williams CKI. 2006. Gaussian <span>Processes</span> for <span>Machine Learning</span>. <span>MIT Press</span>.
+</div>
+<div id="ref-semenovaPriorVAEEncodingSpatial2022" class="csl-entry" role="doc-biblioentry">
+Semenova E, Xu Y, Howes A, Rashid T, Bhatt S, Mishra S, Flaxman S. 2022. <span>PriorVAE</span>: Encoding spatial priors with variational autoencoders for small-area estimation. <em>Journal of The Royal Society Interface</em> <strong>19</strong>:20220094. doi:<a href="https://doi.org/10.1098/rsif.2022.0094">10.1098/rsif.2022.0094</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -348,7 +423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../Chapters/Chapter7.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level in England</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -9,7 +9,7 @@ book:
     url: https://theorashid.github.io/
   cover-image: thesis-analysis/thesis_analysis/eda/figures/age_mx_void.webp
   favicon: assets/favicon.png
-  downloads: [pdf]
+  # downloads: [pdf]
   abstract: "People died in England and we modelled the all cause and cause-specific death rates. This took longer than expected."
   chapters:
     - index.qmd

@@ -249,7 +249,7 @@
   urldate = {2022-12-01},
   abstract = {With the advent of routine health data indexed at a fine geographical resolution, small area disease mapping studies have become an established technique in geographical epidemiology. The specific issues posed by the sparseness of the data and possibility for local spatial dependence belong to a generic class of statistical problems involving an underlying (latent) spatial process of interest corrupted by observational noise. These are naturally formulated within the framework of hierarchical models, and over the past decade, a variety of spatial models have been proposed for the latent level(s) of the hierarchy. In this article, we provide a comprehensive review of the main classes of such models that have been used for disease mapping within a Bayesian estimation paradigm, and report a performance comparison between representative models in these classes, using a set of simulated data to help illustrate their respective properties. We also consider recent extensions to model the joint spatial distribution of multiple disease or health indicators. The aim is to help the reader choose an appropriate structural prior for the second level of the hierarchical model and to discuss issues of sensitivity to this choice.},
   langid = {english},
-  keywords = {disease mapping,SAHSU,spatial,statistical model},
+  keywords = {disease mapping,joint cause,SAHSU,spatial,statistical model},
   file = {/Users/theorashid/Zotero/storage/E9PNLQ8Q/Best et al. - 2005 - A comparison of Bayesian spatial models for diseas.pdf}
 }
 
@@ -533,6 +533,23 @@
   file = {/Users/theorashid/Zotero/storage/AMQP9AF5/nhs-a-and-e-delays-austerity-emergency-care-hospitals-hunt-hancock-lansley.html}
 }
 
+@article{downingJointDiseaseMapping2008,
+  title = {Joint Disease Mapping Using Six Cancers in the {{Yorkshire}} Region of {{England}}},
+  author = {Downing, Amy and Forman, David and Gilthorpe, Mark S. and Edwards, Kimberley L. and Manda, Samuel OM},
+  year = {2008},
+  month = jul,
+  journal = {International Journal of Health Geographics},
+  volume = {7},
+  number = {1},
+  pages = {41},
+  issn = {1476-072X},
+  doi = {10.1186/1476-072X-7-41},
+  urldate = {2023-04-19},
+  abstract = {The aims of this study were to model jointly the incidence rates of six smoking related cancers in the Yorkshire region of England, to explore the patterns of spatial correlation amongst them, and to estimate the relative weight of smoking and other shared risk factors for the relevant disease sites, both before and after adjustment for socioeconomic background (SEB).},
+  keywords = {cause-specific,england,joint cause,mortality,statistical model},
+  file = {/Users/theorashid/Zotero/storage/TTCU62ST/Downing et al. - 2008 - Joint disease mapping using six cancers in the Yor.pdf;/Users/theorashid/Zotero/storage/2WIGI2Z4/1476-072X-7-41.html}
+}
+
 @article{dwyer-lindgrenInequalitiesLifeExpectancy2017,
   title = {Inequalities in {{Life Expectancy Among US Counties}}, 1980 to 2014: {{Temporal Trends}} and {{Key Drivers}}},
   shorttitle = {Inequalities in {{Life Expectancy Among US Counties}}, 1980 to 2014},
@@ -718,6 +735,14 @@
   file = {/Users/theorashid/Zotero/storage/5NWK6QL4/Finucane et al. - 2014 - Bayesian Estimation of Population-Level Trends in .pdf}
 }
 
+@misc{flaxmanFastHierarchicalGaussian,
+  title = {Fast Hierarchical {{Gaussian}} Processes},
+  author = {Flaxman, Seth and Gelman, Andrew and Neill, Daniel and Smola, Alex and Vehtari, Aki and Wilson, Andrew Gordon},
+  abstract = {While the framework of Gaussian process priors for functions is very flexible and has a number of advantages, its use within a fully Bayesian hierarchical modeling framework has been limited due to computational constraints. Most often, simple models are fit, with hyperparameters learned by maximum likelihood. But this approach understates the posterior uncertainty in inference. We consider priors over kernel hyperparameters, thus inducing a very flexible Bayesian hierarchical modeling framework in which we perform inference using MCMC not just for the posterior function but also for the posterior over the kernel hyperparameters. We address the central challenge of computational efficiency with MCMC by exploiting separable structure in the covariance matrix corresponding to the kernel, yielding significant gains in time and memory efficiency. Our method can be conveniently implemented in a probabilistic programming language (Stan), is widely applicable to any setting involving structured kernels, and immediately enables a number of useful features, including kernel learning through novel prior specifications, learning nonparametric priors over categorical variables, clustering through a factor analysis approach, and missing observations. We demonstrate our methods on real and synthetic spatiotemporal datasets.},
+  langid = {english},
+  file = {/Users/theorashid/Zotero/storage/MZDU7MZG/Flaxman et al. - Fast hierarchical Gaussian processes.pdf}
+}
+
 @article{foremanSmallAreaForecasts2017,
   title = {Small Area Forecasts of Cause-Specific Mortality: Application of a {{Bayesian}} Hierarchical Model to {{US}} Vital Registration Data},
   shorttitle = {Small Area Forecasts of Cause-Specific Mortality},
@@ -733,7 +758,7 @@
   issn = {0035-9254},
   urldate = {2022-12-01},
   abstract = {Mortality forecasts are typically limited in that they pertain only to national death rates, predict only all-cause mortality or do not capture and utilize the correlation between diseases. We present a novel Bayesian hierarchical model that jointly forecasts cause-specific death rates for geographic subunits. We examine its effectiveness by applying it to US vital statistics data for 1979-2011 and produce forecasts to 2024. Not only does the model generate coherent forecasts for mutually exclusive causes of death, but also it has lower out-of-sample error than alternative commonly used models for forecasting mortality.},
-  keywords = {cause-specific,mortality,small area,spatial,statistical model},
+  keywords = {cause-specific,joint cause,mortality,small area,spatial,statistical model},
   file = {/Users/theorashid/Zotero/storage/CI5J5BK3/Foreman et al. - 2017 - Small area forecasts of cause-specific mortality .pdf}
 }
 
@@ -862,6 +887,25 @@
   howpublished = {https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/articles/healthexpectanciesatbirthformiddlelayersuperoutputareasmsoasengland/2015-09-25},
   keywords = {data source,life expectancy},
   file = {/Users/theorashid/Zotero/storage/VRSN8IHL/2015-09-25.html}
+}
+
+@article{heldJointDiseaseMapping2005,
+  title = {Towards Joint Disease Mapping},
+  author = {Held, Leonhard and Nat{\'a}rio, Isabel and Fenton, Sarah Elaine and Rue, H{\aa}vard and Becker, Nikolaus},
+  year = {2005},
+  month = feb,
+  journal = {Statistical Methods in Medical Research},
+  volume = {14},
+  number = {1},
+  pages = {61--82},
+  publisher = {{SAGE Publications Ltd STM}},
+  issn = {0962-2802},
+  doi = {10.1191/0962280205sm389oa},
+  urldate = {2023-04-19},
+  abstract = {This article discusses and extends statistical models to jointly analyse the spatial variation of rates of several diseases with common risk factors. We start with a review of methods for separate analyses of diseases, then move to ecological regression approaches, where the rates from one of the diseases enter as surrogate covariates for exposure. Finally, we propose a general framework for jointly modelling the variation of two or more diseases, some of which share latent spatial fields, but with possibly different risk gradients. In our application, we consider mortality data on oral, oesophagus, larynx and lung cancers for males in Germany, which all share smoking as a common risk factor. Furthermore, the first three cancers are also known to be related to excessive alcohol consumption. An empirical comparison of the different models based on a formal model criterion as well as on the posterior precision of the relative risk estimates strongly suggests that the joint modelling approach is a useful and valuable extension over individual analyses.},
+  langid = {english},
+  keywords = {cause-specific,disease mapping,joint cause,statistical model},
+  file = {/Users/theorashid/Zotero/storage/AI47QYLT/Held et al. - 2005 - Towards joint disease mapping.pdf}
 }
 
 @article{hiamWhyLifeExpectancy2018,
@@ -1020,6 +1064,24 @@
   file = {/Users/theorashid/Zotero/storage/DIREXUM6/Kelsall and Wakefield - 2002 - Modeling Spatial Variation in Disease Risk.pdf}
 }
 
+@article{knorr-heldSharedComponentModel2001,
+  title = {A {{Shared Component Model}} for {{Detecting Joint}} and {{Selective Clustering}} of {{Two Diseases}}},
+  author = {{Knorr-Held}, Leonhard and Best, Nicola G.},
+  year = {2001},
+  journal = {Journal of the Royal Statistical Society. Series A (Statistics in Society)},
+  volume = {164},
+  number = {1},
+  eprint = {2680535},
+  eprinttype = {jstor},
+  pages = {73--85},
+  publisher = {{[Wiley, Royal Statistical Society]}},
+  issn = {0964-1998},
+  urldate = {2023-04-19},
+  abstract = {The study of spatial variations in disease rates is a common epidemiological approach used to describe the geographical clustering of diseases and to generate hypotheses about the possible 'causes' which could explain apparent differences in risk. Recent statistical and computational developments have led to the use of realistically complex models to account for overdispersion and spatial correlation. However, these developments have focused almost exclusively on spatial modelling of a single disease. Many diseases share common risk factors (smoking being an obvious example) and, if similar patterns of geographical variation of related diseases can be identified, this may provide more convincing evidence of real clustering in the underlying risk surface. We propose a shared component model for the joint spatial analysis of two diseases. The key idea is to separate the underlying risk surface for each disease into a shared and a disease-specific component. The various components of this formulation are modelled simultaneously by using spatial cluster models implemented via reversible jump Markov chain Monte Carlo methods. We illustrate the methodology through an analysis of oral and oesophageal cancer mortality in the 544 districts of Germany, 1986-1990.},
+  keywords = {cause-specific,disease mapping,joint cause,statistical model},
+  file = {/Users/theorashid/Zotero/storage/7VTMELKG/Knorr-Held and Best - 2001 - A Shared Component Model for Detecting Joint and S.pdf}
+}
+
 @article{kontisFutureLifeExpectancy2017,
   title = {Future Life Expectancy in 35 Industrialised Countries: Projections with a {{Bayesian}} Model Ensemble},
   shorttitle = {Future Life Expectancy in 35 Industrialised Countries},
@@ -1038,6 +1100,24 @@
   pmid = {28236464},
   keywords = {life expectancy,mortality,statistical model},
   file = {/Users/theorashid/Zotero/storage/MLDXEDCS/Kontis et al. - 2017 - Future life expectancy in 35 industrialised countr.pdf}
+}
+
+@article{kontisLessonsLearnedLessons2022,
+  title = {Lessons Learned and Lessons Missed: Impact of the Coronavirus Disease 2019 ({{COVID-19}}) Pandemic on All-Cause Mortality in 40 Industrialised Countries and {{US}} States Prior to Mass Vaccination},
+  shorttitle = {Lessons Learned and Lessons Missed},
+  author = {Kontis, Vasilis and Bennett, James E. and Parks, Robbie M. and Rashid, Theo and {Pearson-Stuttard}, Jonathan and Asaria, Perviz and Zhou, Bin and Guillot, Michel and Mathers, Colin D. and Khang, Young-Ho and McKee, Martin and Ezzati, Majid},
+  year = {2022},
+  month = feb,
+  journal = {Wellcome Open Research},
+  volume = {6},
+  pages = {279},
+  issn = {2398-502X},
+  doi = {10.12688/wellcomeopenres.17253.2},
+  urldate = {2023-04-19},
+  abstract = {Background:               Industrialised countries had varied responses to the COVID-19 pandemic, which may lead to different death tolls from COVID-19 and other diseases.                                                        Methods:               We applied an ensemble of 16 Bayesian probabilistic models to vital statistics data to estimate the number of weekly deaths if the pandemic had not occurred for 40 industrialised countries and US states from mid-February 2020 through mid-February 2021. We subtracted these estimates from the actual number of deaths to calculate the impacts of the pandemic on all-cause mortality.                                         Results:               Over this year, there were 1,410,300 (95\% credible interval 1,267,600-1,579,200) excess deaths in these countries, equivalent to a 15\% (14-17) increase, and 141 (127-158) additional deaths per 100,000 people. In Iceland, Australia and New Zealand, mortality was lower than would be expected in the absence of the pandemic, while South Korea and Norway experienced no detectable change. The USA, Czechia, Slovakia and Poland experienced {$>$}20\% higher mortality. Within the USA, Hawaii experienced no detectable change in mortality and Maine a 5\% increase, contrasting with New Jersey, Arizona, Mississippi, Texas, California, Louisiana and New York which experienced {$>$}25\% higher mortality. Mid-February to the end of May 2020 accounted for over half of excess deaths in Scotland, Spain, England and Wales, Canada, Sweden, Belgium, the Netherlands and Cyprus, whereas mid-September 2020 to mid-February 2021 accounted for {$>$}90\% of excess deaths in Bulgaria, Croatia, Czechia, Hungary, Latvia, Montenegro, Poland, Slovakia and Slovenia. In USA, excess deaths in the northeast were driven mainly by the first wave, in southern and southwestern states by the summer wave, and in the northern plains by the post-September period.                                                        Conclusions:               Prior to widespread vaccine-acquired immunity, minimising the overall death toll of the pandemic requires policies and non-pharmaceutical interventions that delay and reduce infections, effective treatments for infected patients, and mechanisms to continue routine health care.},
+  langid = {english},
+  keywords = {covid-19,mortality},
+  file = {/Users/theorashid/Zotero/storage/J5X2XWU5/Kontis et al. - 2022 - Lessons learned and lessons missed impact of the .pdf}
 }
 
 @article{kontisMagnitudeDemographicsDynamics2020,
@@ -1138,6 +1218,24 @@
   howpublished = {https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/lowersuperoutputareamidyearpopulationestimates},
   keywords = {data source},
   file = {/Users/theorashid/Zotero/storage/C8QU88MK/lowersuperoutputareamidyearpopulationestimates.html}
+}
+
+@article{mahakiJointSpatiotemporalShared2018,
+  title = {Joint {{Spatio-temporal Shared Component Model}} with an {{Application}} in {{Iran Cancer Data}}},
+  author = {Mahaki, Behzad and Mehrabi, Yadollah and Kavousi, Amir and Schmid, Volker J.},
+  year = {2018},
+  month = jun,
+  journal = {Asian Pacific Journal of Cancer Prevention},
+  volume = {19},
+  number = {6},
+  pages = {1553--1560},
+  publisher = {{West Asia Organization for Cancer Prevention (WAOCP), APOCP's West Asia Chapter.}},
+  issn = {1513-7368},
+  doi = {10.22034/APJCP.2018.19.6.1553},
+  urldate = {2023-04-19},
+  abstract = {Background: Among the proposals for joint disease mapping, the shared component model has become morepopular. Another advance to strengthen inference of disease data is the extension of purely spatial models to includetime aspect. We aim to combine the idea of multivariate shared components with spatio-temporal modelling in a jointdisease mapping model and apply it for incidence rates of seven prevalent cancers in Iran which together account forapproximately 50\% of all cancers. Methods: In the proposed model, each component is shared by different subsetsof diseases, spatial and temporal trends are considered for each component, and the relative weight of these trends foreach component for each relevant disease can be estimated. Results: For esophagus and stomach cancers the Northernprovinces was the area of high risk. For colorectal cancer Gilan, Semnan, Fars, Isfahan, Yazd and East-Azerbaijanwere the highest risk provinces. For bladder and lung cancer, the northwest were the highest risk area. For prostate andbreast cancers, Isfahan, Yazd, Fars, Tehran, Semnan, Mazandaran and Khorasane-Razavi were the highest risk part.The smoking component, shared by esophagus, stomach, bladder and lung, had more effect in Gilan, Mazandaran,Chaharmahal and Bakhtiari, Kohgilouyeh and Boyerahmad, Ardebil and Tehran provinces, in turn. For overweightand obesity component, shared by esophagus, colorectal, prostate and breast cancers the largest effect was found forTehran, Khorasane-Razavi, Semnan, Yazd, Isfahan, Fars, Mazandaran and Gilan, in turn. For low physical activitycomponent, shared by colorectal and breast cancers North-Khorasan, Ardebil, Golestan, Ilam, Khorasane-Razavi andSouth-Khorasan had the largest effects, in turn. The smoking component is significantly more important for stomachthan for esophagus, bladder and lung. The overweight and obesity had significantly more effect for colorectal than ofesophagus cancer. Conclusions: The presented model is a valuable model to model geographical and temporal variationamong diseases and has some interesting potential features and benefits over other joint models.},
+  keywords = {cancer,cause-specific,disease mapping,joint cause,statistical model},
+  file = {/Users/theorashid/Zotero/storage/T6FQHSW2/Mahaki et al. - 2018 - Joint Spatio-temporal Shared Component Model with .pdf}
 }
 
 @article{marmotHealthInequalitiesBritish1991,
@@ -1486,6 +1584,13 @@
   keywords = {probabilistic programming}
 }
 
+@book{rasmussenGaussianProcessesMachine2006,
+  title = {Gaussian {{Processes}} for {{Machine Learning}}},
+  author = {Rasmussen, Carl Edward and Williams, Christopher K. I.},
+  year = {2006},
+  publisher = {{MIT Press}}
+}
+
 @article{salomonEpidemiologicTransitionRevisited2002,
   title = {The {{Epidemiologic Transition Revisited}}: {{Compositional Models}} for {{Causes}} of {{Death}} by {{Age}} and {{Sex}}},
   shorttitle = {The {{Epidemiologic Transition Revisited}}},
@@ -1503,6 +1608,25 @@
   abstract = {For decades, researchers have noted systematic shifts in cause-of-death patterns as mortality levels change. The notion of the "epidemiologic transition" has influenced thinking about the evolution of health in different societies and the response of the health system to these changes. This article re-examines the epidemiologic transition in terms of empirical regularities in the cause composition of mortality by age and sex since 1950, and considers whether the theory of epidemiologic transition presents a durable framework for understanding more recent patterns. Age-sex-specific mortality rates from three broad cause groups are analyzed: Group 1 (communicable diseases, maternal and perinatal causes, and nutritional deficiencies); Group 2 (noncommunicable diseases); and Group 3 (injuries), using the most extensive international database on mortality by cause, including 1,576 country-years of observation, and new statistical models for compositional data. The analyses relate changes in cause-of-death patterns to changing levels of all-cause mortality and income per capita. The results confirm that declines in overall mortality are accompanied by systematic changes in the composition of causes in many age groups. These changes are most pronounced among children, for whom Group 1 causes decline as overall mortality falls, and in younger adults, where strikingly different patterns are found for men (shift from Group 3 to Group 2) compared to women (shift toward Group 2 then Group 3). The underlying patterns that emerge from this analysis offer insights into the epidemiologic transition from high-mortality to low-mortality settings.},
   keywords = {cause-specific,mortality},
   file = {/Users/theorashid/Zotero/storage/YT73MGYG/Salomon and Murray - 2002 - The Epidemiologic Transition Revisited Compositio.pdf}
+}
+
+@article{semenovaPriorVAEEncodingSpatial2022,
+  title = {{{PriorVAE}}: Encoding Spatial Priors with Variational Autoencoders for Small-Area Estimation},
+  shorttitle = {{{PriorVAE}}},
+  author = {Semenova, Elizaveta and Xu, Yidan and Howes, Adam and Rashid, Theo and Bhatt, Samir and Mishra, Swapnil and Flaxman, Seth},
+  year = {2022},
+  month = jun,
+  journal = {Journal of The Royal Society Interface},
+  volume = {19},
+  number = {191},
+  pages = {20220094},
+  publisher = {{Royal Society}},
+  doi = {10.1098/rsif.2022.0094},
+  urldate = {2023-04-19},
+  abstract = {Gaussian processes (GPs), implemented through multivariate Gaussian distributions for a finite collection of data, are the most popular approach in small-area spatial statistical modelling. In this context, they are used to encode correlation structures over space and can generalize well in interpolation tasks. Despite their flexibility, off-the-shelf GPs present serious computational challenges which limit their scalability and practical usefulness in applied settings. Here, we propose a novel, deep generative modelling approach to tackle this challenge, termed PriorVAE: for a particular spatial setting, we approximate a class of GP priors through prior sampling and subsequent fitting of a variational autoencoder (VAE). Given a trained VAE, the resultant decoder allows spatial inference to become incredibly efficient due to the low dimensional, independently distributed latent Gaussian space representation of the VAE. Once trained, inference using the VAE decoder replaces the GP within a Bayesian sampling framework. This approach provides tractable and easy-to-implement means of approximately encoding spatial priors and facilitates efficient statistical inference. We demonstrate the utility of our VAE two-stage approach on Bayesian, small-area estimation tasks.},
+  copyright = {All rights reserved},
+  keywords = {Bayesian inference,Gaussian process prior,small-area estimation,spatial modelling,variational autoencoder},
+  file = {/Users/theorashid/Zotero/storage/K95BRTYB/Semenova et al. - 2022 - PriorVAE encoding spatial priors with variational.pdf}
 }
 
 @article{silcocksLifeExpectancySummary2001,

@@ -7,28 +7,49 @@ Epi transition
 
 ## Future work
 
-Bayesian methods
-Highest resolution in a joint model, with error estimates
+There are many possible substantive and methodological extensions to the work presented in this thesis.
+Firstly, on the substantive side, there is a reason the final year of study period was restricted at 2019 that has nothing to do with the availability of finalised civil registration data for the proceeding years.
+That is the Covid-19 pandemic.
+It would be naïve to fit a the same model to an extended time period including the pandemic years, which had such a major influence on mortality patterns.
+The model relies heavily on linear trends, which would be affected by the final years.
+Further, pandemics are fat-tailed events, so the _Gaussian_ random walk effects would struggle to capture the shock without affecting the overall variance of the effect. 
 
-Substantive and methodological
+Rather than extending the study to include the pandemic years and look at the trends between 2002 and 2023, a more interesting question is to ask "had the pandemic happened, how would mortality be different?"
+This would be done using a counterfactual analysis: train a model to estimate annual mortality from 2002 to 2019 and produce a forecast for the years from 2020.
+A team, including myself, has already done this analysis at the national level at a weekly temporal resolution [@kontisMagnitudeDemographicsDynamics2020; @kontisLessonsLearnedLessons2022].
+Here, the task would instead involve forecasts for each sex-age-space-time-cause stratum on annual timescales.
+The group has been involved in a number of mortality forecasting projects [@kontisFutureLifeExpectancy2017; @bennettFutureLifeExpectancy2015; @foremanSmallAreaForecasts2017].
+The models are similar to those in this thesis, but would need to be adapted and trained specifically for forecasting purposes, with the possibility of averaging multiple models to reduce bias.
+The results would allow us to see how the cause-composition of mortality has changed compared to the _business as usual_ scenario.
+We would obviously expect and increase in deaths infectious disease, but were injuries reduced as the country was locked down in their homes?
+Did cancer outcomes worsen due to missed surgeries as hospitals were flooded with Covid-19 patients?
+Is there a longer term effect due to strain on emergency services, which has manifested in longer waiting lists and waiting times for appointments [@dorlingHowAusterityCaused2023]?
+And, how have these effects varied for different age groups and different areas of the country?
 
-Only care about LHS of equation.
-Flexible models, such as Gaussian processes, which use inductive biases and knowledge, or wilder like 
-Very familiar with research, was on a paper
-But ultimately, the working environment was not conducive to methods development
-Cluster offline, only a command line
-This is health data – Understand why people still use Scottish lip cancer and reference data
-A lot of time spent scaling the models
-Future research can incorporate new models
-Joint likelihood for causes (e.g Best et al.), using multiple surface, or something more flexible like Kronecker GP
-Packages don't exist yet, but should be there in near future
+One of the major strengths of the thesis was the use of Bayesian methods, at one of the highest resolutions in the literature for a model estimating mortality over space and time.
+This was largely thanks to recent developments in probabilistic programming, which allow sampling to run on GPUs rather than CPUs, and is generally faster for models with over 10,000 parameters [@laoTfpMcmcModern2020].
+The models themselves, which were based on previous work in the group[@bennettFutureLifeExpectancy2015; @bennettContributionsDiseasesInjuries2018], followed traditional statistical approaches using intercepts and linear slopes and adding in random walk effects for non-linearities.
+However, with models such as @eq-ch-4-model, we are actually only interested in the left-hand side of the equation – the death rate – and not at all in the values of the parameters on the right-hand side.
+There are a vast array of flexible models which can describe complex data without needing to design heavily parametrised structures.
+These range from Gaussian processes [@rasmussenGaussianProcessesMachine2006; @flaxmanFastHierarchicalGaussian], where the user can use inductive biases and their own knowledge to influence how the model fits the data, to wilder options like neural networks, which completely sacrifice any remaining interpretability of the effects.
 
-Since 2019, Covid
-Produce a forecast of mortality
-Run the counterfactual, as we did in Kontis at the weekly national level, but for district level and annual
-See how the cause-composition changed
-Obviously increase in infectious disease, but were injuries reduced?
-Were cancer outcomes worse due to missed surgeries?
-Is there a longer term effect due to strain on emergency services?
+During my PhD, I became very familiar with the literature on Gaussian processes, and was involved on a paper aimed at speeding up inference in spatial settings [@semenovaPriorVAEEncodingSpatial2022].
+One of the most promising avenues for the task of mortality estimation in this thesis, outlined in @flaxmanFastHierarchicalGaussian, is the use of Kronecker-structured covariance matrices to create hierarchical Gaussian processes.
+Here, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects.
+We can exploit the Kronecker structure for faster inference, as we no longer need to invert the full matrix, but only the smaller constituent matrices of each effect.
+Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data ^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
+Also, there was no guarantee the Gaussian process methods would be quicker, as the inversion of a large spatial matrix scales cubically, nor would it produce a result much different from the original model.
+Instead, I allocated time to scaling existing models and testing new hardware.
+I think the hierarchical Gaussian process model is much more flexible, requiring less testing of each effect in @eq-ch-4-model, and should be the starting point for future research.
+
+Another methodological extension would be to model causes of death jointly, thereby borrowing strength across _causes_.
+Diseases often share common risk factors and similar aetiologies, so there often is some redundancy in specifying a unique spatial surface for each cause.
+In the disease mapping literature, studies have built spatial models which share spatial components between diseases.
+Firstly, @knorr-heldSharedComponentModel2001 considered a model (also described in @bestComparisonBayesianSpatial2005) for two diseases, with disease-specific spatial components and one shared component.
+@heldJointDiseaseMapping2005 generalised this approach to model any number of diseases as a weighted sum of shared components.
+Rather than a general approach, both @downingJointDiseaseMapping2008 and @mahakiJointSpatiotemporalShared2018 allocated the spatial components to the diseases _a priori_ based on knowledge of the common risk factors between cancers such as smoking, obesity and alcohol consumption.
+@foremanSmallAreaForecasts2017 allowed for more variability by modelling interactions between each spatial unit and cause.
+There is also the option to extend the hierarchical Gaussian process described above with another component covariance matrix describing the correlations between each of the cause groups.
+Ultimately, the goal would be to run a single joint model that flexibly describes interactions between sexes, age groups, spatial units, time, and causes of death.
 
 ## Conclusions

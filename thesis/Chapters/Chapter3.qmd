@@ -45,7 +45,7 @@ Here, I have taken slices across each dimension, but the aim in the following ch
 Having already introduced the term "district" in @fig-ch-3-district, I'll set out the lay of the land in terms of geographies used in this thesis.
 This thesis is concerned only with England, as Scotland, Wales, and Northern Ireland each have their own separate deprivation data which are not comparable.
 The geographies in England form a nested hierarchy of spatial units from regions to districts to Middle-layer Super Output Areas (MSOAs) to Lower-layer Super Output Areas (LSOAs).
-The number of units for each geography are summarised in @tbl-geography.
+The number of units for each geography are summarised in @tbl-ch-3-geography.
 
 | Geography | Number of units | Median (5<sup>th</sup> - 95<sup>th</sup> percentile) population in 2019 |
 | --------- | --------------- | ------------------------------------------------ |
@@ -54,7 +54,7 @@ The number of units for each geography are summarised in @tbl-geography.
 | MSOA      | 6791            | 7985 (5760–11,917)                               |
 | LSOA      | 32844           | 1620 (1235-2468)                                 |
 
-: The number of each geographical unit of England used in thesis and their populations in 2019. {#tbl-geography}
+: The number of each geographical unit of England used in thesis and their populations in 2019. {#tbl-ch-3-geography}
 
 England is divided into 9 regions (London, North West, West Midlands, etc).
 Within these regions, there are 314 local authority districts.
@@ -95,7 +95,7 @@ The definition of the indicators can change over time.
 Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts and cannot be simply expressed as a proportion of the population.
 Therefore, I used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
 
-The deprivation data for geographies larger than LSOAs in @tbl-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
+The deprivation data for geographies larger than LSOAs in @tbl-ch-3-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
 
 ### Migration data
 
