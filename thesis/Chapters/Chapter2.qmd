@@ -38,7 +38,7 @@ SAHSU published an environment and health atlas for England and Wales, showing t
 ### Disease mapping at SAHSU
 
 Many of the studies at SAHSU focus on prevalence or mortality from rare diseases at small areas.
-The number of cases, or number of deaths, in a region are likely to small numbers.
+The number of cases, or number of deaths, in a region are likely to be small numbers.
 This sparseness issue is even more pertinent when the population is further stratified by age group.
 Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in risk.
 There is a need for statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
@@ -165,7 +165,7 @@ Here, we focus on class, income, geography, and deprivation.
 
 The notion of class is prominent in UK society, but health outcomes between classes are difficult to separate from other risk factors such as hazards in manual labour or smoking rates.
 The Whitehall study of 1967 followed 17,530 men working in the civil service and recorded their mortality over a 10-year period.
-@marmotInequalitiesDeathSpecific1984 found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and unskilled manual workers.
+@marmotInequalitiesDeathSpecific1984 found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and manual workers.
 They found, in general, a strong inverse association between grade and mortality – a term Marmot has coined a "social gradient".
 The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be fully explained by smoking or industrial exposure alone.
 The authors concluded there must be other factors inherent to social class (defined here by employment), which explain the mortality differences.
