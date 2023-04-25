@@ -1,6 +1,8 @@
 # And what they died from: cause-specific mortality at the district level {#sec-Chapter6}
 
-## Overview
+Where previous studies found female life expectancy in the bottom deciles of deprivation declined [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], in @sec-Chapter4, I showed there were widespread and accelerating declines, with 1 in 5 small areas for women and 1 in 9 for men observing a fall in life expectancy in 2014-19.
+However, the lack of available covariates at the MSOA level makes is difficult to suggest which social and environmental effects are driving life expectancy downwards.
+By analysing mortality for specific causes of death, which is the third objective of the thesis that I address in this chapter, we are able to suggest causal pathways that shape mortality profiles.
 
 ## Methods
 
@@ -12,7 +14,7 @@ There were no age­-district-year combinations in which the number of deaths fro
 
 Each death record in the post-neonatal period was assigned an ICD-10 code corresponding to the underlying cause of death.
 For neonates, which are not assigned an underlying cause of death, I used the ICD-10 code in the first position on the death record.
-I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@WHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
+I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
 I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have a similar history.
 I used the top 12 causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
 Together, these form a mutually exclusive, collectively exhaustive list of causes of death.
@@ -166,7 +168,7 @@ Liver cirrhosis, an advanced stage of liver damage, was only of the top 12 leadi
 It has perhaps the most interesting geography for change of all causes, with contrast between huge decreases in London and increases in the rest of the country, with the largest in the coastal southwest and east.
 The geography is perhaps indicative of the contrasting dynamics of the two main risk factors for liver cirrhosis: alcohol misuse and hepatitis B/C infection.
 Alcohol is the main cause of liver disease, and has driven a large proportion of increases in liver cirrhosis throughout Europe [@blachierBurdenLiverDisease2013].
-Alcohol is generally consumed less in the capital, with London having the lowest percentage of adults who abstain from drinking alcohol (23.6%) and the lowest percentage of adults who drink over 14 units per week (20.1%) [@LocalAlcoholProfiles2021].
+Alcohol is generally consumed less in the capital, with London having the lowest percentage of adults who abstain from drinking alcohol (23.6%) and the lowest percentage of adults who drink over 14 units per week (20.1%) [@publichealthenglandLocalAlcoholProfiles2021].
 On the other hand, the prevalence of hepatitis B/C has decreased over the past decades.
 There has been reduced incidence and vaccination for hepatitis B.
 Although a large number of people acquired hepatitis C in the 1970s and 1980s, the virus has since been identified and transmission has reduced [@blachierBurdenLiverDisease2013].

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This chapter presents the datasets, data cleaning, and modelling choices that are common between the proceeding chapters.
+This chapter presents the datasets, data cleaning, and modelling choices that are common between the proceeding analysis chapters.
 
 ## Counts of the dead
 
@@ -17,7 +17,7 @@ The data are updated every year and are mostly complete for previous years, but 
 Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis.
 For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older.
 There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
-Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@UserGuideMortality2022].
+Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@officefornationalstatisticsUserGuideMortality2022].
 
 Before to fitting any models, it's good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
 
@@ -66,14 +66,14 @@ LSOAs are a type of census geography made up of around four or five smaller unit
 OAs are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
 MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries.
 OAs, LSOAs, and MSOAs are all statistical units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
-No policies are created using these boundaries [@2011CensusGeographies2022].
+No policies are created using these boundaries [@officefornationalstatistics2011CensusGeographies2022].
 
 ### Counts of the living
 
 This second data sources we require are populations counts.
-These are taken from mid-year population estimates of the usual resident population by the ONS [@MiddleLayerSuper2021; @LowerLayerSuper2021].
+These are taken from mid-year population estimates of the usual resident population by the ONS [@officefornationalstatisticsMiddleLayerSuper2021; @officefornationalstatisticsLowerLayerSuper2021].
 The ONS estimates inter-censal populations on a rolling basis, updating the previous year's value using the change in the population in the GP patient registration data as an indicator of the true population change.
-The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England [@PopulationEstimatesOutput2021].
+The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England [@officefornationalstatisticsPopulationEstimatesOutput2021].
 
 ### Deprivation data
 
@@ -84,7 +84,7 @@ I used data for the following measures of socioeconomic deprivation from the Eng
 - Education, skills and training deprivation (also referred to as _low education_). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.
 
 The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data.
-The data are produced at the LSOA level [@EnglishIndicesDeprivation2019].
+The data are produced at the LSOA level [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
 
 IMD data are not available for every year.
 The analysis period for the thesis is 2002 to 2019, so I used data for these measures for 2004, as data for 2002 were not available, and 2019.
@@ -95,13 +95,13 @@ The definition of the indicators can change over time.
 Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts and cannot be simply expressed as a proportion of the population.
 Therefore, I used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.
 
-The deprivation data for geographies larger than LSOAs in @tbl-ch-3-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@EnglishIndicesDeprivation2019].
+The deprivation data for geographies larger than LSOAs in @tbl-ch-3-geography were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
 
 ### Migration data
 
 I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre.
 The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data [@vandijkUsingLinkedConsumer2021].
-Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs [@EnglishIndicesDeprivation2019].
+Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
 
 ## Modelling the dead
 

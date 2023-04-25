@@ -223,13 +223,13 @@ div.csl-indent {
 
 <section id="overview" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">3.1</span> Overview</h2>
-<p>This chapter presents the datasets, data cleaning, and modelling choices that are common between the proceeding chapters.</p>
+<p>This chapter presents the datasets, data cleaning, and modelling choices that are common between the proceeding analysis chapters.</p>
 </section>
 <section id="counts-of-the-dead" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="counts-of-the-dead"><span class="header-section-number">3.2</span> Counts of the dead</h2>
 <p>This thesis is primarily concerned with modelling death rates for small areas in England. This requires two data sources: counts of deaths, and populations counts. The counts of deaths come from de-identified civil registration data for all deaths in England from 2002 to 2019. In other words, every death in England from 2002 to 2019.</p>
 <p>The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data. The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner’s report to identify the underlying cause of death.</p>
-<p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="UserGuideMortality2022">(<a href="../references.html#ref-UserGuideMortality2022" role="doc-biblioref"><span>“User guide to mortality statistics,”</span> 2022</a>)</span>.</p>
+<p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="officefornationalstatisticsUserGuideMortality2022">(<a href="../references.html#ref-officefornationalstatisticsUserGuideMortality2022" role="doc-biblioref">Office for National Statistics, 2022a</a>)</span>.</p>
 <p>Before to fitting any models, it’s good practice to explore the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.</p>
 <div id="fig-ch-3-age" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -296,11 +296,11 @@ div.csl-indent {
 </table>
 </div>
 <p>England is divided into 9 regions (London, North West, West Midlands, etc). Within these regions, there are 314 local authority districts. Districts are administrative geographies formed from a mixture of London boroughs, metropolitan and non-metropolitan districts, and unitary authorities. They are responsible for local policies, and are therefore subject to local government restructuring and boundary changes. For stability, I chose the district boundaries from 2020 throughout.</p>
-<p>LSOAs are a type of census geography made up of around four or five smaller units called Output Areas (OAs). OAs are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity. MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries. OAs, LSOAs, and MSOAs are all statistical units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes. No policies are created using these boundaries <span class="citation" data-cites="2011CensusGeographies2022">(<a href="../references.html#ref-2011CensusGeographies2022" role="doc-biblioref"><span>“2011 <span>Census</span> geographies,”</span> 2022</a>)</span>.</p>
+<p>LSOAs are a type of census geography made up of around four or five smaller units called Output Areas (OAs). OAs are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity. MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries. OAs, LSOAs, and MSOAs are all statistical units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes. No policies are created using these boundaries <span class="citation" data-cites="officefornationalstatistics2011CensusGeographies2022">(<a href="../references.html#ref-officefornationalstatistics2011CensusGeographies2022" role="doc-biblioref">Office for National Statistics, 2022b</a>)</span>.</p>
 </section>
 <section id="counts-of-the-living" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="counts-of-the-living"><span class="header-section-number">3.2.2</span> Counts of the living</h3>
-<p>This second data sources we require are populations counts. These are taken from mid-year population estimates of the usual resident population by the ONS <span class="citation" data-cites="MiddleLayerSuper2021 LowerLayerSuper2021">(<a href="../references.html#ref-LowerLayerSuper2021" role="doc-biblioref"><span>“Lower layer <span>Super Output Area</span> population estimates,”</span> 2021</a>; <a href="../references.html#ref-MiddleLayerSuper2021" role="doc-biblioref"><span>“Middle layer <span>Super Output Area</span> population estimates,”</span> 2021</a>)</span>. The ONS estimates inter-censal populations on a rolling basis, updating the previous year’s value using the change in the population in the GP patient registration data as an indicator of the true population change. The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England <span class="citation" data-cites="PopulationEstimatesOutput2021">(<a href="../references.html#ref-PopulationEstimatesOutput2021" role="doc-biblioref"><span>“Population estimates by output areas, electoral, health and other geographies, <span>England</span> and <span>Wales</span>,”</span> 2021</a>)</span>.</p>
+<p>This second data sources we require are populations counts. These are taken from mid-year population estimates of the usual resident population by the ONS <span class="citation" data-cites="officefornationalstatisticsMiddleLayerSuper2021 officefornationalstatisticsLowerLayerSuper2021">(<a href="../references.html#ref-officefornationalstatisticsMiddleLayerSuper2021" role="doc-biblioref">Office for National Statistics, 2021a</a>, <a href="../references.html#ref-officefornationalstatisticsLowerLayerSuper2021" role="doc-biblioref">2021b</a>)</span>. The ONS estimates inter-censal populations on a rolling basis, updating the previous year’s value using the change in the population in the GP patient registration data as an indicator of the true population change. The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England <span class="citation" data-cites="officefornationalstatisticsPopulationEstimatesOutput2021">(<a href="../references.html#ref-officefornationalstatisticsPopulationEstimatesOutput2021" role="doc-biblioref">Office for National Statistics, 2021c</a>)</span>.</p>
 </section>
 <section id="deprivation-data" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="deprivation-data"><span class="header-section-number">3.2.3</span> Deprivation data</h3>
@@ -310,14 +310,14 @@ div.csl-indent {
 <li>Employment deprivation (also referred to as <em>unemployment</em>). The proportion of the relevant population of the geography involuntarily excluded from the labour market due to unemployment, sickness or disability, or caring responsibilities.</li>
 <li>Education, skills and training deprivation (also referred to as <em>low education</em>). Lack of attainment and skills, including education attainment levels, school attendance, and language proficiency indicators in the geographical population.</li>
 </ul>
-<p>The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data. The data are produced at the LSOA level <span class="citation" data-cites="EnglishIndicesDeprivation2019">(<a href="../references.html#ref-EnglishIndicesDeprivation2019" role="doc-biblioref"><span>“English indices of deprivation 2019,”</span> 2019</a>)</span>.</p>
+<p>The above measures are the three largest contributors to the Index of Multiple Deprivation (IMD), excluding a domain on health that also uses mortality data. The data are produced at the LSOA level <span class="citation" data-cites="ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019">(<a href="../references.html#ref-ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government, 2019</a>)</span>.</p>
 <p>IMD data are not available for every year. The analysis period for the thesis is 2002 to 2019, so I used data for these measures for 2004, as data for 2002 were not available, and 2019. The 2004 data on deprivation domains were reported for LSOA boundaries from the 2001 census. I mapped these data to the 2011 census LSOA boundaries by assigning the 2001 LSOA score to all postcodes contained within it, then overlaying the 2011 LSOA boundaries, and averaging the score for all constituent postcodes of each LSOA, to obtain the corresponding score for each 2011 LSOA.</p>
 <p>The definition of the indicators can change over time. Further, the indicator used for measuring education, skills and training deprivation (low education) is not directly interpretable because it combines multiple concepts and cannot be simply expressed as a proportion of the population. Therefore, I used ranking rather than scores so that comparisons can be made not only across spatial units in a single year, but also across the different years.</p>
-<p>The deprivation data for geographies larger than LSOAs in <a href="#tbl-ch-3-geography">Table&nbsp;<span>3.1</span></a> were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts <span class="citation" data-cites="EnglishIndicesDeprivation2019">(<a href="../references.html#ref-EnglishIndicesDeprivation2019" role="doc-biblioref"><span>“English indices of deprivation 2019,”</span> 2019</a>)</span>.</p>
+<p>The deprivation data for geographies larger than LSOAs in <a href="#tbl-ch-3-geography">Table&nbsp;<span>3.1</span></a> were created by ranking the population-weighted average of scores for all constituent LSOAs, as done previously for districts <span class="citation" data-cites="ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019">(<a href="../references.html#ref-ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government, 2019</a>)</span>.</p>
 </section>
 <section id="migration-data" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="migration-data"><span class="header-section-number">3.2.4</span> Migration data</h3>
-<p>I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre. The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data <span class="citation" data-cites="vandijkUsingLinkedConsumer2021">(<a href="../references.html#ref-vandijkUsingLinkedConsumer2021" role="doc-biblioref">van Dijk et al., 2021</a>)</span>. Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs <span class="citation" data-cites="EnglishIndicesDeprivation2019">(<a href="../references.html#ref-EnglishIndicesDeprivation2019" role="doc-biblioref"><span>“English indices of deprivation 2019,”</span> 2019</a>)</span>.</p>
+<p>I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre. The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data <span class="citation" data-cites="vandijkUsingLinkedConsumer2021">(<a href="../references.html#ref-vandijkUsingLinkedConsumer2021" role="doc-biblioref">van Dijk et al., 2021</a>)</span>. Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs <span class="citation" data-cites="ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019">(<a href="../references.html#ref-ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government, 2019</a>)</span>.</p>
 </section>
 </section>
 <section id="modelling-the-dead" class="level2" data-number="3.3">
@@ -340,38 +340,38 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-2011CensusGeographies2022" class="csl-entry" role="doc-biblioentry">
-2011 <span>Census</span> geographies. 2022. <em>Office for National Statistics</em>.
-</div>
 <div id="ref-devalpineNIMBLEMCMCParticle2022" class="csl-entry" role="doc-biblioentry">
 de Valpine P, Paciorek CJ, Turek D, Michaud N, Anderson-Bergman C, Obermayer F, Wehrhahn Cortes C, Rodrìguez A, Lang DT, Paganin S, Hug J. 2022. <span>NIMBLE</span>: <span>MCMC</span>, <span>Particle Filtering</span>, and <span>Programmable Hierarchical Modeling</span>.
 </div>
 <div id="ref-devalpineProgrammingModelsWriting2017" class="csl-entry" role="doc-biblioentry">
 de Valpine P, Turek D, Paciorek CJ, Anderson-Bergman C, Lang DT, Bodik R. 2017. Programming <span>With Models</span>: <span>Writing Statistical Algorithms</span> for <span>General Model Structures With NIMBLE</span>. <em>Journal of Computational and Graphical Statistics</em> <strong>26</strong>:403–413. doi:<a href="https://doi.org/10.1080/10618600.2016.1172487">10.1080/10618600.2016.1172487</a>
 </div>
-<div id="ref-EnglishIndicesDeprivation2019" class="csl-entry" role="doc-biblioentry">
-English indices of deprivation 2019. 2019. <em>Ministry of Housing, Communities &amp; Local Government</em>.
-</div>
 <div id="ref-laoTfpMcmcModern2020" class="csl-entry" role="doc-biblioentry">
 Lao J, Suter C, Langmore I, Chimisov C, Saxena A, Sountsov P, Moore D, Saurous RA, Hoffman MD, Dillon JV. 2020. Tfp.mcmc: <span>Modern Markov Chain Monte Carlo Tools Built</span> for <span>Modern Hardware</span>. doi:<a href="https://doi.org/10.48550/arXiv.2002.01184">10.48550/arXiv.2002.01184</a>
 </div>
-<div id="ref-LowerLayerSuper2021" class="csl-entry" role="doc-biblioentry">
-Lower layer <span>Super Output Area</span> population estimates. 2021. <em>Office for National Statistics</em>.
+<div id="ref-ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019" class="csl-entry" role="doc-biblioentry">
+Ministry of Housing, Communities &amp; Local Government. 2019. English indices of deprivation 2019. <em>Ministry of Housing, Communities &amp; Local Government</em>.
 </div>
-<div id="ref-MiddleLayerSuper2021" class="csl-entry" role="doc-biblioentry">
-Middle layer <span>Super Output Area</span> population estimates. 2021. <em>Office for National Statistics</em>.
+<div id="ref-officefornationalstatistics2011CensusGeographies2022" class="csl-entry" role="doc-biblioentry">
+Office for National Statistics. 2022b. 2011 <span>Census</span> geographies. <em>Office for National Statistics</em>.
+</div>
+<div id="ref-officefornationalstatisticsUserGuideMortality2022" class="csl-entry" role="doc-biblioentry">
+Office for National Statistics. 2022a. User guide to mortality statistics. <em>Office for National Statistics</em>.
+</div>
+<div id="ref-officefornationalstatisticsLowerLayerSuper2021" class="csl-entry" role="doc-biblioentry">
+Office for National Statistics. 2021b. Lower layer <span>Super Output Area</span> population estimates. <em>Office for National Statistics</em>.
+</div>
+<div id="ref-officefornationalstatisticsMiddleLayerSuper2021" class="csl-entry" role="doc-biblioentry">
+Office for National Statistics. 2021a. Middle layer <span>Super Output Area</span> population estimates. <em>Office for National Statistics</em>.
+</div>
+<div id="ref-officefornationalstatisticsPopulationEstimatesOutput2021" class="csl-entry" role="doc-biblioentry">
+Office for National Statistics. 2021c. Population estimates by output areas, electoral, health and other geographies, <span>England</span> and <span>Wales</span>. <em>Office for National Statistics</em>.
 </div>
 <div id="ref-phanComposableEffectsFlexible2019" class="csl-entry" role="doc-biblioentry">
 Phan D, Pradhan N, Jankowiak M. 2019. Composable <span>Effects</span> for <span>Flexible</span> and <span>Accelerated Probabilistic Programming</span> in <span>NumPyro</span>. doi:<a href="https://doi.org/10.48550/arXiv.1912.11554">10.48550/arXiv.1912.11554</a>
 </div>
-<div id="ref-PopulationEstimatesOutput2021" class="csl-entry" role="doc-biblioentry">
-Population estimates by output areas, electoral, health and other geographies, <span>England</span> and <span>Wales</span>. 2021. <em>Office for National Statistics</em>.
-</div>
 <div id="ref-rashidProbabilisticprogrammingpackages2022" class="csl-entry" role="doc-biblioentry">
 Rashid T. 2022. Probabilistic-programming-packages.
-</div>
-<div id="ref-UserGuideMortality2022" class="csl-entry" role="doc-biblioentry">
-User guide to mortality statistics. 2022. <em>Office for National Statistics</em>.
 </div>
 <div id="ref-vandijkUsingLinkedConsumer2021" class="csl-entry" role="doc-biblioentry">
 van Dijk JT, Lansley G, Longley PA. 2021. Using linked consumer registers to estimate residential moves in the <span>United Kingdom</span>. <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em> <strong>184</strong>:1452–1474. doi:<a href="https://doi.org/10.1111/rssa.12713">10.1111/rssa.12713</a>

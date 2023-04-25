@@ -116,7 +116,7 @@ And although the census is considered the "gold standard", it is subject to enum
 Beyond the population issue, finer scale studies are restricted by data availability.
 Where data are available, there is still the need to overcome small number issues before feeding death rates through the life table.
 @eayresEvaluationMethodologiesSmall2004 recommend a minimum population size of 5000 when using traditional life table methods, below which the calculation of life expectancy is unstable, impossible, or the error estimates become so large that any comparison between subgroups becomes meaningless.
-One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@HealthExpectanciesBirth2015; @LocalHealthSmall2021; @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
+One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021; @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
 Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce more accurate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009; @jonkerComparisonBayesianRandomEffects2012].
 
 @jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap in life expectancy for women and men.
@@ -183,7 +183,7 @@ The lowest life expectancies were seen in urban northern England, and the highes
 Within London itself, male and female life expectancy showed 5-6 years of variation.
 
 There have been substantial efforts in the UK to measure the deprivation of an area.
-Since 2004, the standard deprivation indicator in England  is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA) covering income, unemployment, health, crime and environmental data sources [@EnglishIndicesDeprivation2019].
+Since 2004, the standard deprivation indicator in England  is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA) covering income, unemployment, health, crime and environmental data sources [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
 The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
 The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham did better than expected for that level of deprivation [@steelChangesHealthCountries2018].
 @bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
@@ -198,17 +198,21 @@ The strategy saw a large increase in public spending targeting the social determ
 
 Following the change in government in 2010, the strategy came to an end.
 The Conservative government implemented a widespread series of cuts to public services, collectively known as austerity.
+This included both tight restrictions on the healthcare budget as well as a sweeping reorganisation of the NHS in hope of improving the organisation's efficiency, and cuts to the wider determinants of social health, such as housing and education [@hamRiseDeclineNHS2023].
 The cuts were geographically unequal, with reductions to funding for local governments particularly severe to local authorities with an old industrial base [@grayDepthsCutsUneven2018].
+
 The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
 These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
 Although it is difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in district-level life expectancy from 2013 to 2017.
 As written in the _The New York Times_, "after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty" [@goodmanBritainAusterityChanging2018] – a comparison only compounded by the Brexit vote in 2016.
 
 Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies.
+This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities [@hamRiseDeclineNHS2023].
 However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 show that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
-More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain"[@BritainHasEndured2023].
+More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain"[@theeconomistBritainHasEndured2023].
+And it's not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
 
 After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
-Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other industrialised countries [@kontisMagnitudeDemographicsDynamics2020].
+Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries [@kontisMagnitudeDemographicsDynamics2020].
 At the current time of writing in 2023, the health service is yet to recover, with waiting lists for operations and waiting times for emergency care unhealthily high [@dorlingHowAusterityCaused2023].
 There is no suggestion that the picture of health and health inequalities in the UK should improve in the coming years.

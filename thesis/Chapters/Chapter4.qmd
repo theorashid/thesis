@@ -1,11 +1,12 @@
 # Small: Life expectancy trends in England at the MSOA level {#sec-Chapter4}
 
+There have been declines in female life expectancy in England for the most deprived deciles since the start of the 2010s [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
+However, these studies have only broken England down into deciles of deprivation, rather than looking at geographical variation.
+And studies of trends in life expectancy have been limited to the district level [@bennettFutureLifeExpectancy2015], which masks substantial heterogeneity.
+In this chapter, I address the first objective of the thesis – to estimate trends in life expectancy for small areas in England from 2002 to 2019 – choosing a smaller unit of analysis than districts: MSOAs.
+
 This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author.
 The figures have been reproduced for the thesis, and the text has been updated but remains much the same as the original.
-
-## Overview
-
-
 
 ## Methods
 
@@ -100,7 +101,7 @@ In 2019, there was a 20.6 year (95% CrI 17.5–24.2) gap for women between the M
 The gap was 27.0 years (23.4–31.1) for men, between an MSOA in Kensington and Chelsea, London (95.3 years (92.1–99.3)) and an MSOA in Blackpool (68.3 years (66.9–69.6)).
 The difference between the first and 99<sup>th</sup> percentiles of life expectancy in 2019 was 14.2 years (13.9–14.5) for women and 13.6 years (13.4–13.9) for men.
 
-![Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 [@LifeExpectancyBirth2022].](../thesis-analysis/thesis_analysis/england/figures/distribution.pdf){#fig-ch-4-distribution}
+![Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 [@worldbankLifeExpectancyBirth2022].](../thesis-analysis/thesis_analysis/england/figures/distribution.pdf){#fig-ch-4-distribution}
 
 When all MSOAs were ranked on the basis of their life expectancy, the difference between successively ranked MSOAs was particularly large for the approximately 5% of MSOAs with the lowest and highest life expectancy (seen as the sharper decline or rise at the two ends of the ranked life expectancy curve in @fig-ch-4-distribution), indicating distinct groups at extreme advantage and disadvantage.
 
@@ -176,7 +177,7 @@ As a result, England has seen widening inequalities in longevity, with the life 
 
 The main strength of the analysis is the presentation of high-­resolution data for mortality and longevity across England over a period of substantial change in economic, health, and social care policy.
 By applying a hierarchical model based on patterns of mortality over age, space, and time, I obtained robust yearly estimates of mortality and life expectancy, together with the uncertainty in these estimates, for small areas.
-By contrast, studies that had not used a coherent model produced unstable (i.e., very large uncertainty) or implausible life expectancy estimates in some MSOAs, despite having aggregated deaths over 5 years, nor could they analyse trends at the MSOA level [@HealthExpectanciesBirth2015; @LocalHealthSmall2021].
+By contrast, studies that had not used a coherent model produced unstable (i.e., very large uncertainty) or implausible life expectancy estimates in some MSOAs, despite having aggregated deaths over 5 years, nor could they analyse trends at the MSOA level [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021].
 Comparison of estimates at MSOA and district level shows that the estimated MSOA life expectancy range was about 1.8 times the district-­level range for women and 2.0 times the district-­level range for men in 2019.
 
 A limitation of the work in this chapter is that I did not break down age beyond 85 years, which might mask some differences in old­-age mortality and survival patterns.
@@ -196,7 +197,7 @@ The extent of this underestimation is modest; however, because a large part of l
 
 ### Comparison with previous literature
 
-The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@HealthExpectanciesBirth2015; @LocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
+The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
 However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
 In terms of trends, studies that grouped small ­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
 By analysing trends at the MSOA level, we could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
