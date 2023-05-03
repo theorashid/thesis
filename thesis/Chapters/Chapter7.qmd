@@ -55,7 +55,7 @@ Probability of dying from trachea, bronchus and lung cancers between birth and 8
 
 ![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Colon_and_rectum_cancers.pdf){#fig-ch-7-map-colorectal-men}
 
-Probability of dying from colon and rectum cancers between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+Probability of dying from colorectal cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
 ::: {#fig-ch-7-map-oesophagus layout-ncol=1}
@@ -142,11 +142,11 @@ Local authority district probability of death in 2019 in relation to poverty for
 | Trachea, bronchus and lung cancers | 0.78  | 0.87  |
 | Breast cancer                      | 0.02  |       |
 | Prostate cancer                    |       | 0.17  |
-| Colon and rectum cancers           | 0.09  | 0.45  |
-| Pancreas cancer                    | 0.04  | -0.01 |
-| Ovary cancer                       | -0.04 |       |
+| Colorectal cancer                  | 0.09  | 0.45  |
+| Pancreatic cancer                  | 0.04  | -0.01 |
+| Ovarian cancer                     | -0.04 |       |
 | Lymphomas, multiple myeloma        | 0.00  | -0.07 |
-| Oesophagus cancer                  | 0.41  | 0.48  |
+| Oesophageal cancer                 | 0.41  | 0.48  |
 | Bladder cancer                     |       | 0.46  |
 | Leukaemia                          | -0.06 | 0.18  |
 | Corpus uteri cancer                | 0.27  |       |

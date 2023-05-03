@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,24 +79,26 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Chapters/Chapter8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modelling the dead and what they died from</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/theorashid/thesis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/theorashid/thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -104,75 +106,89 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></a>
+  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></a>
+  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></a>
+  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></a>
+  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></a>
+  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></a>
+  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></span></a>
   </div>
 </li>
       </ul>
@@ -180,14 +196,15 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#public-health-and-policy-implications-of-findings" id="toc-public-health-and-policy-implications-of-findings" class="nav-link active" data-scroll-target="#public-health-and-policy-implications-of-findings"><span class="toc-section-number">8.1</span>  Public health and policy implications of findings</a></li>
-  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work"><span class="toc-section-number">8.2</span>  Future work</a></li>
+  <li><a href="#public-health-and-policy-implications-of-findings" id="toc-public-health-and-policy-implications-of-findings" class="nav-link active" data-scroll-target="#public-health-and-policy-implications-of-findings"><span class="header-section-number">8.1</span> Public health and policy implications of findings</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work"><span class="header-section-number">8.2</span> Future work</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -196,7 +213,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-Chapter8" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></h1>
+<h1 class="title"><span id="sec-Chapter8" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></h1>
 </div>
 
 
@@ -229,80 +246,80 @@ div.csl-indent {
 <!-- ## Conclusions -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-angusIncreasesDeathsDespair2023" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-angusIncreasesDeathsDespair2023" class="csl-entry" role="listitem">
 Angus C, Buckley C, Tilstra AM, Dowd JB. 2023. Increases in <span>“deaths of despair”</span> during the <span>COVID-19</span> pandemic in the <span>United States</span> and the <span>United Kingdom</span>. <em>Public Health</em> <strong>218</strong>:92–96. doi:<a href="https://doi.org/10.1016/j.puhe.2023.02.019">10.1016/j.puhe.2023.02.019</a>
 </div>
-<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="listitem">
 Bennett JE, Li G, Foreman K, Best N, Kontis V, Pearson C, Hambly P, Ezzati M. 2015. The future of life expectancy and life expectancy inequalities in <span>England</span> and <span>Wales</span>: <span>Bayesian</span> spatiotemporal forecasting. <em>The Lancet</em> <strong>386</strong>:163–170. doi:<a href="https://doi.org/10.1016/S0140-6736(15)60296-3">10.1016/S0140-6736(15)60296-3</a>
 </div>
-<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="listitem">
 Bennett JE, Pearson-Stuttard J, Kontis V, Capewell S, Wolfe I, Ezzati M. 2018. Contributions of diseases and injuries to widening life expectancy inequalities in <span>England</span> from 2001 to 2016: A population-based analysis of vital registration data. <em>The Lancet Public Health</em> <strong>3</strong>:e586–e597. doi:<a href="https://doi.org/10.1016/S2468-2667(18)30214-7">10.1016/S2468-2667(18)30214-7</a>
 </div>
-<div id="ref-bestComparisonBayesianSpatial2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bestComparisonBayesianSpatial2005" class="csl-entry" role="listitem">
 Best N, Richardson S, Thomson A. 2005. A comparison of <span>Bayesian</span> spatial models for disease mapping. <em>Statistical Methods in Medical Research</em> <strong>14</strong>:35–59. doi:<a href="https://doi.org/10.1191/0962280205sm388oa">10.1191/0962280205sm388oa</a>
 </div>
-<div id="ref-burn-murdochWhyAreAmericans2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-burn-murdochWhyAreAmericans2023" class="csl-entry" role="listitem">
 Burn-Murdoch J. 2023. Why are <span>Americans</span> dying so young? <em>Financial Times</em>.
 </div>
-<div id="ref-caseRisingMorbidityMortality2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-caseRisingMorbidityMortality2015" class="csl-entry" role="listitem">
 Case A, Deaton A. 2015. Rising morbidity and mortality in midlife among white non-<span>Hispanic Americans</span> in the 21st century. <em>Proceedings of the National Academy of Sciences</em> <strong>112</strong>:15078–15083. doi:<a href="https://doi.org/10.1073/pnas.1518393112">10.1073/pnas.1518393112</a>
 </div>
-<div id="ref-dorlingHowAusterityCaused2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dorlingHowAusterityCaused2023" class="csl-entry" role="listitem">
 Dorling D. 2023. How austerity caused the <span>NHS</span> crisis. <em>openDemocracy</em>.
 </div>
-<div id="ref-downingJointDiseaseMapping2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-downingJointDiseaseMapping2008" class="csl-entry" role="listitem">
 Downing A, Forman D, Gilthorpe MS, Edwards KL, Manda SO. 2008. Joint disease mapping using six cancers in the <span>Yorkshire</span> region of <span>England</span>. <em>International Journal of Health Geographics</em> <strong>7</strong>:41. doi:<a href="https://doi.org/10.1186/1476-072X-7-41">10.1186/1476-072X-7-41</a>
 </div>
-<div id="ref-flaxmanFastHierarchicalGaussian2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-flaxmanFastHierarchicalGaussian2015" class="csl-entry" role="listitem">
 Flaxman S, Gelman A, Neill D, Smola A, Vehtari A, Wilson AG. 2015. Fast hierarchical <span>Gaussian</span> processes.
 </div>
-<div id="ref-foremanSmallAreaForecasts2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-foremanSmallAreaForecasts2017" class="csl-entry" role="listitem">
 Foreman KJ, Li G, Best N, Ezzati M. 2017. <a href="https://www.jstor.org/stable/44681865">Small area forecasts of cause-specific mortality: Application of a <span>Bayesian</span> hierarchical model to <span>US</span> vital registration data</a>. <em>Journal of the Royal Statistical Society Series C (Applied Statistics)</em> <strong>66</strong>:121–139.
 </div>
-<div id="ref-gaylinRefocusingLensEpidemiologic1997" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gaylinRefocusingLensEpidemiologic1997" class="csl-entry" role="listitem">
 Gaylin DS, Kates J. 1997. Refocusing the lens: <span>Epidemiologic</span> transition theory, mortality differentials, and the <span>AIDS</span> pandemic. <em>Social Science &amp; Medicine</em> <strong>44</strong>:609–621. doi:<a href="https://doi.org/10.1016/S0277-9536(96)00212-2">10.1016/S0277-9536(96)00212-2</a>
 </div>
-<div id="ref-hamRiseDeclineNHS2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hamRiseDeclineNHS2023" class="csl-entry" role="listitem">
 Ham C. 2023. The <span>Rise</span> and <span>Decline</span> of the <span>NHS</span> in <span>England</span> 2000-20. <span>The King’s Fund</span>.
 </div>
-<div id="ref-heldJointDiseaseMapping2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-heldJointDiseaseMapping2005" class="csl-entry" role="listitem">
 Held L, Natário I, Fenton SE, Rue H, Becker N. 2005. Towards joint disease mapping. <em>Statistical Methods in Medical Research</em> <strong>14</strong>:61–82. doi:<a href="https://doi.org/10.1191/0962280205sm389oa">10.1191/0962280205sm389oa</a>
 </div>
-<div id="ref-knorr-heldSharedComponentModel2001" class="csl-entry" role="doc-biblioentry">
+<div id="ref-knorr-heldSharedComponentModel2001" class="csl-entry" role="listitem">
 Knorr-Held L, Best NG. 2001. <a href="https://www.jstor.org/stable/2680535">A <span>Shared Component Model</span> for <span>Detecting Joint</span> and <span>Selective Clustering</span> of <span>Two Diseases</span></a>. <em>Journal of the Royal Statistical Society Series A (Statistics in Society)</em> <strong>164</strong>:73–85.
 </div>
-<div id="ref-kontisFutureLifeExpectancy2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kontisFutureLifeExpectancy2017" class="csl-entry" role="listitem">
 Kontis V, Bennett JE, Mathers CD, Li G, Foreman K, Ezzati M. 2017. Future life expectancy in 35 industrialised countries: Projections with a <span>Bayesian</span> model ensemble. <em>The Lancet</em> <strong>389</strong>:1323–1335. doi:<a href="https://doi.org/10.1016/S0140-6736(16)32381-9">10.1016/S0140-6736(16)32381-9</a>
 </div>
-<div id="ref-kontisLessonsLearnedLessons2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kontisLessonsLearnedLessons2022" class="csl-entry" role="listitem">
 Kontis V, Bennett JE, Parks RM, Rashid T, Pearson-Stuttard J, Asaria P, Zhou B, Guillot M, Mathers CD, Khang Y-H, McKee M, Ezzati M. 2022. Lessons learned and lessons missed: Impact of the coronavirus disease 2019 (<span>COVID-19</span>) pandemic on all-cause mortality in 40 industrialised countries and <span>US</span> states prior to mass vaccination. <em>Wellcome Open Research</em> <strong>6</strong>:279. doi:<a href="https://doi.org/10.12688/wellcomeopenres.17253.2">10.12688/wellcomeopenres.17253.2</a>
 </div>
-<div id="ref-kontisMagnitudeDemographicsDynamics2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kontisMagnitudeDemographicsDynamics2020" class="csl-entry" role="listitem">
 Kontis V, Bennett JE, Rashid T, Parks RM, Pearson-Stuttard J, Guillot M, Asaria P, Zhou B, Battaglini M, Corsetti G, McKee M, Di Cesare M, Mathers CD, Ezzati M. 2020. Magnitude, demographics and dynamics of the effect of the first wave of the <span>COVID-19</span> pandemic on all-cause mortality in 21 industrialized countries. <em>Nature Medicine</em> <strong>26</strong>:1919–1928. doi:<a href="https://doi.org/10.1038/s41591-020-1112-0">10.1038/s41591-020-1112-0</a>
 </div>
-<div id="ref-laoTfpMcmcModern2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-laoTfpMcmcModern2020" class="csl-entry" role="listitem">
 Lao J, Suter C, Langmore I, Chimisov C, Saxena A, Sountsov P, Moore D, Saurous RA, Hoffman MD, Dillon JV. 2020. Tfp.mcmc: <span>Modern Markov Chain Monte Carlo Tools Built</span> for <span>Modern Hardware</span>. doi:<a href="https://doi.org/10.48550/arXiv.2002.01184">10.48550/arXiv.2002.01184</a>
 </div>
-<div id="ref-leonTrendsLifeExpectancy2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-leonTrendsLifeExpectancy2019" class="csl-entry" role="listitem">
 Leon DA, Jdanov DA, Shkolnikov VM. 2019. Trends in life expectancy and age-specific mortality in <span>England</span> and <span>Wales</span>, 1970, in comparison with a set of 22 high-income countries: An analysis of vital statistics data. <em>The Lancet Public Health</em> <strong>4</strong>:e575–e582. doi:<a href="https://doi.org/10.1016/S2468-2667(19)30177-X">10.1016/S2468-2667(19)30177-X</a>
 </div>
-<div id="ref-mahakiJointSpatiotemporalShared2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mahakiJointSpatiotemporalShared2018" class="csl-entry" role="listitem">
 Mahaki B, Mehrabi Y, Kavousi A, Schmid VJ. 2018. Joint <span class="nocase">Spatio-temporal Shared Component Model</span> with an <span>Application</span> in <span>Iran Cancer Data</span>. <em>Asian Pacific Journal of Cancer Prevention</em> <strong>19</strong>:1553–1560. doi:<a href="https://doi.org/10.22034/APJCP.2018.19.6.1553">10.22034/APJCP.2018.19.6.1553</a>
 </div>
-<div id="ref-marmotMarmotReview102020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-marmotMarmotReview102020" class="csl-entry" role="listitem">
 Marmot MG, Allen J, Boyce T, Goldblatt P, Morrison J. 2020. Marmot <span>Review</span>: 10 years on. <span>Institute of Health Equity</span>.
 </div>
-<div id="ref-oecdOECDReviewsHealth2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-oecdOECDReviewsHealth2016" class="csl-entry" role="listitem">
 OECD. 2016. <span>OECD Reviews</span> of <span>Health Care Quality</span>: <span>United Kingdom</span> 2016: <span>Raising Standards</span>. <span>Paris</span>: <span>Organisation for Economic Co-operation and Development</span>.
 </div>
-<div id="ref-olshanskyFourthStageEpidemiologic1986" class="csl-entry" role="doc-biblioentry">
+<div id="ref-olshanskyFourthStageEpidemiologic1986" class="csl-entry" role="listitem">
 Olshansky SJ, Ault AB. 1986. The <span>Fourth Stage</span> of the <span>Epidemiologic Transition</span>: <span>The Age</span> of <span>Delayed Degenerative Diseases</span>. <em>The Milbank Quarterly</em> <strong>64</strong>:355–391. doi:<a href="https://doi.org/10.2307/3350025">10.2307/3350025</a>
 </div>
-<div id="ref-rasmussenGaussianProcessesMachine2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rasmussenGaussianProcessesMachine2006" class="csl-entry" role="listitem">
 Rasmussen CE, Williams CKI. 2006. Gaussian <span>Processes</span> for <span>Machine Learning</span>. <span>MIT Press</span>.
 </div>
-<div id="ref-semenovaPriorVAEEncodingSpatial2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-semenovaPriorVAEEncodingSpatial2022" class="csl-entry" role="listitem">
 Semenova E, Xu Y, Howes A, Rashid T, Bhatt S, Mishra S, Flaxman S. 2022. <span>PriorVAE</span>: Encoding spatial priors with variational autoencoders for small-area estimation. <em>Journal of The Royal Society Interface</em> <strong>19</strong>:20220094. doi:<a href="https://doi.org/10.1098/rsif.2022.0094">10.1098/rsif.2022.0094</a>
 </div>
 </div>
@@ -342,9 +359,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -409,6 +440,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

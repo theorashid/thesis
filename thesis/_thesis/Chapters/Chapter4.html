@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -71,6 +71,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -80,24 +81,26 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Chapters/Chapter4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modelling the dead and what they died from</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/theorashid/thesis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/theorashid/thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -105,75 +108,89 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></a>
+  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></a>
+  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></a>
+  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></a>
+  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></a>
+  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></a>
+  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,30 +198,31 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods"><span class="toc-section-number">4.1</span>  Methods</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods"><span class="header-section-number">4.1</span> Methods</a>
   <ul class="collapse">
-  <li><a href="#mortality-and-population-data" id="toc-mortality-and-population-data" class="nav-link" data-scroll-target="#mortality-and-population-data"><span class="toc-section-number">4.1.1</span>  Mortality and population data</a></li>
-  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis"><span class="toc-section-number">4.1.2</span>  Statistical analysis</a></li>
+  <li><a href="#mortality-and-population-data" id="toc-mortality-and-population-data" class="nav-link" data-scroll-target="#mortality-and-population-data"><span class="header-section-number">4.1.1</span> Mortality and population data</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis"><span class="header-section-number">4.1.2</span> Statistical analysis</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="toc-section-number">4.2</span>  Results</a>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">4.2</span> Results</a>
   <ul class="collapse">
-  <li><a href="#inequalities-in-life-expectancy" id="toc-inequalities-in-life-expectancy" class="nav-link" data-scroll-target="#inequalities-in-life-expectancy"><span class="toc-section-number">4.2.1</span>  Inequalities in life expectancy</a></li>
-  <li><a href="#change-in-life-expectancy" id="toc-change-in-life-expectancy" class="nav-link" data-scroll-target="#change-in-life-expectancy"><span class="toc-section-number">4.2.2</span>  Change in life expectancy</a></li>
-  <li><a href="#life-expectancy-and-deprivation" id="toc-life-expectancy-and-deprivation" class="nav-link" data-scroll-target="#life-expectancy-and-deprivation"><span class="toc-section-number">4.2.3</span>  Life expectancy and deprivation</a></li>
-  <li><a href="#inequalities-in-probability-of-survival" id="toc-inequalities-in-probability-of-survival" class="nav-link" data-scroll-target="#inequalities-in-probability-of-survival"><span class="toc-section-number">4.2.4</span>  Inequalities in probability of survival</a></li>
+  <li><a href="#inequalities-in-life-expectancy" id="toc-inequalities-in-life-expectancy" class="nav-link" data-scroll-target="#inequalities-in-life-expectancy"><span class="header-section-number">4.2.1</span> Inequalities in life expectancy</a></li>
+  <li><a href="#change-in-life-expectancy" id="toc-change-in-life-expectancy" class="nav-link" data-scroll-target="#change-in-life-expectancy"><span class="header-section-number">4.2.2</span> Change in life expectancy</a></li>
+  <li><a href="#life-expectancy-and-deprivation" id="toc-life-expectancy-and-deprivation" class="nav-link" data-scroll-target="#life-expectancy-and-deprivation"><span class="header-section-number">4.2.3</span> Life expectancy and deprivation</a></li>
+  <li><a href="#inequalities-in-probability-of-survival" id="toc-inequalities-in-probability-of-survival" class="nav-link" data-scroll-target="#inequalities-in-probability-of-survival"><span class="header-section-number">4.2.4</span> Inequalities in probability of survival</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">4.3</span>  Discussion</a>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">4.3</span> Discussion</a>
   <ul class="collapse">
-  <li><a href="#strengths-and-limitations" id="toc-strengths-and-limitations" class="nav-link" data-scroll-target="#strengths-and-limitations"><span class="toc-section-number">4.3.1</span>  Strengths and limitations</a></li>
-  <li><a href="#comparison-with-previous-literature" id="toc-comparison-with-previous-literature" class="nav-link" data-scroll-target="#comparison-with-previous-literature"><span class="toc-section-number">4.3.2</span>  Comparison with previous literature</a></li>
-  <li><a href="#is-england-the-new-usa-in-a-bad-way" id="toc-is-england-the-new-usa-in-a-bad-way" class="nav-link" data-scroll-target="#is-england-the-new-usa-in-a-bad-way"><span class="toc-section-number">4.3.3</span>  Is England the new USA (in a bad way)?</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">4.3.4</span>  Summary</a></li>
+  <li><a href="#strengths-and-limitations" id="toc-strengths-and-limitations" class="nav-link" data-scroll-target="#strengths-and-limitations"><span class="header-section-number">4.3.1</span> Strengths and limitations</a></li>
+  <li><a href="#comparison-with-previous-literature" id="toc-comparison-with-previous-literature" class="nav-link" data-scroll-target="#comparison-with-previous-literature"><span class="header-section-number">4.3.2</span> Comparison with previous literature</a></li>
+  <li><a href="#is-england-the-new-usa-in-a-bad-way" id="toc-is-england-the-new-usa-in-a-bad-way" class="nav-link" data-scroll-target="#is-england-the-new-usa-in-a-bad-way"><span class="header-section-number">4.3.3</span> Is England the new USA (in a bad way)?</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.3.4</span> Summary</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -214,7 +232,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-Chapter4" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></h1>
+<h1 class="title"><span id="sec-Chapter4" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></h1>
 </div>
 
 
@@ -268,14 +286,14 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <div id="fig-ch-4-distribution" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/distribution.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 <span class="citation" data-cites="worldbankLifeExpectancyBirth2022">(<a href="../references.html#ref-worldbankLifeExpectancyBirth2022" role="doc-biblioref">World Bank, 2022</a>)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 <span class="citation" data-cites="worldbankLifeExpectancyBirth2022">(<a href="../references.html#ref-worldbankLifeExpectancyBirth2022" role="doc-biblioref">World Bank, 2022</a>)</span>.</figcaption>
 </figure>
 </div>
 <p>When all MSOAs were ranked on the basis of their life expectancy, the difference between successively ranked MSOAs was particularly large for the approximately 5% of MSOAs with the lowest and highest life expectancy (seen as the sharper decline or rise at the two ends of the ranked life expectancy curve in <a href="#fig-ch-4-distribution">Figure&nbsp;<span>4.1</span></a>), indicating distinct groups at extreme advantage and disadvantage.</p>
 <div id="fig-ch-4-map-level" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/map_level.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></figcaption>
 </figure>
 </div>
 <p>The 124 (1.8%) of 6791 MSOAs with the lowest female life expectancy and 262 (3.9%) MSOAs with the lowest male life expectancy in 2019 were located in urban areas, particularly in the north, including Blackpool, Leeds, Liverpool, Manchester, and Newcastle. Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts (<a href="#fig-ch-4-map-level">Figure&nbsp;<span>4.2</span></a>).</p>
@@ -286,40 +304,40 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <div id="fig-ch-4-sex-comp" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/sex_comp.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: Comparison of female and male life expectancy in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: Comparison of female and male life expectancy in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-4-map-change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/map_change.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: Geography of change in life expectancy from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.4: Geography of change in life expectancy from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-4-map-pp-change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/map_change_prob.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.5: Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.5: Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <p>Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs. Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 64%). For the other MSOAs, the increase ranged from less than 1 year in 31 MSOAs to more than 7 years in 114 MSOAs. The largest increases in female and male life expectancies were seen in some MSOAs in and around London (e.g., in the London Borough of Camden). In 5,133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (<a href="#fig-ch-4-sex-comp">Figure&nbsp;<span>4.3</span></a>), leading to a closing of the life expectancy gap between female and male sexes.</p>
 <div id="fig-ch-4-scatter-time" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/scatter_time.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.6: Distribution of MSOA life expectancies in each year from 2002 to 2019. Each point shows one MSOA. The central line shows national life expectancy.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.6: Distribution of MSOA life expectancies in each year from 2002 to 2019. Each point shows one MSOA. The central line shows national life expectancy.</figcaption>
 </figure>
 </div>
 <p>The life expectancy increase from 2002 to 2019 was smaller in MSOAs where life expectancy had been lower in 2002, and vice versa, especially for women, which led to a larger life expectancy inequality across MSOAs in 2019 than in 2002 (<a href="#fig-ch-4-scatter-time">Figure&nbsp;<span>4.6</span></a>, <a href="#fig-ch-4-inequality-time">Figure&nbsp;<span>4.7</span></a>). Specifically, the aforementioned 20.6 year (17.5–24.2) gap for women and 27.0 year (23.4–31.1) gap for men between the lowest and highest MSOA life expectancies in 2019 were larger than those in 2002 by 4.3 years (–1.3 to 9.3) for women and 7.7 years (4.0 to 11.7) for men. Similarly, the gap between the first and 99<sup>th</sup> percentiles of MSOA life expectancy for women increased from 10.7 years (10.4–10.9) in 2002 to reach 14.2 years (13.9–14.5) in 2019, and for men increased from 11.5 years (11.3–11.7) in 2002 to 13.6 years (13.4–13.9) in 2019.</p>
 <div id="fig-ch-4-inequality-time" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/inequality_time.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.7: Maximum (highest) to minimum (lowest) and 99<sup>th</sup> to first percentile differences in life expectancy across 6791 MSOAs, 2002–19. The large difference in 2017 is due to the low life expectancy in the MSOA where the deaths in the Grenfell Tower (Kensington and Chelsea, London) fire took place.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.7: Maximum (highest) to minimum (lowest) and 99<sup>th</sup> to first percentile differences in life expectancy across 6791 MSOAs, 2002–19. The large difference in 2017 is due to the low life expectancy in the MSOA where the deaths in the Grenfell Tower (Kensington and Chelsea, London) fire took place.</figcaption>
 </figure>
 </div>
 <p>When broken down by time period, the vast majority of MSOAs saw a life expectancy increase in 2002–06 and 2006–10 (<a href="#fig-ch-4-change">Figure&nbsp;<span>4.8</span></a>). By contrast, women in 351 (5.2%) MSOAs had a median posterior change in life expectancy in 2010–14 that was negative. By 2014–19, the number of MSOAs with a negative median posterior change had risen to 1270 (18.7%) for women, with men in 784 (11.5%) MSOAs also showing a decline. These MSOAs tended to be places in which life expectancy was already low.</p>
 <div id="fig-ch-4-change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/change.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.8: Change in MSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one MSOA. MSOAs are coloured by their life expectancy at the beginning of each period (e.g., for 2014–19, they are coloured by life expectancy in 2014).</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.8: Change in MSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one MSOA. MSOAs are coloured by their life expectancy at the beginning of each period (e.g., for 2014–19, they are coloured by life expectancy in 2014).</figcaption>
 </figure>
 </div>
 </section>
@@ -329,7 +347,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <div id="fig-ch-4-imd" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/IMD.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.9: MSOA life expectancy in relation to measures of socioeconomic deprivation in the MSOA in 2002 and 2019. The socioeconomic measures are poverty, unemployment, and education. The lines show the smooth relationship fitted with locally estimated scatterplot smoothing for each year.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.9: MSOA life expectancy in relation to measures of socioeconomic deprivation in the MSOA in 2002 and 2019. The socioeconomic measures are poverty, unemployment, and education. The lines show the smooth relationship fitted with locally estimated scatterplot smoothing for each year.</figcaption>
 </figure>
 </div>
 </section>
@@ -339,7 +357,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <div id="fig-ch-4-q-change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/england/figures/q_change.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.10: Probability of dying in specific ages in 6791 MSOAs in England in 2002 and 2019. Each point shows one MSOA. The vertical axis uses a log scale so that the large differences in survival across ages can be seen.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4.10: Probability of dying in specific ages in 6791 MSOAs in England in 2002 and 2019. Each point shows one MSOA. The vertical axis uses a log scale so that the large differences in survival across ages can be seen.</figcaption>
 </figure>
 </div>
 </section>
@@ -372,80 +390,80 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <p>These results show that numerous communities in England had begun to have a decline in longevity, mirroring an earlier trend in the USA. That these trends happened in the decade before the Covid-19 pandemic – so-called “normal times” – is worrying, and signals ongoing policy failures to tackle the social determinants of health.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-alexiouLocalGovernmentFunding2021" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-alexiouLocalGovernmentFunding2021" class="csl-entry" role="listitem">
 Alexiou A, Fahy K, Mason K, Bennett D, Brown H, Bambra C, Taylor-Robinson D, Barr B. 2021. Local government funding and life expectancy in <span>England</span>: A longitudinal ecological study. <em>The Lancet Public Health</em> <strong>6</strong>:e641–e647. doi:<a href="https://doi.org/10.1016/S2468-2667(21)00110-9">10.1016/S2468-2667(21)00110-9</a>
 </div>
-<div id="ref-beltran-sanchezTwentiethCenturySurge2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-beltran-sanchezTwentiethCenturySurge2015" class="csl-entry" role="listitem">
 Beltrán-Sánchez H, Finch CE, Crimmins EM. 2015. Twentieth century surge of excess adult male mortality. <em>Proceedings of the National Academy of Sciences</em> <strong>112</strong>:8993–8998. doi:<a href="https://doi.org/10.1073/pnas.1421942112">10.1073/pnas.1421942112</a>
 </div>
-<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="listitem">
 Bennett JE, Li G, Foreman K, Best N, Kontis V, Pearson C, Hambly P, Ezzati M. 2015. The future of life expectancy and life expectancy inequalities in <span>England</span> and <span>Wales</span>: <span>Bayesian</span> spatiotemporal forecasting. <em>The Lancet</em> <strong>386</strong>:163–170. doi:<a href="https://doi.org/10.1016/S0140-6736(15)60296-3">10.1016/S0140-6736(15)60296-3</a>
 </div>
-<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bennettContributionsDiseasesInjuries2018" class="csl-entry" role="listitem">
 Bennett JE, Pearson-Stuttard J, Kontis V, Capewell S, Wolfe I, Ezzati M. 2018. Contributions of diseases and injuries to widening life expectancy inequalities in <span>England</span> from 2001 to 2016: A population-based analysis of vital registration data. <em>The Lancet Public Health</em> <strong>3</strong>:e586–e597. doi:<a href="https://doi.org/10.1016/S2468-2667(18)30214-7">10.1016/S2468-2667(18)30214-7</a>
 </div>
-<div id="ref-blundellCOVID19Inequalities2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blundellCOVID19Inequalities2020" class="csl-entry" role="listitem">
 Blundell R, Costa Dias M, Joyce R, Xu X. 2020. <span>COVID-19</span> and <span>Inequalities</span>. <em>Fiscal Studies</em> <strong>41</strong>:291–319. doi:<a href="https://doi.org/10.1111/1475-5890.12232">10.1111/1475-5890.12232</a>
 </div>
-<div id="ref-burn-murdochWhyAreAmericans2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-burn-murdochWhyAreAmericans2023" class="csl-entry" role="listitem">
 Burn-Murdoch J. 2023. Why are <span>Americans</span> dying so young? <em>Financial Times</em>.
 </div>
-<div id="ref-chettyAssociationIncomeLife2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chettyAssociationIncomeLife2016" class="csl-entry" role="listitem">
 Chetty R, Stepner M, Abraham S, Lin S, Scuderi B, Turner N, Bergeron A, Cutler D. 2016. The <span>Association Between Income</span> and <span>Life Expectancy</span> in the <span>United States</span>, 2001-2014. <em>JAMA</em> <strong>315</strong>:1750–1766. doi:<a href="https://doi.org/10.1001/jama.2016.4226">10.1001/jama.2016.4226</a>
 </div>
-<div id="ref-congdonGeographicalPatternsDrugRelated2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-congdonGeographicalPatternsDrugRelated2019" class="csl-entry" role="listitem">
 Congdon P. 2019. Geographical <span>Patterns</span> in <span>Drug-Related Mortality</span> and <span>Suicide</span>: <span>Investigating Commonalities</span> in <span>English Small Areas</span>. <em>International Journal of Environmental Research and Public Health</em> <strong>16</strong>:1831. doi:<a href="https://doi.org/10.3390/ijerph16101831">10.3390/ijerph16101831</a>
 </div>
-<div id="ref-connollyIncreasingInequalitiesHealth2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-connollyIncreasingInequalitiesHealth2007" class="csl-entry" role="listitem">
 Connolly S, O’Reilly D, Rosato M. 2007. Increasing inequalities in health: <span>Is</span> it an artefact caused by the selective movement of people? <em>Social Science &amp; Medicine</em> <strong>64</strong>:2008–2015. doi:<a href="https://doi.org/10.1016/j.socscimed.2007.02.021">10.1016/j.socscimed.2007.02.021</a>
 </div>
-<div id="ref-davenportLevellingWhereHow2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-davenportLevellingWhereHow2020" class="csl-entry" role="listitem">
 Davenport A, Zarenko B. 2020. Levelling up: Where and how?<span>IFS Green Budget</span> 2020. <span>Institute for Fiscal Studies</span>.
 </div>
-<div id="ref-devalpineNIMBLEMCMCParticle2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-devalpineNIMBLEMCMCParticle2022" class="csl-entry" role="listitem">
 de Valpine P, Paciorek CJ, Turek D, Michaud N, Anderson-Bergman C, Obermayer F, Wehrhahn Cortes C, Rodrìguez A, Lang DT, Paganin S, Hug J. 2022. <span>NIMBLE</span>: <span>MCMC</span>, <span>Particle Filtering</span>, and <span>Programmable Hierarchical Modeling</span>.
 </div>
-<div id="ref-devalpineProgrammingModelsWriting2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-devalpineProgrammingModelsWriting2017" class="csl-entry" role="listitem">
 de Valpine P, Turek D, Paciorek CJ, Anderson-Bergman C, Lang DT, Bodik R. 2017. Programming <span>With Models</span>: <span>Writing Statistical Algorithms</span> for <span>General Model Structures With NIMBLE</span>. <em>Journal of Computational and Graphical Statistics</em> <strong>26</strong>:403–413. doi:<a href="https://doi.org/10.1080/10618600.2016.1172487">10.1080/10618600.2016.1172487</a>
 </div>
-<div id="ref-dwyer-lindgrenInequalitiesLifeExpectancy2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dwyer-lindgrenInequalitiesLifeExpectancy2017" class="csl-entry" role="listitem">
 Dwyer-Lindgren L, Bertozzi-Villa A, Stubbs RW, Morozoff C, Mackenbach JP, van Lenthe FJ, Mokdad AH, Murray CJL. 2017. Inequalities in <span>Life Expectancy Among US Counties</span>, 1980 to 2014: <span>Temporal Trends</span> and <span>Key Drivers</span>. <em>JAMA Internal Medicine</em> <strong>177</strong>:1003–1011. doi:<a href="https://doi.org/10.1001/jamainternmed.2017.0918">10.1001/jamainternmed.2017.0918</a>
 </div>
-<div id="ref-ezzatiReversalFortunesTrends2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ezzatiReversalFortunesTrends2008" class="csl-entry" role="listitem">
 Ezzati M, Friedman AB, Kulkarni SC, Murray CJL. 2008. The <span>Reversal</span> of <span>Fortunes</span>: <span>Trends</span> in <span>County Mortality</span> and <span>Cross-County Mortality Disparities</span> in the <span>United States</span>. <em>PLOS Medicine</em> <strong>5</strong>:e66. doi:<a href="https://doi.org/10.1371/journal.pmed.0050066">10.1371/journal.pmed.0050066</a>
 </div>
-<div id="ref-grayDepthsCutsUneven2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-grayDepthsCutsUneven2018" class="csl-entry" role="listitem">
 Gray M, Barford A. 2018. The depths of the cuts: The uneven geography of local government austerity. <em>Cambridge Journal of Regions, Economy and Society</em> <strong>11</strong>:541–563. doi:<a href="https://doi.org/10.1093/cjres/rsy019">10.1093/cjres/rsy019</a>
 </div>
-<div id="ref-kontisFutureLifeExpectancy2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kontisFutureLifeExpectancy2017" class="csl-entry" role="listitem">
 Kontis V, Bennett JE, Mathers CD, Li G, Foreman K, Ezzati M. 2017. Future life expectancy in 35 industrialised countries: Projections with a <span>Bayesian</span> model ensemble. <em>The Lancet</em> <strong>389</strong>:1323–1335. doi:<a href="https://doi.org/10.1016/S0140-6736(16)32381-9">10.1016/S0140-6736(16)32381-9</a>
 </div>
-<div id="ref-leonTrendsLifeExpectancy2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-leonTrendsLifeExpectancy2019" class="csl-entry" role="listitem">
 Leon DA, Jdanov DA, Shkolnikov VM. 2019. Trends in life expectancy and age-specific mortality in <span>England</span> and <span>Wales</span>, 1970, in comparison with a set of 22 high-income countries: An analysis of vital statistics data. <em>The Lancet Public Health</em> <strong>4</strong>:e575–e582. doi:<a href="https://doi.org/10.1016/S2468-2667(19)30177-X">10.1016/S2468-2667(19)30177-X</a>
 </div>
-<div id="ref-marmotMarmotReview102020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-marmotMarmotReview102020" class="csl-entry" role="listitem">
 Marmot MG, Allen J, Boyce T, Goldblatt P, Morrison J. 2020. Marmot <span>Review</span>: 10 years on. <span>Institute of Health Equity</span>.
 </div>
-<div id="ref-mcelreathStatisticalRethinking2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mcelreathStatisticalRethinking2020" class="csl-entry" role="listitem">
 McElreath R. 2020. Statistical <span>Rethinking</span>, Second. ed. <span>CRC Press</span>.
 </div>
-<div id="ref-officefornationalstatisticsHealthExpectanciesBirth2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-officefornationalstatisticsHealthExpectanciesBirth2015" class="csl-entry" role="listitem">
 Office for National Statistics. 2015. Health <span>Expectancies</span> at <span>Birth</span> for <span>Middle Layer Super Output Areas</span> (<span>MSOAs</span>), <span>England</span>. <em>Office for National Statistics</em>.
 </div>
-<div id="ref-publichealthenglandLocalHealthSmall2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-publichealthenglandLocalHealthSmall2021" class="csl-entry" role="listitem">
 Public Health England. 2021. Local <span>Health</span> - <span>Small Area Public Health Data</span>. <em>Public Health England</em>.
 </div>
-<div id="ref-rashidLifeExpectancyRisk2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rashidLifeExpectancyRisk2021" class="csl-entry" role="listitem">
 Rashid T, Bennett JE, Paciorek CJ, Doyle Y, Pearson-Stuttard J, Flaxman S, Fecht D, Toledano MB, Li G, Daby HI, Johnson E, Davies B, Ezzati M. 2021. Life expectancy and risk of death in 6791 communities in <span>England</span> from 2002 to 2019: High-resolution spatiotemporal analysis of civil registration data. <em>The Lancet Public Health</em> <strong>6</strong>:e805–e816. doi:<a href="https://doi.org/10.1016/S2468-2667(21)00205-X">10.1016/S2468-2667(21)00205-X</a>
 </div>
-<div id="ref-vandijkUsingLinkedConsumer2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vandijkUsingLinkedConsumer2021" class="csl-entry" role="listitem">
 van Dijk JT, Lansley G, Longley PA. 2021. Using linked consumer registers to estimate residential moves in the <span>United Kingdom</span>. <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em> <strong>184</strong>:1452–1474. doi:<a href="https://doi.org/10.1111/rssa.12713">10.1111/rssa.12713</a>
 </div>
-<div id="ref-vehtariRanknormalizationFoldingLocalization2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vehtariRanknormalizationFoldingLocalization2021" class="csl-entry" role="listitem">
 Vehtari A, Gelman A, Simpson D, Carpenter B, Bürkner P-C. 2021. Rank-normalization, folding, and localization: <span>An</span> improved <span class="nocase">R-hat</span> for assessing convergence of <span>MCMC</span>. <em>Bayesian Analysis</em> <strong>16</strong>. doi:<a href="https://doi.org/10.1214/20-BA1221">10.1214/20-BA1221</a>
 </div>
-<div id="ref-worldbankLifeExpectancyBirth2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-worldbankLifeExpectancyBirth2022" class="csl-entry" role="listitem">
 World Bank. 2022. Life expectancy at birth, data. <em>World Bank</em>.
 </div>
 </div>
@@ -489,9 +507,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -556,6 +588,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

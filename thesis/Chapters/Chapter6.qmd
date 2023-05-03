@@ -238,6 +238,29 @@ Blackpool had the highest probability of dying for men at 0.04 (0.04-0.05), whic
 Probability of dying from injuries between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
+### Contribution to life expectancy inequality
+
+The district with the highest life expectancy for both sexes in 2019 was the City of London, a small and affluent district in the capital, at 90.1 years for women and 87.4 years^[For this section, I do not state uncertainty because I use the mean of the death rate samples. This is so the contributions from Arriaga's method sum exactly to the life expectancy difference.] for men.
+For women, the district with the lowest life expectancy was Manchester, which was 10.1 years lower than the best-performing district.
+Blackpool had the largest life expectancy gap for men, at 13.0 years.
+
+::: {#fig-ch-6-contribution-inequality layout-ncol=2}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_inequality_2019.pdf){#fig-ch-6-contribution-inequality-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_inequality_2019.pdf){#fig-ch-6-contribution-inequality-men}
+
+Contributions of deaths from specific causes to life expectancy inequality in 2019 between the district with the highest life expectancy (City of London for both sexes) and all other local authority districts in England. The side panel shows the difference in life expectancy compared to the best-performing district, by summing over the causes. The top panel shows the contribution for each district for each cause.
+:::
+
+The major contributing cause to inequality with respect to the best-performing district was Alzheimer's and other dementias for women, which was the leading contributor for 254 (80.9%) districts.
+For men, all other NCD was the leading cause in 220 (70.0%) districts.
+From the groups of cancers, trachea, bronchus and lung cancers and all other cancers presented clear gradients, with the largest contributions in the worst-performing districts (@fig-ch-6-contribution-inequality).
+Specifically, lung cancer had a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 0.6 years for women and 0.5 years for men, and all other cancers was 0.5 years for both sexes.
+There were strong gradients from the best- to worst-performing districts for all other NCD (10<sup>th</sup>-90<sup>th</sup> percentile differences of 0.9 years for women and 0.8 years for men), ischaemic heart disease (0.5 years and 0.8 years), and COPD (0.6 years and 0.5 years).
+Contributions to inequality from Alzheimer's and other dementias were not as obviously directional, but the cause group had large 10<sup>th</sup>-90<sup>th</sup> percentile differences of 0.8 years for women and 0.5 years for men.
+There was a more prominent gradient for injuries in men (0.5 years) than women (0.3 years).
+
 ### Contribution to life expectancy change
 
 From 2002 to 2019, every district increased in life expectancy for both women and men (@fig-ch-6-contribution).
@@ -250,7 +273,7 @@ In contrast, Alzheimer's and other dementias acted in the other direction, forci
 
 ![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2019.pdf){#fig-ch-6-contribution-men-2002-2019}
 
-Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.
+Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 In @fig-ch-6-contribution-split, I break the overall trend down into two time periods around the year 2010.
@@ -278,7 +301,7 @@ In the latter period, ischaemic heart disease, Alzheimer's and other dementias, 
 
 ![Men, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2010_2019.pdf){#fig-ch-6-contribution-men-2010-2019}
 
-Contributions of deaths from specific causes to life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each districts for each cause.
+Contributions of deaths from specific causes to life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 ## Discussion
@@ -323,6 +346,8 @@ They found, in general, the slowdown was driven by the disappearance of sustaine
 The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.
 
 Both these studies focus on what causes of death have driven the inequality between subgroups of the population.
-The work in this chapter focuses instead on what causes of death have driven the the _inequality in progress_ between subgroups of the population.
+I found the causes with the clearest gradients in contribution from the best- to worst-performing districts were those with modifiable risk factors, such as ischaemic heart disease, lung cancer, COPD, and injuries, and also the residual groups of all other NCDs and all other cancers.
+There were also contributions from Alzheimer's and other dementias, but these did follow the direction from best- to worst-performing district as obviously as the aforementioned causes.
+The work in this chapter extends previous studies by also considering which causes of death have driven the the _inequality in progress_ between subgroups of the population.
 
 ## Summary

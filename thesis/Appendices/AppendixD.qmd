@@ -26,6 +26,7 @@
 : Groups of causes of death used in the district-level cause-specific analysis in @sec-Chapter6 with ICD-10 codes. {#tbl-ap-ch6-causes}
 
 Ovarian cancer (women) and prostate cancer (men) are sex specific.
+The all other cancers group also includes breast cancer for men.
 Liver cirrhosis was not in the top 12 leading causes of death for women, so it was included within all other NCD.
 
 The residual groups (all other cancers, all other CVD, all other NCD, all other IMPN) also contained deaths from the "ill-defined diseases" GHE group (R00-R94, R96-R99, U07, U99).
@@ -41,7 +42,7 @@ These deaths were classified as injuries.
 | Trachea, bronchus and lung cancers | C33-C34                                                |
 | Breast cancer                      | C50                                                    |
 | Prostate cancer                    | C61                                                    |
-| Colorectal cancers                 | C18-C21                                                |
+| Colorectal cancer                  | C18-C21                                                |
 | Pancreatic cancer                  | C25                                                    |
 | Ovarian cancer                     | C56                                                    |
 | Lymphomas, multiple myeloma        | C81-C90, C96                                           |

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,24 +79,26 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Chapters/Chapter7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modelling the dead and what they died from</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/theorashid/thesis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/theorashid/thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -104,75 +106,89 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../Chapters/Chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></a>
+  <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></a>
+  <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></a>
+  <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></a>
+  <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></a>
+  <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></a>
+  <a href="../Appendices/AppendixA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Life table methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></a>
+  <a href="../Appendices/AppendixB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Model parameters and priors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></a>
+  <a href="../Appendices/AppendixC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Hex-cartogram of life expectancy in 2019 at the MSOA level</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></a>
+  <a href="../Appendices/AppendixD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></span></a>
   </div>
 </li>
       </ul>
@@ -180,22 +196,23 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods"><span class="toc-section-number">7.1</span>  Methods</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="toc-section-number">7.2</span>  Results</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods"><span class="header-section-number">7.1</span> Methods</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">7.2</span> Results</a>
   <ul class="collapse">
-  <li><a href="#all-cancers" id="toc-all-cancers" class="nav-link" data-scroll-target="#all-cancers"><span class="toc-section-number">7.2.1</span>  All cancers</a></li>
-  <li><a href="#geography-and-change-of-site-specific-cancers" id="toc-geography-and-change-of-site-specific-cancers" class="nav-link" data-scroll-target="#geography-and-change-of-site-specific-cancers"><span class="toc-section-number">7.2.2</span>  Geography and change of site-specific cancers</a></li>
-  <li><a href="#correlation-and-relation-to-deprivation-of-site-specific-cancers" id="toc-correlation-and-relation-to-deprivation-of-site-specific-cancers" class="nav-link" data-scroll-target="#correlation-and-relation-to-deprivation-of-site-specific-cancers"><span class="toc-section-number">7.2.3</span>  Correlation and relation to deprivation of site-specific cancers</a></li>
-  <li><a href="#change" id="toc-change" class="nav-link" data-scroll-target="#change"><span class="toc-section-number">7.2.4</span>  Change</a></li>
+  <li><a href="#all-cancers" id="toc-all-cancers" class="nav-link" data-scroll-target="#all-cancers"><span class="header-section-number">7.2.1</span> All cancers</a></li>
+  <li><a href="#geography-and-change-of-site-specific-cancers" id="toc-geography-and-change-of-site-specific-cancers" class="nav-link" data-scroll-target="#geography-and-change-of-site-specific-cancers"><span class="header-section-number">7.2.2</span> Geography and change of site-specific cancers</a></li>
+  <li><a href="#correlation-and-relation-to-deprivation-of-site-specific-cancers" id="toc-correlation-and-relation-to-deprivation-of-site-specific-cancers" class="nav-link" data-scroll-target="#correlation-and-relation-to-deprivation-of-site-specific-cancers"><span class="header-section-number">7.2.3</span> Correlation and relation to deprivation of site-specific cancers</a></li>
+  <li><a href="#change" id="toc-change" class="nav-link" data-scroll-target="#change"><span class="header-section-number">7.2.4</span> Change</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">7.3</span>  Discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">7.4</span>  Summary</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">7.3</span> Discussion</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.4</span> Summary</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -204,7 +221,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-Chapter7" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></h1>
+<h1 class="title"><span id="sec-Chapter7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></h1>
 </div>
 
 
@@ -235,7 +252,7 @@ div.csl-indent {
 <div id="fig-ch-7-treemap" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/treemap.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.1: Total number of deaths for the ten leading cancers in England from 2002 to 2019. See <a href="../Appendices/AppendixD.html#tbl-ap-ch6-cancers">Table&nbsp;<span>D.2</span></a> for ICD-10 codes for each category.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: Total number of deaths for the ten leading cancers in England from 2002 to 2019. See <a href="../Appendices/AppendixD.html#tbl-ap-ch6-cancers">Table&nbsp;<span>D.2</span></a> for ICD-10 codes for each category.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-all" class="quarto-layout-panel">
@@ -245,7 +262,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-all-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_All_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-all"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -255,7 +272,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-all-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_All_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-all"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -273,7 +290,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-lung-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Trachea_bronchus_lung_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-lung"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -283,7 +300,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-lung-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Trachea_bronchus_lung_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-lung"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -298,7 +315,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-colorectal-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Colon_and_rectum_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-colorectal"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -308,12 +325,12 @@ div.csl-indent {
 <div id="fig-ch-7-map-colorectal-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Colon_and_rectum_cancers.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-colorectal"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.4: Probability of dying from colon and rectum cancers between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.4: Probability of dying from colorectal cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-ch-7-map-oesophagus" class="quarto-layout-panel">
@@ -323,7 +340,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-oesophagus-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Oesophagus_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-oesophagus"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -333,7 +350,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-oesophagus-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Oesophagus_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-oesophagus"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -348,7 +365,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-pancreas-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Pancreas_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-pancreas"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -358,7 +375,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-pancreas-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Pancreas_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-pancreas"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -373,7 +390,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-stomach-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Stomach_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-stomach"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -383,7 +400,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-stomach-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Stomach_cancer.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-stomach"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -398,7 +415,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-leukaemia-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Leukaemia.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-leukaemia"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -408,7 +425,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-leukaemia-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Leukaemia.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-leukaemia"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -423,7 +440,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-lymphomas-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Lymphomas_multiple_myeloma.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-lymphomas"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -433,7 +450,7 @@ div.csl-indent {
 <div id="fig-ch-7-map-lymphomas-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Lymphomas_multiple_myeloma.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-map-lymphomas"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -444,37 +461,37 @@ div.csl-indent {
 <div id="fig-ch-7-map-ovary-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Ovary_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.10: Probability of dying for women from ovarian cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.10: Probability of dying for women from ovarian cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-breast-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Breast_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.11: Probability of dying for women from breast cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.11: Probability of dying for women from breast cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-endometrial-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_map_Corpus_uteri_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.12: Probability of dying for women from endometrial cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.12: Probability of dying for women from endometrial cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-prostate-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Prostate_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.13: Probability of dying for men from prostate cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.13: Probability of dying for men from prostate cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-liver-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Liver_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.14: Probability of dying for men from liver cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.14: Probability of dying for men from liver cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-map-bladder-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_map_Bladder_cancer.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.15: Probability of dying for men from bladder cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.15: Probability of dying for men from bladder cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.</figcaption>
 </figure>
 </div>
 </section>
@@ -483,7 +500,7 @@ div.csl-indent {
 <div id="fig-ch-7-correlation" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/correlation.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.16: Correlations between the leading cancers for each sex in 2019 women and men.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7.16: Correlations between the leading cancers for each sex in 2019 women and men.</figcaption>
 </figure>
 </div>
 <div id="fig-ch-7-distribution" class="quarto-layout-panel">
@@ -493,7 +510,7 @@ div.csl-indent {
 <div id="fig-ch-7-distribution-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_distribution.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-distribution"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -503,7 +520,7 @@ div.csl-indent {
 <div id="fig-ch-7-distribution-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_distribution.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-distribution"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -518,7 +535,7 @@ div.csl-indent {
 <div id="fig-ch-7-poverty-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_IMD.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-poverty"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -528,7 +545,7 @@ div.csl-indent {
 <div id="fig-ch-7-poverty-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_IMD.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-poverty"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -563,17 +580,17 @@ div.csl-indent {
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td>Colon and rectum cancers</td>
+<td>Colorectal cancer</td>
 <td>0.09</td>
 <td>0.45</td>
 </tr>
 <tr class="odd">
-<td>Pancreas cancer</td>
+<td>Pancreatic cancer</td>
 <td>0.04</td>
 <td>-0.01</td>
 </tr>
 <tr class="even">
-<td>Ovary cancer</td>
+<td>Ovarian cancer</td>
 <td>-0.04</td>
 <td></td>
 </tr>
@@ -583,7 +600,7 @@ div.csl-indent {
 <td>-0.07</td>
 </tr>
 <tr class="even">
-<td>Oesophagus cancer</td>
+<td>Oesophageal cancer</td>
 <td>0.41</td>
 <td>0.48</td>
 </tr>
@@ -635,7 +652,7 @@ div.csl-indent {
 <div id="fig-ch-7-change-women" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/female_level_2002_change.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-change"></p>
-<p></p><figcaption class="figure-caption">(a) Women</figcaption><p></p>
+<figcaption class="figure-caption">(a) Women</figcaption>
 </figure>
 </div>
 </div>
@@ -645,7 +662,7 @@ div.csl-indent {
 <div id="fig-ch-7-change-men" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/cancers/figures/male_level_2002_change.webp" class="img-fluid figure-img" data-ref-parent="fig-ch-7-change"></p>
-<p></p><figcaption class="figure-caption">(b) Men</figcaption><p></p>
+<figcaption class="figure-caption">(b) Men</figcaption>
 </figure>
 </div>
 </div>
@@ -664,8 +681,8 @@ div.csl-indent {
 <h2 data-number="7.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.4</span> Summary</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-steelChangesHealthCountries2018" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-steelChangesHealthCountries2018" class="csl-entry" role="listitem">
 Steel N, Ford JA, Newton JN, Davis ACJ, Vos T, Naghavi M, Glenn S, Hughes A, Dalton AM, Stockton D, Humphreys C, Dallat M, Schmidt J, Flowers J, Fox S, Abubakar I, Aldridge RW, Baker A, Brayne C, Brugha T, Capewell S, Car J, Cooper C, Ezzati M, Fitzpatrick J, Greaves F, Hay R, Hay S, Kee F, Larson HJ, Lyons RA, Majeed A, McKee M, Rawaf S, Rutter H, Saxena S, Sheikh A, Smeeth L, Viner RM, Vollset SE, Williams HC, Wolfe C, Woolf A, Murray CJL. 2018. Changes in health in the countries of the <span>UK</span> and 150 <span>English Local Authority</span> areas 1990: A systematic analysis for the <span>Global Burden</span> of <span>Disease Study</span> 2016. <em>The Lancet</em> <strong>392</strong>:1647–1661. doi:<a href="https://doi.org/10.1016/S0140-6736(18)32207-4">10.1016/S0140-6736(18)32207-4</a>
 </div>
 </div>
@@ -699,9 +716,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -766,6 +797,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
