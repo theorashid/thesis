@@ -10,7 +10,10 @@ book:
   cover-image: thesis-analysis/thesis_analysis/eda/figures/age_mx_void.webp
   favicon: assets/favicon.png
   # downloads: [pdf]
-  abstract: "People died in England and we modelled the all cause and cause-specific death rates. This took longer than expected."
+  abstract: |
+    People died in England and we modelled the all cause and cause-specific death rates.
+    
+    This took longer than expected.
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
@@ -42,9 +45,9 @@ thesis:
   faculty: School of Public Health
   copyright: "Frontmatter/copyright.tex"
   declaration: "Frontmatter/declaration.tex"
-  quotation:
-    text: "Nobody is going to read your thesis."
-    attribution: Kyle Foreman
+  # quotation:
+  #   text: "Nobody is going to read your thesis."
+  #   attribution: Kyle Foreman
   acknowledgements: "Frontmatter/acknowledgements.tex"
   abbreviations: "Frontmatter/abbreviations.tex"
 
