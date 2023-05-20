@@ -2,7 +2,7 @@
 
 Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases.
 And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve.
-In England, we could potentially estimate mortality for LSOAs, OAs, or even postcodes.
+From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England.
 In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.
 
 This chapter is based on the peer-reviewed publication _Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data_, published in _The Lancet Regional Health Europe_ [@bennettChangesLifeExpectancy2023], for which I was joint first author.
@@ -32,7 +32,7 @@ The model was formulated to take into account how prices vary in relation to loc
 Specifically, the model included effects for the following: OA and district of the house, quarter of year in which the transaction took place, type of house (flat, terraced, semi-detached, detached house), status of land ownership (freehold (owns the property and the land upon which the property is built), leasehold (owns the property but not the land, which is leased)), whether the property is an existing property or newly constructed, and number of bedrooms, as well as interactions between the effects.
 Further details can be found in the paper [@bennettChangesLifeExpectancy2023].
 We used the median of all constituent OAs for each LSOA's price.
-Here, I present the price estimates for a two-bedroom, leasehold, existing (not newly constructed) flat sold in the spring season. Two-bedroom leasehold flats were the most common type of sale during the study period with 19.7% of sales.
+We presented the price estimates for a two-bedroom, leasehold, existing (not newly constructed) flat sold in the spring season. Two-bedroom leasehold flats were the most common type of sale during the study period with 19.7% of sales.
 
 ### Statistical analysis
 
@@ -123,16 +123,6 @@ By 2019, female and male life expectancies had a 2.5<sup>th</sup>–97.5<sup>th<
 In 2002, within district inequality had been >12 years in only two districts for men and none for women.
 At the same time, the difference between districts with the highest and lowest life expectancy increased from 5.9 (5.2–7.7) years in 2002 to 8.5 (5.9–11.9) years in 2019 for females, and from 6.8 (5.9–8.7) years to 10.9 (8.2–14.2) years for males indicating that the rise in life expectancy inequality took place both within and between districts.
 
-### Correlations with house price
-
-![Spearman correlation between change in life expectancy and change from 2002 to 2019 in sociodemographic characteristics of the population of London Lower-layer Super Output Areas (LSOAs). LSOAs were grouped by decile of house prices in 2002 and correlations were calculated separately for each decile. Correlations close to zero imply the lack of a relationship between the ranks of the variables.](../thesis-analysis/thesis_analysis/london/figures/correlation.pdf){#fig-ch-5-correlation}
-
-Life expectancy increase was associated with changes in the LSOA resident population and their socioeconomic characteristics (@fig-ch-5-correlation).
-The association was weaker in women and in LSOAs that were already expensive in 2002.
-There was some association between increase in life expectancy and increase in house price for the LSOAs that were least expensive in 2002.
-Although there was no obvious pattern between life expectancy increases and the share of households who had not lived there in 2002, male life expectancy was also associated with a larger rise in the share of population in working ages (30–69 years), and a larger decline in the share of population in young adulthood (15–29 years).
-The LSOAs that improved their rankings in terms of poverty and employment experienced the largest increases in life expectancy.
-
 ## Discussion
 
 This high-resolution analysis revealed that in London, a major global metropolis, not only has life expectancy inequality increased substantially, but this increase has happened both between districts and within every district.
@@ -140,13 +130,19 @@ This high-resolution analysis revealed that in London, a major global metropolis
 Life expectancy in London has previously only been reported at MSOA level, as discussed in @sec-Chapter4.
 When aggregated to MSOA level, the LSOA life expectancies in this work were correlated with MSOA estimates in @sec-Chapter4 (correlation coefficient $>0.99$ and mean difference $\leq 0.01$ years for both sexes).
 
+In the main paper [@bennettChangesLifeExpectancy2023], we also looked at how life expectancy improvements varied with house prices and their changes throughout the city, and whether population change may partly mediate this association.
+We found the change in life expectancy had different associations with price change in more expensive versus lower cost communities: where prices were high at the turn of the century, life expectancy increased substantially independently of price change, and with little change in the resident population.
+In contrast, in areas that started with lower prices, life expectancy only increased proportional to price change, and was accompanied by a greater influx of new residents into the local area.
+This change in residents saw a greater proportion of the population in working ages, and socioeconomically better off, and an outflux of residents in retirement ages and to a lesser extent children, adolescents and young adults.
+This implies that a portion of the change in life expectancy may be due to change in the resident population.
+
 ### Strengths and limitations
 
 The main strength of the study is the presentation of very high-resolution data on life expectancy and house prices in consistent spatial and temporal units in a major global city over a period of substantial policy interest and investment in urban renewal.
 Carrying out the study at the LSOA level uncovered inequalities to a fuller extent.
 
 I defined life expectancy inequality as the difference between 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of LSOA life expectancies rather than the difference between the maximum and minimum as in @sec-Chapter4.
-This was because the LSOAs with extremely low life expectancies tended contain age­-LSOA-­year combinations in which the number of deaths exceeded the population.
+This was because the LSOAs with extremely low life expectancies tended to contain age­-LSOA-­year combinations in which the number of deaths exceeded the population.
 Small-area population, which is the denominator of age-specific death rates, is estimated by the ONS for intercensal years, and may be subject to error.
 This is especially the case in older ages when some people live and die in a long-term care facility, and may be counted towards population (denominator of death rates) in their original LSOA of residence and towards deaths (numerator of death rates) in the LSOA where the care facility is located.
 There were a higher proportion (0.099% compared to 0.001% in @sec-Chapter4) of spatial units with this issue at the LSOA level.
@@ -192,11 +188,10 @@ The evolution of London, and major cities in other high-income nations and emerg
 ## Summary
 
 I performed a hyper-resolution spatiotemporal analysis of all deaths in London from 2002 to 2019, using a Bayesian hierarchical model to obtain estimates of age-specific death rates by age, sex, and LSOA.
-I used life table methods to calculate life expectancy at birth by sex and LSOA, and explored correlations between change in life expectancy and the change in sociodemographic characteristics of the resident population of LSOAs and population turnover.
+I used life table methods to calculate life expectancy at birth by sex and LSOA.
 
 In 134 (2.8%) of London's LSOAs for women and 32 (0.7%) for men, life expectancy may have declined from 2002 to 2019, with a posterior probability of a decline >80% in 41 (0.8%, women) and 14 (0.3%, men) LSOAs.
 The life expectancy increase in other LSOAs ranged from <2 years in 537 (11.1%) LSOAs for women and 214 (4.4%) for men to >10 years in 220 (4.6%) for women and 211 (4.4%) for men.
 The 2.5<sup>th</sup>-97.5<sup>th</sup> percentile life expectancy difference across LSOAs increased from 11.1 (10.7–11.5) years in 2002 to 19.1 (18.4–19.7) years for women in 2019, and from 11.6 (11.3–12.0) years to 17.2 (16.7–17.8) years for men.
-The LSOAs that improved their rankings in terms of poverty and employment experienced the largest increases in life expectancy.
 
 Although the analysis of life expectancy at the LSOA level is possible, there are issues with the population data for older age groups that limit its utility, particularly concerning the tails of the distribution of life expectancy.
