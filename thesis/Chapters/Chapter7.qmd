@@ -1,6 +1,6 @@
 # And when they died from cancer: trends in cancer mortality at the district level {#sec-Chapter7}
 
-Cancers accounted for 28.5% of all deaths, nearly the same total mortality burden as NCDs.
+Cancers accounted for 28.5% of all deaths.
 With over 150 different types of cancer, each with their own anatomical and molecular subtypes, cancer is extremely complex, with a specialist workforce dedicated to each unique cancer.
 Compared with CVDs and NCDs, which are dominated by their major causes (ischaemic heart disease and stroke, and Alzheimer's, COPD and diabetes, respectively), cancers have the largest number of individual causes in the top 12.
 I felt I should go deeper into the cancer story, and pay further attention to a wider variety of site-specific cancers.
@@ -161,11 +161,13 @@ Local authority district probability of death in 2019 in relation to poverty for
 
 ::: {#fig-ch-7-change layout-ncol=1}
 
-![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_level_2002_change.pdf){#fig-ch-7-change-women}
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_change_distribution.pdf){#fig-ch-7-change-women}
 
-![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_level_2002_change.pdf){#fig-ch-7-change-men}
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_change_distribution.pdf){#fig-ch-7-change-men}
 
-Change in probability of dying from cancer from 2002 to 2019 in 314 local authority districts in England against the probability of death in 2002 for each of the leading cancers. The points are coloured by the regions in England.
+Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers.
+
+The points are coloured by the regions in England. Each point shows one district and the vertical line going through the point its 95% credible interval. The districts were ranked first by region and then by the posterior median estimate for the probability of dying.
 :::
 
 ## Discussion
