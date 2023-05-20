@@ -85,7 +85,7 @@ To avoid this instability, when applying the statistical model, I replaced the n
 When making estimates for 2017, the difference between actual and interpolated deaths was added back to the posterior estimates so that these deaths were counted in the corresponding year.
 The Grenfell Tower fire incident was, to the best of our knowledge, the only spatially-specific, long-tailed mortality event in England over the study period.
 
-I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods ^[See  @sec-appA for full details on demographic methods used in this thesis.].
+I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods^[See  @sec-appA for full details on demographic methods used in this thesis.].
 
 The reported 95% credible intervals (CrIs) represent the 2.5<sup>th</sup> to 97.5<sup>th</sup> percentiles of the posterior distribution of estimated life expectancies.
 I also report the posterior probability that the estimated change over time in an MSOA represents an increase versus a decrease in life expectancy.
@@ -105,10 +105,10 @@ The difference between the first and 99<sup>th</sup> percentiles of life expecta
 
 When all MSOAs were ranked on the basis of their life expectancy, the difference between successively ranked MSOAs was particularly large for the approximately 5% of MSOAs with the lowest and highest life expectancy (seen as the sharper decline or rise at the two ends of the ranked life expectancy curve in @fig-ch-4-distribution), indicating distinct groups at extreme advantage and disadvantage.
 
-![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualisation](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a hex-cartogram of life expectancy in 2019, see @fig-app-c-carto-level.]](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-4-map-level}
-
 The 124 (1.8%) of 6791 MSOAs with the lowest female life expectancy and 262 (3.9%) MSOAs with the lowest male life expectancy in 2019 were located in urban areas, particularly in the north, including Blackpool, Leeds, Liverpool, Manchester, and Newcastle.
 Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts (@fig-ch-4-map-level).
+
+![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualisation](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a hex-cartogram of life expectancy in 2019, see @fig-app-c-carto-level.]](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-4-map-level}
 
 ### Change in life expectancy
 
