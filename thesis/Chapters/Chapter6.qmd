@@ -2,7 +2,7 @@
 
 Where previous studies found female life expectancy in the bottom deciles of deprivation declined [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], in @sec-Chapter4, I showed there were widespread and accelerating declines, with 1 in 5 small areas for women and 1 in 9 for men observing a fall in life expectancy in 2014-19.
 However, the lack of available covariates at the MSOA level makes is difficult to suggest which social and environmental effects are driving life expectancy downwards.
-By analysing mortality for specific causes of death, which is the third objective of the thesis that I address in this chapter, we are able to suggest causal pathways that shape mortality profiles.
+By analysing mortality for specific causes of death, which is the third objective of the thesis that I address in this chapter, we are able to suggest pathways that shape mortality profiles.
 
 ## Methods
 
@@ -17,11 +17,11 @@ For neonates, which are not assigned an underlying cause of death, I used the IC
 I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
 I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have a similar history.
 I used the top 12 causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other NCD, all other CVD, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
-Together, these form a mutually exclusive, collectively exhaustive list of causes of death.
+Together, these form a mutually exclusive, collectively exhaustive list of causes of death (@fig-ch-6-treemap).
 
 The full list of ICD-10 codes for each cause group can be found in @tbl-ap-ch6-causes.
 
-Although the size of the spatial unit of analysis has been increased to the district-level, by stratifying by cause of death, the number of death in each age-district-year-cause stratum is still very small.
+Although the size of the spatial unit of analysis has been increased to the district-level, by stratifying by cause of death, the number of deaths in each age-district-year-cause stratum is still very small.
 As in @sec-Chapter4 and @sec-Chapter5, I used a Bayesian hierarchical model to obtain stable estimates of death rates.
 I conducted all analyses separately by sex and cause group.
 
@@ -144,7 +144,7 @@ It is worth noting that given only 96,109 (14.5% of 663,692) of deaths from Alzh
 Probability of dying from COPD between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
-Chronic obstructive pulmonary disease (COPD) was had the largest geographical variation of any disease for women, with a 6.0-fold variation (4.4-fold for men).
+Chronic obstructive pulmonary disease (COPD) had the largest geographical variation of any disease for women, with a 6.0-fold variation (4.4-fold for men).
 The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)).
 This is a result of the main risk factor, tobacco smoking, peaking later in women than in men.
 The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
@@ -242,7 +242,7 @@ Probability of dying from injuries between birth and 80 years of age in 314 loca
 
 The district with the highest life expectancy for both sexes in 2019 was the City of London, a small and affluent district in the capital, at 90.1 years for women and 87.4 years^[For this section, I do not state uncertainty because I use the mean of the death rate samples. This is so the contributions from Arriaga's method sum exactly to the life expectancy difference.] for men.
 For women, the district with the lowest life expectancy was Manchester, which was 10.1 years lower than the best-performing district.
-Blackpool had the largest life expectancy gap for men, at 13.0 years.
+Blackpool had the lowest life expectancy for men, 13.0 years less than the City of London.
 
 ::: {#fig-ch-6-contribution-inequality layout-ncol=2}
 
@@ -331,7 +331,7 @@ When calculating contributions using Arriaga's method, mortality for each cause 
 This would not be necessary if cause-specific mortality were estimated jointly as the causes of death would adjust amongst each other each iteration to sum to total mortality.
 @foremanSmallAreaForecasts2017 jointly forecasted cause-specific death rates for states in the US, but instead estimated each age group separately.
 
-Unlike @sec-Chapter4 and @sec-Chapter5, migration not as much of an issue at the district level.
+Unlike @sec-Chapter4 and @sec-Chapter5, migration was not as much of an issue at the district level.
 As @vandijkUsingLinkedConsumer2021 explain, "the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same local authority district."
 
 ### Comparison with previous literature
