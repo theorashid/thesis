@@ -11,9 +11,27 @@ book:
   favicon: assets/favicon.png
   # downloads: [pdf]
   abstract: |
-    People died in England and we modelled the all cause and cause-specific death rates.
-    
-    This took longer than expected.
+    High-resolution data for how mortality and longevity have changed are scarce.
+    Mortality estimates are limited to large spatial units or aggregate multiple years of data for stability, which masks heterogeneity in trends.
+    Here, I developed Bayesian hierarchical models based on patterns of mortality over age, space, and time, to obtain robust yearly estimates of life expectancy and cause-specific, together with the uncertainty in these estimates, for small areas.
+    Using civil registration data held by the UK Small Area Health Statistics Unit, I investigated trends in mortality for subnational units in England from 2002 to 2019, a period of substantial change in economic, health, and social care policy.
+
+    I examined trends in life expectancy in England's 6791 middle-layer super output areas (MSOAs).
+    In 2002–06 and 2006–10, all but a few (0–1%) MSOAs had a life expectancy increase for female and male sexes.
+    In 2010–14, female life expectancy decreased in 351 (5.2%) of 6791 MSOAs.
+    By 2014–19, the number of MSOAs with declining life expectancy was 1270 (18.7%) for women and 784 (11.5%) for men.
+    The same analysis was performed for the 4835 lower-layer super output areas in London.
+    At this smaller level, there were issues with the population data in the older age groups that affected the tails of the life expectancy distribution.
+
+    I modelled the cause-specific composition of mortality for 314 districts in England.
+    The inequality in life expectancy progress since 2010 was driven largely by Alzheimer's and other dementias and the residual group of non-communicable diseases, as well as ischaemic heart disease in men.
+
+    The analysis was extended to the top ten leading cancer causes of death in England.
+    Preventable cancers were both the most unequal in progress from 2002 to 2019, with lung cancer in women and oesophageal cancer in men seeing declines in most districts but increases in other districts, particularly in the East of England.
+    Unlike areas in the rest of the country, mortality in London from lung, colorectal, oesophageal, and all other cancers did not increase in poorer districts, indicating that there is some exceptional effect for cancer mortality in London.
+
+    For declines in life expectancy to happen before the Covid-19 pandemic in increasing numbers of communities in England is worrying.
+    The use of small area statistics on total mortality and the cause-composition of mortality are vital to policymakers in creating targetted initiatives for reducing inequalities and preventing further deteriorations in longevity.
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
