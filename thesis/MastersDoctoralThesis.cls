@@ -201,6 +201,9 @@
 
 \RequirePackage{booktabs} % Required for better table rules
 
+\RequirePackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
 \RequirePackage{caption} % Required for customising the captions
 \captionsetup{justification=justified,font=small,labelfont=sc,margin=50pt}
 
@@ -287,7 +290,7 @@ incompatible\MessageBreak with this class}{The pagesyles are defined
 KOMA-script documentation for details.}]{fancyhdr}
 
 
-\newcommand{\blank@p@gestyle}{empty}
+\newcommand{\blank@p@gestyle}{plain}
 \newcommand{\chapter@p@gestyle}{plain}
 \NewDocumentCommand{\blankpagestyle}{ m }{%
 	\ClassWarning{\classname}{\string\blankpagestyle\space is
@@ -356,7 +359,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\checktoopen
 	\tttypeout{\abstractname}
 	#1%added to be able to have abstract more than one page long
-	\thispagestyle{empty}
+	\thispagestyle{plain}
 	\begin{flushleft}{\huge\abstractname\par}\end{flushleft}
 }
 {

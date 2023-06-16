@@ -60,7 +60,7 @@ This appendix contains full information on the parameters of each model.
 | Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{N}^+(1)$                                     | 1                                    |
 | Overdispersion parameter                           | $\rho$                 | $\exp (0.1)$                                    | 1                                    |
 
-: Specification of the Bayesian statistical model in @eq-ch-5-likelihood. {#tbl-ap-ch5-model}
+: Specification of the Bayesian statistical model in @eq-ch-6-likelihood. {#tbl-ap-ch6-model}
 
 | Parameter name                                     | Symbol                 | Prior                                                             | Dimension                            |
 |----------------------------------------------------|------------------------|-------------------------------------------------------------------|--------------------------------------|
@@ -79,4 +79,4 @@ This appendix contains full information on the parameters of each model.
 | Age group random walk over time                    | $\gamma_{at}$          | $\mathcal{N}\left(\gamma_{a,t-1},\sigma_\gamma^2\right)$          | 19 x 17                              |
 | Age group random walk over time standard deviation | $\sigma_\gamma$        | $\mathcal{N}^+(1)$                                     | 1                                    |
 
-: Specification of the Bayesian statistical model in @eq-ch-6-likelihood. {#tbl-ap-ch6-model}
+: Specification of the Bayesian statistical model in @eq-ch-7-likelihood. {#tbl-ap-ch7-model}

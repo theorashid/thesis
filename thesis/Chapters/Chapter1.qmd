@@ -2,7 +2,7 @@
 
 ## Rationale
 
-Although the UK is, by global standards, a wealthy nation with relatively high life expectancy, the country still suffers vast inequalities in mortality.
+Although the UK has, by global standards, a relatively high life expectancy, the country still suffers vast inequalities in mortality.
 While there have been studies on trends in subnational life expectancy in England, these have been limited in resolution to the district level [@bennettFutureLifeExpectancy2015].
 There is vast heterogeneity in health outcomes and their determinants within districts.
 As a notable example of mortality from recent years, Kensington and Chelsea, which contains both the most affluent areas in the country in its south and some of the poorest in its north, was the district containing the Grenfell Tower tragedy in 2017.
@@ -11,23 +11,21 @@ There is a clear need to uncover further variation in mortality below the distri
 Since around 2010, although national life expectancy has continued to increase, there is evidence that the rise in female life expectancy has reversed in the most deprived deciles of the population [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
 There are likely to be important changes in the cause-specific composition of mortality that have driven this reversal.
 
-The title of this thesis is adapted from @mathersCountingDeadWhat2005: _Counting the dead and what they died from: an assessment of the global status of cause of death data_.
-
 ## Objectives
 
 The aim of my thesis is to estimate trends in mortality for small areas over the past 20 years in England.
 There are two specific objectives which will help achieve this aim:
 
-1. To estimate trends in life expectancy for small areas in England from 2002 to 2019.
+1. To estimate trends in life expectancy for very small areas in England from 2002 to 2019.
 1. To investigate trends in cause-specific mortality for districts in England from 2002 to 2019.
 
 ## Structure of the thesis
 
 @sec-Chapter2 reviews the literature on spatial methods for disease mapping using the studies at the Small Area Health Statistics Unit - who hold the data for the research in this thesis - as examples.
 I also review studies on mortality for small subnational regions, followed by the literature of separating total mortality into different causes of death, before exploring inequalities in UK over the past few decades through to the present.
-@sec-Chapter3 provides an overview of the data sources and statistical modelling choices common to all objectives of this thesis.
-@sec-Chapter4 concerns the first objective of the thesis - estimating trends in life expectancy for small areas in England.
-@sec-Chapter5 extends the first objective by focussing on London at a finer scale than the previous chapter as an attempt to gauge whether higher resolution analyses are possible.
-@sec-Chapter6 addresses objective two of this thesis, breaking down total mortality in England into specific causes of deaths at a coarser scale, and looking at potential drivers for the observed trends in life expectancy.
-@sec-Chapter7 follows the methods of @sec-Chapter6, but focussing only on deaths from cancers.
-@sec-Chapter8 concludes with a discussion on the public health implications of the findings and areas for future research building on the work in this thesis.
+@sec-Chapter3 presents the data sources, and @sec-Chapter4 the statistical modelling choices common to all objectives of this thesis.
+@sec-Chapter5 concerns the first objective of the thesis - estimating trends in life expectancy for very small areas in England.
+@sec-Chapter6 extends the first objective by focussing on London at a finer scale than the previous chapter as an attempt to gauge whether higher resolution analyses are possible.
+@sec-Chapter7 addresses objective two of this thesis, breaking down total mortality in England into specific causes of deaths at a coarser scale, and looking at potential drivers for the observed trends in life expectancy.
+@sec-Chapter8 follows the methods of @sec-Chapter7, but focussing only on deaths from cancers.
+@sec-Chapter9 concludes with a discussion on the public health implications of the findings and areas for future research building on the work in this thesis.

@@ -23,7 +23,7 @@
 | All other IMPN                     | A00-99, B00-99, D50-53, D649, E00-E02, E40-46, E50-54, G00, G03-G04, G14, H65-H66, N70-N73, J00-J06, O00-O99, P00-P96, Z353 |
 | Injuries                           | U00-U01, U509, V00-V99, W00-W99, X00-X40, X43-X44, X46-X99, Y00-Y01, Y10-Y36, Y381, Y40-Y86, Y870-Y872, Y88-Y89 |
 
-: Groups of causes of death used in the district-level cause-specific analysis in @sec-Chapter6 with ICD-10 codes. {#tbl-ap-ch6-causes}
+: Groups of causes of death used in the district-level cause-specific analysis in @sec-Chapter7 with ICD-10 codes. {#tbl-ap-ch7-causes}
 
 Ovarian cancer (women) and prostate cancer (men) are sex specific.
 The all other cancers group also includes breast cancer for men.
@@ -54,7 +54,7 @@ These deaths were classified as injuries.
 | Liver cancer                       | C22                                                    |
 | All other cancers                  | C00-C14, C17, C23-24, C26-C32, C37-C41, C43-C49, C51-C53, C57-C66, C48-C81, C97 D00-D48 |
 
-: Groups of causes of death used in the district-level cancer analysis in @sec-Chapter7 with ICD-10 codes. {#tbl-ap-ch6-cancers}
+: Groups of causes of death used in the district-level cancer analysis in @sec-Chapter8 with ICD-10 codes. {#tbl-ap-ch8-cancers}
 
 The residual group also contained deaths from the "ill-defined diseases", which were proportionately assigned as above.
 The residual group also includes breast cancer for men.

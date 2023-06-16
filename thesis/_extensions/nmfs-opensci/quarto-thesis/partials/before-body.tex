@@ -1,4 +1,4 @@
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+% \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
@@ -7,21 +7,22 @@
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
-\thispagestyle{empty}%
+\thispagestyle{plain}%
 \null\vskip1cm%
 \includegraphics[width=6cm]{$cover-image$}
 \vfill
 \singlespacing
-\begin{flushleft}\fontsize{24}{28}\sf
+\begin{flushleft}\fontsize{24}{28}
     \textbf{\expandafter{\ttitle}}\\[0.5cm]
-    \fontsize{18}{20}\sf
+    \fontsize{18}{20}
     \authorname\\
     \vfill
-    \fontsize{13}{15}\sf
-    \emph{Supervisors:} \supname
+    \fontsize{13}{15}
+    Supervisors: \supname
 
     A thesis submitted for the degree of \degreename\\
-    \deptname, \groupname
+    \deptname, \groupname\\
+    \univname
 
     June 2023
 \end{flushleft}

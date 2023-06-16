@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelling the dead and what they died from - 2&nbsp; Background</title>
+<title>Spatiotemporal mortality modelling - 2&nbsp; Background</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Modelling the dead and what they died from</a> 
+      <a href="../">Spatiotemporal mortality modelling</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/theorashid/thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -122,37 +122,43 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Small: Life expectancy trends in England at the MSOA level</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling death rates</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Smaller: Life expectancy inequality in London at the LSOA level</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Life expectancy trends in England at the MSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">And what they died from: cause-specific mortality at the district level</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Life expectancy inequality in London at the LSOA level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">And when they died from cancer: trends in cancer mortality at the district level</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cause-specific mortality at the district level</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Chapters/Chapter8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Trends in cancer mortality at the district level</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Chapters/Chapter9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -308,7 +314,7 @@ S_i = U_i + V_i,
 </section>
 <section id="health-inequalities-in-the-uk" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="health-inequalities-in-the-uk"><span class="header-section-number">2.5</span> Health inequalities in the UK</h2>
-<p>While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation suffers still vast, preventable inequalities in mortality and morbidity. Health inequalities can be reduced through progressive social and economic policies, but is important to estimate and understand differences in health outcomes between population subgroups to aid the design of such policies. There are several ways to stratify the UK population and compare inequalities between subgroups. Here, we focus on class, income, geography, and deprivation.</p>
+<p>While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation suffers still vast, preventable inequalities in mortality and morbidity. Health inequalities can be reduced through, amongst other initiatives, progressive social and economic policies, better nutrition programmes, and improved health care. It is important to estimate and understand differences in health outcomes between population subgroups to aid the design of such policies. There are several ways to stratify the UK population and compare inequalities between subgroups. Here, we focus on class, income, geography, and deprivation.</p>
 <section id="class-and-income-inequality" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="class-and-income-inequality">Class and income inequality</h4>
 <p>The notion of class is prominent in UK society, but health outcomes between classes are difficult to separate from other risk factors such as hazards in manual labour or smoking rates. The Whitehall study of 1967 followed 17,530 men working in the civil service and recorded their mortality over a 10-year period. <span class="citation" data-cites="marmotInequalitiesDeathSpecific1984">Marmot et al. (<a href="../references.html#ref-marmotInequalitiesDeathSpecific1984" role="doc-biblioref">1984</a>)</span> found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and manual workers. They found, in general, a strong inverse association between grade and mortality – a term Marmot has coined a “social gradient”. The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be explained industrial exposure alone, and the gradient remained even after controlling for smoking. The authors concluded there must be other factors inherent to social class (defined here by employment grade), which explain the mortality differences. A second cohort of Whitehall employees from 1985 to 1988, this time including women as well as men, were screened and asked to answer questions on self-reported ill-health. <span class="citation" data-cites="marmotHealthInequalitiesBritish1991">Marmot et al. (<a href="../references.html#ref-marmotHealthInequalitiesBritish1991" role="doc-biblioref">1991</a>)</span> found the social gradient in health had persisted in the 20 years separating the studies. In 2008, Marmot was asked by the Secretary of State to conduct a review into the state of health inequalities in the UK and to use the evidence to design policy for reducing these inequalities. A key plot in the first Marmot Review, released in 2010, depicted the social gradient in mortality for regions in England by socio-economic classification of employment <span class="citation" data-cites="marmotMarmotReviewFair2010">(<a href="../references.html#ref-marmotMarmotReviewFair2010" role="doc-biblioref">Marmot et al., 2010</a>)</span>.</p>
@@ -327,7 +333,7 @@ S_i = U_i + V_i,
 <p>Since the turn of the millennium, there have been two periods of contrasting health policy in the UK. The early 2000s saw the implementation of the English health inequalities strategy under New Labour, with explicit goals of reducing geographical inequalities in life expectancy. The strategy saw a large increase in public spending targeting the social determinants of health, with policies on supporting families, tackling deprivation, and preventative healthcare. <span class="citation" data-cites="barrInvestigatingImpactEnglish2017">Barr et al. (<a href="../references.html#ref-barrInvestigatingImpactEnglish2017" role="doc-biblioref">2017</a>)</span> analysed the trends in life expectancy for different quantiles of deprivation and provided evidence that the strategy achieved its aim of reducing the gap in life expectancy between the 20% most-deprived areas and the rest of the English population.</p>
 <p>Following the change in government in 2010, the strategy came to an end. The Conservative government implemented a widespread series of cuts to public services, collectively known as austerity. This included both tight restrictions on the healthcare budget as well as a sweeping reorganisation of the NHS in hope of improving the organisation’s efficiency, and cuts to the wider determinants of social health, such as housing and education <span class="citation" data-cites="hamRiseDeclineNHS2023">(<a href="../references.html#ref-hamRiseDeclineNHS2023" role="doc-biblioref">Ham, 2023</a>)</span>. The cuts were geographically unequal, with reductions in funding for local governments particularly severe for local authorities with an old industrial base <span class="citation" data-cites="grayDepthsCutsUneven2018">(<a href="../references.html#ref-grayDepthsCutsUneven2018" role="doc-biblioref">Gray and Barford, 2018</a>)</span>.</p>
 <p>The study by <span class="citation" data-cites="barrInvestigatingImpactEnglish2017">Barr et al. (<a href="../references.html#ref-barrInvestigatingImpactEnglish2017" role="doc-biblioref">2017</a>)</span> saw that the trends in inequality reduction were reversing since 2012. These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty <span class="citation" data-cites="taylor-robinsonAssessingImpactRising2019">(<a href="../references.html#ref-taylor-robinsonAssessingImpactRising2019" role="doc-biblioref">Taylor-Robinson et al., 2019</a>)</span>, and falls in female life expectancy at 65 and 85 <span class="citation" data-cites="hiamWhyLifeExpectancy2018">(<a href="../references.html#ref-hiamWhyLifeExpectancy2018" role="doc-biblioref">Hiam et al., 2018</a>)</span>. Although it is difficult to uncover causal relationships, <span class="citation" data-cites="alexiouLocalGovernmentFunding2021">Alexiou et al. (<a href="../references.html#ref-alexiouLocalGovernmentFunding2021" role="doc-biblioref">2021</a>)</span> found strong associations between cuts to local government and the change in district-level life expectancy from 2013 to 2017. As written in the <em>The New York Times</em>, “after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty” <span class="citation" data-cites="goodmanBritainAusterityChanging2018">(<a href="../references.html#ref-goodmanBritainAusterityChanging2018" role="doc-biblioref">Goodman, 2018</a>)</span> – a comparison only compounded by the Brexit vote in 2016.</p>
-<p>Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies. This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities <span class="citation" data-cites="hamRiseDeclineNHS2023">(<a href="../references.html#ref-hamRiseDeclineNHS2023" role="doc-biblioref">Ham, 2023</a>)</span>. However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, <span class="citation" data-cites="leonTrendsLifeExpectancy2019">Leon et al. (<a href="../references.html#ref-leonTrendsLifeExpectancy2019" role="doc-biblioref">2019</a>)</span> showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales. More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: “longer-run slowdowns in life expectancy are observable in other European countries… but none has stalled quite as much as Britain”<span class="citation" data-cites="theeconomistBritainHasEndured2023">(<a href="../references.html#ref-theeconomistBritainHasEndured2023" role="doc-biblioref">The Economist, 2023</a>)</span>. And it’s not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries <span class="citation" data-cites="oecdOECDReviewsHealth2016">(<a href="../references.html#ref-oecdOECDReviewsHealth2016" role="doc-biblioref">OECD, 2016</a>)</span>.</p>
+<p>Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies. This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities <span class="citation" data-cites="hamRiseDeclineNHS2023">(<a href="../references.html#ref-hamRiseDeclineNHS2023" role="doc-biblioref">Ham, 2023</a>)</span>. However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, <span class="citation" data-cites="leonTrendsLifeExpectancy2019">Leon et al. (<a href="../references.html#ref-leonTrendsLifeExpectancy2019" role="doc-biblioref">2019</a>)</span> showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales. More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: “longer-run slowdowns in life expectancy are observable in other European countries… but none has stalled quite as much as Britain”<span class="citation" data-cites="theeconomistBritainHasEndured2023">(<a href="../references.html#ref-theeconomistBritainHasEndured2023" role="doc-biblioref">The Economist, 2023</a>)</span>. And it is not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries <span class="citation" data-cites="oecdOECDReviewsHealth2016">(<a href="../references.html#ref-oecdOECDReviewsHealth2016" role="doc-biblioref">OECD, 2016</a>)</span>.</p>
 <p>After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic. Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries <span class="citation" data-cites="kontisMagnitudeDemographicsDynamics2020">(<a href="../references.html#ref-kontisMagnitudeDemographicsDynamics2020" role="doc-biblioref">Kontis et al., 2020</a>)</span>. At the current time of writing in 2023, the health service is yet to recover, with waiting lists for operations and waiting times for emergency care unhealthily high <span class="citation" data-cites="dorlingHowAusterityCaused2023">(<a href="../references.html#ref-dorlingHowAusterityCaused2023" role="doc-biblioref">Dorling, 2023</a>)</span>. There is no suggestion that the picture of health and health inequalities in the UK should improve in the coming years.</p>
 <p>It is important to estimate how health inequalities have changed in different areas of the country through this period of substantial change in economic, social, and healthcare policy, so that public health interventions can be targetted towards the most disadvantaged groups.</p>
 
@@ -787,7 +793,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../Chapters/Chapter3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting and modelling the dead</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

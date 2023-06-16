@@ -166,7 +166,8 @@ An important innovation of the GBD study was the introduction of a hierarchical 
 ## Health inequalities in the UK
 
 While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation suffers still vast, preventable inequalities in mortality and morbidity.
-Health inequalities can be reduced through progressive social and economic policies, but is important to estimate and understand differences in health outcomes between population subgroups to aid the design of such policies.
+Health inequalities can be reduced through, amongst other initiatives, progressive social and economic policies, better nutrition programmes, and improved health care.
+It is important to estimate and understand differences in health outcomes between population subgroups to aid the design of such policies.
 There are several ways to stratify the UK population and compare inequalities between subgroups.
 Here, we focus on class, income, geography, and deprivation.
 
@@ -225,7 +226,7 @@ Policies of austerity were brought about as a response to the financial crash of
 This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities [@hamRiseDeclineNHS2023].
 However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
 More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain"[@theeconomistBritainHasEndured2023].
-And it's not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
+And it is not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
 
 After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
 Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries [@kontisMagnitudeDemographicsDynamics2020].
