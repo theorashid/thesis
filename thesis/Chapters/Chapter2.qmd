@@ -32,7 +32,7 @@ Postcodes within a 2km buffer of a landfill site were classified as exposed.
 Compared to those living beyond 2km, SAHSU found a small unexplained excess of congenital anomalies [@elliottRiskAdverseBirth2001], no increase in rates of cancer [@jarupCancerRisksPopulations2002], and no excess risk of Down syndrome [@jarupSyndromeBirthsLandfill2007].
 
 Distance from source is, however, only a basic model for the exposure, which can exhibit more complex, directional spatial patterns.
-A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assess the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010], noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
+A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assessed the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010], noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
 SAHSU published an environment and health atlas for England and Wales, showing the spatial patterns of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
 
 ### Disease mapping at SAHSU {-}
@@ -46,8 +46,8 @@ There is a need for statistical smoothing techniques to obtain robust estimates 
 Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 
 There are three main categories for modelling spatial effects.
-First, we can treat space as a continuous surface, as with Gaussian processes or splines.
-Second, we can use areal models, which make use of spatial neighbourhood structure of the units.
+First, we can treat space as a continuous surface using Gaussian processes or splines.
+Second, we can use areal models, which make use of the spatial neighbourhood structure of the units.
 Thirdly, we can explicitly build effects based on a nested hierarchy of geographical units, for example between state, county and census tract in the US.
 
 #### Space as a continuous process {-}
@@ -68,7 +68,7 @@ $$ {#eq-MVN}
 where $\pmb{\mu}$ is the mean effect vector, $\pmb{\Sigma} = \sigma^2 \pmb{\Omega}$ and $\pmb{\Omega}$ is a symmetric, positive semi-definite matrix defining the correlation between spatial units.
 A common choice when specifying the structure of the correlation matrix is to assume a function that decays with the distance between the centroids of the areas, so that places nearby in space share similar disease profiles.
 Note, this is mathematically equivalent to the practical implementation of a Gaussian process, which uses a finite set of points.
-An example in @elliottSpatialEpidemiologyMethods2001 chooses the exponential decay function to map cancer risk in northwest England.
+An example in @elliottSpatialEpidemiologyMethods2001 chooses an exponential decay function to map cancer risk in northwest England.
 
 #### Space as discrete units {-}
 
@@ -120,7 +120,7 @@ Populations for small geographies are only recorded during a decennial census, a
 And although the census is considered the "gold standard", it is subject to enumeration errors, particularly for areas with special populations such as students or armed forces [@elliottSpatialEpidemiologyMethods2001].
 
 Beyond the population issue, finer scale studies are restricted by data availability.
-Where data are available, there is still the need to overcome small number issues before feeding death rates through the life table.
+Where data are available, there is still the need to overcome small number issues before feeding death rates through the life table to calculate life expectancy.
 @eayresEvaluationMethodologiesSmall2004 recommend a minimum population size of 5000 when using traditional life table methods, below which the calculation of life expectancy is unstable^[Or, if the open-ended age group contains zero deaths, the calculation of life expectancy is impossible. This is because the probability of dying in the final age group will be zero, so the life table cannot be closed and the life expectancy will be infinite.], or the error estimates become so large that any comparison between subgroups becomes meaningless.
 One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021; @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
 Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce more accurate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009; @jonkerComparisonBayesianRandomEffects2012].
@@ -154,7 +154,7 @@ There are, however, questions around the universality and unidirectionality of t
 Around the same time as Omran, Samuel Preston collated cause-specific mortality data for a huge number of populations, spanning 48 nations and nearly a century [@prestonInternationalComparisonExcessive1970; @prestonStructureChangeCauses1974].
 This would enable international comparisons of groups of causes of death over different time periods, and a deeper understanding of the upward trends in life expectancy.
 In particular, by plotting cause-specific disease rates against overall mortality, @prestonStructureChangeCauses1974 saw that, over time, the contribution of infectious diseases to a particular _level_ of mortality had become ever smaller.
-That is to say, as mortality declines, the contribution from infectious diseases also declines.
+That is to say, as mortality declined, the contribution from infectious diseases also declined.
 Preston attributed this to an accelerating rate of medical progress guided by the "germ theory of disease", which public health and science were not able to replicate for NCDs.
 Preston also traced the excess deaths in older males observed in western societies to cardiovascular diseases, cancer and bronchitis – a direct result of dramatic increases in cigarette smoking [@prestonInternationalComparisonExcessive1970].
 
@@ -188,7 +188,7 @@ Income is not a routinely collected statistic in the UK. Nevertheless, using a s
 #### Geographical inequality {-}
 
 In 2015, the GBD Study released its first subnational estimates of mortality, starting with the UK and Japan.
-@steelChangesHealthCountries2018 assess these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
+@steelChangesHealthCountries2018 assessed these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
 In a study on forecasting subnational life expectancy in England and Wales, @bennettFutureLifeExpectancy2015 estimated a 8.2 year range in life expectancy for men and 7.1 year range for women in 2012 between 375 districts.
 The lowest life expectancies were seen in urban northern England, and the highest in the south and London's affluent districts.
 Within London itself, male and female life expectancy showed 5-6 years of variation.
@@ -196,9 +196,9 @@ Within London itself, male and female life expectancy showed 5-6 years of variat
 #### Deprivation {-}
 
 There have been substantial efforts in the UK to measure the deprivation of an area.
-Since 2004, the standard deprivation indicator in England  is the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA^[See @sec-Chapter3 for descriptions of geographical units.]) covering income, unemployment, health, crime and environmental data sources [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
+Since 2004, the standard deprivation indicator in England has been the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA^[See @sec-Chapter3 for descriptions of geographical units.]) covering income, unemployment, health, crime and environmental data sources [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
 The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
-The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham did better than expected for that level of deprivation [@steelChangesHealthCountries2018].
+The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham had lower rates of premature mortality than expected for that level of deprivation [@steelChangesHealthCountries2018].
 @bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
 They found since 2011, although national life expectancy has continued to increase, the rise in female life expectancy has reversed in the two most deprived deciles.
 The second Marmot Review in 2020 also found female life expectancy declined in the most deprived decile between the periods 2010-12 and 2016-18 [@marmotMarmotReview102020].
@@ -214,7 +214,7 @@ The strategy saw a large increase in public spending targeting the social determ
 Following the change in government in 2010, the strategy came to an end.
 The Conservative government implemented a widespread series of cuts to public services, collectively known as austerity.
 This included both tight restrictions on the healthcare budget as well as a sweeping reorganisation of the NHS in hope of improving the organisation's efficiency, and cuts to the wider determinants of social health, such as housing and education [@hamRiseDeclineNHS2023].
-The cuts were geographically unequal, with reductions to funding for local governments particularly severe to local authorities with an old industrial base [@grayDepthsCutsUneven2018].
+The cuts were geographically unequal, with reductions in funding for local governments particularly severe for local authorities with an old industrial base [@grayDepthsCutsUneven2018].
 
 The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
 These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
@@ -223,7 +223,7 @@ As written in the _The New York Times_, "after eight years of budget cutting, Br
 
 Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies.
 This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities [@hamRiseDeclineNHS2023].
-However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 show that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
+However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
 More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain"[@theeconomistBritainHasEndured2023].
 And it's not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
 

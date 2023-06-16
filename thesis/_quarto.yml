@@ -31,7 +31,7 @@ book:
     Unlike areas in the rest of the country, mortality in London from lung, colorectal, oesophageal, and all other cancers did not increase in poorer districts, indicating that there is some exceptional effect for cancer mortality in the London region.
 
     For declines in life expectancy to happen before the Covid-19 pandemic in increasing numbers of communities in England is worrying.
-    Small area statistics on total mortality and the cause-composition of mortality are a vital tool for policymakers in creating targetted initiatives for reducing inequalities and preventing further deteriorations in longevity.
+    Small area statistics on total mortality and the cause-composition of mortality are a vital tool for creating targetted initiatives to reduce inequalities and prevent further deteriorations in longevity.
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd

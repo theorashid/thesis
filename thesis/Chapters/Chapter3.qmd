@@ -36,7 +36,7 @@ Likewise, life expectancy has improved throughout the study period, but has stal
 ![District-level life expectancy for total death rates from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.pdf){#fig-ch-3-district}
 
 @fig-ch-3-district shows the geography of life expectancy after aggregating deaths over the entire study period by district.
-For both sexes, the picture is similar: pockets of low life expectancy in the urban northwest, northeast, west midlands, and coastal areas east of London.
+For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, West Midlands, and coastal areas east of London.
 
 Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.
 
@@ -64,7 +64,7 @@ To ensure geographic consistency, all data were mapped to the district boundarie
 
 Output Areas (OAs) are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
 LSOAs are a type of census geography made up of around four or five OAs.
-MSOAs are then comprised of around four or five LSOAs, and these MSOAs fit within district boundaries.
+MSOAs are then composed of around four or five LSOAs, and these MSOAs fit within district boundaries.
 OAs, LSOAs, and MSOAs are all statistical units are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
 No policies are created using these boundaries [@officefornationalstatistics2011CensusGeographies2022].
 Again, for geographic consistency, all data were mapped to the output area hierarchy from the 2011 census.
@@ -108,11 +108,11 @@ Estimates of population turnover for MSOAs were created by taking the mean acros
 
 For each chapter, the quantity of interest is the same: mortality in each age group, spatial unit and year.
 Empirically, death rates can be calculated from observed data as the number of deaths divided by the population in each strata.
-Formally, using $a$, $s$, and $t$ to index age, spatial unit and time respectively, we write
+Formally, using $a$, $s$, and $t$ to index age, spatial unit and time, respectively, we write
 $$
 \hat{m}_{ast} = \frac{\text{deaths}_{ast}}{\text{population}_{ast}},
 $$ {#eq-death-rate}
-where $\hat{m}_{ast}$ is the death rate.
+where $\hat{m}_{ast}$ is the empirical death rate.
 
 When the number of deaths becomes small, however, the empirical death rate presents an apparent variability from year to year, or from spatial unit to spatial unit, which is larger than the true differences in the risk of death.
 The problem is exacerbated for the young ages or rare diseases, where the number of deaths might be zero, or for smaller geographical units, where the population might be zero.
@@ -138,7 +138,7 @@ Furthermore, the state-of-the-art approximate inference package for spatial mode
 
 Bayesian models are specified in a probabilistic programming language.
 The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
-`NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which my research group has a lot of experience with, as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
+`NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which my research group has a lot of experience with as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
 `NIMBLE` has an `R` interface but compiles models to `C++` for speed and scalability.
 It also increases the sampling efficiency by automatically finding conjugate relationships between parameters in the model and marginalising over them wherever possible.
 The group also has a close relationship with the lead developer of `NIMBLE`.
@@ -150,8 +150,8 @@ This is a common problem in spatial and spatiotemporal models, where the paramet
 To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent, which is better for computational reasons than storing a large number of correlated samples).
 
 I spent a lot of time trying different probabilistic programming languages across `R`, `python` and `Julia`, in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@rashidProbabilisticprogrammingpackages2022].
-In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is faster for large models [@laoTfpMcmcModern2020].
-The major downside was that `NumPyro` had not been used extensively by the spatial modelling community, so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code [@numpyrodocumentationCARDistribution2023].
+In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is more performant for large models [@laoTfpMcmcModern2020].
+The major downside was that `NumPyro` had not been used extensively by the spatial modelling community so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code [@numpyrodocumentationCARDistribution2023].
 Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to around a day.
 `NumPyro` also has built-in methods for approximate variational inference, such as the Laplace approximation, but these failed to converge to sensible values for these models without heavy customisation of variational function, so I stuck with sampling methods.
 

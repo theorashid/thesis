@@ -13,7 +13,7 @@ The figures have been reproduced for the thesis, and the text has been updated b
 ### Mortality and population data
 
 I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021).
-Deaths were stratified by 19 age groups ($0, 1–4, 5–9, ..., 80–84, 85+$) and 6791 MSOAs.
+Deaths were stratified by 19 age groups (0, 1–4, 5–9, ..., 80–84, 85+) and 6791 MSOAs.
 I did not use 129 death records (<0.001%) for which sex was not recorded.
 In 48 (0.001%) age­-MSOA-­year combinations, the number of deaths exceeded population.
 Most of these were in people aged 85 years and older.
@@ -25,7 +25,7 @@ I used a Bayesian hierarchical model to obtain stable estimates of death rates b
 I conducted all analyses for women and men separately because mortality and trends differ by sex.
 In the model, the number of deaths in age group $a (=1,...,19)$, MSOA $s (=1,...,6791)$ and year $t (= 1,...,18)$ follows a negative binomial distribution
 $$
-\text{deaths}_{ast} = \text{Negative Binomial}(p_{ast}, r).
+\text{deaths}_{ast} \sim \text{Negative Binomial}(p_{ast}, r).
 $$ {#eq-ch-4-likelihood-1}
 The parameter $p_{ast}$ is
 $$
@@ -90,7 +90,7 @@ I calculated life expectancy at birth, and probability of dying at specific ages
 The reported 95% credible intervals (CrIs) represent the 2.5<sup>th</sup> to 97.5<sup>th</sup> percentiles of the posterior distribution of estimated life expectancies.
 I also report the posterior probability that the estimated change over time in an MSOA represents an increase versus a decrease in life expectancy.
 Posterior probability represents the inherent uncertainty in life expectancy trends.
-In an MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there is around a 100% posterior probability of an increase, and hence around a 0% probability of a decrease, and vice versa.
+In an MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there is a 100% posterior probability of an increase, and hence around a 0% probability of a decrease, and vice versa.
 Posterior probabilities more distant from 50% indicate more certainty.
 
 ## Results
@@ -189,7 +189,7 @@ Regression of the change in life expectancy from 2002 to 2019 in each MSOA again
 Studies in both the UK [@connollyIncreasingInequalitiesHealth2007] and USA [@ezzatiReversalFortunesTrends2008] have also shown that migration is not sufficient to explain the trends in health and health inequalities, and that these trends are largely due to real changes in population health.
 Even if rising inequalities are partly due to health-­selective migration, this phenomenon has social and economic origins that should be addressed through employment opportunities, affordable housing, high-­quality education, and health care.
 
-Population and mortality statistics in the UK are generated independently from one another. As a result, we encountered a situation of having more deaths than population in a small percentage (0.001%) of age-­MSOA­ year combinations, a phenomenon that was more common in those aged 85 years and older.
+Population and mortality statistics in the UK are generated independently from one another. As a result, we encountered a situation of having more deaths than population in a small percentage (0.001%) of age-­MSOA­-year combinations, a phenomenon that was more common in those aged 85 years and older.
 This finding might be due to errors in population estimates in years between censuses or because some people (e.g., those living in long­term care facilities such as care homes), are counted in one MSOA for the population statistic but have their death registered in another.
 Furthermore, care home residents might have relocated from other MSOAs, with different socioeconomic characteristics from that in which the care home is located.
 This factor could attenuate the association between socioeconomic variables and life expectancy.
@@ -200,7 +200,7 @@ The extent of this underestimation is modest; however, because a large part of l
 The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
 However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
 In terms of trends, studies that grouped small ­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
-By analysing trends at the MSOA level, we could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
+By analysing trends at the MSOA level, I could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
 
 @congdonGeographicalPatternsDrugRelated2019 also used spatial models to smooth over MSOA-level data of mortality, but specifically drug-related deaths and suicides between 2012-16.
 The author singled out the district of Blackpool as containing many of the MSOAs with the most extreme relative risks of death from these causes, including the MSOA I found had the lowest life expectancy for men in 2019.
@@ -216,8 +216,8 @@ The declining life expectancy in numerous English MSOAs since 2014, especially t
 First, in both countries, there is substantial variation in life expectancy at any level of poverty, which might be due to geographical variations in health behaviours, the public health programmes that influence these behaviours or otherwise prevent disease, and health services [@chettyAssociationIncomeLife2016; @burn-murdochWhyAreAmericans2023].
 The second similarity in small­ area life expectancy trends is that the decline in life expectancy was more widespread in women than in men [@ezzatiReversalFortunesTrends2008].
 Historically, women and men had similar life expectancies in high-­income nations before a rise in traffic injuries and diseases associated with specific occupations and health behaviours such as smoking and alcohol use created a male mortality disadvantage in the 20<sup>th</sup> century [@beltran-sanchezTwentiethCenturySurge2015].
-The closing of female and male life expectancy in the late 20<sup>th</sup> century and early 20<sup>st</sup> century in many high­income nations [@kontisFutureLifeExpectancy2017] is partly due to the dynamics of smoking, which peaked later in women than in men, and affects causes of death such as respiratory diseases and lung cancer that have stagnated or even increased in women in deprived communities [@bennettContributionsDiseasesInjuries2018; @leonTrendsLifeExpectancy2019].
-However, it is rare for the convergence of female and male life expectancies to occur in the form of female life expectancy decline [@ezzatiReversalFortunesTrends2008], which might be due to a combination of the worsening economic, psychosocial (eg, poverty, stress, and domestic violence), and behavioural (smoking and alcohol use) determinants of mortality in English women.
+The closing of female and male life expectancy in the late 20<sup>th</sup> century and early 21<sup>st</sup> century in many high-­income nations [@kontisFutureLifeExpectancy2017] is partly due to the dynamics of smoking, which peaked later in women than in men, and affects causes of death such as respiratory diseases and lung cancer that have stagnated or even increased in women in deprived communities [@bennettContributionsDiseasesInjuries2018; @leonTrendsLifeExpectancy2019].
+However, it is rare for the convergence of female and male life expectancies to occur in the form of female life expectancy decline [@ezzatiReversalFortunesTrends2008], which might be due to a combination of the worsening economic, psychosocial (e.g., poverty, stress, and domestic violence), and behavioural (smoking and alcohol use) determinants of mortality in English women.
 
 In both countries, the decline in life expectancy was associated with the economic trends of unemployment and insecure and low-­wage employment following late 20<sup>th</sup> century deindustrialisation.
 In England, these economic trends led to a larger loss of jobs in the north than in London and the southeast [@blundellCOVID19Inequalities2020; @davenportLevellingWhereHow2020].

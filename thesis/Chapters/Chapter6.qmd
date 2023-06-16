@@ -8,7 +8,7 @@ By analysing mortality for specific causes of death, which is the third objectiv
 
 I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,648,191 death records, extract date: 17<sup>th</sup> November 2022).
 England was divided into 314 districts according to the boundaries in 2020.
-Deaths were assigned into the following age groups: $0, 1–4, 5–9, ..., 80–84, 85+$ years.
+Deaths were assigned into the following age groups: 0, 1–4, 5–9, ..., 80–84, 85+ years.
 I did not use 130 death records (<0.001%) for which sex was not recorded.
 There were no age­-district-year combinations in which the number of deaths from all causes exceeded the population.
 
@@ -27,7 +27,7 @@ I conducted all analyses separately by sex and cause group.
 
 I used a binomial likelihood:
 $$
-\text{deaths}_{ast} = \text{Binomial}(m_{ast}, \text{Population}_{ast}).
+\text{deaths}_{ast} \sim \text{Binomial}(m_{ast}, \text{Population}_{ast}).
 $$ {#eq-ch-6-likelihood}
 A beta-binomial was trialled but did not improve model fit.
 The model is as follows:
@@ -112,7 +112,7 @@ Probability of dying from a stroke between birth and 80 years of age in 314 loca
 Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
-All other CVD also shows a downward trend, with the exceptions of Hastings and, more noticeably, the Isle of Wight.
+All other CVD also showed a downward trend, with the exceptions of Hastings and, more noticeably, the Isle of Wight.
 Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code [@murrayGlobalBurdenDisease1996] – since around 2012, suggesting these trends result from poor coding practice.
 
 ### Non-communicable diseases
@@ -280,7 +280,7 @@ In @fig-ch-6-contribution-split, I break the overall trend down into two time pe
 This both follows the analysis for @fig-ch-4-change, but it is also the year there was a change in government, and a move in fiscal policy towards austerity.
 
 In the period 2010-19, life expectancy progress slowed in England, as discussed at the MSOA level in @sec-Chapter4, with three districts experiencing a decline in female life expectancy.
-For women, lung cancer switched from generally contributing negatively to the change in district life expectancy (@fig-ch-6-contribution-women-2002-2010) to positively (@fig-ch-6-contribution-women-2010-2019)
+For women, lung cancer switched from generally contributing negatively to the change in district life expectancy (@fig-ch-6-contribution-women-2002-2010) to positively (@fig-ch-6-contribution-women-2010-2019).
 The contribution for the other cancer groups was similar for the two time periods.
 There were a larger number of districts with positive contributions for all other NCDs in the second period.
 The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVD) was weaker for the second time period as the negative forcing effect of Alzheimer's and other dementias strengthened massively.
@@ -340,7 +340,7 @@ There are two key studies in the literature which break the population of Englan
 The authors found the gap in life expectancy between the most and least deprived areas was caused by the large contributions of respiratory diseases, ischaemic heart disease, and a set of preventable and treatable cancers.
 Unlike the present work, the authors broke the results down further by age, finding that deaths in children younger than 5 years and dementias in older ages drove the inequality between the top and bottom deciles.
 
-Secondly, as one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered a massive 264 causes of deaths, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
+Secondly, using data from one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered a massive 264 causes of deaths, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
 As with @bennettContributionsDiseasesInjuries2018 and the work here, the GBD group found the rate of improvement in life expectancy had slowed since 2010.
 They found, in general, the slowdown was driven by the disappearance of sustained annual improvements from ischaemic heart disease, strokes, as in @fig-ch-6-contribution-split, but also to a lesser extent from colorectal cancer, lung cancer, and breast cancer.
 The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.

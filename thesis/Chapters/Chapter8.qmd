@@ -16,7 +16,7 @@ There is also worrying shift towards injuries (GBD group 3) contributing negativ
 This is possibly driven by a rise in "deaths of despair" [@angusIncreasesDeathsDespair2023; @caseRisingMorbidityMortality2015], although this would require further analysis by stratifying into intentional and unintentional injuries.
 It should be noted that IMPN and injuries do not play a major role in total mortality as they accounted for only 11.1% of all deaths from 2002 to 2019, but they are almost entirely preventable and should be addressed through appropriate policy.
 
-Cancer outcomes in the UK are worse than those in Europe in general [@oecdOECDReviewsHealth2016].
+Cancer survival outcomes in the UK are worse than those in Europe in general [@oecdOECDReviewsHealth2016].
 In this thesis, I found mortality showed huge spatial variation for a number of preventable cancers.
 Worryingly, at the same level of poverty, London performed significantly better that the rest of the country for several cancers.
 This suggests either regional differences in the quality of care, or differences in the populations living in deprived areas, which should both be the subject for policy discussions.
@@ -48,7 +48,6 @@ Did cancer outcomes worsen due to missed surgeries as hospitals were flooded wit
 Is there a longer term effect due to strain on emergency services, which has manifested in longer waiting lists and waiting times for appointments [@dorlingHowAusterityCaused2023]?
 And, how have these effects varied for different age groups and different areas of the country?
 
-Improvements in hardware and inference methods, such as variational inference rather than sampling
 In theory, with improvements both to hardware and the rise of approximate inference algorithms to replace computationally costly sampling methods, the models can be scaled to higher and higher spatial resolutions and we could potentially estimate mortality for the entire country for LSOAs, OAs, or even postcodes.
 However, given the data issues in @sec-Chapter5, perhaps bigger is not better when the quality of the data is lacking.
 
@@ -63,7 +62,7 @@ During my PhD, I became very familiar with the literature on Gaussian processes,
 One of the most promising avenues for the task of mortality estimation in this thesis, outlined in @flaxmanFastHierarchicalGaussian2015, is the use of Kronecker-structured covariance matrices to create hierarchical Gaussian processes.
 In there context of this thesis, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects.
 We can exploit the Kronecker structure for faster inference, as we no longer need to invert the full matrix (an operation that scales cubically with the number of data points), but rather the smaller constituent matrices of each effect.
-Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data ^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
+Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
 Also, there was no guarantee the Gaussian process methods would be quicker, as it still requires the inversion of a large spatial matrix, nor would it produce a result much different from the original model.
 Instead, I allocated time to scaling existing models and testing new hardware.
 I believe the hierarchical Gaussian process model should be the starting point for future research because it is much more flexible and requires less testing of each effect than the models in this thesis.
