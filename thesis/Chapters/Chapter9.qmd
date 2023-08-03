@@ -68,13 +68,11 @@ Instead, I allocated time to scaling existing models and testing new hardware.
 I believe the hierarchical Gaussian process model should be the starting point for future research because it is much more flexible and requires less testing of each effect than the models in this thesis.
 
 Another methodological extension would be to model causes of death jointly, thereby borrowing strength across _causes_.
-Diseases often share common risk factors and similar aetiologies, so there often is some redundancy in specifying a unique spatial surface for each cause.
-In the disease mapping literature, studies have built spatial models which share spatial components between diseases.
-Firstly, @knorr-heldSharedComponentModel2001 considered a model (also described in @bestComparisonBayesianSpatial2005) for two diseases, with disease-specific spatial components and one shared component.
-@heldJointDiseaseMapping2005 generalised this approach to model any number of diseases as a weighted sum of shared components.
-Rather than a general approach, both @downingJointDiseaseMapping2008 and @mahakiJointSpatiotemporalShared2018 allocated the spatial components to the diseases _a priori_ based on knowledge of the common risk factors between cancers such as smoking, obesity and alcohol consumption.
-@foremanSmallAreaForecasts2017 allowed for more variability by modelling interactions between each spatial unit and cause.
-There is also the option to extend the hierarchical Gaussian process described above with another component covariance matrix describing the correlations between each of the cause groups.
+Studies have built spatial models which use shared components between diseases, either modelling spatial patterns of any number of diseases using a weighted sum of shared components [@knorr-heldSharedComponentModel2001; @bestComparisonBayesianSpatial2005; @heldJointDiseaseMapping2005] or pre-ascribing the spatial components to the diseases based on knowledge of common risk factors [@downingJointDiseaseMapping2008; @mahakiJointSpatiotemporalShared2018].
+However, as the number of diseases in the study increases, more spatial components must be fitted, which is computationally prohibitive.
+Furthermore, unless the spatial components are defined _a priori_, there is a question of how many spatial components are required to parsimoniously describe the variance in the data.
+Alternatively, the correlations between the causes can be modelled using a multivariate normal distribution of the same dimensions as the number of cause groups, as in @foremanSmallAreaForecasts2017.
+Extending this idea, there is also the option to extend the hierarchical Gaussian process described above with another component covariance matrix describing the correlations between each of the cause groups.
 Ultimately, the goal would be to run a single joint model that flexibly describes interactions between sexes, age groups, spatial units, time, and causes of death.
 
 <!-- ## Conclusions -->

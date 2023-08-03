@@ -77,7 +77,7 @@ These are taken from mid-year population estimates of the usual resident populat
 The ONS estimates inter-censal populations on a rolling basis, updating the previous year's value using the change in the population in the GP patient registration data as an indicator of the true population change.
 The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England [@officefornationalstatisticsPopulationEstimatesOutput2021].
 
-### Deprivation
+### Community deprivation data
 
 I used data for the following measures of socioeconomic deprivation from the English Indices of Deprivation:
 

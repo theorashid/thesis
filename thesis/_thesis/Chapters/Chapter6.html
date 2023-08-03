@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -101,7 +101,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Spatiotemporal mortality modelling</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/theorashid/thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/theorashid/thesis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -200,6 +200,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Groups of causes of death</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Appendices/AppendixE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Maps of cause-specific mortality</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -252,17 +258,17 @@ div.csl-indent {
 
 </header>
 
+<p>This chapter is based on the peer-reviewed publication <em>Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data</em>, published in <em>The Lancet Regional Health Europe</em> <span class="citation" data-cites="bennettChangesLifeExpectancy2023">(<a href="../references.html#ref-bennettChangesLifeExpectancy2023" role="doc-biblioref">Bennett et al., 2023</a>)</span>, for which I was joint first author. The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited. The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level. Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.</p>
 <p>Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases. And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve. From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England. In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.</p>
-<p>This chapter is based on the peer-reviewed publication <em>Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data</em>, published in <em>The Lancet Regional Health Europe</em> <span class="citation" data-cites="bennettChangesLifeExpectancy2023">(<a href="../references.html#ref-bennettChangesLifeExpectancy2023" role="doc-biblioref">Bennett et al., 2023</a>)</span>, for which I was joint first author. The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level. Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.</p>
 <section id="methods" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="methods"><span class="header-section-number">6.1</span> Methods</h2>
 <section id="mortality-and-population-data" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="mortality-and-population-data"><span class="header-section-number">6.1.1</span> Mortality and population data</h3>
-<p>I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021). Deaths were stratified by 19 age groups (0, 1–4, 5–9, …, 80–84, 85+) and 4835 LSOAs. These LSOAs fit inside 33 districts: London’s 32 boroughs and the City of London. I did not use 16 death records (0.002%) for which sex was not recorded. In 3267 (0.099%) age­-LSOA-­year combinations, the number of deaths exceeded the population. In 88% of these combinations, the deaths exceeded population by only one or two, and 96% of these combinations were in people aged 80 years and older. In these cases, the population was set equal to the number of deaths.</p>
+<p>I performed a high-­resolution spatiotemporal analysis of all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021), as detailed in <a href="Chapter3.html"><span>Chapter&nbsp;3</span></a>. Deaths were stratified by 19 age groups (0, 1–4, 5–9, …, 80–84, 85+) and 4835 LSOAs. These LSOAs fit inside 33 districts: London’s 32 boroughs and the City of London. I did not use 16 death records (0.002%) for which sex was not recorded. In 3267 (0.099%) age­-LSOA-­year combinations, the number of deaths exceeded the population. In 88% of these combinations, the deaths exceeded population by only one or two, and 96% of these combinations were in people aged 80 years and older. In these cases, the population was set equal to the number of deaths.</p>
 </section>
 <section id="statistical-analysis" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="statistical-analysis"><span class="header-section-number">6.1.2</span> Statistical analysis</h3>
-<p>The model was largely the same as <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>, with a few changes: First, the negative binomial likelihood from <a href="Chapter4.html#eq-ch-4-likelihood-1">Equation&nbsp;<span>4.2</span></a> was replaced with a beta-binomial likelihood, <span id="eq-ch-6-likelihood"><span class="math display">\[
+<p>The model was largely as outlined in <a href="Chapter4.html"><span>Chapter&nbsp;4</span></a>, with a few changes: First, the negative binomial likelihood from <a href="Chapter4.html#eq-ch-4-likelihood-1">Equation&nbsp;<span>4.2</span></a> was replaced with a beta-binomial likelihood, <span id="eq-ch-6-likelihood"><span class="math display">\[
 \text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
 \tag{6.1}\]</span></span> where <span class="math inline">\(m_{ast}\)</span> is the death rate and <span class="math inline">\(\rho \geq 0\)</span> is the overdispersion parameter. I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for <a href="Chapter4.html#eq-ch-4-likelihood-1">Equation&nbsp;<span>4.2</span></a> that mortality is low. In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible. The beta-binomial likelihood is a generalisation of the binomial distribution that allows for overdispersion. The death rates were logit-transformed and the model structure is otherwise the same as <a href="Chapter4.html#eq-ch-4-model">Equation&nbsp;<span>4.4</span></a>, but using nested hierarchical random effects with LSOAs nested in MSOAs, which were nested in districts. A <span class="math inline">\(\rho \sim \exp (0.1)\)</span> hyperprior was used for the overdispersion term, and <span class="math inline">\(\sigma \sim \mathcal{N}^+(1)\)</span> hyperpriors for the standard deviation parameters, as recommended by the Stan development team <span class="citation" data-cites="standevelopmentteamPriorChoiceRecommendations2020">(<a href="../references.html#ref-standevelopmentteamPriorChoiceRecommendations2020" role="doc-biblioref">Stan development team, 2020</a>)</span>.</p>
 <p><a href="../Appendices/AppendixB.html#tbl-ap-ch6-model">Table&nbsp;<span>B.2</span></a> shows all model parameters, their priors and dimensions.</p>

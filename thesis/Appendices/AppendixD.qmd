@@ -10,7 +10,7 @@
 | Ovarian cancer                     | C56                                                    |
 | Lymphomas, multiple myeloma        | C81-C90, C96                                           |
 | Oesophageal cancer                 | C15                                                    |
-| All other cancers                  | C00-C14, C16-C17, C22-24, C26-C32, C37-C41, C43-C49, C51-C54, C57-C67, C48-C81, C91-C95, C97, D00-D48 |
+| All other cancers                  | C00-C14, C16-C17, C22-C24, C26-C32, C37-C41, C43-C49, C51-C55, C57-C60, C62-C67, C68-C80, C91-C95, C97, D00-D48 |
 | Ischaemic heart disease            | I20-I25                                                |
 | Stroke                             | I60-I69                                                |
 | All other CVD                      | I00-I19, I26-I59, I70-I99                              |
@@ -49,10 +49,10 @@ These deaths were classified as injuries.
 | Oesophageal cancer                 | C15                                                    |
 | Bladder cancer                     | C67                                                    |
 | Leukaemia                          | C91-C95                                                |
-| Corpus uteri cancer                | C54                                                    |
+| Corpus uteri cancer                | C54-C55                                                |
 | Stomach cancer                     | C16                                                    |
 | Liver cancer                       | C22                                                    |
-| All other cancers                  | C00-C14, C17, C23-24, C26-C32, C37-C41, C43-C49, C51-C53, C57-C66, C48-C81, C97 D00-D48 |
+| All other cancers                  | C00-C14, C17, C23-24, C26-C32, C37-C41, C43-C49, C51-C53, C57-C60, C62-C66, C68-C80, C97 D00-D48 |
 
 : Groups of causes of death used in the district-level cancer analysis in @sec-Chapter8 with ICD-10 codes. {#tbl-ap-ch8-cancers}
 
@@ -62,4 +62,3 @@ Ovarian cancer, corpus uteri cancer (women) and prostate cancer (men) are sex sp
 Bladder cancer and liver cancer were not leading cancers for women, so they are included in the residual group.
 
 The next leading cancers in the residual group of all other cancers were bladder cancer, brain and nervous system cancers, and liver cancer for women, and brain and nervous system cancers, mesothelioma, and melanoma and other skin cancers for men.
-

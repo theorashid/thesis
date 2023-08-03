@@ -1,18 +1,19 @@
 # Life expectancy trends in England at the MSOA level {#sec-Chapter5}
 
+This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author.
+The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
+The figures have been reproduced for the thesis, and the text has been updated but remains much the same as the original.
+
 There have been declines in female life expectancy in England for the most deprived deciles since the start of the 2010s [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
 However, these studies have only broken England down into deciles of deprivation, rather than looking at geographical variation.
 And studies of trends in life expectancy have been limited to the district level [@bennettFutureLifeExpectancy2015], which masks substantial heterogeneity.
 In this chapter, I address the first objective of the thesis – to estimate trends in life expectancy for small areas in England from 2002 to 2019 – choosing a smaller unit of analysis than districts: MSOAs.
 
-This chapter is based on the peer-reviewed publication _Life expectancy and risk of death in 6791 communities in England from 2002 to 2019: high-resolution spatiotemporal analysis of civil registration data_, published in _The Lancet Public Health_ [@rashidLifeExpectancyRisk2021], for which I was first author.
-The figures have been reproduced for the thesis, and the text has been updated but remains much the same as the original.
-
 ## Methods
 
 ### Mortality and population data
 
-I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021).
+I performed a high-­resolution spatiotemporal analysis of all deaths in England from 2002 to 2019 (8,646,878 death records, extract date: 25<sup>th</sup> June 2021), as detailed in @sec-Chapter3.
 Deaths were stratified by 19 age groups (0, 1–4, 5–9, ..., 80–84, 85+) and 6791 MSOAs.
 I did not use 129 death records (<0.001%) for which sex was not recorded.
 In 48 (0.001%) age­-MSOA-­year combinations, the number of deaths exceeded population.
@@ -171,7 +172,7 @@ The author singled out the district of Blackpool as containing many of the MSOAs
 
 Over the period of this analysis, from 2002 to 2019, national life expectancy increased in high-­income countries in Australasia, Europe, and North America.
 Female life expectancy has stagnated or declined in various intervals since 2010 in the UK (84% of the UK population in 2019 lived in England) and in some other high-­income countries including France, Germany, Italy, and the USA; the UK and USA have had some of the poorest performances in terms of the duration or extent of slowdown or reversal in longevity gain.
-The comparative performance of high-­income countries’ longevity trends has been attributed to differences in risk factors such as smoking, health care, and social inequalities [@leonTrendsLifeExpectancy2019].
+The comparative performance of high-­income countries’ longevity trends has been attributed to differences in risk factors such as smoking, health care, and social inequalities [@leonTrendsLifeExpectancy2019; @nationalresearchcouncilInternationalDifferencesMortality2010].
 
 To our knowledge, nationwide trend data for small-­area life expectancy are available only in the USA.
 The declining life expectancy in numerous English MSOAs since 2014, especially those that already had a low life expectancy, resembles a trend spanning nearly three decades in the USA in two ways [@ezzatiReversalFortunesTrends2008; @dwyer-lindgrenInequalitiesLifeExpectancy2017; @chettyAssociationIncomeLife2016].

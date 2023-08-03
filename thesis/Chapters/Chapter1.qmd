@@ -21,8 +21,8 @@ There are two specific objectives which will help achieve this aim:
 
 ## Structure of the thesis
 
-@sec-Chapter2 reviews the literature on spatial methods for disease mapping using the studies at the Small Area Health Statistics Unit - who hold the data for the research in this thesis - as examples.
-I also review studies on mortality for small subnational regions, followed by the literature of separating total mortality into different causes of death, before exploring inequalities in UK over the past few decades through to the present.
+@sec-Chapter2 reviews the literature on spatial methods for mapping disease and mortality for small subnational regions, followed by the literature of separating total mortality into different causes of death
+I will then explore inequalities in UK over the past few decades through to the present.
 @sec-Chapter3 presents the data sources, and @sec-Chapter4 the statistical modelling choices common to all objectives of this thesis.
 @sec-Chapter5 concerns the first objective of the thesis - estimating trends in life expectancy for very small areas in England.
 @sec-Chapter6 extends the first objective by focussing on London at a finer scale than the previous chapter as an attempt to gauge whether higher resolution analyses are possible.

@@ -1,0 +1,244 @@
+# Maps of cause-specific mortality {#sec-appE}
+
+This appendix contains district-level maps of the probability of dying between birth and 80 years of age in 2019 and change from 2002 to 2019 from specific causes of deaths, which supplement the text in @sec-Chapter7 and @sec-Chapter8.
+Note, there are two sets of maps for all other cancers, one for each chapter.
+The all other cancers group for @sec-Chapter8 contains fewer deaths because the group from @sec-Chapter7 had been divided to include more cancer groups.
+
+## Cardiovascular diseases
+
+#### Ischaemic heart disease {-}
+
+::: {#fig-app-e-map-ihd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Ischaemic_heart_disease.pdf){#fig-app-e-map-ihd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Ischaemic_heart_disease.pdf){#fig-app-e-map-ihd-men}
+
+Probability of dying from ischaemic heart disease between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Stroke {-}
+
+::: {#fig-app-e-map-stroke layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Cerebrovascular_disease.pdf){#fig-app-e-map-stroke-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Cerebrovascular_disease.pdf){#fig-app-e-map-stroke-men}
+
+Probability of dying from a stroke between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### All other CVDs {-}
+
+::: {#fig-app-e-map-other-cvd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_CVD.pdf){#fig-app-e-map-other-cvd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_CVD.pdf){#fig-app-e-map-other-cvd-men}
+
+Probability of dying from all other CVDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+## Non-communicable diseases
+
+#### Alzheimer's and other dementias {-}
+
+::: {#fig-app-e-map-alzheimer layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Alzheimer_and_other_dementias.pdf){#fig-app-e-map-alzheimer-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Alzheimer_and_other_dementias.pdf){#fig-app-e-map-alzheimer-men}
+
+Probability of dying from Alzheimer's and other dementias between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### COPD {-}
+
+::: {#fig-app-e-map-COPD layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Chronic_obstructive_pulmonary_disease.pdf){#fig-app-e-map-COPD-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Chronic_obstructive_pulmonary_disease.pdf){#fig-app-e-map-COPD-men}
+
+Probability of dying from COPD between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Diabetes mellitus, nephritis and nephrosis {-}
+
+::: {#fig-app-e-map-diabetes layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Diabetes_mellitus_nephritis_and_nephrosis.pdf){#fig-app-e-map-diabetes-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Diabetes_mellitus_nephritis_and_nephrosis.pdf){#fig-app-e-map-diabetes-men}
+
+Probability of dying from diabetes mellitus, nephritis and nephrosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+![Probability of dying for men from liver cirrhosis between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/causes/figures/male_map_Cirrhosis_of_the_liver.pdf){#fig-app-e-map-liver-cirrhosis-men}
+
+#### All other NCDs {-}
+
+::: {#fig-app-e-map-other-ncd layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_NCD.pdf){#fig-app-e-map-other-ncd-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_NCD.pdf){#fig-app-e-map-other-ncd-men}
+
+Probability of dying from all other NCDs between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+## Cancers
+
+#### Trachea, bronchus and lung cancers {-}
+
+::: {#fig-app-e-map-lung layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Trachea_bronchus_lung_cancers.pdf){#fig-app-e-map-lung-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Trachea_bronchus_lung_cancers.pdf){#fig-app-e-map-lung-men}
+
+Probability of dying from trachea, bronchus and lung cancers between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Colorectal cancer {-}
+
+::: {#fig-app-e-map-colorectal layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Colon_and_rectum_cancers.pdf){#fig-app-e-map-colorectal-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Colon_and_rectum_cancers.pdf){#fig-app-e-map-colorectal-men}
+
+Probability of dying from colorectal cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Oesophageal cancer {-}
+
+::: {#fig-app-e-map-oesophagus layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Oesophagus_cancer.pdf){#fig-app-e-map-oesophagus-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Oesophagus_cancer.pdf){#fig-app-e-map-oesophagus-men}
+
+Probability of dying from oesophageal cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Pancreatic cancer {-}
+
+::: {#fig-app-e-map-pancreas layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Pancreas_cancer.pdf){#fig-app-e-map-pancreas-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Pancreas_cancer.pdf){#fig-app-e-map-pancreas-men}
+
+Probability of dying from pancreatic cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Stomach cancer {-}
+
+::: {#fig-app-e-map-stomach layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Stomach_cancer.pdf){#fig-app-e-map-stomach-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Stomach_cancer.pdf){#fig-app-e-map-stomach-men}
+
+Probability of dying from stomach cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Leukaemia {-}
+
+::: {#fig-app-e-map-leukaemia layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Leukaemia.pdf){#fig-app-e-map-leukaemia-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Leukaemia.pdf){#fig-app-e-map-leukaemia-men}
+
+Probability of dying from leukaemia between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Lymphomas, multiple myeloma {-}
+
+::: {#fig-app-e-map-lymphomas layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Lymphomas_multiple_myeloma.pdf){#fig-app-e-map-lymphomas-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Lymphomas_multiple_myeloma.pdf){#fig-app-e-map-lymphomas-men}
+
+Probability of dying from lymphomas, multiple myeloma between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+#### Breast cancer {-}
+
+![Probability of dying for women from breast cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Breast_cancer.pdf){#fig-app-e-map-breast-women}
+
+#### Ovarian cancer {-}
+
+![Probability of dying for women from ovarian cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Ovary_cancer.pdf){#fig-app-e-map-ovary-women}
+
+#### Corpus uteri cancer {-}
+
+![Probability of dying for women from corpus uteri cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Corpus_uteri_cancer.pdf){#fig-app-e-map-corpus-uteri-women}
+
+#### Prostate cancer {-}
+
+![Probability of dying for men from prostate cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Prostate_cancer.pdf){#fig-app-e-map-prostate-men}
+
+#### Liver cancer {-}
+
+![Probability of dying for men from liver cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Liver_cancer.pdf){#fig-app-e-map-liver-men}
+
+#### Bladder cancer {-}
+
+![Probability of dying for men from bladder cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Bladder_cancer.pdf){#fig-app-e-map-bladder-men}
+
+#### All other cancers {-}
+
+::: {#fig-app-e-map-all-other-cancers layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_map_All_other_cancers.pdf){#fig-app-e-map-all-other-cancers-women}
+
+![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_All_other_cancers.pdf){#fig-app-e-map-all-other-cancers-men}
+
+Probability of dying from all other cancers (cancers only study) between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-app-e-map-all-other-cancers-cs layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_cancers.pdf){#fig-app-e-map-all-other-cancers-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_cancers.pdf){#fig-app-e-map-all-other-cancers-men}
+
+Probability of dying from all other cancers (cause-specific mortality study) between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+## Maternal, perinatal, nutritional and infectious causes
+
+#### Bladder cancer {-}
+
+::: {#fig-app-e-map-respiratory layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_Lower_respiratory_infections.pdf){#fig-app-e-map-respiratory-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_Lower_respiratory_infections.pdf){#fig-app-e-map-respiratory-men}
+
+Probability of dying from lower respiratory infections between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+::: {#fig-app-e-map-other-IMPN layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_All_other_infections_maternal_perinatal_and_nutritional_conditions.pdf){#fig-app-e-map-other-IMPN-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_All_other_infections_maternal_perinatal_and_nutritional_conditions.pdf){#fig-app-e-map-other-IMPN-men}
+
+Probability of dying from all other infections, maternal, perinatal and nutritional conditions between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::
+
+## Injuries
+
+::: {#fig-app-e-map-injuries layout-ncol=1}
+
+![Women](../thesis-analysis/thesis_analysis/causes/figures/female_map_External_causes.pdf){#fig-app-e-map-injuries-women}
+
+![Men](../thesis-analysis/thesis_analysis/causes/figures/male_map_External_causes.pdf){#fig-app-e-map-injuries-men}
+
+Probability of dying from injuries between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+:::

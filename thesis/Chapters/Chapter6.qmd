@@ -1,19 +1,20 @@
 # Life expectancy inequality in London at the LSOA level {#sec-Chapter6}
 
+This chapter is based on the peer-reviewed publication _Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data_, published in _The Lancet Regional Health Europe_ [@bennettChangesLifeExpectancy2023], for which I was joint first author.
+The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
+The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level.
+Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.
+
 Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases.
 And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve.
 From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England.
 In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.
 
-This chapter is based on the peer-reviewed publication _Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data_, published in _The Lancet Regional Health Europe_ [@bennettChangesLifeExpectancy2023], for which I was joint first author.
-The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level.
-Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.
-
 ## Methods
 
 ### Mortality and population data
 
-I performed a high-­resolution spatiotemporal analysis of civil registration data in which I extracted de­-identified data for all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021).
+I performed a high-­resolution spatiotemporal analysis of all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021), as detailed in @sec-Chapter3.
 Deaths were stratified by 19 age groups (0, 1–4, 5–9, ..., 80–84, 85+) and 4835 LSOAs.
 These LSOAs fit inside 33 districts: London's 32 boroughs and the City of London.
 I did not use 16 death records (0.002%) for which sex was not recorded.
@@ -23,7 +24,7 @@ In these cases, the population was set equal to the number of deaths.
 
 ### Statistical analysis
 
-The model was largely the same as @sec-Chapter5, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likelihood,
+The model was largely as outlined in @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likelihood,
 $$
 \text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
 $$ {#eq-ch-6-likelihood}

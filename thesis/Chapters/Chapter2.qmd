@@ -2,49 +2,24 @@
 
 ## Overview
 
-The section begins with a brief history of the Small Area Health Statistics Unit (SAHSU), who manage the mortality data used in the thesis.
-In particular, I will focus on the spatial methods, which were developed at the unit and I build upon in the thesis, in the context of disease mapping studies of SAHSU.
+The section begins with an overview of the spatial methods for mapping mortality at the small area level and some examples of applications from the UK and beyond looking at mortality for small subnational regions.
+There is a brief history of the Small Area Health Statistics Unit (SAHSU), who manage the mortality data used in the thesis, and developed and applied many of the spatial methods discussed.
 
-There is a section on literature from the UK and beyond looking at mortality for small subnational regions, followed by a history of separating total mortality into different causes of death and the epidemiologic transition theory.
+This is followed by a history of separating total mortality into different causes of death and the epidemiologic transition theory.
 
-I will finish by exploring the picture of inequalities in UK over the past few decades through to the present, focussing on class, income, geography, and deprivation.
+The chapter finishes by exploring the picture of inequalities in UK over the past few decades through to the present, focussing on class, income, geography, and deprivation.
 
-## Small area health statistics (unit)
+## Mapping mortality and disease at small areas
 
-In 1983, a documentary on the fallout from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
-This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
-The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to _ad hoc_ queries on local health hazards.
-The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottSmallAreaHealth1992].
-
-Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
-
-- _Point source type studies_. Is there an increased risk close to an environmental hazard?
-- _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables?
-- _Clustering_. Does a disease produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
-- _Disease mapping_. Summarising the spatial variation in risk.
-
-In a pilot study for SAHSU, @elliottSmallAreaHealth1992 investigated the mortality near the Plymouth docks from mesothelioma and asbestosis – both of which are related to industrial exposure and asbestos.
-Death registrations with postcode information were held by SAHSU, and concentric circular bands were drawn around the Plymouth dockyards as a way to approximate the exposure from a point source of environmental pollution.
-There was a clear increase in risk within 3km of the docks.
-A similar distance-based approach was adopted to look at excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999], and kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004].
-In response to public concern over exposure to toxic chemicals in waste materials, SAHSU conducted the most extensive study ever into the health effects of landfill sites.
-Postcodes within a 2km buffer of a landfill site were classified as exposed.
-Compared to those living beyond 2km, SAHSU found a small unexplained excess of congenital anomalies [@elliottRiskAdverseBirth2001], no increase in rates of cancer [@jarupCancerRisksPopulations2002], and no excess risk of Down syndrome [@jarupSyndromeBirthsLandfill2007].
-
-Distance from source is, however, only a basic model for the exposure, which can exhibit more complex, directional spatial patterns.
-A number of SAHSU studies have employed physics-informed models to create an exposure surface, and assessed the geographic correlations between this surface and the health outcome, notably for a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007], exposure to mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010], noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013], road traffic noise in London [@halonenRoadTrafficNoise2015], and particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
-SAHSU published an environment and health atlas for England and Wales, showing the spatial patterns of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
-
-### Disease mapping at SAHSU {-}
-
-Many of the studies at SAHSU focus on prevalence or mortality from rare diseases at small areas.
-The number of cases, or number of deaths, in a region are likely to be small numbers.
+Many studies compare the prevalence of diseases or mortality in different subgroups of the population by dividing the population geographically into small areas.
+The number of cases, or number of deaths, in an area are likely to be small numbers.
 This sparseness issue is even more pertinent when the population is further stratified by age group.
-Rates calculated from observed data present apparent variability between spatial units, which is larger than the true differences in risk.
-There is a need for statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
-@aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean risk across the region.
-Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
+When calculating rates of incidence from the observed data, there is an apparent variability between spatial units, which is often larger than the true differences in risk due to the noise in the data.
+To overcome these issues, we can use statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
 
+### Disease mapping methods
+
+In small area studies, it is common to smooth data using models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 There are three main categories for modelling spatial effects.
 First, we can treat space as a continuous surface using Gaussian processes or splines.
 Second, we can use areal models, which make use of the spatial neighbourhood structure of the units.
@@ -85,15 +60,6 @@ $$
 S_i = U_i + V_i,
 $$ {#eq-BYM}
 where $U_i$ follow an ICAR distribution, and $V_i$ are independent and identically distributed random effects.
-The BYM distribution was employed to model spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
-
-Further disease mapping studies at SAHSU using spatially structured effects have also extended the methodology to look at age patterns and trends over time.
-@asariaTrendsInequalitiesCardiovascular2012 analysed cardiovascular disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
-@bennettFutureLifeExpectancy2015 designed a model to jointly forecast all-cause mortality for districts in England, age groups and years.
-The model used BYM spatial effects and random walk effects over age and time to capture non-linear relationships.
-It is also possible to borrow information across causes of death, as applied in @foremanSmallAreaForecasts2017 to forecast cause-specific mortality for states in the US.
-Random walk effects were again used for temporal non-linearities, a CAR prior was used for spatial effects, and a multivariate normal prior for causes of death whereby the covariance matrix describes the correlation structure between the 15 cause groups.
-The model did not, however, share information between age groups.
 
 #### Space as a nested hierarchy of geographies {-}
 
@@ -101,10 +67,33 @@ The relationships between different levels of a hierarchy of geographical units 
 These models account for when spatial units lie within common administrative boundaries.
 This is often a desirable property of the model for certain geographies, like states in the US, which are administrative.
 Policy is decided at these geographies, so there is reason to believe these boundaries may have a greater effect on health outcomes than spatial structure.
-Although not used in previous SAHSU studies, @finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, subregion, region and country.
+@finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, subregion, region and country.
 Note, although these models group by geographical region, these models are not _spatial_ as they do not contain any information on the relative position of the areas.
 
-## Small area analyses of mortality
+Of the two specifications that are spatial, either as a continuous process or discrete units, the Markov random field priors are often preferred for computational reasons, as we can exploit the sparseness of the adjacency matrix in our inference algorithms rather than computing the covariance between each pair of spatial units as in the general case of @eq-MVN.
+
+In applications to disease mapping, spatial models are the natural choice when the disease exhibits a spatial pattern.
+This is the case for infectious diseases, particularly on short timescales like Covid-19 [@konstantinoudisRegionalExcessMortality2022].
+Nested hierarchies are a more suitable choice when administrative areas are meaningful and have an effect on the health outcomes of the population.
+For example, state-specific abortion laws in the USA could affect maternal mortality, and so a model should include an effect for each state.
+
+#### Modelling variation beyond space {-}
+
+As computational power has improved, it has become feasible to model patterns over other features of the population, such as time period and age group.
+Trends over time can be modelled as linear through slopes, or using non-linear effects which allow neighbouring time points to be alike, the simplest of which is a first-order Gaussian random walk process.
+Variation over age for all-cause mortality follows a characteristic J-shape, with higher mortality in the infant and older age groups [@prestonDemographyMeasuringModeling2001], and should therefore be modelled using a non-linear process such as a random walk.
+
+Difficulties arise when considering the interactions between the space, age, and time variables.
+One can imagine situations in which different spatial units will have different age patterns in disease rates, for example, if the certain age groups were vaccinated against disease in that spatial unit before others.
+After implementing a base model with the main effects, the question is how to model additional terms which account for the interaction between the variables.
+Space-time interactions could range from fully independent, to each spatial unit having independent time trends, to inseparable space-time variation where interactions borrow strength across neighbouring spatial units and neighbouring time periods [@knorr-heldBayesianModellingInseparable2000].
+
+However, it should be considered that by breaking the population down into smaller and smaller subgroups through age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small area level.
+Although interaction effects are plausible, modellers should consider whether there evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
+
+### Applications of disease mapping methods
+
+#### Small area analyses of mortality {-}
 
 In order to compare the health status between areas, health authorities require a measure of mortality that collapses age-specific information into a single number.
 Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate, but are not easily understood by laypeople.
@@ -134,7 +123,33 @@ There have also been studies on specific cities at a finer resolution. In order 
 
 Two studies in North America have looked below the county level, at census tracts, with wide-ranging population sizes as small as 40. @dwyer-lindgrenVariationLifeExpectancy2017, using a model that relied heavily on sociodemographic covariates, studied trends for life expectancy and many causes of death for 397 tracts in King County, Washington, uncovering an 18.3 year gap in life expectancy for men. Using the same model for Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found widening inequalities over time and a difference of 9.5 years for men.
 
-## Mortality by specific causes of death (counting what they died from)
+#### Small Area Health Statistics Unit {-}
+
+In 1983, a documentary on the fallout from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
+This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
+The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to _ad hoc_ queries on local health hazards.
+The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottSmallAreaHealth1992].
+
+Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
+
+- _Point source type studies_. Is there an increased risk close to an environmental hazard? SAHSU have investigated increased mortality from mesothelioma and asbestosis near Plymouth docks [@elliottSmallAreaHealth1992]; excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999]; kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]; possible excess of several morbidities near landfill sites [@elliottRiskAdverseBirth2001; @jarupCancerRisksPopulations2002; @jarupSyndromeBirthsLandfill2007].
+- _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables? SAHSU looked at several exposures, including a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007]; mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010]; noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013]; road traffic noise in London [@halonenRoadTrafficNoise2015]; particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
+- _Clustering_. Does a disease produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
+- _Disease mapping_. Summarising the spatial variation in risk.
+
+SAHSU has been at the forefront of both methodology and applications in disease mapping.
+@aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean risk across the region.
+Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, including using the BYM distribution (@eq-BYM) to map spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England .
+In a landmark piece bringing together work on disease mapping and environmental exposure, SAHSU published an environment and health atlas for England and Wales, showing the spatial patterns of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
+
+Further disease mapping studies at SAHSU using spatially structured effects have also extended the methodology to look at age patterns and trends over time.
+@asariaTrendsInequalitiesCardiovascular2012 analysed cardiovascular disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
+@bennettFutureLifeExpectancy2015 designed a model to jointly forecast all-cause mortality for districts in England, age groups and years.
+The model used BYM spatial effects and random walk effects over age and time to capture non-linear relationships.
+
+## Mortality from specific causes of death
+
+### The Epidemiologic Transition
 
 In the mid-twentieth century, a team in the US Public Health Service, led by Iwao Moriyama, began looking into the cause-specific composition of mortality into all diseases and injuries for the first half of the century.
 Notably, @moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes, and found as the US saw an overall downward trend in mortality, the leading causes of death changed from communicable diseases, such as tuberculosis and diphtheria, toward non-communicable, "chronic diseases of older ages", such as heart diseases and cancers.
@@ -162,6 +177,37 @@ Since its first edition in 1990, the subject of international comparisons of the
 The studies aim to quantify and compare the burden of diseases, injuries, and risk factors, usually through cross-sectional methods but occasionally by examining trends and subnational populations [@ezzatiReversalFortunesTrends2008; @dwyer-lindgrenInequalitiesLifeExpectancy2017].
 An important innovation of the GBD study was the introduction of a hierarchical classification of groups of causes, with the broadest level divided into three groups: communicable, maternal, perinatal, and nutritional diseases (Group 1), NCDs (Group 2), and injuries (Group 3).
 @salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century, finding the majority of the change in cause structure occurred among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
+
+### Modelling cause-specific mortality
+
+In studies looking at multiple causes of death it may be desirable to extend disease mapping models to capture the interdependence between cause of death groups.
+Cause-specific mortality can exhibit complex correlation structures, with correlations for diseases with common risk factors but anti-correlations for competing causes of death.
+For studies that already look at mortality for small areas and narrow age groups, breaking the population down further by cause of death increases the sparseness in the data, and the introduction of terms to the smoothing model which share information between causes could stabilise the estimation of death rates.
+
+The simplest and most computationally-scalable method is to ignore any correlations between diseases and run separate regression models for each cause of death.
+This is the approach taken by GBD studies for a vast array of causes of death.
+When looking at both total mortality and a mutually exclusive, collectively exhaustive list of causes of death, studies typically constrain the cause-specific death rate estimates from separate regressions to sum to the all-cause mortality value.
+This is because estimates of all-cause mortality are more robust, because the death counts are larger and therefore lower variance, and the data do not suffer from errors in assignment of cause of death.
+The GBD studies scale death rates so that the proportions of each cause of death sum to unity.
+In the context of mortality projections, @wilmothAreMortalityProjections1995 also points out that aggregating forecasts from multiple causes of death leads to upward bias when compared to the total mortality forecast.
+
+A joint modelling approach would allow the borrowing of strength across causes to express correlations between diseases that share common risk factors and similar aetiologies.
+There is also some redundancy separate regression models as a unique spatial surface is specified for each cause in specifying.
+In the disease mapping literature, studies have built spatial models to look at a small number of diseases which share spatial components between diseases.
+Firstly, @knorr-heldSharedComponentModel2001 considered a model (also described in @bestComparisonBayesianSpatial2005) for two diseases, with disease-specific spatial components and one shared component.
+@heldJointDiseaseMapping2005 generalised this approach to model any number of diseases as a weighted sum of shared components.
+Rather than a general approach, both @downingJointDiseaseMapping2008 and @mahakiJointSpatiotemporalShared2018 allocated the spatial components to the diseases _a priori_ based on knowledge of the common risk factors between cancers such as smoking, obesity and alcohol consumption.
+Unless the components are pre-specified based on prior knowledge, however, the required number of shared components to capture variation in the data needs to be determined through trial and error.
+This is especially problematic when the number of diseases in the study, and hence the possible number of combinations of shared components, increases.
+
+@foremanSmallAreaForecasts2017 modelled a larger number of causes of death to jointly forecast cause-specific mortality for states in the US.
+The model was similar to the spatiotemporal models described earlier, with random walk effects for temporal non-linearities and a CAR prior for spatial effects, but with the introduction of a multivariate normal prior for causes of death whereby the covariance matrix describes the correlation structure between the 15 cause groups.
+The model did not, however, share information between age groups.
+
+In studies of the cause composition of total mortality, rather than estimating the absolute death rate for each cause of death, it is possible to reframe the problem using a compositional model which considers the fraction of each cause of death composing total mortality.
+This was the approach by @salomonEpidemiologicTransitionRevisited2002 in looking at the dynamics of the proportions of mortality from GBD Groups 1, 2, and 3.
+The benefit of a compositional model is that the proportions are constrained to sum to unity, and the model can capture covariance between the component causes of death.
+However, it is not possible to recover absolute death rates with compositional approach.
 
 ## Health inequalities in the UK
 
@@ -205,32 +251,28 @@ They found since 2011, although national life expectancy has continued to increa
 The second Marmot Review in 2020 also found female life expectancy declined in the most deprived decile between the periods 2010-12 and 2016-18 [@marmotMarmotReview102020].
 Digging further into these trends by region, the report found this trend was seen in all regions except London, the West Midlands and the North West, and that male life expectancy in the bottom decile also decreased in the North East, Yorkshire and the Humber, and the East of England.
 
-#### Health policy in the UK {-}
+#### Recent public health strategy and trends in health outcomes {-}
 
-Since the turn of the millennium, there have been two periods of contrasting health policy in the UK.
+Since the turn of the millennium, there have been two periods of contrasting public health policy in the UK.
 The early 2000s saw the implementation of the English health inequalities strategy under New Labour, with explicit goals of reducing geographical inequalities in life expectancy.
 The strategy saw a large increase in public spending targeting the social determinants of health, with policies on supporting families, tackling deprivation, and preventative healthcare.
-@barrInvestigatingImpactEnglish2017 analysed the trends in life expectancy for different quantiles of deprivation and provided evidence that the strategy achieved its aim of reducing the gap in life expectancy between the 20% most-deprived areas and the rest of the English population.
 
 Following the change in government in 2010, the strategy came to an end.
 The Conservative government implemented a widespread series of cuts to public services, collectively known as austerity.
 This included both tight restrictions on the healthcare budget as well as a sweeping reorganisation of the NHS in hope of improving the organisation's efficiency, and cuts to the wider determinants of social health, such as housing and education [@hamRiseDeclineNHS2023].
-The cuts were geographically unequal, with reductions in funding for local governments particularly severe for local authorities with an old industrial base [@grayDepthsCutsUneven2018].
 
-The study by @barrInvestigatingImpactEnglish2017 saw that the trends in inequality reduction were reversing since 2012.
-These trends have been found at both ends of the life course: rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019], and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
-Although it is difficult to uncover causal relationships, @alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in district-level life expectancy from 2013 to 2017.
-As written in the _The New York Times_, "after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty" [@goodmanBritainAusterityChanging2018] – a comparison only compounded by the Brexit vote in 2016.
+Although it is difficult to isolate the causal effect of the period of austerity on health outcomes, there is some evidence of differences in health outcomes in these periods.
+@barrInvestigatingImpactEnglish2017 analysed the trends in life expectancy for different quantiles of deprivation and provided evidence that the English health inequalities strategy achieved its aim of reducing the gap in life expectancy between the 20% most-deprived areas and the rest of the English population, and that the trends were reversing since 2012.
+These trends have been found across the life course: with rising infant mortality associated with childhood poverty [@taylor-robinsonAssessingImpactRising2019]; increases in "deaths of despair" (drug overdose, suicide, alcoholic liver disease) for those in middle ages [@hiamThingsFallApart2020; @angusIncreasesDeathsDespair2023]; and falls in female life expectancy at 65 and 85 [@hiamWhyLifeExpectancy2018].
+@alexiouLocalGovernmentFunding2021 found strong associations between cuts to local government and the change in district-level life expectancy from 2013 to 2017.
+As written in the _The New York Times_, "after eight years of budget cutting, Britain is looking less like the rest of Europe and more like the United States, with a shrinking welfare state and spreading poverty" [@goodmanBritainAusterityChanging2018].
 
-Policies of austerity were brought about as a response to the financial crash of 2008, which were global in scale, and many countries adopted similar fiscal strategies.
-This presented a double challenge for governments in high-income countries as the demand for care only continued to rise due to growing and ageing populations, with higher proportions of the populations suffering ill-health and complex multi-morbidities [@hamRiseDeclineNHS2023].
-However, in an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
-More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain"[@theeconomistBritainHasEndured2023].
-And it is not just life expectancy: the UK has performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
+Although fiscal policies of austerity were adopted by many countries in response to the global financial crash of 2008, there is evidence that public health has deteriorated more in the UK than in other countries.
+In an international study comparing mortality trends in England and Wales to 22 industrialised countries, @leonTrendsLifeExpectancy2019 showed that although there was a general slowdown in improvement of life expectancy across many nations, the slowdown in the most recent period of the study, 2011-16, was more pronounced in England and Wales.
+More recently, The Economist found the same evidence, comparing the long-run trend from 1980-2011 through to 2022 for 12 European countries: "longer-run slowdowns in life expectancy are observable in other European countries... but none has stalled quite as much as Britain" [@theeconomistBritainHasEndured2023].
+The UK has also performed worse as measured by cancer survival rates and infant mortality compared to other industrialised countries [@oecdOECDReviewsHealth2016].
 
 After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
 Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries [@kontisMagnitudeDemographicsDynamics2020].
-At the current time of writing in 2023, the health service is yet to recover, with waiting lists for operations and waiting times for emergency care unhealthily high [@dorlingHowAusterityCaused2023].
-There is no suggestion that the picture of health and health inequalities in the UK should improve in the coming years.
 
 It is important to estimate how health inequalities have changed in different areas of the country through this period of substantial change in economic, social, and healthcare policy, so that public health interventions can be targetted towards the most disadvantaged groups.
