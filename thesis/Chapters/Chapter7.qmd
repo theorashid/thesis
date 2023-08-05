@@ -65,7 +65,7 @@ I ran a model for a combined group of all deaths to calculate life expectancy in
 Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.
 
 The primary reporting outcome is the unconditional probability of dying between birth and 80 years of age.
-Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest.
+Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest [@prestonDemographyMeasuringModeling2001].
 I limited the age range to 80 years because the probability of death in the absence of competing causes equals 100% when the entire life course is considered.
 The reported 95% credible intervals represent the 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of the posterior distribution of estimated probability of death.
 
@@ -233,15 +233,16 @@ Looking at the raw data for these districts, there is a step increase the use of
 There is always the desire the split the residual groups into more and more causes of death.
 For example, there are interesting patterns in the change of all other IMPN, and it would be interesting to understand further how the component causes of all other NCDs are driving the inequality in progress.
 Moreover, there has been a lot of recent attention in the literature on "deaths of despair" – deaths from drug overdose, suicide or alcoholic liver disease – in the UK [@angusIncreasesDeathsDespair2023] and the US [@caseRisingMorbidityMortality2015], and it would of interest to separate injuries by whether the deaths were intentional or unintentional.
-However, the groupings were chosen based on a total mortality rule to prevent the number of deaths in each cause group from becoming too small.
+However, the groupings were chosen based on a total mortality rule so that the number of deaths in each cause group allowed robust inference of cause-age-area-year-specific death rates at the district level.
 
 It would have been desirable, albeit computationally challenging, to run all cause groups in a single joint model.
 When calculating contributions using Arriaga's method, mortality for each cause group was scaled such that the sum across all causes equalled to the estimate for total mortality.
 This would not be necessary if cause-specific mortality were estimated jointly as the causes of death would adjust amongst each other each iteration to sum to total mortality.
 @foremanSmallAreaForecasts2017 jointly forecasted cause-specific death rates for states in the US, but instead estimated each age group separately.
 
-Unlike @sec-Chapter5 and @sec-Chapter6, migration was not as much of an issue at the district level.
-As @vandijkUsingLinkedConsumer2021 explain, "the majority of moves occur over short distances: the 2011 Census records that 57.1% of the individuals aged 16 and over that changed address within the preceding 12 months moved within the same local authority district."
+The population in each district can change because of migration, both within the country and from overseas.
+However, unlike @sec-Chapter5 and @sec-Chapter6, migration was not as much of an issue at the district level than at the smaller levels of analyses used earlier in the thesis.
+The majority of moves in the UK are within the same district [@vandijkUsingLinkedConsumer2021], and so will have little effect on the change in mortality in a given district.
 
 ### Comparison with previous literature
 
