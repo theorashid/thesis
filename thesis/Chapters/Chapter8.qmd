@@ -15,7 +15,7 @@ I used the top ten leading cancer causes of death according to the total number 
 There were 2,453,173 deaths from cancers in England from 2002 to 2019; of these, 1,533,703 (62.5%) deaths occurred before 80 years of age (@fig-ch-8-treemap).
 Of cancer deaths before 80 years of age, 697,953 (45.5%) were deaths in women and 835,750 (54.5%) in men.
 
-![Total number of deaths for the ten leading cancers in England from 2002 to 2019. See @tbl-ap-ch8-cancers for ICD-10 codes for each category.](../thesis-analysis/thesis_analysis/cancers/figures/treemap.pdf){#fig-ch-8-treemap}
+![Total number of deaths for the ten leading cancers in England from 2002 to 2019. See @tbl-ap-ch8-cancers for ICD-10 codes for each category.](../thesis-analysis/thesis_analysis/cancers/figures/treemap.pdf){#fig-ch-8-treemap fig-scap="Total number of deaths for the ten leading cancers in England from 2002 to 2019."}
 
 As I have increased the number of site-specific cancers from six (women) and five (men) to ten for each sex, the residual group in this chapter is smaller than the _All other cancers_ group in @sec-Chapter7.
 The results from the causes of cancer mortality that were in the twelve leading causes of death in the previous chapter are identical in this chapter.
@@ -51,7 +51,7 @@ Probability of dying from cancer between birth and 80 years of age in 314 local 
 
 The mean age at death in 2019 among those who died before 80 years of age varied from 63.0 years for breast cancer to 69.0 for trachea, bronchus and lung cancers (hereafter referred to as _lung_ cancer for brevity) in women and from 66.1 years for the combined category of all other cancers to 72.2 for prostate cancer in men.
 
-::: {#fig-ch-8-distribution layout-ncol=1}
+::: {#fig-ch-8-distribution layout-ncol=1 fig-scap="Ranked probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers."}
 
 ![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_distribution.pdf){#fig-ch-8-distribution-women}
 
@@ -80,7 +80,7 @@ For men, the probability of dying from lung cancer was correlated with the proba
 There were particularly high correlations between the probabilities of dying from bladder and oesophageal cancers (0.71), and from oesophageal and colorectal cancers (0.69).
 Probabilities of dying from leukaemia, lymphomas, multiple myelomas, pancreatic or corpus uteri cancer were only weakly correlated with probabilities for other categories.
 
-::: {#fig-ch-8-poverty layout-ncol=1}
+::: {#fig-ch-8-poverty layout-ncol=1 fig-scap="Local authority district probability of death in 2019 in relation to poverty for each of the leading cancers."}
 
 ![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_IMD.pdf){#fig-ch-8-poverty-women}
 
@@ -108,7 +108,7 @@ The largest declines were in London, the strongest seen in Newham (decrease of 2
 The posterior probability that the observed decline for lung cancer in women was a true decline was >0.80 in 197 (62.7%) districts.
 Women in 4 (1.3%) districts experienced an increase in lung cancer mortality with a posterior probability >0.80, and in the remaining 113 (36.0%) districts there was no clear trend at this level of posterior probability.
 
-::: {#fig-ch-8-change layout-ncol=1}
+::: {#fig-ch-8-change layout-ncol=1 fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers."}
 
 ![Women](../thesis-analysis/thesis_analysis/cancers/figures/female_change_distribution.pdf){#fig-ch-8-change-women}
 

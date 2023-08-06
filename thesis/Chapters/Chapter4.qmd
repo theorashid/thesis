@@ -23,7 +23,7 @@ Although there are a large number of deaths in the older age group and it is eas
 In this thesis, I have used Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.
 An added advantage of the Bayesian paradigm is the robust estimation of error.
 
-![Simulated and expected deaths from 2002 to 2019 for a young age group (1-4 years) and an old age group (80-84), assuming the national death rates in England and a population size of 1000.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time_sim.pdf){#fig-ch-4-sim}
+![Simulated and expected deaths from 2002 to 2019 for a young age group (1-4 years) and an old age group (80-84 years), assuming the national death rates in England and a population size of 1000.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time_sim.pdf){#fig-ch-4-sim fig-scap="Simulated and expected deaths from 2002 to 2019 for a young age group and an old age group."}
 
 This is a regression task.
 We want to smooth over the data – the models are not being used for prediction.

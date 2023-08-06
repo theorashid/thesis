@@ -53,7 +53,7 @@ Life expectancy at birth for London increased from 80.9 (95% CrI 80.8–81.0) ye
 Life expectancy inequality (difference between 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles) was 19.1 (18.4–19.7) years for women and 17.2 (16.7–17.8) years for men, in 2019 which is a substantial increase from 11.1 (10.7–11.5) years for women and 11.6 (11.3–12.0) years for men in 2002.
 The corresponding estimates for life expectancy inequality in 2019 calculated using MSOA level analysis in @sec-Chapter5 were 10.8 (10.3–11.3) years for women and 11.0 (10.5–11.6) years for men.
 
-![Map of life expectancy and the distribution of life expectancy in London in 2019. The areas in white have a life expectancy equal to the overall London life expectancy.](../thesis-analysis/thesis_analysis/london/figures/map_level.pdf){#fig-ch-6-map-level}
+![Map of life expectancy and the distribution of life expectancy in London in 2019. The areas in white have a life expectancy equal to the overall London life expectancy.](../thesis-analysis/thesis_analysis/london/figures/map_level.pdf){#fig-ch-6-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in London in 2019."}
 
 Life expectancy in 2019 was highest in LSOAs in central London districts of Kensington and Chelsea, Westminster, City of London and Camden, in the southwest (Richmond upon Thames and Kingston upon Thames) and parts of the northwest (e.g., parts of Harrow and Barnet), with life expectancy in many LSOAs surpassing 90 years (@fig-ch-6-map-level).
 Low life expectancy was spread in LSOAs throughout the city but was more common in outer east and southeast London.
@@ -66,13 +66,13 @@ There was large variation across London in how much life expectancy increased fr
 In 134 (2.8%) LSOAs for women and 32 (0.7%) for men, life expectancy may have declined, with a posterior probability of a decline greater than 80% in 41 (0.8%) and 14 (0.3%) LSOAs for women and men, respectively.
 Life expectancy increased more in LSOAs in central and inner east and south London than in outer areas.
 
-![Change in LSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one LSOA. LSOAs are coloured by their life expectancy at the beginning of each period.](../thesis-analysis/thesis_analysis/london/figures/change.pdf){#fig-ch-6-change}
+![Change in LSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one LSOA. LSOAs are coloured by their life expectancy at the beginning of each period.](../thesis-analysis/thesis_analysis/london/figures/change.pdf){#fig-ch-6-change fig-scap="Change in LSOA life expectancy in different time periods, 2002–19."}
 
 The rate of increase in life expectancy was smaller after 2010 compared to the earlier years for both sexes (@fig-ch-6-change), and the number of LSOAs in which life expectancy may have fallen was larger, especially from 2010 to 2014.
 The slow-down or reversal of LSOA life expectancy after 2010 is consistent with the pattern seen throughout England's MSOAs in @sec-Chapter5, which may be partly due to increase in poverty due to low-wage employment and cuts in services in the austerity era.
 However, the progressive worsening of life expectancy gain and loss from 2010–2014 to 2014–2019 which was seen in other parts of England did not happen in London (@fig-ch-6-change).
 
-::: {#fig-ch-6-geofacet layout-ncol=1}
+::: {#fig-ch-6-geofacet layout-ncol=1 fig-scap="Life expectancy at birth and inequality in life expectancy within London's 33 local authority districts from 2002 to 2019."}
 
 ![Women](../thesis-analysis/thesis_analysis/london/figures/women_geofacet.pdf){#fig-ch-6-geofacet-women}
 
@@ -87,7 +87,7 @@ The large decline in life expectancy in Kensington and Chelsea in 2017 is due to
 There was substantial variation in the size of life expectancy increase over short distances.
 As a result of this spatial heterogeneity, life expectancy inequality increased not only in London as a whole, but also in every district in London alongside increasing average life expectancy (@fig-ch-6-geofacet and @fig-ch-6-ridges).
 
-::: {#fig-ch-6-ridges layout-ncol=1}
+::: {#fig-ch-6-ridges layout-ncol=1 fig-scap="Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts."}
 
 ![Women](../thesis-analysis/thesis_analysis/london/figures/women_ridges.pdf){#fig-ch-6-ridges-women}
 

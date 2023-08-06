@@ -72,6 +72,8 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -303,7 +305,7 @@ div.csl-indent {
 <section id="site-specific-cancers" class="level3" data-number="8.2.2">
 <h3 data-number="8.2.2" class="anchored" data-anchor-id="site-specific-cancers"><span class="header-section-number">8.2.2</span> Site-specific cancers</h3>
 <p>The mean age at death in 2019 among those who died before 80 years of age varied from 63.0 years for breast cancer to 69.0 for trachea, bronchus and lung cancers (hereafter referred to as <em>lung</em> cancer for brevity) in women and from 66.1 years for the combined category of all other cancers to 72.2 for prostate cancer in men.</p>
-<div id="fig-ch-8-distribution" class="quarto-layout-panel">
+<div id="fig-ch-8-distribution" class="quarto-layout-panel" data-fig-scap="Ranked probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers.">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
@@ -337,7 +339,7 @@ div.csl-indent {
 </figure>
 </div>
 <p>For women, the district-level probabilities of dying from stomach, oesophageal, lung and the residual category of all other cancers were correlated, with pairwise correlation coefficients ranging from 0.51 to 0.75 (<a href="#fig-ch-8-correlation">Figure&nbsp;<span>8.4</span></a>). For men, the probability of dying from lung cancer was correlated with the probability of dying from stomach, liver, bladder, colorectal, oesophageal, and all other cancers. There were particularly high correlations between the probabilities of dying from bladder and oesophageal cancers (0.71), and from oesophageal and colorectal cancers (0.69). Probabilities of dying from leukaemia, lymphomas, multiple myelomas, pancreatic or corpus uteri cancer were only weakly correlated with probabilities for other categories.</p>
-<div id="fig-ch-8-poverty" class="quarto-layout-panel">
+<div id="fig-ch-8-poverty" class="quarto-layout-panel" data-fig-scap="Local authority district probability of death in 2019 in relation to poverty for each of the leading cancers.">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
@@ -359,7 +361,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8.5: Local authority district probability of death in 2019 in relation to poverty for each of the leading cancers. The points are coloured by the regions in England.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.5: Local authority district probability of death in 2019 in relation to poverty for each of the leading cancers. The points are coloured by the regions in England. The Spearman rank correlations (<span class="math inline">\(\rho\)</span>) between the probability of dying from the cancer and poverty ranking are in the top left of each panel.</figcaption><p></p>
 </figure>
 </div>
 <p>The probability of dying from a cancer was associated with poverty for both sexes, with Spearman correlation coefficients of 0.77 for women and 0.82 for men (<a href="#fig-ch-8-poverty">Figure&nbsp;<span>8.5</span></a>). In part, this was due to the probability of dying from the leading cancer for both sexes, lung cancer, exhibiting the strongest correlations with poverty of any of the cancer groups (0.78 for women and 0.87 for men). Stomach cancer (0.63 for women and 0.68 for men) and all other cancers (0.59 and 0.62) also presented strong correlations between poverty and mortality, as did liver cancer mortality for men (0.65). The probabilities of dying from breast (0.02), prostate (0.16) pancreatic (0.04 and -0.01), lymphomas (0.00 and -0.07), leukaemia (-0.06 and 0.18), and colorectal cancer in women (0.09) showed little or no association with poverty. Those in poor districts of London had lower probabilities of dying from lung, colorectal, oesophageal, bladder (men), and all other cancers than in comparably deprived districts in the rest of the country (<a href="#fig-ch-8-poverty">Figure&nbsp;<span>8.5</span></a>). This London advantage dampened the association with poverty for mortality from lung cancer and all other cancers in particular, and increased the extent of variability across districts at higher levels of poverty.</p>
@@ -367,7 +369,7 @@ div.csl-indent {
 <section id="change-from-2002-to-2019" class="level3" data-number="8.2.3">
 <h3 data-number="8.2.3" class="anchored" data-anchor-id="change-from-2002-to-2019"><span class="header-section-number">8.2.3</span> Change from 2002 to 2019</h3>
 <p>The probability of dying from a cancer before 80 years of age declined from 2002 to 2019 in every district for both sexes, with median reduction across districts of 18.7% for women and 23.4% for men (<a href="#fig-ch-8-change">Figure&nbsp;<span>8.6</span></a>). The largest declines were in districts in London. Among cause categories, the largest reductions in mortality were for stomach cancer, with the declines in probability of dying before 80 years of age ranging between 39.1% and 57.2% for women across districts, and between 51.5% and 58.8% for men from 2002 to 2019, all with posterior probability &gt;0.999. The probability of dying from oesophageal cancer also decreased in every district for women, but varied for men from a 42.9% (27.7% to 56.0%) decrease in Plymouth to a 7.0% (-19.8% to 42.4%) increase in Gosport (<a href="#fig-ch-8-change">Figure&nbsp;<span>8.6</span></a> and <a href="../Appendices/AppendixE.html#fig-app-e-map-oesophagus">Figure&nbsp;<span>E.11</span></a>). The posterior probability that the observed decline was a true decline was &gt;0.80 in 242 (77.1%) districts for oesophageal cancer in men. Lung cancer mortality decreased everywhere for men with posterior probability &gt;0.999, but for women, there were mixed trends. The largest declines were in London, the strongest seen in Newham (decrease of 29.5% (18.5% to 38.8%)), whereas the probability of dying increased in many districts in the East of England, with the largest increase of 27.0% (6.8% to 49.7%) in Tendring (<a href="#fig-ch-8-change">Figure&nbsp;<span>8.6</span></a> and <a href="../Appendices/AppendixE.html#fig-app-e-map-lung">Figure&nbsp;<span>E.9</span></a>). The posterior probability that the observed decline for lung cancer in women was a true decline was &gt;0.80 in 197 (62.7%) districts. Women in 4 (1.3%) districts experienced an increase in lung cancer mortality with a posterior probability &gt;0.80, and in the remaining 113 (36.0%) districts there was no clear trend at this level of posterior probability.</p>
-<div id="fig-ch-8-change" class="quarto-layout-panel">
+<div id="fig-ch-8-change" class="quarto-layout-panel" data-fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers.">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">

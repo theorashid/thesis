@@ -14,7 +14,7 @@ book:
     High-resolution data for how mortality and longevity have changed are scarce.
     Estimating mortality for specific combinations of spatial units, time periods, age groups, and causes of death poses computational challenges and typically compromises are made in the granularity of the results.
     I developed Bayesian hierarchical models based on patterns of mortality over age, space, and time, to obtain robust yearly estimates of life expectancy and cause-specific mortality for small areas.
-    Using civil registration data held by the UK Small Area Health Statistics Unit, I investigated trends in mortality for subnational units in England from 2002 to 2019.
+    Using vital registration data held by the UK Small Area Health Statistics Unit, I investigated trends in mortality for subnational units in England from 2002 to 2019.
 
     I examined trends in life expectancy in England's 6791 middle-layer super output areas (MSOAs).
     In the years 2014-19, 1270 (18.7%) MSOAs for women and 784 (11.5%) MSOAs for men saw declines in life expectancy.
