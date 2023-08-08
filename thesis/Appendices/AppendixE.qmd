@@ -2,7 +2,7 @@
 
 This appendix contains district-level maps of the probability of dying between birth and 80 years of age in 2019 and change from 2002 to 2019 from specific causes of deaths, which supplement the text in @sec-Chapter7 and @sec-Chapter8.
 Note, there are two sets of maps for all other cancers, one for each chapter.
-The all other cancers group for @sec-Chapter8 contains fewer deaths because the group from @sec-Chapter7 had been divided to include more cancer groups.
+The all other cancers group for @sec-Chapter8 contains fewer deaths because the group from @sec-Chapter7 had been divided to include more site-specific cancer groups.
 
 ::: {#fig-app-e-map-ihd layout-ncol=1}
 

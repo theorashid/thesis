@@ -5,12 +5,12 @@
 Although previous studies have observed a decline in female life expectancy in the bottom two deciles of deprivation in the past decade [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], this thesis has shown both for men and women where the declines have been happening for small areas.
 Not only have there been declines, but the declines have been accelerating in the latter half of the decade, such that in the period 2014-19, life expectancy fell 1 in 5 MSOAs for women and 1 in 9 for men.
 These trends happened in the years before the mortality-forcing event of the Covid-19 pandemic and are worse than comparable countries [@leonTrendsLifeExpectancy2019], and should be deemed a failure for public health policy.
-Although the complexity of policy means it cannot be proved casually, leaders within the NHS have pointed towards constrained funding for the healthcare body itself, as well as cuts to wider social determinants, such as housing and education, as the main reason for the country's poor performance [@hamRiseDeclineNHS2023].
+Although the complexity of policy means it cannot be proved causally, leaders within the NHS have pointed towards constrained funding for the healthcare body itself, as well as cuts to wider social determinants, such as housing and education, as the main reason for the country's poor performance [@hamRiseDeclineNHS2023].
 
 The declines in life expectancy were sustained over a long period of time, which serves as another example where death rates for some population subgroups run contrary to the persistent mortality decline of the third stage of the Epidemiologic Transition theory, as discussed in @gaylinRefocusingLensEpidemiologic1997 with the HIV/AIDS pandemic.
 And even if England is in the hypothesised fourth stage of the transition, the Age of Delayed Degenerative diseases [@olshanskyFourthStageEpidemiologic1986], there are subnational patterns where degenerative diseases are *not* killing at later and later ages.
 The difference in progress between districts in the last decade was largely driven by differences in these degenerative diseases.
-In particular, the rate of improvement for CVD and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
+In particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
 Furthermore, female mortality from infectious, maternal, perinatal and nutritional conditions (GBD group 1), which dominate the second stage of the transition, increased in many districts.
 There is also worrying shift towards injuries (GBD group 3) contributing negatively towards life expectancy progress, particularly for men.
 This is possibly driven by a rise in "deaths of despair" [@angusIncreasesDeathsDespair2023; @caseRisingMorbidityMortality2015], although this would require further analysis by stratifying into intentional and unintentional injuries.
@@ -25,13 +25,13 @@ Finally, this thesis emphasises the value of small area work in informing policy
 National trends in mortality are not spatially homogenous.
 Particular diseases have shown massive variation at the district level, such as COPD in women (6.0-fold in 2019), and by studying England at the MSOA level, I have uncovered the widest subnational gap in life expectancy of 27.0 years (men in 2019) in the literature.
 This rich source of data allows policy makers to work with local authorities to create targeted public health interventions.
-The population issues at the LSOA level in London and the coding of CVD on the Isle of Wight show there are still limitations of the data.
+The population issues at the LSOA level in London and the coding of CVDs on the Isle of Wight show there are still limitations of the data.
 Nevertheless, the estimates from this thesis are already being used in the press to provide context for recent falls in US life expectancy [@burn-murdochWhyAreAmericans2023], and I hope they are also being discussed by policymakers.
 
 ## Future work
 
 There are many possible substantive and methodological extensions to the work presented in this thesis.
-Firstly, on the substantive side, there is a reason the final year of study period was restricted at 2019 that has nothing to do with the availability of civil registration data for the proceeding years: the Covid-19 pandemic.
+Firstly, on the substantive side, there is a reason the final year of study period was restricted at 2019 that has nothing to do with the availability of vital registration data for the proceeding years: the Covid-19 pandemic.
 It would be naïve to fit the same model to an extended time period that includes the pandemic years because the pandemic had such a major influence on mortality patterns.
 The model relies heavily on linear trends, which would be affected by the final years.
 Further, pandemics are fat-tailed events, so the _Gaussian_ random walk effects would struggle to capture the shock without increasing the overall variance of the effect. 
@@ -52,15 +52,15 @@ In theory, with improvements both to hardware and the rise of approximate infere
 However, given the data issues in @sec-Chapter5, perhaps bigger is not better when the quality of the data is lacking.
 
 One of the major strengths of the thesis was the use of Bayesian methods, at one of the highest spatial resolutions in the literature for a model estimating mortality.
-This was largely thanks to recent developments in probabilistic programming, which allow sampling to run on GPUs rather than CPUs, and is generally faster for models with over 10,000 parameters [@laoTfpMcmcModern2020].
-The models themselves, which were based on previous work in the group [@bennettFutureLifeExpectancy2015; @bennettContributionsDiseasesInjuries2018], followed traditional statistical approaches using intercepts and linear slopes and adding in random walk effects for non-linearities.
+This was largely thanks to recent developments in probabilistic programming, which allow sampling algorithms to run on GPUs rather than CPUs, and is generally faster for models with over 10,000 parameters [@laoTfpMcmcModern2020].
+The models themselves, which were based on previous work in the group [@bennettFutureLifeExpectancy2015; @bennettContributionsDiseasesInjuries2018], followed traditional statistical approaches using intercepts and linear slopes and adding in random walk effects for nonlinearities.
 However, with models such as @eq-ch-4-model, we are actually only interested in the left-hand side of the equation – the death rate – and not at all in the values of the parameters on the right-hand side.
 There are a vast array of flexible models which can describe complex data without needing to design heavily parametrised structures.
 These range from Gaussian processes [@rasmussenGaussianProcessesMachine2006; @flaxmanFastHierarchicalGaussian2015], where the user can use inductive biases and their own knowledge to influence how the model fits the data, to wilder options like neural networks, which completely sacrifice any remaining interpretability of the effects.
 
 During my PhD, I became very familiar with the literature on Gaussian processes, and was involved with a paper aimed at speeding up inference in spatial settings [@semenovaPriorVAEEncodingSpatial2022].
 One of the most promising avenues for the task of mortality estimation in this thesis, outlined in @flaxmanFastHierarchicalGaussian2015, is the use of Kronecker-structured covariance matrices to create hierarchical Gaussian processes.
-In there context of this thesis, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects.
+In the context of this thesis, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects.
 We can exploit the Kronecker structure for faster inference, as we no longer need to invert the full matrix (an operation that scales cubically with the number of data points), but rather the smaller constituent matrices of each effect.
 Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
 Also, there was no guarantee the Gaussian process methods would be quicker, as it still requires the inversion of a large spatial matrix, nor would it produce a result much different from the original model.
@@ -68,7 +68,7 @@ Instead, I allocated time to scaling existing models and testing new hardware.
 I believe the hierarchical Gaussian process model should be the starting point for future research because it is much more flexible and requires less testing of each effect than the models in this thesis.
 
 Another methodological extension would be to model causes of death jointly, thereby borrowing strength across _causes_.
-Studies have built spatial models which use shared components between diseases, either modelling spatial patterns of any number of diseases using a weighted sum of shared components [@knorr-heldSharedComponentModel2001; @bestComparisonBayesianSpatial2005; @heldJointDiseaseMapping2005] or pre-ascribing the spatial components to the diseases based on knowledge of common risk factors [@downingJointDiseaseMapping2008; @mahakiJointSpatiotemporalShared2018].
+Studies have built spatial models which use shared components between diseases, either modelling spatial patterns of any number of diseases using a weighted sum of shared components [@knorr-heldSharedComponentModel2001; @bestComparisonBayesianSpatial2005; @heldJointDiseaseMapping2005] or pre-assigning the spatial components to the diseases based on knowledge of common risk factors [@downingJointDiseaseMapping2008; @mahakiJointSpatiotemporalShared2018].
 However, as the number of diseases in the study increases, more spatial components must be fitted, which is computationally prohibitive.
 Furthermore, unless the spatial components are defined _a priori_, there is a question of how many spatial components are required to parsimoniously describe the variance in the data.
 Alternatively, the correlations between the causes can be modelled using a multivariate normal distribution of the same dimensions as the number of cause groups, as in @foremanSmallAreaForecasts2017.

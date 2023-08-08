@@ -3,7 +3,7 @@
 This chapter is based on the peer-reviewed publication _Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data_, published in _The Lancet Regional Health Europe_ [@bennettChangesLifeExpectancy2023], for which I was joint first author.
 The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
 The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level.
-Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James Bennett.
+Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James E Bennett.
 
 Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases.
 And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve.
@@ -37,7 +37,7 @@ A $\rho \sim \exp (0.1)$ hyperprior was used for the overdispersion term, and $\
 
 @tbl-ap-ch6-model shows all model parameters, their priors and dimensions.
 
-Again, I used `NIMBLE` for MCMC [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017], with four chains of 80,000 iterations, discarding the first 30,000, thinning the remainder by 200 and checking for convergence using trace plots and R-hat [@vehtariRanknormalizationFoldingLocalization2021].
+Again, I used `NIMBLE` for MCMC [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017], with four chains of 80,000 iterations, discarding the first 30,000, thinning the remainder by 200 and checking for convergence using trace plots and $\widehat{R}$ [@vehtariRanknormalizationFoldingLocalization2021].
 
 The local effect of the Grenfell Tower fire was even more pronounced at the LSOA level.
 In 2017, the LSOA in Kensington and Chelsea where Grenfell Tower is located had 75 deaths, compared to less than 15 in 2016 and 2018.
@@ -149,7 +149,7 @@ To some extent, as this is one of the highest-resolution studies in the literatu
 As we go to finer and finer resolutions, we will always uncover more inequality, until we reach the physical limit of the individual and the inequality is between the earliest neonatal death and the oldest person to die in the city.
 
 In terms of work specific to London, beyond that at the MSOA level in @sec-Chapter5, @congdonModellingChangesSmall2014 considered both ill-health and mortality for 625 wards in London, finding more than a two-fold variation in the percent of life spent in disability for men, but did not mention the absolute inequality of life expectancy in the city.
-Some studies have documented changes in spatial patterns of poverty in London,[@traversHousingInequalityLondon2016; @bosettiOutNewGeography2015] and have found that poverty rates have fallen in inner East London but may have risen in some outer London areas, with corresponding changes in the share of the population working in higher professional occupations.
+Some studies have documented changes in spatial patterns of poverty in London [@traversHousingInequalityLondon2016; @bosettiOutNewGeography2015], and have found that poverty rates have fallen in inner East London but may have risen in some outer London areas, with corresponding changes in the share of the population working in higher professional occupations.
 No previous study has reported how life expectancy change in small-area units coincided with change in house prices.
 
 ### Urban policy and public health implications

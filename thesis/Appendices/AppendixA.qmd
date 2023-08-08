@@ -21,7 +21,7 @@ $$ {#eq-app-a-life-table-1}
 
 The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died weighted by ${}_{n}a_{x}$
 $$
-{}_{n}L_{x} = n l_x \cdot + {}_{n}a_{x} l_{x} {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
+{}_{n}L_{x} = n \cdot l_x + {}_{n}a_{x} \cdot l_{x} \cdot {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
 $$ {#eq-app-a-life-table-2}
 
 and the total number of person-years lived above $x$ is

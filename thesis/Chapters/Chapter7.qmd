@@ -57,7 +57,7 @@ Thus, the districts containing the Isle of Wight and the Isles of Scilly were ea
 
 All model parameters, their priors and dimensions are in @tbl-ap-ch7-model.
 
-I fitted the model in the probabilistic programming language NumPyro [@phanComposableEffectsFlexible2019] and obtained 1000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates.
+I fitted the model in the probabilistic programming language `NumPyro` [@phanComposableEffectsFlexible2019] and obtained 1000 draws from the posterior distribution of model parameters that were used to calculate age-specific death rates.
 Where possible, non-centred parametrisations were used in the model to improve the efficiency of the NUTS samplers.
 I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution.
 
@@ -132,7 +132,7 @@ The largest increases for both sexes were seen in Kingston upon Hull for (45.9% 
 The change in probability of dying from all other IMPN was greatly different between the sexes, with 71 (22.6%) districts seeing an increase for women, the largest in Barrow-in-Furness (55.6% (-0.8% to 135.2%)), compared to only 5 (0.02%) districts for men.
 There were also mixed trends for lower respiratory infections (increases in 13 (4.1%) districts for women and 9 (2.9%) for men), all other NCDs (29 (9.2%) and 53 (16.9%)), and injuries (116 (36.9%) and 9 (2.9%)).
 
-Mortality from liver cirrhosis had presented dramatic geographical variation in change in mortality over the period 2002-19, with a contrast between huge decreases in districts in London and increases (243 (77.4%) districts) in the majority of districts elsewhere in the country, with the largest increases in the coastal South West and East of England (@fig-app-e-map-liver-cirrhosis-men).
+Mortality from liver cirrhosis presented dramatic spatial variation in change in mortality over the period 2002-19, with a contrast between huge decreases in districts in London and increases in the majority (243 (77.4%) districts) of districts elsewhere in the country, with the largest increases in the coastal South West and East of England (@fig-app-e-map-liver-cirrhosis-men).
 
 ### Contribution to life expectancy inequality
 
@@ -150,7 +150,7 @@ Contributions of deaths from specific causes to life expectancy inequality in 20
 :::
 
 The major contributing cause to inequality with respect to the best-performing district was dementias for women, which was the leading contributor for 254 (80.9%) districts.
-For men, all other NCDs was the leading cause in 220 (70.0%) districts.
+For men, the all other NCDs group was the leading cause in 220 (70.0%) districts.
 From the groups of cancers, lung cancer and all other cancers presented clear gradients, with the largest contributions in the worst-performing districts (@fig-ch-7-contribution-inequality).
 Specifically, lung cancer had a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 0.6 years for women and 0.5 years for men, and all other cancers was 0.5 years for both sexes.
 There were strong gradients from the best- to worst-performing districts for all other NCDs (10<sup>th</sup>-90<sup>th</sup> percentile differences of 0.9 years for women and 0.8 years for men), ischaemic heart disease (0.5 years and 0.8 years), and COPD (0.6 years and 0.5 years).
@@ -160,8 +160,8 @@ There was a more prominent gradient for injuries in men (0.5 years) than women (
 ### Contribution to life expectancy change
 
 From 2002 to 2019, life expectancy increased in every district for both women and men (@fig-ch-7-contribution).
-This was driven largely by decreases in ischaemic heart disease, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
-In contrast, dementias acted in the other direction, forcing life expectancy downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
+This was driven largely by decreases in ischaemic heart disease mortality, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
+In contrast, mortality from dementias acted in the other direction, forcing life expectancy downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
 
 ::: {#fig-ch-7-contribution layout-ncol=2 fig-scap="Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England."}
 
@@ -180,12 +180,12 @@ For women, lung cancer switched from generally contributing negatively to the ch
 The contribution for the other cancer groups was similar for the two time periods.
 There were a larger number of districts with positive contributions for all other NCDs in the second period.
 The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVDs) was weaker for the second time period as the negative forcing effect of dementias strengthened massively.
-In the years 2010 to 2019, the _inequality in progress_ between districts was driven largely by Alzheimer's and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
+In the years 2010 to 2019, the _inequality in progress_ between districts was driven largely by dementias and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
 
 For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period.
 As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from dementias.
 Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively.
-In the latter period, ischaemic heart disease, dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
+In the latter period, mortality from ischaemic heart disease, dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
 
 ::: {#fig-ch-7-contribution-split-women layout-ncol=2 fig-scap="Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
 
@@ -219,7 +219,7 @@ The study was carried out at the district level rather than for MSOAs, which mas
 However, when stratifying further by cause of death, the number of deaths in each age-space-time-cause stratum can be extremely small, even at the district level, which makes the estimation task difficult.
 Furthermore, running a model that takes a day of GPU time to reach convergence for all causes at the MSOA level for 34 cause-sex combinations is extremely computationally demanding.
 
-This study did not look at age- and cause-specific contributions to life expectancy inequality, unlike @bennettContributionsDiseasesInjuries2018, and instead collapsed over age groups.
+This study did not look at age- _and_ cause-specific contributions to life expectancy inequality, unlike @bennettContributionsDiseasesInjuries2018, and instead collapsed over age groups.
 Although this masks some variation, the groups were selected based on the total number of deaths from 2002 to 2019, and are consequently skewed towards older ages, and the age-specific contributions of (e.g.) dementias are not particularly interesting.
 
 Death records are subject to issues in the assignment of ICD-10 codes for the cause of death.
@@ -253,7 +253,7 @@ There are two key studies in the literature which break the population of Englan
 The authors found the gap in life expectancy between the most and least deprived areas was caused by the large contributions of respiratory diseases, ischaemic heart disease, and a set of preventable and treatable cancers.
 Unlike the present work, the authors broke the results down further by age, finding that deaths in children younger than 5 years and dementias in older ages drove the inequality between the top and bottom deciles.
 
-Secondly, using data from one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered a massive 264 causes of deaths, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
+Secondly, using data from one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered a massive 264 causes of death, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
 As with @bennettContributionsDiseasesInjuries2018 and the work here, the GBD group found the rate of improvement in life expectancy had slowed since 2010.
 They found, in general, the slowdown was driven by the disappearance of sustained annual improvements from ischaemic heart disease, strokes, as in the present results, but also to a lesser extent from colorectal cancer, lung cancer, and breast cancer.
 The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.

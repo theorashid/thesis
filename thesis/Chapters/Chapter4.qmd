@@ -29,7 +29,7 @@ This is a regression task.
 We want to smooth over the data – the models are not being used for prediction.
 I tried to design a model that captures as much of the true variation in the data as possible using epidemiological knowledge to choose plausible effects.
 In other words, the model is "full", with enough parameters to capture all the true variability.
-The downside of this approach is that models with more parameters are harder to fit, whereas models with fewer parameters, or parsimonious models, make Bayesian inference easier but can mask some of the variance.
+The downside of this approach is that models with more parameters are harder to fit, whereas models with fewer parameters, or _parsimonious_ models, make Bayesian inference easier but can mask some of the variance.
 
 ## A model for smoothing death rates
 
@@ -67,7 +67,7 @@ $\xi_{as}$ is an age group-spatial unit interaction term, which quantifies space
 This allows different spatial units to have different age-specific mortality patterns, and each age group’s death rate to have a different spatial pattern.
 This interaction term was modelled as $\mathcal{N}(0, \sigma_\xi^2)$.
 
-$\nu_{st}$ and $\gamma_{at}$ allow space- and age group-specific non-linearity in the time trends.
+$\nu_{st}$ and $\gamma_{at}$ allow space- and age group-specific nonlinearity in the time trends.
 For each spatial unit and age group, I again used first-order random walk priors with $\nu_{s1} = \gamma_{a1} = 0$ so that the terms were identifiable.
 
 The spatial intercepts and slopes, $\alpha_{1s}$ and $\beta_{1s}$, were modelled as nested hierarchical random effects.
@@ -84,9 +84,9 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 ## Inference
 
 The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that the sequence of samples will asymptotically converge to the true posterior.
-Furthermore, the state-of-the-art approximate inference package for spatial models, INLA, scales badly with the number of hyperparameters, and hence would struggle with the high dimensionality of the models in this thesis.
+Furthermore, the state-of-the-art approximate inference package for spatial models, `INLA`, scales badly with the number of hyperparameters, and hence would struggle with the high dimensionality of the models in this thesis.
 
-Bayesian models are specified in a probabilistic programming language.
+Bayesian models can be specified in a probabilistic programming language.
 The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
 `NIMBLE` uses the BUGS ("Bayesian inference Using Gibbs Sampling") syntax for defining a hierarchical model, which my research group has a lot of experience with as `WinBUGS`, one of the earliest software packages for Bayesian analysis, was developed largely in the department for use on SAHSU studies.
 `NIMBLE` has an `R` interface but compiles models to `C++` for speed and scalability.
@@ -99,7 +99,7 @@ Although `NIMBLE` could execute a reasonable number of samples per second, the M
 This is a common problem in spatial and spatiotemporal models, where the parameters are correlated by design.
 To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent, which is better for computational reasons than storing a large number of correlated samples).
 
-I tried different probabilistic programming languages across `R`, `python` and `Julia`, in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@rashidProbabilisticprogrammingpackages2022].
+I tried different probabilistic programming languages across `R`, `python` and `Julia` [@rashidProbabilisticprogrammingpackages2022], in particular packages that implemented the more efficient No U-Turn Sampler (NUTS).
 In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is more performant for large models [@laoTfpMcmcModern2020].
 The major downside was that `NumPyro` had not been used extensively by the spatial modelling community so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code [@numpyrodocumentationCARDistribution2023].
 Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to around a day.
