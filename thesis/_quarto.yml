@@ -68,7 +68,7 @@ thesis:
   abbreviations: "Frontmatter/abbreviations.tex"
 
 bibliography: [thesis.bib]
-csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/elife.csl"
+csl: "elife.csl"
 
 execute:
   echo: false
