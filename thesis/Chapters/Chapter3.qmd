@@ -12,7 +12,7 @@ The number of units for each geography are summarised in @tbl-ch-3-geography.
 
 | Geography | Number of units | Median (5$^{\text{th}}$-95$^{\text{th}}$ percentile) population in 2019 |
 | --------- | --------------- | ------------------------------------------------ |
-| region    | 9               | 5,934,037 (3,536,336-9,092,877)                   |
+| region    | 9               | 5,934,037 (3,536,336-9,092,877)                  |
 | district  | 314             | 140,271 (68,238-380,483)                         |
 | MSOA      | 6791            | 7985 (5760–11,917)                               |
 | LSOA      | 32844           | 1620 (1235-2468)                                 |
