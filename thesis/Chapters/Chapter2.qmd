@@ -67,7 +67,7 @@ The relationships between different levels of a hierarchy of geographical units 
 These models account for when spatial units lie within common administrative boundaries.
 This is often a desirable property of the model for certain geographies, like states in the US, which are administrative.
 Policy is decided at these geographies, so there is reason to believe these boundaries may have a greater effect on health outcomes than spatial structure.
-@finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, subregion, region and country.
+@finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, super-region, region and country.
 Note, although these models group by geographical region, these models are not _spatial_ as they do not contain any information on the relative position of the areas.
 
 Of the two specifications that are spatial, either as a continuous process or discrete units, the Markov random field priors are often preferred for computational reasons, as we can exploit the sparseness of the adjacency matrix in our inference algorithms rather than computing the covariance between each pair of spatial units as in the general case of @eq-MVN.
@@ -88,7 +88,7 @@ One can imagine situations in which different spatial units will have different 
 After implementing a base model with the main effects, the question is how to model additional terms which account for the interactions between the variables.
 Space-time interactions could range from fully independent, to each spatial unit having independent temporal patterns, to inseparable space-time variation where interactions borrow strength across neighbouring spatial units and neighbouring time periods [@knorr-heldBayesianModellingInseparable2000].
 
-However, it should be considered that by breaking the population down into smaller and smaller subgroups through age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small area level.
+However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small area level.
 Although interaction effects are plausible, modellers should consider whether there evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
 
 ### Applications of disease mapping methods
@@ -139,7 +139,7 @@ Beyond producing substantive research on environment and health, a core aim of S
 
 SAHSU has been at the forefront of both methodology and applications in disease mapping.
 @aylinNationalFacilitySmall1999 mapped diseases for wards in Kensington, Chelsea and Westminster using a simple model that smoothed rates towards the mean risk across the region.
-Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, including using the BYM distribution (@eq-BYM) to map spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
+Thereafter, SAHSU published a plethora of studies for disease mapping models with explicit spatial dependence, including using the BYM model (@eq-BYM) to map spatial variation in the relative risk of testicular [@toledanoSpatialVariationTemporal2001] and prostate [@jarupGeographicalEpidemiologyProstate2002] cancers for small areas in regions of England.
 In a landmark piece bringing together work on disease mapping and environmental exposures, SAHSU published an environment and health atlas for England and Wales, showing the spatial patterns of 14 health conditions at census ward level over an aggregated 25 year period alongside five environmental exposure surfaces [@hansellannal.EnvironmentHealthAtlas2014].
 
 Further disease mapping studies at SAHSU using spatially structured effects have also extended the methodology to look at age patterns and trends over time.
@@ -157,7 +157,7 @@ The success of the reduction – and in the case of typhoid fever, near-eliminat
 
 By comparing vital registration data over several centuries, Abdel Omran observed this shift of mortality from communicable to non-communicable diseases (NCDs) in many countries [@omranEpidemiologicTransitionTheory1971; @omranCenturyEpidemiologicTransition1977]. Although the pace and determinants of the transition varied between countries, Omran was able to formalise three common successive stages of the shift in mortality:
 
-1. _The Age of Pestilence and Famine_. Mortality is high and largely governed by malthusian "positive checks" – epidemics, famines, and wars.
+1. _The Age of Pestilence and Famine_. Mortality is high and largely governed by Malthusian "positive checks" – epidemics, famines, and wars.
 2. _The Age of Receding Pandemics_. Mortality decreases as epidemics become less frequent, but infectious diseases remain the leading causes of death. 
 3. _The Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
 
@@ -183,7 +183,7 @@ An important innovation of the GBD study was the introduction of a hierarchical 
 
 In studies looking at multiple causes of death it may be desirable to extend disease mapping models to capture the interdependence between causes of death.
 Cause-specific mortality can exhibit complex correlation structures, with correlations for diseases with common risk factors but anti-correlations for competing causes of death.
-For studies that already look at mortality for small areas and narrow age groups, breaking the population down further by cause of death increases the sparseness in the data, and the introduction of terms to the smoothing model which share information between causes could stabilise the estimation of death rates.
+For studies that already look at mortality for small areas and narrow age groups, breaking the population down further by cause of death increases the sparseness in the data, and it may be necessary to introduce terms to the smoothing model which share information between causes in order to stabilise the estimation of death rates.
 
 The simplest and most computationally-scalable method is to ignore any correlations between diseases and run separate regression models for each cause of death.
 This is the approach taken by GBD studies for a vast array of causes of death.
@@ -193,7 +193,7 @@ The GBD studies scale death rates so that the proportions of each cause of death
 In the context of mortality projections, @wilmothAreMortalityProjections1995 also points out that aggregating forecasts from multiple causes of death leads to upward bias when compared to the total mortality forecast.
 
 A joint modelling approach would allow the borrowing of strength across causes to express correlations between diseases that share common risk factors and similar aetiologies.
-There is also some redundancy separate regression models as a unique spatial surface is specified for each cause in specifying.
+There is also some redundancy in separate regression models as a unique spatial surface is specified for each cause.
 In the disease mapping literature, studies have built spatial models to look at a small number of diseases which share spatial components between diseases.
 Firstly, @knorr-heldSharedComponentModel2001 considered a model (also described in @bestComparisonBayesianSpatial2005) for two diseases, with disease-specific spatial components and one shared component.
 @heldJointDiseaseMapping2005 generalised this approach to model any number of diseases as a weighted sum of shared components.
@@ -208,7 +208,7 @@ The model did not, however, share information between age groups.
 In studies of the cause composition of total mortality, rather than estimating the absolute death rate for each cause of death, it is possible to reframe the problem using a compositional model which considers the fraction of each cause of death composing total mortality.
 This was the approach taken by @salomonEpidemiologicTransitionRevisited2002 to investigate the dynamics of the proportions of mortality from GBD Groups 1, 2, and 3.
 The benefit of a compositional model is that the proportions are constrained to sum to unity, and the model can capture covariance between the component causes of death.
-However, it is not possible to recover absolute death rates with compositional approach.
+However, it is not possible to recover absolute death rates with a compositional approach.
 
 ## Health inequalities in the UK
 
@@ -245,7 +245,7 @@ Within London itself, male and female life expectancy showed 5-6 years of variat
 
 There have been substantial efforts in the UK to measure the deprivation of an area.
 Since 2004, the standard deprivation indicator in England has been the Index of Multiple Deprivation (IMD) – a composite indicator for each Lower-layer Super Output Area (LSOA^[See @sec-Chapter3 for descriptions of spatial units.]) covering income, unemployment, health, crime and environmental data sources [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
-The Marmot Report presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
+The Marmot Review presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
 The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham had lower rates of premature mortality than expected for that level of deprivation [@steelChangesHealthCountries2018].
 @bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
 They found since 2011, although national life expectancy has continued to increase, the rise in female life expectancy has reversed in the two most deprived deciles.

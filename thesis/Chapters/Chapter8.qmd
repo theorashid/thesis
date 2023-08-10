@@ -9,7 +9,7 @@ I felt I should go deeper into the cancer story, and pay further attention to a 
 
 ## Methods
 
-The methodology for this section if the same as @sec-Chapter7, but I have stratified cancer groups further.
+The methodology for this section is the same as @sec-Chapter7, but I have stratified cancer groups further.
 I used the top ten leading cancer causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual group comprising all other cancer deaths.
 
 There were 2,453,173 deaths from cancers in England from 2002 to 2019; of these, 1,533,703 (62.5%) deaths occurred before 80 years of age (@fig-ch-8-treemap).

@@ -62,16 +62,16 @@ Posterior probabilities more distant from 50% indicate more certainty.
 
 In 2019, there was a 20.6 year (95% CrI 17.5–24.2) gap for women between the MSOA with the highest life expectancy (an MSOA in Camden, London; 95.4 years (92.4–98.7)) and the MSOA with the lowest life expectancy (an MSOA in Leeds; 74.7 years (73.4–76.2)).
 The gap was 27.0 years (23.4–31.1) for men, between an MSOA in Kensington and Chelsea, London (95.3 years (92.1–99.3)) and an MSOA in Blackpool (68.3 years (66.9–69.6)).
-The difference between the first and 99<sup>th</sup> percentiles of life expectancy in 2019 was 14.2 years (13.9–14.5) for women and 13.6 years (13.4–13.9) for men.
+The difference between the first and 99$^{\text{th}}$ percentiles of life expectancy in 2019 was 14.2 years (13.9–14.5) for women and 13.6 years (13.4–13.9) for men.
 
 ![Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 [@worldbankLifeExpectancyBirth2022].](../thesis-analysis/thesis_analysis/england/figures/distribution.pdf){#fig-ch-5-distribution fig-scap="Ranked MSOA life expectancies in 2002 and 2019."}
 
 When all MSOAs were ranked on the basis of their life expectancy, the difference between successively ranked MSOAs was particularly large for the approximately 5% of MSOAs with the lowest and highest life expectancy (seen as the sharper decline or rise at the two ends of the ranked life expectancy curve in @fig-ch-5-distribution), indicating distinct groups at extreme advantage and disadvantage.
 
 The 124 (1.8%) of 6791 MSOAs with the lowest female life expectancy and 262 (3.9%) MSOAs with the lowest male life expectancy in 2019 were located in urban areas, particularly in the north, including Blackpool, Leeds, Liverpool, Manchester, and Newcastle.
-Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts (@fig-ch-5-map-level).
+Many of the MSOAs with the highest life expectancy, especially for men, were in London and its neighbouring districts (@fig-ch-5-map-level^[For an interactive version of this figure, see the [visualisation](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/). For a hex-cartogram of life expectancy in 2019, see @fig-app-c-carto-level.]).
 
-![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy. ^[For an interactive version of this figure, see the [visualisation](https://equitablehealthycities.org/focus-cities/london/mortality-map-england/).] ^[For a hex-cartogram of life expectancy in 2019, see @fig-app-c-carto-level.]](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-5-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in 2019."}
+![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-5-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in 2019."}
 
 ### Change in life expectancy
 

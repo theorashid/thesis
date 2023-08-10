@@ -1,7 +1,7 @@
 # Cause-specific mortality at the district level {#sec-Chapter7}
 
 Where previous studies found female life expectancy in the bottom deciles of deprivation declined [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], in @sec-Chapter5, I showed there were widespread and accelerating declines, with 1 in 5 small areas for women and 1 in 9 for men observing a fall in life expectancy in 2014-19.
-However, the lack of available covariates at the MSOA level makes is difficult to suggest which social and environmental effects are driving life expectancy downwards.
+However, the lack of available covariates at the MSOA level makes it difficult to suggest which social and environmental effects are driving life expectancy downwards.
 By analysing mortality for specific causes of death, which is the second objective of the thesis that I address in this chapter, we are able to suggest pathways that shape mortality profiles.
 
 ## Methods
@@ -16,16 +16,16 @@ There were no age­-district-year combinations in which the number of deaths fro
 
 ### Grouping causes of death
 
-Each death record in the post-neonatal period was assigned an ICD-10 code corresponding to the underlying cause of death.
+Each death record in post-neonatal ages was assigned an ICD-10 code corresponding to the underlying cause of death.
 For neonates, which are not assigned an underlying cause of death, I used the ICD-10 code in the first position on the death record.
 I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
 I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have a similar history.
-I used the top twelve causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other non-communicable diseases (NCDs), all other cardiovascular diseases (CVDs), all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
+I used the top twelve causes of death for each sex according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other non-communicable diseases (NCDs), all other cardiovascular diseases (CVDs), all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
 Together, these form a mutually exclusive, collectively exhaustive list of causes of death (@fig-ch-7-treemap).
 
 The full list of ICD-10 codes for each cause group can be found in @tbl-ap-ch7-causes.
 
-![Total number of deaths for the twelve leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCDs, all other CVDs, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries. See @tbl-ap-ch7-causes for ICD-10 codes for each category. ^[For brevity, the group "diabetes mellitus, nephritis and nephrosis" has been shortened to "diabetes".]](../thesis-analysis/thesis_analysis/causes/figures/treemap.pdf){#fig-ch-7-treemap fig-scap="Total number of deaths for the twelve leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCDs, all other CVDs, all other infections, maternal, perinatal and nutritional conditions, and injuries."}
+![Total number of deaths for the twelve leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCDs, all other CVDs, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries. See @tbl-ap-ch7-causes for ICD-10 codes for each category.](../thesis-analysis/thesis_analysis/causes/figures/treemap.pdf){#fig-ch-7-treemap fig-scap="Total number of deaths for the twelve leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCDs, all other CVDs, all other infections, maternal, perinatal and nutritional conditions, and injuries."}
 
 There were 4,465,948 (51.6%) deaths in women and 4,182,108 (48.4%) in men in England from 2002 to 2019.
 3,972,286 (45.9%) of these deaths occurred in people aged younger than 80 years of age.
@@ -50,7 +50,7 @@ The model is the same as model @sec-Chapter4, but without a random walk for each
 
 Spatial effects were modelled using ICAR priors rather than the nested hierarchy of random effects seen in @sec-Chapter5 and @sec-Chapter6.
 The nested hierarchy allowed units that fell in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy.
-Regions have no such policy implications and hence we implemented a fully spatial model.
+However, regions, the level above districts in the hierarchy, have no such policy implications and hence we implemented a fully spatial model.
 
 The ICAR model requires all spatial units to have neighbours.
 Thus, the districts containing the Isle of Wight and the Isles of Scilly were each joined to the nearest mainland district based on road or ferry connections.
@@ -81,7 +81,7 @@ Details on the calculations for both the probability of dying and Arriaga's meth
 
 ### Variation in space
 
-The highest probability of dying in 2019 for any sex-cause-district combination was for ischaemic heart disease for men in Manchester at 0.13 (0.12-0.13) (@fig-ch-7-distribution and @fig-app-e-map-ihd).
+The highest probability of dying between birth and 80 years of age in 2019 for any sex-cause-district combination was for ischaemic heart disease for men in Manchester at 0.13 (0.12-0.13) (@fig-ch-7-distribution and @fig-app-e-map-ihd).
 For women, all other NCDs had the highest mortality for any disease, with the highest probability of dying of 0.09 (0.08-0.09) in Blackpool (@fig-ch-7-distribution and @fig-app-e-map-other-ncd).
 
 ::: {#fig-ch-7-distribution layout-ncol=1 fig-scap="Ranked probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the twelve leading causes of death and residual groups."}
@@ -108,7 +108,7 @@ The highest mortality for injuries were in coastal areas and in the urban northw
 ### Variation over time
 
 The largest declines from 2002 to 2019 were seen in CVDs (@fig-ch-7-change).
-The probability of dying from ischaemic heart disease (median decline across districts of 67.1% for women and 58.2% for men) and strokes (62.7% and 61.3%) declined in all districts for both sexes, and mortality from all other CVDs decreased in all but the districts of Isle of Wight and Hastings (41.9% for women and 40.5% for men; @fig-app-e-map-other-cvd), suggesting there are localised issues in the data.
+The probability of dying between birth and 80 years of age from ischaemic heart disease (median decline across districts of 67.1% for women and 58.2% for men) and strokes (62.7% and 61.3%) declined in all districts for both sexes, and mortality from all other CVDs decreased in all but the districts of Isle of Wight and Hastings (41.9% for women and 40.5% for men; @fig-app-e-map-other-cvd), suggesting there are localised issues in the data.
 There were also declines in all districts for each sex for diabetes mortality (43.2% and 42.9%).
 
 ::: {#fig-ch-7-change layout-ncol=1 fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the twelve leading causes of death and residual groups."}
@@ -124,7 +124,7 @@ The points are coloured by the regions in England. Each point shows one district
 In contrast, the probability of dying from dementias saw the largest increases of any cause, with all districts observing an increase for both sexes (median increase across districts of 106.2% for women and 121.8% for men; @fig-app-e-map-alzheimer).
 The largest increases were Eastbourne (419.4% (314.2% to 544.5%)) for women and in Kingston-upon-Hull (235.1% (168.8% to 316.6%)) for men.
 
-Mortality from cancer causes of death declined in all districts and for both sexes with three exceptions: pancreatic cancer mortality, which saw increases in all districts (except a small decrease in Tower Hamlets for women), and lung cancer mortality in women and oesophageal cancer mortality in men, which saw decreases in most districts but increase elsewhere.
+Mortality from cancer causes of death declined in all districts and for both sexes with three exceptions: pancreatic cancer mortality, which saw increases in all districts (except a small decrease in Tower Hamlets for women), and lung cancer mortality in women and oesophageal cancer mortality in men, which saw decreases in most districts but increases elsewhere.
 Mortality from COPD also saw mixed trends, and with wider variability than the observed changes in lung cancer mortality.
 The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)).
 The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
@@ -227,10 +227,10 @@ Although the ONS use selection algorithms to improve consistency between doctors
 We selected 80 years of age as the upper bound to partially mitigate this effect because it covers a wide age range but does not include the very oldest ages.
 However, for certain diseases such as dementias where only 96,109 (14.5% of 663,692) of deaths from occur in those under 80 years, the probability of dying between birth and 80 years masks variations in the age groups where the majority of deaths occur.
 There are also specific cases of problematic cause of death assignment in the data.
-For example, mortality from all other CVDs also showed a downward trend with the exceptions of Hastings and, more noticeably, the Isle of Wight.
-Looking at the raw data for these districts, there is a step increase the use of ICD-10 code I51.5 – a garbage CVD code [@murrayGlobalBurdenDisease1996] – since around 2012 in these districts, suggesting these trends result from poor coding practice.
+For example, mortality from all other CVDs showed a downward trend in every district with the exceptions of Hastings and, more noticeably, the Isle of Wight.
+Looking at the raw data for these districts, there is a step increase in the use of ICD-10 code I51.5 – a garbage CVD code [@murrayGlobalBurdenDisease1996] – since around 2012 in these districts, suggesting these trends result from poor coding practice.
 
-There is always the desire the split the residual groups into more and more causes of death.
+There is always the desire to split the residual groups into more and more causes of death.
 For example, there are interesting patterns in the change of all other IMPN, and it would be interesting to understand further how the component causes of all other NCDs are driving the inequality in progress.
 Moreover, there has been a lot of recent attention in the literature on "deaths of despair" – deaths from drug overdose, suicide or alcoholic liver disease – in the UK [@angusIncreasesDeathsDespair2023] and the US [@caseRisingMorbidityMortality2015], and it would of interest to separate injuries by whether the deaths were intentional or unintentional.
 However, the groupings were chosen based on a total mortality rule so that the number of deaths in each cause group allowed robust inference of cause-age-area-year-specific death rates at the district level.

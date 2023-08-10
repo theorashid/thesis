@@ -15,7 +15,7 @@ $$ {#eq-death-rate}
 where $\hat{m}_{ast}$ is the empirical death rate.
 
 When the number of deaths becomes small, however, the empirical death rate presents an apparent variability from year to year, or from spatial unit to spatial unit, which is larger than the true differences in the risk of death.
-The problem is exacerbated for the young ages or causes with lower mortality, where the number of deaths might be zero, or for smaller geographical units, where the population might be zero.
+The problem is exacerbated for the young ages or causes with lower mortality, where the number of deaths might be zero, or for smaller geographical units, where the population might be very small.
 As a demonstration, @fig-ch-4-sim shows the expected and simulated number of deaths for a young age group (1-4 years) and an old age group (80-84).
 The simulation assumes the hypothetical spatial unit has a population of 1000 in each age group in each year, and generates deaths using a Poisson distribution and the national age-specific death rates for each year.
 Note, given the population sizes in @tbl-ch-3-geography, the true age-specific populations for LSOAs and MSOAs will be smaller and there will be even more zeros and even more noise in the number of deaths than in this simulation.
@@ -107,6 +107,6 @@ Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to a
 
 ## Clean code and open source
 
-I have paid a lot of attention into open sourcing code for all analyses during my PhD.
+I have paid a lot of attention to open sourcing code for all analyses during my PhD.
 The code is clean, version-controlled and follows best practices for scientific software engineering.
 As well as code contributed to open source projects along the way, the code for [statistical models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and the [thesis itself](https://github.com/theorashid/thesis) can be found on GitHub.
