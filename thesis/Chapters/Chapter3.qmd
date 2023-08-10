@@ -10,7 +10,7 @@ This thesis is concerned only with England, as Scotland, Wales, and Northern Ire
 The geographies in England form a nested hierarchy of spatial units from regions to districts to Middle-layer Super Output Areas (MSOAs) to Lower-layer Super Output Areas (LSOAs).
 The number of units for each geography are summarised in @tbl-ch-3-geography.
 
-| Geography | Number of units | Median (5<sup>th</sup> - 95<sup>th</sup> percentile) population in 2019 |
+| Geography | Number of units | Median (5$^{\text{th}}$-95$^{\text{th}}$ percentile) population in 2019 |
 | --------- | --------------- | ------------------------------------------------ |
 | region    | 9               | 5,934,037 (3,536,336-9,092,877)                   |
 | district  | 314             | 140,271 (68,238-380,483)                         |
@@ -49,27 +49,6 @@ For each analysis, deaths were stratified into the following age groups: 0, 1–
 There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death.
 Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors [@officefornationalstatisticsUserGuideMortality2022].
 
-Before fitting any models, I explored the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
-
-![Age-specific death rates in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf){#fig-ch-3-age}
-
-The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (@fig-ch-3-age).
-Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.
-
-![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf){#fig-ch-3-age-broad}
-
-@fig-ch-3-age-broad looks at the trends over time for wider age groups.
-I did not use the 5-year age groups because the number of deaths for certain age groups at single years were small, and any data presented should be non-disclosive in accordance with SAHSU's data sharing agreement.
-In general, death rates have decreased from 2002 to 2019 in all age groups, but with slowing progress in young adulthood and working ages (30-69 years).
-Likewise, life expectancy has improved throughout the study period, but has stalled since around 2010 for both sexes. 
-
-![District-level life expectancy for total death rates from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.pdf){#fig-ch-3-district}
-
-@fig-ch-3-district shows the geography of life expectancy after aggregating deaths over the entire study period by district.
-For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, West Midlands, and coastal areas east of London.
-
-Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.
-
 ### Population
 
 The second data sources we require are population counts.
@@ -104,3 +83,26 @@ The deprivation data for geographies larger than LSOAs in @tbl-ch-3-geography we
 I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre.
 The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data [@vandijkUsingLinkedConsumer2021].
 Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs [@ministryofhousingcommunities&localgovernmentEnglishIndicesDeprivation2019].
+
+## Exploratory data analysis
+
+Before fitting any models, I explored the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.
+
+![Age-specific death rates in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf){#fig-ch-3-age}
+
+The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (@fig-ch-3-age).
+Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.
+
+![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf){#fig-ch-3-age-broad}
+
+@fig-ch-3-age-broad looks at the trends over time for wider age groups.
+I did not use the 5-year age groups because the number of deaths for certain age groups at single years were small, and any data presented should be non-disclosive in accordance with SAHSU's data sharing agreement.
+In general, death rates have decreased from 2002 to 2019 in all age groups, but with slowing progress in young adulthood and working ages (30-69 years).
+Likewise, life expectancy has improved throughout the study period, but has stalled since around 2010 for both sexes. 
+
+![District-level life expectancy for total death rates from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.pdf){#fig-ch-3-district}
+
+@fig-ch-3-district shows the geography of life expectancy after aggregating deaths over the entire study period by district.
+For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, and West Midlands.
+
+Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.

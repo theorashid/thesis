@@ -14,7 +14,7 @@ In this chapter, I test this idea by modelling life expectancy at the finer LSOA
 
 ### Mortality and population data
 
-I performed a high-­resolution spatiotemporal analysis of all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25<sup>th</sup> June 2021), as detailed in @sec-Chapter3.
+I performed a high-­resolution spatiotemporal analysis of all deaths in London from 2002 to 2019 (909,097 death records, extract date: 25$^{\text{th}}$ June 2021), as detailed in @sec-Chapter3.
 Deaths were stratified by 19 age groups (0, 1–4, 5–9, ..., 80–84, 85+) and 4835 LSOAs.
 These LSOAs fit inside 33 districts: London's 32 boroughs and the City of London.
 I did not use 16 death records (0.002%) for which sex was not recorded.
@@ -43,14 +43,14 @@ The local effect of the Grenfell Tower fire was even more pronounced at the LSOA
 In 2017, the LSOA in Kensington and Chelsea where Grenfell Tower is located had 75 deaths, compared to less than 15 in 2016 and 2018.
 The additional deaths were caused by a fire in a high­rise residential building.
 I used the same treatment as in @sec-Chapter5 to remove the outlier from the modelling stage and add the excess mortality in at a later stage before calculating life expectancies.
-I defined life expectancy inequality as the difference between 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of LSOA life expectancies.
+I defined life expectancy inequality as the difference between 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of LSOA life expectancies.
 
 ## Results
 
 ### Inequalities in life expectancy
 
 Life expectancy at birth for London increased from 80.9 (95% CrI 80.8–81.0) years in 2002 to 85.4 (85.3–85.5) years in 2019 for women, and from 76.1 (76.0–76.2) years to 81.6 (81.5–81.7) years for men.
-Life expectancy inequality (difference between 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles) was 19.1 (18.4–19.7) years for women and 17.2 (16.7–17.8) years for men, in 2019 which is a substantial increase from 11.1 (10.7–11.5) years for women and 11.6 (11.3–12.0) years for men in 2002.
+Life expectancy inequality (difference between 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles) was 19.1 (18.4–19.7) years for women and 17.2 (16.7–17.8) years for men, in 2019 which is a substantial increase from 11.1 (10.7–11.5) years for women and 11.6 (11.3–12.0) years for men in 2002.
 The corresponding estimates for life expectancy inequality in 2019 calculated using MSOA level analysis in @sec-Chapter5 were 10.8 (10.3–11.3) years for women and 11.0 (10.5–11.6) years for men.
 
 ![Map of life expectancy and the distribution of life expectancy in London in 2019. The areas in white have a life expectancy equal to the overall London life expectancy.](../thesis-analysis/thesis_analysis/london/figures/map_level.pdf){#fig-ch-6-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in London in 2019."}
@@ -97,7 +97,7 @@ Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectanc
 Districts are ordered by the median life expectancy in 2002.
 :::
 
-By 2019, female and male life expectancies had a 2.5<sup>th</sup>–97.5<sup>th</sup> percentile range that was >12 years in every district, and >20 years in three districts for men and two for women.
+By 2019, female and male life expectancies had a 2.5$^{\text{th}}$–97.5$^{\text{th}}$ percentile range that was >12 years in every district, and >20 years in three districts for men and two for women.
 In 2002, within district inequality had been >12 years in only two districts for men and none for women.
 At the same time, the difference between districts with the highest and lowest life expectancy increased from 5.9 (5.2–7.7) years in 2002 to 8.5 (5.9–11.9) years in 2019 for females, and from 6.8 (5.9–8.7) years to 10.9 (8.2–14.2) years for males indicating that the rise in life expectancy inequality took place both within and between districts.
 
@@ -119,7 +119,7 @@ This implies that a portion of the change in life expectancy may be due to chang
 The main strength of the study is the presentation of very high-resolution data on life expectancy and house prices in consistent spatial and temporal units in a major global city over a period of substantial policy interest and investment in urban renewal.
 Carrying out the study at the LSOA level uncovered inequalities to a fuller extent.
 
-I defined life expectancy inequality as the difference between 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of LSOA life expectancies rather than the difference between the maximum and minimum as in @sec-Chapter5.
+I defined life expectancy inequality as the difference between 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of LSOA life expectancies rather than the difference between the maximum and minimum as in @sec-Chapter5.
 This was because the LSOAs with extremely low life expectancies tended to contain age­-LSOA-­year combinations in which the number of deaths exceeded the population.
 Small-area population, which is the denominator of age-specific death rates, is estimated by the ONS for intercensal years, and may be subject to error.
 This is especially the case in older ages when some people live and die in a long-term care facility, and may be counted towards population (denominator of death rates) in their original LSOA of residence and towards deaths (numerator of death rates) in the LSOA where the care facility is located.
@@ -138,10 +138,10 @@ To understand whether changes in the life expectancy of communities arises from 
 ### Comparison with previous literature
 
 The inequalities of 19.1 (18.4–19.7) years for women in 2019 and 17.2 (16.7–17.8) years for men in London in 2019 are some of the largest for any city in the literature and the largest for women.
-Further, some of the inequality in the tails of the life expectancy distribution is masked by our choice of inequality measure, the 2.5<sup>th</sup>-97.5<sup>th</sup> percentile difference, rather than the full range across all LSOAs.
+Further, some of the inequality in the tails of the life expectancy distribution is masked by our choice of inequality measure, the 2.5$^{\text{th}}$-97.5$^{\text{th}}$ percentile difference, rather than the full range across all LSOAs.
 
 In a study of the 397 census tracts in King County, Washington, a county ranking in the top 5% of the US in terms of both income and life expectancy, @dwyer-lindgrenVariationLifeExpectancy2017 found an 18.3 year gap in life expectancy for men between the top and bottom tracts in 2014, and a 14.8 gap for women.
-For Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found a difference in 2016 of 9.5 years for men and 8.3 years for women between the 90<sup>th</sup> and and 10<sup>th</sup> percentiles of 368 census tracts.
+For Vancouver, Canada, @yuSpatiotemporalAnalysisInequalities2021a found a difference in 2016 of 9.5 years for men and 8.3 years for women between the 90$^{\text{th}}$ and and 10$^{\text{th}}$ percentiles of 368 census tracts.
 Using the same measure of inequality as the Vancouver study, @jonkerComparisonBayesianRandomEffects2012 uncovered a 8.2 year and 9.2 year gap in life expectancy for women and men for 89 small areas in Rotterdam.
 Across six large cities in Latin America, @bilalInequalitiesLifeExpectancy2019 observed the largest difference between the top and bottom decile of life expectancy at birth was 17.7 years for women in Santiago, Chile.
 
@@ -170,6 +170,6 @@ I used life table methods to calculate life expectancy at birth by sex and LSOA.
 
 In 134 (2.8%) of London's LSOAs for women and 32 (0.7%) for men, life expectancy may have declined from 2002 to 2019, with a posterior probability of a decline >80% in 41 (0.8%, women) and 14 (0.3%, men) LSOAs.
 The life expectancy increase in other LSOAs ranged from <2 years in 537 (11.1%) LSOAs for women and 214 (4.4%) for men to >10 years in 220 (4.6%) for women and 211 (4.4%) for men.
-The 2.5<sup>th</sup>-97.5<sup>th</sup> percentile life expectancy difference across LSOAs increased from 11.1 (10.7–11.5) years in 2002 to 19.1 (18.4–19.7) years for women in 2019, and from 11.6 (11.3–12.0) years to 17.2 (16.7–17.8) years for men.
+The 2.5$^{\text{th}}$-97.5$^{\text{th}}$ percentile life expectancy difference across LSOAs increased from 11.1 (10.7–11.5) years in 2002 to 19.1 (18.4–19.7) years for women in 2019, and from 11.6 (11.3–12.0) years to 17.2 (16.7–17.8) years for men.
 
 Although the analysis of life expectancy at the LSOA level is possible, there are issues with the population data for older age groups that limit its utility, particularly concerning the tails of the distribution of life expectancy.

@@ -8,7 +8,7 @@ By analysing mortality for specific causes of death, which is the second objecti
 
 ### Mortality and population data
 
-I performed a high-­resolution spatiotemporal analysis of vital registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,648,191 death records, extract date: 17<sup>th</sup> November 2022).
+I performed a high-­resolution spatiotemporal analysis of vital registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,648,191 death records, extract date: 17$^{\text{th}}$ November 2022).
 England was divided into 314 districts according to the boundaries in 2020.
 Deaths were assigned into the following age groups: 0, 1–4, 5–9, ..., 80–84, 85+ years.
 I did not use 130 death records (<0.001%) for which sex was not recorded.
@@ -67,7 +67,7 @@ Death rates for this total mortality group, and for injuries, were corrected in 
 The primary reporting outcome is the unconditional probability of dying between birth and 80 years of age.
 Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest [@prestonDemographyMeasuringModeling2001].
 I limited the age range to 80 years because the probability of death in the absence of competing causes equals 100% when the entire life course is considered.
-The reported 95% credible intervals represent the 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles of the posterior distribution of estimated probability of death.
+The reported 95% credible intervals represent the 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of the posterior distribution of estimated probability of death.
 
 I calculated the contributions of deaths from each cause of death, in each age group, to the life expectancy change for each district between different time periods using Arriaga's method, which is widely used to decompose life expectancy differences between populations or population subgroups [@arriagaMeasuringExplainingChange1984].
 Arriaga's method calculates how much each age group contributes to the life expectancy difference by quantifying how much death rate differences at that age change the years of life lived both at that age and in subsequent ages through changing the number of survivors.
@@ -152,9 +152,9 @@ Contributions of deaths from specific causes to life expectancy inequality in 20
 The major contributing cause to inequality with respect to the best-performing district was dementias for women, which was the leading contributor for 254 (80.9%) districts.
 For men, the all other NCDs group was the leading cause in 220 (70.0%) districts.
 From the groups of cancers, lung cancer and all other cancers presented clear gradients, with the largest contributions in the worst-performing districts (@fig-ch-7-contribution-inequality).
-Specifically, lung cancer had a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 0.6 years for women and 0.5 years for men, and all other cancers was 0.5 years for both sexes.
-There were strong gradients from the best- to worst-performing districts for all other NCDs (10<sup>th</sup>-90<sup>th</sup> percentile differences of 0.9 years for women and 0.8 years for men), ischaemic heart disease (0.5 years and 0.8 years), and COPD (0.6 years and 0.5 years).
-Contributions to inequality from dementias were not as obviously directional, but the cause group had large 10<sup>th</sup>-90<sup>th</sup> percentile differences of 0.8 years for women and 0.5 years for men.
+Specifically, lung cancer had a difference in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 0.6 years for women and 0.5 years for men, and all other cancers was 0.5 years for both sexes.
+There were strong gradients from the best- to worst-performing districts for all other NCDs (10$^{\text{th}}$-90$^{\text{th}}$ percentile differences of 0.9 years for women and 0.8 years for men), ischaemic heart disease (0.5 years and 0.8 years), and COPD (0.6 years and 0.5 years).
+Contributions to inequality from dementias were not as obviously directional, but the cause group had large 10$^{\text{th}}$-90$^{\text{th}}$ percentile differences of 0.8 years for women and 0.5 years for men.
 There was a more prominent gradient for injuries in men (0.5 years) than women (0.3 years).
 
 ### Contribution to life expectancy change
@@ -180,12 +180,12 @@ For women, lung cancer switched from generally contributing negatively to the ch
 The contribution for the other cancer groups was similar for the two time periods.
 There were a larger number of districts with positive contributions for all other NCDs in the second period.
 The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVDs) was weaker for the second time period as the negative forcing effect of dementias strengthened massively.
-In the years 2010 to 2019, the _inequality in progress_ between districts was driven largely by dementias and all other NCDs, both with a difference in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 3.0 years.
+In the years 2010 to 2019, the _inequality in progress_ between districts was driven largely by dementias and all other NCDs, both with a difference in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 3.0 years.
 
 For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period.
 As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from dementias.
 Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively.
-In the latter period, mortality from ischaemic heart disease, dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10<sup>th</sup> and 90<sup>th</sup> percentile districts of 2.8, 2.9 and 3.0 years respectively.
+In the latter period, mortality from ischaemic heart disease, dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 2.8, 2.9 and 3.0 years respectively.
 
 ::: {#fig-ch-7-contribution-split-women layout-ncol=2 fig-scap="Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
 
