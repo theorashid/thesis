@@ -227,6 +227,7 @@ div.csl-indent {
   <li><a href="#community-deprivation-data" id="toc-community-deprivation-data" class="nav-link" data-scroll-target="#community-deprivation-data"><span class="header-section-number">3.3.3</span> Community deprivation data</a></li>
   <li><a href="#migration" id="toc-migration" class="nav-link" data-scroll-target="#migration"><span class="header-section-number">3.3.4</span> Migration</a></li>
   </ul></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">3.4</span> Exploratory data analysis</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -306,29 +307,6 @@ div.csl-indent {
 <p>This thesis is primarily concerned with modelling death rates for small areas in England. This requires two data sources: counts of deaths, and population counts. The counts of deaths come from de-identified civil registration data for all deaths in England from 2002 to 2019. In other words, every death in England from 2002 to 2019.</p>
 <p>The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data. The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner’s report to identify the underlying cause of death.</p>
 <p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="officefornationalstatisticsUserGuideMortality2022">(<a href="../references.html#ref-officefornationalstatisticsUserGuideMortality2022" role="doc-biblioref">Office for National Statistics, 2022b</a>)</span>.</p>
-<p>Before fitting any models, I explored the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.</p>
-<div id="fig-ch-3-age" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.1: Age-specific death rates in England from 2002 to 2019.</figcaption>
-</figure>
-</div>
-<p>The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (<a href="#fig-ch-3-age">Figure&nbsp;<span>3.1</span></a>). Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.</p>
-<div id="fig-ch-3-age-broad" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.2: Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.</figcaption>
-</figure>
-</div>
-<p><a href="#fig-ch-3-age-broad">Figure&nbsp;<span>3.2</span></a> looks at the trends over time for wider age groups. I did not use the 5-year age groups because the number of deaths for certain age groups at single years were small, and any data presented should be non-disclosive in accordance with SAHSU’s data sharing agreement. In general, death rates have decreased from 2002 to 2019 in all age groups, but with slowing progress in young adulthood and working ages (30-69 years). Likewise, life expectancy has improved throughout the study period, but has stalled since around 2010 for both sexes.</p>
-<div id="fig-ch-3-district" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.3: District-level life expectancy for total death rates from 2002 to 2019.</figcaption>
-</figure>
-</div>
-<p><a href="#fig-ch-3-district">Figure&nbsp;<span>3.3</span></a> shows the geography of life expectancy after aggregating deaths over the entire study period by district. For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, West Midlands, and coastal areas east of London.</p>
-<p>Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.</p>
 </section>
 <section id="population" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="population"><span class="header-section-number">3.3.2</span> Population</h3>
@@ -350,6 +328,33 @@ div.csl-indent {
 <section id="migration" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="migration"><span class="header-section-number">3.3.4</span> Migration</h3>
 <p>I also used estimates of population turnover, defined as the proportion of households in each LSOA in 2019 who were different from those who had lived there in 2002, from the Consumer Data Research Centre. The Consumer Data Research Centre estimates these proportions by using the names of households members, individually and in combination, and addresses and dates of records from electoral and consumer registers and land registry sales data <span class="citation" data-cites="vandijkUsingLinkedConsumer2021">(<a href="../references.html#ref-vandijkUsingLinkedConsumer2021" role="doc-biblioref">van Dijk et al., 2021</a>)</span>. Estimates of population turnover for MSOAs were created by taking the mean across all constituent LSOAs <span class="citation" data-cites="ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019">(<a href="../references.html#ref-ministryofhousingcommunities&amp;localgovernmentEnglishIndicesDeprivation2019" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government, 2019</a>)</span>.</p>
+</section>
+</section>
+<section id="exploratory-data-analysis" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">3.4</span> Exploratory data analysis</h2>
+<p>Before fitting any models, I explored the data visually, in this case looking at how total mortality varies over different cross sections: sex, age, space, time.</p>
+<div id="fig-ch-3-age" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Age-specific death rates in England from 2002 to 2019.</figcaption>
+</figure>
+</div>
+<p>The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (<a href="#fig-ch-3-age">Figure&nbsp;<span>3.1</span></a>). Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.</p>
+<div id="fig-ch-3-age-broad" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.</figcaption>
+</figure>
+</div>
+<p><a href="#fig-ch-3-age-broad">Figure&nbsp;<span>3.2</span></a> looks at the trends over time for wider age groups. I did not use the 5-year age groups because the number of deaths for certain age groups at single years were small, and any data presented should be non-disclosive in accordance with SAHSU’s data sharing agreement. In general, death rates have decreased from 2002 to 2019 in all age groups, but with slowing progress in young adulthood and working ages (30-69 years). Likewise, life expectancy has improved throughout the study period, but has stalled since around 2010 for both sexes.</p>
+<div id="fig-ch-3-district" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../thesis-analysis/thesis_analysis/eda/figures/e0_map_LAD_2002_2019.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: District-level life expectancy for total death rates from 2002 to 2019.</figcaption>
+</figure>
+</div>
+<p><a href="#fig-ch-3-district">Figure&nbsp;<span>3.3</span></a> shows the geography of life expectancy after aggregating deaths over the entire study period by district. For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, and West Midlands.</p>
+<p>Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -375,7 +380,6 @@ Office for National Statistics. 2021c. Population estimates by output areas, ele
 van Dijk JT, Lansley G, Longley PA. 2021. Using linked consumer registers to estimate residential moves in the <span>United Kingdom</span>. <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em> <strong>184</strong>:1452–1474. doi:<a href="https://doi.org/10.1111/rssa.12713">10.1111/rssa.12713</a>
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

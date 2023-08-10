@@ -99,7 +99,7 @@ Although `NIMBLE` could execute a reasonable number of samples per second, the M
 This is a common problem in spatial and spatiotemporal models, where the parameters are correlated by design.
 To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent, which is better for computational reasons than storing a large number of correlated samples).
 
-I tried different probabilistic programming languages across `R`, `python` and `Julia` [@rashidProbabilisticprogrammingpackages2022], in particular packages that implemented the more efficient No U-Turn Sampler (NUTS).
+I tried different probabilistic programming languages across `R`, `python` and `Julia` [@rashidProbabilisticprogrammingpackages2022], in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@hoffmanNoUTurnSamplerAdaptively2014].
 In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is more performant for large models [@laoTfpMcmcModern2020].
 The major downside was that `NumPyro` had not been used extensively by the spatial modelling community so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code [@numpyrodocumentationCARDistribution2023].
 Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to around a day.
