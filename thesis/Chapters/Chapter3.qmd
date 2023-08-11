@@ -2,7 +2,7 @@
 
 ## Overview
 
-This chapter presents the datasets and data cleaning that are common between the proceeding analysis chapters.
+This chapter presents the datasets and data cleaning processes that are common between the proceeding analysis chapters.
 
 ## Geographies of England
 

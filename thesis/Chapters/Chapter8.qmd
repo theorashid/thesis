@@ -3,7 +3,8 @@
 The work in this chapter has formed the paper _Inequalities in mortality from leading cancers in districts of England from 2002 to 2019: high-resolution spatiotemporal analysis of vital registration data_, which has recently been submitted for publication at _The Lancet Oncology_ and for which I am first author.
 
 As seen in the previous chapter, mortality from cancers in England has declined more slowly than from other major causes of death such as CVDs, and hence the share of deaths from cancers has steadily increased.
-Compared with CVDs and NCDs, which are dominated by their major causes (ischaemic heart disease and stroke, and Alzheimer's, COPD and diabetes, respectively), cancers had the largest number of individual causes in the top twelve causes of death.
+In 2019, there were more deaths from cancers (144,306 (28.9% of all deaths in 2019)) than from CVDs 126,105 (25.3%), although this was less than the number of deaths from other NCDs excluding CVDs and cancers (173,323 (34.8%)) which reflects the rise in dementia deaths in recent years.
+Compared with CVDs and other NCDs, which are dominated by their major causes (ischaemic heart disease and stroke, and Alzheimer's, COPD and diabetes, respectively), cancers had the largest number of individual causes in the top twelve causes of death.
 With over 150 different types of cancer, each with their own anatomical and molecular subtypes, cancer is extremely complex, with a specialist workforce dedicated to each unique cancer.
 I felt I should go deeper into the cancer story, and pay further attention to a wider array of site-specific cancers.
 

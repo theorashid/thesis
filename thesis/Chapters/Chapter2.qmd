@@ -19,11 +19,12 @@ To overcome these issues, we can use statistical smoothing techniques to obtain 
 
 ### Disease mapping methods
 
-In small area studies, it is common to smooth data using models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
+In small-area studies, it is common to smooth data using models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 There are three main categories for modelling spatial effects.
 First, we can treat space as a continuous surface using Gaussian processes or splines.
 Second, we can use areal models, which make use of the spatial neighbourhood structure of the units.
 Thirdly, we can explicitly build effects based on a nested hierarchy of geographical units, for example between state, county and census tract in the US.
+Each of these methods rely on assumptions which may make them more or less appropriate in different applications.
 
 #### Space as a continuous process {-}
 
@@ -47,7 +48,7 @@ An example in @elliottSpatialEpidemiologyMethods2001 chooses an exponential deca
 
 #### Space as discrete units {-}
 
-A more popular prior is the conditional autoregressive (CAR) prior, also known as a Gaussian Markov random field.
+A more popular prior is the conditional autoregressive (CAR) prior, also known as a Gaussian Markov random field, which was first introduced by @besagSpatialInteractionStatistical1974.
 These form a joint distribution as in @eq-MVN, but the covariance is usually defined instead in terms of the precision matrix
 $$
 \mathbf{P} = \pmb{\Sigma}^{-1} = \tau(\mathbf{D} - \rho \mathbf{A}),
@@ -60,6 +61,7 @@ $$
 S_i = U_i + V_i,
 $$ {#eq-BYM}
 where $U_i$ follow an ICAR distribution, and $V_i$ are independent and identically distributed random effects.
+The addition of the spatially-unstructured component $V$ accounts for any non-spatial heterogeneity.
 
 #### Space as a nested hierarchy of geographies {-}
 
@@ -73,7 +75,7 @@ Note, although these models group by geographical region, these models are not _
 Of the two specifications that are spatial, either as a continuous process or discrete units, the Markov random field priors are often preferred for computational reasons, as we can exploit the sparseness of the adjacency matrix in our inference algorithms rather than computing the covariance between each pair of spatial units as in the general case of @eq-MVN.
 
 In applications to disease mapping, spatial models are the natural choice when the disease exhibits a spatial pattern.
-This is the case for infectious diseases, particularly on short timescales like Covid-19 [@konstantinoudisRegionalExcessMortality2022].
+This is the case for mortality from infectious diseases, particularly on short timescales like Covid-19 [@konstantinoudisRegionalExcessMortality2022].
 Nested hierarchies are a more suitable choice when administrative areas are meaningful and have an effect on the health outcomes of the population.
 For example, state-specific abortion laws in the USA could affect maternal mortality, and so a model should include an effect for each state.
 
@@ -81,19 +83,24 @@ For example, state-specific abortion laws in the USA could affect maternal morta
 
 As computational power has improved, it has become feasible to model patterns over other features of the population, such as time period and age group.
 Trends over time can be modelled as linear through slopes, or using nonlinear effects which allow neighbouring time points to be alike, the simplest of which is a first-order Gaussian random walk process.
-Variation over age for all-cause mortality follows a characteristic J-shape, with higher mortality in the infant and older age groups [@prestonDemographyMeasuringModeling2001], and should therefore be modelled using a nonlinear process such as a random walk.
+All-cause mortality varies smoothly over ages, following a characteristic J-shape with higher mortality in the infant and older age groups [@prestonDemographyMeasuringModeling2001], and therefore can be modelled using a nonlinear process such as a random walk.
 
 Difficulties arise when considering interactions between the space, age, and time variables.
 One can imagine situations in which different spatial units will have different age patterns in disease rates, for example, if the certain age groups were vaccinated against disease in that spatial unit before others.
 After implementing a base model with the main effects, the question is how to model additional terms which account for the interactions between the variables.
 Space-time interactions could range from fully independent, to each spatial unit having independent temporal patterns, to inseparable space-time variation where interactions borrow strength across neighbouring spatial units and neighbouring time periods [@knorr-heldBayesianModellingInseparable2000].
 
-However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small area level.
+However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small-area level.
 Although interaction effects are plausible, modellers should consider whether there evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
+
+It should be noted that there are situations where statistical smoothing would not be appropriate.
+There might be true variability in the data which a smoothing model would conceal.
+For example, the Grenfell Tower fire in 2017 was a localised event that affected mortality.
+Without accounting for this event, the models described above would either attenuate its effect on mortality, or the spike in mortality would cause estimates of mortality in nearby spatial units or years to be erroneously high.
 
 ### Applications of disease mapping methods
 
-#### Small area analyses of mortality {-}
+#### Small-area analyses of mortality {-}
 
 In order to compare the health status between areas, health authorities require a measure of mortality that collapses age-specific information into a single number.
 Indirectly standardised measures such as the standardised mortality ratio – the ratio between total deaths and expected deaths in an area – are easy to calculate, but are not easily understood by laypeople.
@@ -114,7 +121,7 @@ Where data are available, there is still the need to overcome small number issue
 One approach, often taken by statistical agencies, is to build larger populations by either aggregating multiple years of data [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021; @bahkLifeExpectancyInequalities2020] or combining spatial units [@ezzatiReversalFortunesTrends2008].
 Here, we focus on studies using Bayesian hierarchical models to generate robust estimates of age-specific death rates by recognising the correlations between spatial units and age groups, which produce more accurate estimates for small population studies of life expectancy [@congdonLifeExpectanciesSmall2009; @jonkerComparisonBayesianRandomEffects2012].
 
-@jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap in life expectancy for women and men.
+@jonkerComparisonBayesianRandomEffects2012 demonstrated the advantages of the Bayesian approach for 89 small areas in Rotterdam using a joint model for sex, space and age effects, finding a 8.2 year and 9.2 year gap between the neighbourhoods with the highest and lowest life expectancies for women and men.
 @stephensLifeExpectancyEstimation2013 employed the same model for 153 administrative areas in New South Wales, Australia.
 
 Bayesian spatial models for mortality have been scaled to small areas for entire countries, and also consider trends in these regions over time. @bennettFutureLifeExpectancy2015 forecasted life expectancy for 375 districts in England and Wales using a spatiotemporal model trained over a 31 year period, and @dwyer-lindgrenInequalitiesLifeExpectancy2017 explored mortality trends 3110 US counties from 1980 to 2014.
@@ -127,10 +134,10 @@ Two studies in North America have looked below the county level, at census tract
 
 In 1983, a documentary on the fallout from a fire at the Sellafield nuclear site in Cumbria claimed that there was a ten-fold increase in cases of childhood leukaemia in the surrounding community.
 This anomaly had gone undetected by public health authorities, raising concern that routinely collected data were not able to identify local clusters of disease.
-The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small area statistics and respond quickly to _ad hoc_ queries on local health hazards.
+The subsequent enquiry confirmed the excess, and recommended that a research unit was set up to monitor small-area statistics and respond quickly to _ad hoc_ queries on local health hazards.
 The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottSmallAreaHealth1992].
 
-Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
+Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small-area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
 
 - _Point source type studies_. Is there an increased risk close to an environmental hazard? SAHSU has investigated increased mortality from mesothelioma and asbestosis near Plymouth docks [@elliottSmallAreaHealth1992]; excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999]; kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]; possible excess of several morbidities near landfill sites [@elliottRiskAdverseBirth2001; @jarupCancerRisksPopulations2002; @jarupSyndromeBirthsLandfill2007].
 - _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables? SAHSU have looked at several exposures, including a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007]; mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010]; noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013]; road traffic noise in London [@halonenRoadTrafficNoise2015]; particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
@@ -208,7 +215,7 @@ The model did not, however, share information between age groups.
 In studies of the cause composition of total mortality, rather than estimating the absolute death rate for each cause of death, it is possible to reframe the problem using a compositional model which considers the fraction of each cause of death composing total mortality.
 This was the approach taken by @salomonEpidemiologicTransitionRevisited2002 to investigate the dynamics of the proportions of mortality from GBD Groups 1, 2, and 3.
 The benefit of a compositional model is that the proportions are constrained to sum to unity, and the model can capture covariance between the component causes of death.
-However, it is not possible to recover absolute death rates with a compositional approach.
+However, it is not possible to recover absolute cause-specific death rates using the compositional approach without estimating the overall death rate.
 
 ## Health inequalities in the UK
 
@@ -276,4 +283,5 @@ The UK has also performed worse as measured by cancer survival rates and infant 
 After a decade of cuts, the UK entered the 2020s facing the greatest public health challenge for a generation: the Covid-19 pandemic.
 Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries [@kontisMagnitudeDemographicsDynamics2020].
 
-It is important to estimate how health inequalities have changed in different areas of the country through this period of substantial change in economic, social, and healthcare policy, so that public health interventions can target the most disadvantaged groups.
+It is important to estimate how health inequalities have changed in different areas of the country through this period of substantial change in economic, social, and healthcare policy.
+Small-area health statistics, and in particular those at high-resolutions, not only reveal the extent of the mortality differences between neighbourhoods, but can also identify the areas at highest risk, allowing public health interventions to target the most disadvantaged groups.

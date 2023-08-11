@@ -21,7 +21,6 @@ The simulation assumes the hypothetical spatial unit has a population of 1000 in
 Note, given the population sizes in @tbl-ch-3-geography, the true age-specific populations for LSOAs and MSOAs will be smaller and there will be even more zeros and even more noise in the number of deaths than in this simulation.
 Although there are a large number of deaths in the older age group and it is easy to visualise a curve that fits the data, the death counts for the young age group are extremely sparse and it is difficult to estimate the true underlying death rate.
 In this thesis, I have used Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.
-An added advantage of the Bayesian paradigm is the robust estimation of error.
 
 ![Simulated and expected deaths from 2002 to 2019 for a young age group (1-4 years) and an old age group (80-84 years), assuming the national death rates in England and a population size of 1000.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time_sim.pdf){#fig-ch-4-sim fig-scap="Simulated and expected deaths from 2002 to 2019 for a young age group and an old age group."}
 
@@ -29,7 +28,13 @@ This is a regression task.
 We want to smooth over the data – the models are not being used for prediction.
 I tried to design a model that captures as much of the true variation in the data as possible using epidemiological knowledge to choose plausible effects.
 In other words, the model is "full", with enough parameters to capture all the true variability.
-The downside of this approach is that models with more parameters are harder to fit, whereas models with fewer parameters, or _parsimonious_ models, make Bayesian inference easier but can mask some of the variance.
+The downside of this approach is that, with more parameters, there is a risk of parametrising the noise in the data.
+Moreover, over-parametrised models can suffer from a lack of identifiability, which can lead to convergence issues.
+In contrast, models with fewer parameters, or _parsimonious_ models, make inference easier but can mask some of the variance.
+
+I used Bayesian inference methods for the smoothing models, which estimate posterior distributions for each parameter.
+It is easy to use samples from the posterior distribution to carry the uncertainty of different age groups through to the uncertainty in life expectancy or other nonlinear functions derived from the life table.
+The Bayesian approach also allows the inclusion of prior knowledge of the parameters, which I use here through spatially-structured prior distributions.
 
 ## A model for smoothing death rates
 
@@ -83,7 +88,7 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 ## Inference
 
-The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that the sequence of samples will asymptotically converge to the true posterior.
+The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that, under mild conditions, the sequence of samples will asymptotically converge to the true posterior distribution [@robertsGeneralStateSpace2004].
 Furthermore, the state-of-the-art approximate inference package for spatial models, `INLA`, scales badly with the number of hyperparameters, and hence would struggle with the high dimensionality of the models in this thesis.
 
 Bayesian models can be specified in a probabilistic programming language.
@@ -99,8 +104,9 @@ Although `NIMBLE` could execute a reasonable number of samples per second, the M
 This is a common problem in spatial and spatiotemporal models, where the parameters are correlated by design.
 To overcome these mixing issues, the chains had to be run for longer and thinned (i.e. take every $n^{\text{th}}$ sample so the Markov chain samples are closer to independent, which is better for computational reasons than storing a large number of correlated samples).
 
-I tried different probabilistic programming languages across `R`, `python` and `Julia` [@rashidProbabilisticprogrammingpackages2022], in particular packages that implemented the more efficient No U-Turn Sampler (NUTS) [@hoffmanNoUTurnSamplerAdaptively2014].
-In the end, I settled on `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is more performant for large models [@laoTfpMcmcModern2020].
+In an effort to increase the sampling efficiency of the models, I tested a number of alternative probabilistic programming languages across `R`, `python` and `Julia`, which I have detailed in @rashidProbabilisticprogrammingpackages2022.
+In particular, I focussed on packages that have implemented the more efficient No U-Turn Sampler (NUTS) [@hoffmanNoUTurnSamplerAdaptively2014].
+In the end, I chose to rewrite the models in `NumPyro` [@phanComposableEffectsFlexible2019] because it was the fastest and inference could be performed on a GPU, rather than CPUs, which is more performant for large models [@laoTfpMcmcModern2020].
 The major downside was that `NumPyro` had not been used extensively by the spatial modelling community so I had to implement the CAR distribution from @eq-CAR-prec myself, which has since been contributed to the source code [@numpyrodocumentationCARDistribution2023].
 Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to around a day.
 `NumPyro` also has built-in methods for approximate variational inference, such as the Laplace approximation, but these failed to converge to sensible values for these models without heavy customisation of variational function, so I stuck with sampling methods.

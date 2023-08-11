@@ -61,21 +61,23 @@ I fitted the model in the probabilistic programming language `NumPyro` [@phanCom
 Where possible, non-centred parametrisations were used in the model to improve the efficiency of the NUTS samplers.
 I ran four chains with a warmup of 2000 iterations and then 10,000 further iterations and thinned the remainder by 40 to obtain 1000 post-burn-in draws from the posterior distribution.
 
-I ran a model for a combined group of all deaths to calculate life expectancy in each district.
-Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.
-
 The primary reporting outcome is the unconditional probability of dying between birth and 80 years of age.
 Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest [@prestonDemographyMeasuringModeling2001].
 I limited the age range to 80 years because the probability of death in the absence of competing causes equals 100% when the entire life course is considered.
 The reported 95% credible intervals represent the 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of the posterior distribution of estimated probability of death.
 
-I calculated the contributions of deaths from each cause of death, in each age group, to the life expectancy change for each district between different time periods using Arriaga's method, which is widely used to decompose life expectancy differences between populations or population subgroups [@arriagaMeasuringExplainingChange1984].
+In order to assess the effect of differences in the cause-composition of mortality between districts on inequalities in total mortality, I decomposed life expectancy differences into contributions from specific causes of death.
+This required estimates of life expectancy at the district level, for which I ran a model for a combined group of all deaths.
+Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.
+
+I calculated the contributions of deaths from each cause of death, in each age group, to both the life expectancy inequality between each district and the district with the highest life expectancy, and to the life expectancy change for each district between different time periods.
+I used Arriaga's method, which is widely used to decompose life expectancy differences between populations or population subgroups [@arriagaMeasuringExplainingChange1984].
 Arriaga's method calculates how much each age group contributes to the life expectancy difference by quantifying how much death rate differences at that age change the years of life lived both at that age and in subsequent ages through changing the number of survivors.
 It then partitions the age-specific contributions to the life expectancy gap by cause of death in proportion to the difference in cause-specific death rates between the subgroups.
 The cause-specific death rates were scaled such that the sum over all causes was equal to the estimate for total mortality.
 For this analysis, I used the sample mean death rate in each age-district-year-cause combination.
 
-Details on the calculations for both the probability of dying and Arriaga's method can be found in @sec-appA.
+Details on the calculations for life expectancy, the probability of dying, and Arriaga's method can be found in @sec-appA.
 
 ## Results
 
@@ -136,7 +138,7 @@ Mortality from liver cirrhosis presented dramatic spatial variation in change in
 
 ### Contribution to life expectancy inequality
 
-The district with the highest life expectancy for both sexes in 2019 was the City of London, a small and affluent district in the capital, at 90.1 years for women and 87.4 years^[For this section, I do not state uncertainty because I use the mean of the death rate samples. This is so the contributions from Arriaga's method sum exactly to the life expectancy difference.] for men.
+The district with the highest life expectancy for both sexes in 2019 was the City of London, a small and affluent district in the capital, at 90.1 years for women and 87.4 years^[For the analyses on the contributions of different causes of death to life expectancy differences, I do not state uncertainty because I use the mean of the death rate samples. This is so the contributions from Arriaga's method sum exactly to the life expectancy difference. Hence, values of life expectancy differences and the cause-district-specific contributions towards these differences are mean estimates without uncertainty.] for men.
 For women, the district with the lowest life expectancy was Manchester, which was 10.1 years lower than the best-performing district.
 Blackpool had the lowest life expectancy for men, 13.0 years less than the City of London.
 
@@ -146,7 +148,7 @@ Blackpool had the lowest life expectancy for men, 13.0 years less than the City 
 
 ![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_inequality_2019.pdf){#fig-ch-7-contribution-inequality-men}
 
-Contributions of deaths from specific causes to life expectancy inequality in 2019 between the district with the highest life expectancy (City of London for both sexes) and all other local authority districts in England. The side panel shows the difference in life expectancy compared to the best-performing district, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to life expectancy inequality in 2019 between the district with the highest life expectancy (City of London for both sexes) and all other local authority districts in England. The districts are ordered from the best-performing district downwards, with the side panel showing the difference in life expectancy compared to the best-performing district, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 The major contributing cause to inequality with respect to the best-performing district was dementias for women, which was the leading contributor for 254 (80.9%) districts.
@@ -169,7 +171,7 @@ In contrast, mortality from dementias acted in the other direction, forcing life
 
 ![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2019.pdf){#fig-ch-7-contribution-men-2002-2019}
 
-Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 In @fig-ch-7-contribution-split-women and @fig-ch-7-contribution-split-men, I break the overall trend down into two time periods around the year 2010.
@@ -189,11 +191,11 @@ In the latter period, mortality from ischaemic heart disease, dementias, and all
 
 ::: {#fig-ch-7-contribution-split-women layout-ncol=2 fig-scap="Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
 
-![2002-10](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2010.pdf){#fig-ch-7-contribution-women-2002-2010}
+![Women, 2002-10](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2010.pdf){#fig-ch-7-contribution-women-2002-2010}
 
-![2010-19](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2010_2019.pdf){#fig-ch-7-contribution-women-2010-2019}
+![Women, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2010_2019.pdf){#fig-ch-7-contribution-women-2010-2019}
 
-Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 ::: {#fig-ch-7-contribution-split-men layout-ncol=2 fig-scap="Contributions of deaths from specific causes to male life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
@@ -202,7 +204,7 @@ Contributions of deaths from specific causes to female life expectancy differenc
 
 ![Men, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2010_2019.pdf){#fig-ch-7-contribution-men-2010-2019}
 
-Contributions of deaths from specific causes to male life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The side panel shows the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to male life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 ## Discussion
@@ -215,7 +217,7 @@ I found that the slowdown in life expectancy gains since around 2010 has been dr
 
 The work presents trends in cause-specific mortality over a period of substantial policy interest at the district level, and uncovers which causes of death have been driving the slowdown in progress since 2010.
 
-The study was carried out at the district level rather than for MSOAs, which masks substantial heterogeneity and was the motivation for the all-cause mortality study in @sec-Chapter5.
+The study was carried out at the district level rather than for MSOAs, which masks substantial heterogeneity, as shown by the all-cause mortality study in @sec-Chapter5.
 However, when stratifying further by cause of death, the number of deaths in each age-space-time-cause stratum can be extremely small, even at the district level, which makes the estimation task difficult.
 Furthermore, running a model that takes a day of GPU time to reach convergence for all causes at the MSOA level for 34 cause-sex combinations is extremely computationally demanding.
 
@@ -237,11 +239,11 @@ However, the groupings were chosen based on a total mortality rule so that the n
 
 It would have been desirable, albeit computationally challenging, to run all cause groups in a single joint model.
 When calculating contributions using Arriaga's method, mortality for each cause group was scaled such that the sum across all causes equalled to the estimate for total mortality.
-This would not be necessary if cause-specific mortality were estimated jointly as the causes of death would adjust amongst each other each iteration to sum to total mortality.
+A joint model of cause-specific mortality could account for correlations for diseases with common risk factors and anti-correlations for competing causes of death.
 @foremanSmallAreaForecasts2017 jointly forecasted cause-specific death rates for states in the US, but instead estimated each age group separately.
 
 The population in each district can change because of migration, both within the country and from overseas.
-However, unlike @sec-Chapter5 and @sec-Chapter6, migration was not as much of an issue at the district level than at the smaller levels of analyses used earlier in the thesis.
+However, unlike @sec-Chapter5 and @sec-Chapter6, migration was not as much of an issue at the district level compared with the smaller levels of analyses used earlier in the thesis.
 The majority of moves in the UK are within the same district [@vandijkUsingLinkedConsumer2021], and so will have little effect on the change in mortality in a given district.
 
 ### Comparison with previous literature
@@ -260,7 +262,7 @@ The authors found the annual reduction in mortality attributable to most major r
 
 Both these studies focus on what causes of death have driven the inequality between subgroups of the population.
 I found the causes with the clearest gradients in contribution from the best- to worst-performing districts were those with modifiable risk factors, such as ischaemic heart disease, lung cancer, COPD, and injuries, and also the residual groups of all other NCDs and all other cancers.
-There were also contributions from dementias, but these did follow the direction from best- to worst-performing district as obviously as the aforementioned causes.
+There were also contributions from dementias, but these did not follow the direction from best- to worst-performing district as obviously as the aforementioned causes.
 The work in this chapter extends previous studies by also considering which causes of death have driven the the _inequality in progress_ between subgroups of the population.
 
 ### Explaining the variation
@@ -292,6 +294,6 @@ Mortality from lower respiratory infections, which include influenza and pneumon
 It also depends on the strength of the immune system of the infected.
 The ability of the lungs to recover from infection can be degraded by years of industrial exposure or smoking, which could influence the high mortality in the urban North West.
 The highest mortality from injuries were in coastal areas, where there are obvious natural hazards, but also include a number of "left-behind" districts following deindustrialisation and lack of investment [@whittyChiefMedicalOfficer2021].
-The highest male mortality from injuries was in Blackpool, which agrees with both the literature on mortality from drugs and suicide [@congdonGeographicalPatternsDrugRelated2019] and the MSOA level life expectancy results (@sec-Chapter5).
+The highest male mortality from injuries was in Blackpool, which agrees with both the literature on mortality from drugs and suicide [@congdonGeographicalPatternsDrugRelated2019] and coincides with the MSOA level life expectancy results (@sec-Chapter5).
 
 ## Summary
