@@ -297,3 +297,10 @@ The highest mortality from injuries were in coastal areas, where there are obvio
 The highest male mortality from injuries was in Blackpool, which agrees with both the literature on mortality from drugs and suicide [@congdonGeographicalPatternsDrugRelated2019] and coincides with the MSOA level life expectancy results (@sec-Chapter5).
 
 ## Summary
+
+I performed a high-resolution spatiotemporal analysis of vital registration data on deaths from the twelve leading causes of death by sex in England from 2002 to 2019.
+I used life table methods to calculate the probability of dying between birth and 80 years of age by sex, cause of death, district and year, as well as the cause-specific contributions to the inequality in life expectancy between different years of the study for each district.
+
+The most unequal causes of death were COPD for women (6.0-fold variation in mortality across districts) and liver cirrhosis for men (6.7-fold).
+The causes of death with the least geographical variability were lymphomas, multiple myeloma (1.2-fold for both sexes) and leukaemia (1.1-fold for women and 1.2-fold for men).
+There has been a slowdown in life expectancy gains since 2010, which has been driven largely by dementias and all other NCDs in women, and by ischaemic heart disease, dementias, and all other NCDs in men.
