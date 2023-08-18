@@ -272,7 +272,7 @@ Both mortality from ischaemic heart disease and strokes have continued to follow
 These reflect improvements in reducing and controlling risk factors such as high blood pressure and high blood cholesterol, organisational changes to the NHS such that acute CVD episodes are treated in specific centres, improvements in the treatment of CVD including coronary angiographies and stent insertion, and public health campaigns such as FAST (Face drooping, Arm weakness, Speech difficulties, Time) so the general public know when to seek emergency help for a stroke.
 
 Although the management of CVDs has improved over the past decades, the burden of mortality has shifted towards dementias.
-This reflects that, beyond age and family history, the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol).
+This reflects that, beyond age and family history, the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol) [@yuEvidencebasedPreventionAlzheimer2020].
 Some part of this trend may also be due to increased diagnosis and coding of deaths as dementias, with doctors increasingly assigning mental and neurological conditions as the underlying cause of death rather than simply "dying of old age".
 
 These contrasting trends in mortality from ischaemic heart disease and dementias could explain the finding that these causes of death have largely driven the heterogeneity of the slowdown in life expectancy gains since around 2010 at varying rates across districts, suggesting that CVD risk factors within the population have influenced the inequality in progress in recent years.
