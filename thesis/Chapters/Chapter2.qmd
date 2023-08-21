@@ -56,7 +56,7 @@ $$ {#eq-CAR-prec}
 where $\tau$ controls the overall precision of the effects, $\mathbf{A}$ is the spatial adjacency matrix formed by the small areas, $\mathbf{D}$ is a diagonal matrix with entries equal to the number of neighbours for each spatial unit, and the autocorrelation parameter $\rho$ describes the amount of correlation.
 This can be seen as tuning the degree of spatial dependence, where $\rho = 0$ implies independence between areas, and $\rho = 1$ full dependence.
 The case with $\rho = 1$ is called the intrinsic conditional autoregressive (ICAR) model.
-There sometimes exists further over-dispersion in the residuals that cannot be modelled by purely spatially-structured random effects.
+There sometimes exists further overdispersion in the residuals that cannot be modelled by purely spatially-structured random effects.
 @besagBayesianImageRestoration1991 proposed the model (hereafter called BYM)
 $$
 S_i = U_i + V_i,
@@ -74,7 +74,7 @@ Policy is decided at these geographies, so there is reason to believe these boun
 Note, although these models group by geographical region, these models are not _spatial_ as they do not contain any information on the relative position of the areas.
 
 Of the two specifications that are spatial, either as a continuous process or discrete units, the Markov random field priors are often preferred for computational reasons, as we can exploit the sparseness of the adjacency matrix in our inference algorithms rather than computing the covariance between each pair of spatial units as in the general case of @eq-MVN.
-There are concerns, however, that the GMRF representation of space as an adjacency matrix, which was originally proposed for a regular lattice of pixels in image analysis, is reductive for more complicated spatial problems.
+There are concerns, however, that the GMRF representation of space as an adjacency matrix, which was originally proposed for a regular lattice of pixels in image analysis [@besagBayesianImageRestoration1991], is reductive for more complicated spatial problems.
 Despite this, in an epidemiological context, @duncanSpatialSmoothingBayesian2017 found the standard ICAR model with binary, first-order neighbour weights outperformed models with a variety of different weighting schemes, including matrix weights based on higher-order degrees of neighbours, distance between neighbours, and distance between covariate values.
 
 In applications to disease mapping, spatial models are the natural choice when the disease exhibits a spatial pattern.
@@ -93,7 +93,7 @@ One can imagine situations in which different spatial units will have different 
 After implementing a base model with the main effects, the question is how to model additional terms which account for the interactions between the variables.
 Space-time interactions could range from fully independent, to each spatial unit having independent temporal patterns, to inseparable space-time variation where interactions borrow strength across neighbouring spatial units and neighbouring time periods [@knorr-heldBayesianModellingInseparable2000].
 
-However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that is already at the small-area level.
+However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that are already at the small-area level.
 Although interaction effects are plausible, modellers should consider whether there evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
 
 It should be noted that there are situations where statistical smoothing would not be appropriate.
