@@ -269,13 +269,20 @@ The work in this chapter extends previous studies by also considering which caus
 
 @asariaTrendsInequalitiesCardiovascular2012 found CVD mortality followed a persistent downward trend in nearly all wards in England from 1982 to 2006.
 Both mortality from ischaemic heart disease and strokes have continued to follow this trend through to 2019 at the district level.
-These reflect improvements in reducing and controlling risk factors such as high blood pressure and high blood cholesterol, organisational changes to the NHS such that acute CVD episodes are treated in specific centres, improvements in the treatment of CVD including coronary angiographies and stent insertion, and public health campaigns such as FAST (Face drooping, Arm weakness, Speech difficulties, Time) so the general public know when to seek emergency help for a stroke.
 
-Although the management of CVDs has improved over the past decades, the burden of mortality has shifted towards dementias.
-This reflects that, beyond age and family history, the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol) [@yuEvidencebasedPreventionAlzheimer2020].
-Some part of this trend may also be due to increased diagnosis and coding of deaths as dementias, with doctors increasingly assigning mental and neurological conditions as the underlying cause of death rather than simply "dying of old age".
+In England, about 51% of all mortality from myocardial infarction, an acute manifestation of ischaemic heart disease, is attributable to out-of-hospital deaths [@asariaAcuteMyocardialInfarction2017].
+Reductions in out-of-hospital mortality reflects improvements in reducing and controlling risk factors for CVD (smoking, blood glucose and diabetes, raised blood pressure, and high blood cholesterol) [@ezzatiContributionsRiskFactors2015].
+Unlike cancers and COPD where the increased risk following smoking spans decades, the risk of CVD returns to the level of non-smokers within ten years after smoking cessation [@ezzatiContributionsRiskFactors2015].
+Declines in CVD mortality have thus gained greatly from reductions in smoking rates, and more recently, the ban on smoking in public places, which came into force in the UK in 2007 and has had a rapid effect on hospitalisation rates for acute CVD cases [@pellSmokefreeLegislationHospitalizations2008].
+As well as improvements in these risk factors, reductions in in-hospital CVD mortality partially reflect organisational changes to the NHS such that patients with acute myocardial infarctions are taken directly to centres with capacity to re-open arteries, bypassing local accident and emergency services.
+Furthermore, strategies to shorten pre-hospital delays between symptom onset and a call for help, for example, the FAST (Face drooping, Arm weakness, Speech difficulties, Time) public health campaign for stroke events, can improve the efficacy of treatments such as stent insertions.
 
-These contrasting trends in mortality from ischaemic heart disease and dementias could explain the finding that these causes of death have largely driven the heterogeneity of the slowdown in life expectancy gains since around 2010 at varying rates across districts, suggesting that CVD risk factors within the population have influenced the inequality in progress in recent years.
+The burden of mortality has shifted towards dementias.
+A number of the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol) [@yuEvidencebasedPreventionAlzheimer2020].
+However dementia diagnoses are also heavily influenced by age, family history and education.
+Some part of this trend may also be due to increased efforts in improving diagnosis and cause of death coding of dementias in the UK [@hayatEvaluationRoutinelyCollected2022; @mukadamDiagnosticRatesTreatment2014].
+
+These contrasting trends in mortality from ischaemic heart disease and dementias could explain the finding that these causes of death have largely driven the heterogeneity of the slowdown in life expectancy gains since around 2010 at varying rates across districts, suggesting that heterogeneous dynamics of CVD risk factors within the population have influenced the inequality in progress in recent years.
 The sizeable contribution to the inequality in life expectancy improvement from all other NCDs is more difficult to explain without further stratifying the cause group.
 
 The heterogeneous trends in mortality from both lung cancer, where the probability of dying declined in all districts for men and saw mixed trends for women, and from COPD, where a larger proportion of districts experienced a decrease in mortality for women than for men, reflected that the peak in female smoking rates and smoking-attributable mortality have lagged behind that in men by about 20-30 years [@thunStagesCigaretteEpidemic2012].
