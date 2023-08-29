@@ -7,7 +7,7 @@ The figures have been reproduced for the thesis, and the text has been updated b
 There have been declines in female life expectancy in England for the most deprived deciles since the start of the 2010s [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
 However, these studies have only broken England down into deciles of deprivation, rather than looking at geographical variation.
 And studies of trends in life expectancy have been limited to the district level [@bennettFutureLifeExpectancy2015], which masks substantial heterogeneity.
-In this chapter, I address the first objective of the thesis – to estimate trends in life expectancy for small areas in England from 2002 to 2019 – choosing a smaller unit of analysis than districts: MSOAs.
+In this chapter, I address the first objective of the thesis – to estimate trends in life expectancy for small areas in England from 2002 to 2019 – by choosing a smaller unit of analysis than districts: MSOAs.
 
 ## Methods
 
@@ -34,7 +34,7 @@ Thus, the MSOAs containing the Isle of Wight, Hayling Island, the Isles of Scill
 The results of the spatial model were virtually identical to the hierarchical random effects model (correlation coefficient 0.999 for female and male sexes; mean difference 0.03 years for women and 0.009 years for men; mean absolute difference 0.07 years for women and 0.09 years for men for life expectancy estimates from the two approaches).
 I present results from the hierarchical model for two reasons.
 First, it allows neighbouring MSOAs that fall in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy implementation.
-Second, the hierarchical model was computationally less demanding with run times about 1.4 times faster than the spatial model.
+Second, the hierarchical model was computationally less demanding, with run times about 1.4 times faster than the spatial model.
 
 Inference was performed using MCMC in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
 I monitored convergence using trace plots and the $\widehat{R}$ diagnostic [@vehtariRanknormalizationFoldingLocalization2021] and thinned post burn-in samples to reduce memory and storage use.

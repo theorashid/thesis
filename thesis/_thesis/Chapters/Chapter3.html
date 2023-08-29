@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -305,12 +305,12 @@ div.csl-indent {
 <section id="deaths" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="deaths"><span class="header-section-number">3.3.1</span> Deaths</h3>
 <p>This thesis is primarily concerned with modelling death rates for small areas in England. This requires two data sources: counts of deaths, and population counts. The counts of deaths come from de-identified civil registration data for all deaths in England from 2002 to 2019. In other words, every death in England from 2002 to 2019.</p>
-<p>The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data. The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on coroner’s report to identify the underlying cause of death.</p>
+<p>The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data. The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on a coroner’s report to identify the underlying cause of death.</p>
 <p>Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis. For each analysis, deaths were stratified into the following age groups: 0, 1–4, 5–9, 10–14, then 5-year age groups up to 80–84, and 85 years and older. There are also a series of ICD-10 (International Classification of Diseases, Tenth Revision) codes from the death certificate associated with the underlying and contributory causes leading to the death. Here, I focus only on the underlying cause of death, which has been assigned using selection algorithms to improve consistency between doctors <span class="citation" data-cites="officefornationalstatisticsUserGuideMortality2022">(<a href="../references.html#ref-officefornationalstatisticsUserGuideMortality2022" role="doc-biblioref">Office for National Statistics, 2022b</a>)</span>.</p>
 </section>
 <section id="population" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="population"><span class="header-section-number">3.3.2</span> Population</h3>
-<p>The second data sources we require are population counts. These are taken from mid-year population estimates of the usual resident population by the ONS <span class="citation" data-cites="officefornationalstatisticsMiddleLayerSuper2021 officefornationalstatisticsLowerLayerSuper2021">(<a href="../references.html#ref-officefornationalstatisticsMiddleLayerSuper2021" role="doc-biblioref">Office for National Statistics, 2021a</a>, <a href="../references.html#ref-officefornationalstatisticsLowerLayerSuper2021" role="doc-biblioref">2021b</a>)</span>. The ONS estimates inter-censal populations on a rolling basis, updating the previous year’s value using the change in the population in the GP patient registration data as an indicator of the true population change. The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England <span class="citation" data-cites="officefornationalstatisticsPopulationEstimatesOutput2021">(<a href="../references.html#ref-officefornationalstatisticsPopulationEstimatesOutput2021" role="doc-biblioref">Office for National Statistics, 2021c</a>)</span>.</p>
+<p>The second data sources we require are population counts. These are taken from mid-year population estimates of the usual resident population by the ONS <span class="citation" data-cites="officefornationalstatisticsMiddleLayerSuper2021 officefornationalstatisticsLowerLayerSuper2021">(<a href="../references.html#ref-officefornationalstatisticsMiddleLayerSuper2021" role="doc-biblioref">Office for National Statistics, 2021a</a>, <a href="../references.html#ref-officefornationalstatisticsLowerLayerSuper2021" role="doc-biblioref">2021b</a>)</span>. The ONS estimates inter-censal populations on a rolling basis, updating the previous year’s value using the change in the population in GP patient registration data as an indicator of the true population change. The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England <span class="citation" data-cites="officefornationalstatisticsPopulationEstimatesOutput2021">(<a href="../references.html#ref-officefornationalstatisticsPopulationEstimatesOutput2021" role="doc-biblioref">Office for National Statistics, 2021c</a>)</span>.</p>
 </section>
 <section id="community-deprivation-data" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="community-deprivation-data"><span class="header-section-number">3.3.3</span> Community deprivation data</h3>
@@ -354,7 +354,7 @@ div.csl-indent {
 </figure>
 </div>
 <p><a href="#fig-ch-3-district">Figure&nbsp;<span>3.3</span></a> shows the geography of life expectancy after aggregating deaths over the entire study period by district. For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, and West Midlands.</p>
-<p>Here, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.</p>
+<p>In this section, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

@@ -3,16 +3,16 @@
 ## Public health and policy implications of findings
 
 Although previous studies have observed a decline in female life expectancy in the bottom two deciles of deprivation in the past decade [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], this thesis has shown both for men and women where the declines have been happening for small areas.
-Not only have there been declines, but the declines have been accelerating in the latter half of the decade, such that in the period 2014-19, life expectancy fell 1 in 5 MSOAs for women and 1 in 9 for men.
+Not only have there been declines, but the declines have been accelerating in the latter half of the decade, such that in the period 2014-19, life expectancy fell in 1 in 5 MSOAs for women and 1 in 9 for men.
 These trends happened in the years before the mortality-forcing event of the Covid-19 pandemic and are worse than comparable countries [@leonTrendsLifeExpectancy2019], and should be deemed a failure for public health policy.
 Although the complexity of policy means it cannot be proved causally, leaders within the NHS have pointed towards constrained funding for the healthcare body itself, as well as cuts to wider social determinants, such as housing and education, as the main reason for the country's poor performance [@hamRiseDeclineNHS2023].
 
 The declines in life expectancy were sustained over a long period of time, which serves as another example where death rates for some population subgroups run contrary to the persistent mortality decline of the third stage of the Epidemiologic Transition theory, as discussed in @gaylinRefocusingLensEpidemiologic1997 with the HIV/AIDS pandemic.
-And even if England is in the hypothesised fourth stage of the transition, the Age of Delayed Degenerative diseases [@olshanskyFourthStageEpidemiologic1986], there are subnational patterns where degenerative diseases are *not* killing at later and later ages.
+Even if England is in the hypothesised fourth stage of the transition, the Age of Delayed Degenerative diseases [@olshanskyFourthStageEpidemiologic1986], there are subnational patterns where degenerative diseases are *not* killing at later and later ages.
 The difference in progress between districts in the last decade was largely driven by differences in these degenerative diseases.
 In particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
 Furthermore, female mortality from infectious, maternal, perinatal and nutritional conditions (GBD group 1), which dominate the second stage of the transition, increased in many districts.
-There is also worrying shift towards injuries (GBD group 3) contributing negatively towards life expectancy progress, particularly for men.
+There is also a worrying shift towards injuries (GBD group 3) contributing negatively towards life expectancy progress, particularly for men.
 This is possibly driven by a rise in "deaths of despair" [@angusIncreasesDeathsDespair2023; @caseRisingMorbidityMortality2015], although this would require further analysis by separating intentional and unintentional injuries.
 It should be noted that IMPN and injuries do not play a major role in total mortality as they accounted for only 11.1% of all deaths from 2002 to 2019, but they are almost entirely preventable and should be addressed through appropriate policy.
 
@@ -43,9 +43,9 @@ Here, the task would instead involve forecasts for each sex-age-space-time-cause
 The group has been involved in a number of mortality forecasting projects [@kontisFutureLifeExpectancy2017; @bennettFutureLifeExpectancy2015; @foremanSmallAreaForecasts2017].
 The models are similar to those in this thesis, but would need to be adapted and trained specifically for forecasting purposes, with the possibility of averaging multiple models to reduce bias.
 The results would allow us to see how the cause-composition of mortality has changed compared to the _business as usual_ scenario.
-We would obviously expect and increase in deaths infectious disease, but were injuries reduced as the country was locked down in their homes?
+We would obviously expect an increase in deaths from infectious diseases, but were injuries reduced as the country was locked down in their homes?
 Did cancer outcomes worsen due to missed surgeries as hospitals were flooded with Covid-19 patients?
-Is there a longer term effect due to strain on emergency services, which has manifested in longer waiting lists and waiting times for appointments [@dorlingHowAusterityCaused2023]?
+Is there a longer-term effect due to strain on emergency services, which has manifested in longer waiting lists and waiting times for appointments [@dorlingHowAusterityCaused2023]?
 And, how have these effects varied for different age groups and different areas of the country?
 
 In theory, with improvements both to hardware and the rise of approximate inference algorithms to replace computationally costly sampling methods, the models can be scaled to higher and higher spatial resolutions and we could potentially estimate mortality for the entire country for LSOAs, OAs, or even postcodes.
@@ -62,7 +62,7 @@ During my PhD, I became very familiar with the literature on Gaussian processes,
 One of the most promising avenues for the task of mortality estimation in this thesis, outlined in @flaxmanFastHierarchicalGaussian2015, is the use of Kronecker-structured covariance matrices to create hierarchical Gaussian processes.
 In the context of this thesis, the covariance matrix would be defined as the Kronecker product of three smaller matrices: one for age effects, one for spatial effects, and one for temporal effects.
 We can exploit the Kronecker structure for faster inference, as we no longer need to invert the full matrix (an operation that scales cubically with the number of data points), but rather the smaller constituent matrices of each effect.
-Ultimately, nothing came to fruition as the working environment due to the sensitivity of the data^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
+Ultimately, nothing came to fruition as the working environment, due to the sensitivity of the data,^[Working on a cluster with no internet access and only a command line interface – good luck installing your favourite packages. This is why spatial statisticians only study Scottish lip cancer.] was not conducive to developing novel statistical methods.
 Also, there was no guarantee the Gaussian process methods would be quicker, as it still requires the inversion of a large spatial matrix, nor would it produce a result much different from the original model.
 Instead, I allocated time to scaling existing models and testing new hardware.
 I believe the hierarchical Gaussian process model should be the starting point for future research because it is much more flexible and requires less testing of each effect than the models in this thesis.

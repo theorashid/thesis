@@ -115,4 +115,4 @@ Rewriting the model in `NumPyro` and sampling on a GPU cut the runtime down to a
 
 I have paid a lot of attention to open sourcing code for all analyses during my PhD.
 The code is clean, version-controlled, and follows best practices for scientific software engineering.
-As well as code contributed to open source projects along the way, the code for [statistical models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and the [thesis itself](https://github.com/theorashid/thesis) can be found on GitHub.
+As well having contributed code to open source projects along the way, the code for [statistical models](https://github.com/theorashid/mortality-statsmodel), [plots and analysis](https://github.com/theorashid/thesis-analysis), and the [thesis itself](https://github.com/theorashid/thesis) can be found on GitHub.

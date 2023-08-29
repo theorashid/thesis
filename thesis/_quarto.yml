@@ -11,8 +11,8 @@ book:
   favicon: assets/favicon.png
   # downloads: [pdf]
   abstract: |
-    High-resolution data for how mortality and longevity have changed are scarce.
-    Estimating mortality for specific combinations of spatial units, time periods, age groups, and causes of death poses computational challenges and typically compromises are made in the granularity of the results.
+    High-resolution data for changes in mortality and longevity are scarce.
+    Estimating mortality for specific combinations of spatial units, time periods, age groups, and causes of death poses computational challenges which typically results in compromises in the granularity of the results.
     I developed Bayesian hierarchical models based on patterns of mortality over age, space, and time, to obtain robust yearly estimates of life expectancy and cause-specific mortality for small areas.
     Using vital registration data held by the UK Small Area Health Statistics Unit, I investigated trends in mortality for subnational units in England from 2002 to 2019.
 
@@ -24,7 +24,7 @@ book:
     I modelled the cause-specific composition of mortality for 314 districts in England.
     The inequality in life expectancy progress since 2010 was driven largely by dementias and the residual group of non-communicable diseases, as well as ischaemic heart disease in men.
     The analysis was extended to look specifically at the top ten leading cancer causes of death.
-    Preventable cancers were the most unequal in progress from 2002 to 2019.
+    Preventable cancers showed the greatest spatial inequality in 2019.
     Unlike areas in the rest of the country, mortality in London from several cancers did not increase in poorer districts, suggesting that some features of London weaken the relationship between poverty and mortality.
 
     Small area statistics on total mortality and the cause-composition of mortality are a vital tool for creating targetted initiatives to reduce inequalities in longevity.

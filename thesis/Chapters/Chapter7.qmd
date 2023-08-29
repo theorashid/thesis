@@ -68,7 +68,7 @@ The reported 95% credible intervals represent the 2.5$^{\text{th}}$ and 97.5$^{\
 
 In order to assess the effect of differences in the cause-composition of mortality between districts on inequalities in total mortality, I decomposed life expectancy differences into contributions from specific causes of death.
 This required estimates of life expectancy at the district level, for which I ran a model for a combined group of all deaths.
-Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing using the mean deaths from injuries between 2016 and 2018 before running the model.
+Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing the mean deaths from injuries between 2016 and 2018 before running the model.
 
 I calculated the contributions of deaths from each cause of death, in each age group, to both the life expectancy inequality between each district and the district with the highest life expectancy, and to the life expectancy change for each district between different time periods.
 I used Arriaga's method, which is widely used to decompose life expectancy differences between populations or population subgroups [@arriagaMeasuringExplainingChange1984].
@@ -97,15 +97,15 @@ Ranked probability of dying between birth and 80 years of age in 314 local autho
 
 The cause of death with the largest inequality in mortality was COPD for women, with a 6.0-fold variation between the districts with the highest and lowest probabilities of dying in 2019.
 COPD was also one of the most unequal causes of death for men (4.4-fold), but was exceeded in inequality by lower respiratory infections (4.8-fold) and liver cirrhosis (6.7-fold), which was in the top twelve leading causes of death for men but not for women.
-For women, there was large inequality in the probability of dying for the two leading causes of death by total number of deaths, Alzheimer's and other dementias (4.1-fold; referred to as _dementias_ hereafter) and ischaemic heart disease (4.4-fold), although there was less variation in mortality for these causes in men (3.6-fold and 3.1-fold).
+For women, there was large inequality in the probability of dying from the two leading causes of death by total number of deaths, Alzheimer's and other dementias (4.1-fold; referred to as _dementias_ hereafter) and ischaemic heart disease (4.4-fold), although there was less variation in mortality for these causes in men (3.6-fold and 3.1-fold).
 All of these causes presented similar geographies, with the highest probabilities of dying clustered in urban areas, particularly in the North West (figure in @sec-appE).
 
 With the exception of trachea, bronchus and lung cancers (referred to hereafter as _lung cancer_; 3.7-fold variation for women and 3.1-fold for men), cancers showed the least geographical inequality, all with less than 1.7-fold variation in the probability of dying.
-For both sexes, the least unequal cause of death was lymphomas, multiple myeloma (1.2-fold for both sexes).
+For both sexes, the least unequal cause of death was lymphomas and multiple myeloma (1.2-fold for both sexes).
 
 The highest probabilities of dying from diabetes for both sexes were in the east of London (@fig-app-e-map-diabetes).
 Specifically, the borough of Newham had the highest mortality for both sexes (0.01 (0.01-0.01) for women and 0.02 (0.01-0.02) for men).
-The highest mortality for injuries were in coastal areas and in the urban northwest, with the highest probability of dying for men in Blackpool at 0.04 (0.04-0.05) (@fig-app-e-map-injuries).
+The highest probabilities of dying from injuries were in coastal areas and in the urban northwest, with the highest probability of dying for men in Blackpool at 0.04 (0.04-0.05) (@fig-app-e-map-injuries).
 
 ### Variation over time
 
@@ -124,15 +124,15 @@ The points are coloured by the regions in England. Each point shows one district
 :::
 
 In contrast, the probability of dying from dementias saw the largest increases of any cause, with all districts observing an increase for both sexes (median increase across districts of 106.2% for women and 121.8% for men; @fig-app-e-map-alzheimer).
-The largest increases were Eastbourne (419.4% (314.2% to 544.5%)) for women and in Kingston-upon-Hull (235.1% (168.8% to 316.6%)) for men.
+The largest increases were Eastbourne (419.4% (314.2% to 544.5%)) for women and in Kingston upon Hull (235.1% (168.8% to 316.6%)) for men.
 
-Mortality from cancer causes of death declined in all districts and for both sexes with three exceptions: pancreatic cancer mortality, which saw increases in all districts (except a small decrease in Tower Hamlets for women), and lung cancer mortality in women and oesophageal cancer mortality in men, which saw decreases in most districts but increases elsewhere.
+Mortality from cancer causes of death declined in all districts and for both sexes with three exceptions: pancreatic cancer mortality, which saw increases in all districts (except a small decrease in Tower Hamlets for women), lung cancer mortality in women and oesophageal cancer mortality in men, which both saw decreases in most districts but increases elsewhere.
 Mortality from COPD also saw mixed trends, and with wider variability than the observed changes in lung cancer mortality.
 The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)).
 The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
 
 The change in probability of dying from all other IMPN was greatly different between the sexes, with 71 (22.6%) districts seeing an increase for women, the largest in Barrow-in-Furness (55.6% (-0.8% to 135.2%)), compared to only 5 (0.02%) districts for men.
-There were also mixed trends for lower respiratory infections (increases in 13 (4.1%) districts for women and 9 (2.9%) for men), all other NCDs (29 (9.2%) and 53 (16.9%)), and injuries (116 (36.9%) and 9 (2.9%)).
+There were also mixed trends for lower respiratory infections (increases in 13 (4.1%) districts for women and 9 (2.9%) for men), all other NCDs (29 (9.2%) for women and 53 (16.9%) for men), and injuries (116 (36.9%) for women and 9 (2.9%) for men).
 
 Mortality from liver cirrhosis presented dramatic spatial variation in change in mortality over the period 2002-19, with a contrast between huge decreases in districts in London and increases in the majority (243 (77.4%) districts) of districts elsewhere in the country, with the largest increases in the coastal South West and East of England (@fig-app-e-map-liver-cirrhosis-men).
 
@@ -210,7 +210,7 @@ Contributions of deaths from specific causes to male life expectancy difference 
 ## Discussion
 
 This analysis revealed huge inequalities in mortality for a wide-ranging variety of causes of death in England.
-In particular, although there were widespread declines in CVDs, there have been huge increases in dementias, which in 2019 became one of the most unequal causes of death, with 4.1- and 3.6-fold differences for women and men between the highest and lowest districts.
+Although there were widespread declines in CVDs, there have been huge increases in dementias, which in 2019 became one of the most unequal causes of death, with 4.1- and 3.6-fold differences for women and men between the highest and lowest districts.
 I found that the slowdown in life expectancy gains since around 2010 has been driven largely by dementias and all other NCDs in women, and by ischaemic heart disease, dementias, and all other NCDs in men.
 
 ### Strengths and limitations
@@ -227,14 +227,14 @@ Although this masks some variation, the groups were selected based on the total 
 Death records are subject to issues in the assignment of ICD-10 codes for the cause of death.
 Although the ONS use selection algorithms to improve consistency between doctors when identifying the underlying cause of death [@officefornationalstatisticsUserGuideMortality2022], the challenge of multimorbidity in older age groups makes the assignment of cause of death increasingly difficult [@mesleCausesDeathVery2021].
 We selected 80 years of age as the upper bound to partially mitigate this effect because it covers a wide age range but does not include the very oldest ages.
-However, for certain diseases such as dementias where only 96,109 (14.5% of 663,692) of deaths from occur in those under 80 years, the probability of dying between birth and 80 years masks variations in the age groups where the majority of deaths occur.
+However, for certain diseases such as dementias where only 96,109 (14.5% of 663,692) of deaths occur in those under 80 years, the probability of dying between birth and 80 years masks variations in the age groups where the majority of deaths occur.
 There are also specific cases of problematic cause of death assignment in the data.
 For example, mortality from all other CVDs showed a downward trend in every district with the exceptions of Hastings and, more noticeably, the Isle of Wight.
 Looking at the raw data for these districts, there is a step increase in the use of ICD-10 code I51.5 – a garbage CVD code [@murrayGlobalBurdenDisease1996] – since around 2012 in these districts, suggesting these trends result from poor coding practice.
 
 There is always the desire to split the residual groups into more and more causes of death.
 For example, there are interesting patterns in the change of all other IMPN, and it would be interesting to understand further how the component causes of all other NCDs are driving the inequality in progress.
-Moreover, there has been a lot of recent attention in the literature on "deaths of despair" – deaths from drug overdose, suicide or alcoholic liver disease – in the UK [@angusIncreasesDeathsDespair2023] and the US [@caseRisingMorbidityMortality2015], and it would of interest to separate injuries by whether the deaths were intentional or unintentional.
+Moreover, there has been a lot of recent attention in the literature on "deaths of despair" – deaths from drug overdose, suicide or alcoholic liver disease – in the UK [@angusIncreasesDeathsDespair2023] and the US [@caseRisingMorbidityMortality2015], and it would be of interest to separate injuries into whether the deaths were intentional or unintentional.
 However, the groupings were chosen based on a total mortality rule so that the number of deaths in each cause group allowed robust inference of cause-age-area-year-specific death rates at the district level.
 
 It would have been desirable, albeit computationally challenging, to run all cause groups in a single joint model.
@@ -263,7 +263,7 @@ The authors found the annual reduction in mortality attributable to most major r
 Both these studies focus on what causes of death have driven the inequality between subgroups of the population.
 I found the causes with the clearest gradients in contribution from the best- to worst-performing districts were those with modifiable risk factors, such as ischaemic heart disease, lung cancer, COPD, and injuries, and also the residual groups of all other NCDs and all other cancers.
 There were also contributions from dementias, but these did not follow the direction from best- to worst-performing district as obviously as the aforementioned causes.
-The work in this chapter extends previous studies by also considering which causes of death have driven the the _inequality in progress_ between subgroups of the population.
+The work in this chapter extends previous studies by also considering which causes of death have driven the _inequality in progress_ between subgroups of the population.
 
 ### Explaining the variation
 
@@ -271,11 +271,11 @@ The work in this chapter extends previous studies by also considering which caus
 Both mortality from ischaemic heart disease and strokes have continued to follow this trend through to 2019 at the district level.
 
 In England, about 51% of all mortality from myocardial infarction, an acute manifestation of ischaemic heart disease, is attributable to out-of-hospital deaths [@asariaAcuteMyocardialInfarction2017].
-Reductions in out-of-hospital mortality reflects improvements in reducing and controlling risk factors for CVD (smoking, blood glucose and diabetes, raised blood pressure, and high blood cholesterol) [@ezzatiContributionsRiskFactors2015].
+Reductions in out-of-hospital mortality reflect improvements in reducing and controlling risk factors for CVD (smoking, blood glucose and diabetes, raised blood pressure, and high blood cholesterol) [@ezzatiContributionsRiskFactors2015].
 Unlike cancers and COPD where the increased risk following smoking spans decades, the risk of CVD returns to the level of non-smokers within ten years after smoking cessation [@ezzatiContributionsRiskFactors2015].
-Declines in CVD mortality have thus gained greatly from reductions in smoking rates, and more recently, the ban on smoking in public places, which came into force in the UK in 2007 and has had a rapid effect on hospitalisation rates for acute CVD cases [@pellSmokefreeLegislationHospitalizations2008].
-As well as improvements in these risk factors, reductions in in-hospital CVD mortality partially reflect organisational changes to the NHS such that patients with acute myocardial infarctions are taken directly to centres with capacity to re-open arteries, bypassing local accident and emergency services.
-Furthermore, strategies to shorten pre-hospital delays between symptom onset and a call for help, for example, the FAST (Face drooping, Arm weakness, Speech difficulties, Time) public health campaign for stroke events, can improve the efficacy of treatments such as stent insertions.
+Declines in CVD mortality have thus gained greatly from reductions in smoking rates, and more recently, the ban on smoking in public places, which came into force in the UK in 2007 and has rapidly decreased hospitalisation rates for acute CVD cases [@pellSmokefreeLegislationHospitalizations2008].
+As well as improvements in these risk factors, reductions in in-hospital CVD mortality partially reflect organisational changes to the NHS such that patients with acute myocardial infarctions are taken directly to centres with capacity to re-open coronary arteries, bypassing local accident and emergency services.
+Furthermore, strategies to shorten pre-hospital delays between symptom onset and a call for help, for example, the FAST (Face drooping, Arm weakness, Speech difficulties, Time) public health campaign for stroke events, can improve the efficacy of treatments such as thrombolysis.
 
 The burden of mortality has shifted towards dementias.
 A number of the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol) [@yuEvidencebasedPreventionAlzheimer2020].
@@ -289,14 +289,14 @@ The heterogeneous trends in mortality from both lung cancer, where the probabili
 
 The geography of the change in mortality from liver cirrhosis – an advanced stage of liver damage – is perhaps indicative of the contrasting dynamics of the two main risk factors for liver cirrhosis: alcohol misuse and hepatitis B/C infection.
 Alcohol is the main cause of liver disease, and has driven a large proportion of increases in liver cirrhosis throughout Europe [@blachierBurdenLiverDisease2013].
-Alcohol is generally consumed less in the capital, with London having the lowest percentage of adults who abstain from drinking alcohol (23.6%) and the lowest percentage of adults who drink over 14 units per week (20.1%) [@publichealthenglandLocalAlcoholProfiles2021].
-On the other hand, the prevalence of hepatitis B/C has decreased over the past decades.
-There has been reduced incidence and vaccination for hepatitis B.
+Alcohol is generally consumed less in the capital, with London having the highest percentage of adults who abstain from drinking alcohol (23.6%) and the lowest percentage of adults who drink over 14 units per week (20.1%) [@publichealthenglandLocalAlcoholProfiles2021].
+The prevalence of hepatitis B/C has decreased over the past decades.
+There has been reduced incidence, in part due to vaccination, for hepatitis B.
 Although a large number of people acquired hepatitis C in the 1970s and 1980s, the virus has since been identified and transmission has reduced [@blachierBurdenLiverDisease2013].
 
 As is the case in most high income countries, which are in the third stage of the epidemiologic transition, there were far fewer deaths from maternal, perinatal, nutritional and infectious causes (GBD Group 1) and injuries (GBD Group 3) compared to CVDs, cancers and other NCDs (GBD Group 2).
-Although notably, these results consider the period before the Covid-19 pandemic, so the cause-composition will likely have changed to include more deaths from infections in the most recent years.
-The similar profiles for men and women for the level of mortality from all other IMPN in 2019 reflects that the three main causes by number of deaths are other infectious diseases, diarrhoeal diseases, low birth weight rather than maternal conditions, although without further disaggregating this group, it is difficult to suggest drivers of the observed trends.
+Although, notably, these results consider the period before the Covid-19 pandemic, and therefore the cause-composition will likely have changed to include more deaths from infections in the most recent years.
+The similar profiles for men and women for the level of mortality from all other IMPN in 2019 reflects that the three main causes by number of deaths are other infectious diseases, diarrhoeal diseases and low birth weight, rather than maternal conditions, although without further disaggregating this group, it is difficult to suggest drivers of the observed trends.
 Mortality from lower respiratory infections, which include influenza and pneumonia, can vary greatly between years depending on the severity of the virus and whether the flu vaccination prevents the prevalent strain.
 It also depends on the strength of the immune system of the infected.
 The ability of the lungs to recover from infection can be degraded by years of industrial exposure or smoking, which could influence the high mortality in the urban North West.
@@ -309,5 +309,5 @@ I performed a high-resolution spatiotemporal analysis of vital registration data
 I used life table methods to calculate the probability of dying between birth and 80 years of age by sex, cause of death, district and year, as well as the cause-specific contributions to the inequality in life expectancy between different years of the study for each district.
 
 The most unequal causes of death were COPD for women (6.0-fold variation in mortality across districts) and liver cirrhosis for men (6.7-fold).
-The causes of death with the least geographical variability were lymphomas, multiple myeloma (1.2-fold for both sexes) and leukaemia (1.1-fold for women and 1.2-fold for men).
+The causes of death with the least geographical variability were lymphomas and multiple myeloma (1.2-fold for both sexes) and leukaemia (1.1-fold for women and 1.2-fold for men).
 There has been a slowdown in life expectancy gains since 2010, which has been driven largely by dementias and all other NCDs in women, and by ischaemic heart disease, dementias, and all other NCDs in men.

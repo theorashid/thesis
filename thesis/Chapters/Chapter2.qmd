@@ -2,17 +2,17 @@
 
 ## Overview
 
-The section begins with an overview of the spatial methods for mapping mortality for small areas and some examples of applications from the UK and beyond looking at mortality for small subnational regions.
-There is a brief history of the Small Area Health Statistics Unit (SAHSU), who manage the mortality data used in the thesis, and developed and applied many of the spatial methods discussed.
+The section begins with an overview of the spatial methods for mapping mortality for small areas and describes some examples of applications from the UK and beyond looking at mortality for small subnational regions.
+There is a brief history of the Small Area Health Statistics Unit (SAHSU), who manage the mortality data used in the thesis, and have developed and applied many of the spatial methods discussed.
 
 This is followed by a history of separating total mortality into different causes of death and the epidemiologic transition theory.
 
-The chapter finishes by exploring the picture of inequalities in UK over the past few decades through to the present, focussing on class, income, geography, and deprivation.
+The chapter finishes by exploring the picture of inequalities in the UK over the past few decades through to the present, focussing on class, income, geography, and deprivation.
 
 ## Mapping mortality and disease at small areas
 
 Many studies compare the prevalence of diseases or mortality in different subgroups of the population by dividing the population geographically into small areas.
-The number of cases, or number of deaths, in an area are likely to be small numbers.
+The number of cases, or number of deaths, in an area is likely to be small.
 This sparseness issue is even more pertinent when the population is further stratified by age group.
 When calculating rates of incidence from the observed data, there is an apparent variability between spatial units, which is often larger than the true differences in risk due to the noise in the data.
 To overcome these issues, we can use statistical smoothing techniques to obtain robust estimates of rates by sharing information between strata.
@@ -70,7 +70,7 @@ The relationships between different levels of a hierarchy of geographical units 
 These models account for when spatial units lie within common administrative boundaries.
 This is often a desirable property of the model for certain geographies, like states in the US, which are administrative.
 Policy is decided at these geographies, so there is reason to believe these boundaries may have a greater effect on health outcomes than spatial structure.
-@finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy global, super-region, region and country.
+@finucaneBayesianEstimationPopulationLevel2014 demonstrate how country-level blood pressure can be modelled by exploiting the hierarchy of global, super-region, region and country.
 Note, although these models group by geographical region, these models are not _spatial_ as they do not contain any information on the relative position of the areas.
 
 Of the two specifications that are spatial, either as a continuous process or discrete units, the Markov random field priors are often preferred for computational reasons, as we can exploit the sparseness of the adjacency matrix in our inference algorithms rather than computing the covariance between each pair of spatial units as in the general case of @eq-MVN.
@@ -89,12 +89,12 @@ Trends over time can be modelled as linear through slopes, or using nonlinear ef
 All-cause mortality varies smoothly over ages, following a characteristic J-shape with higher mortality in the infant and older age groups [@prestonDemographyMeasuringModeling2001], and therefore can be modelled using a nonlinear process such as a random walk.
 
 Difficulties arise when considering interactions between the space, age, and time variables.
-One can imagine situations in which different spatial units will have different age patterns in disease rates, for example, if the certain age groups were vaccinated against disease in that spatial unit before others.
+One can imagine situations in which different spatial units will have different age patterns in disease rates, for example, if certain age groups were vaccinated against disease in that spatial unit before others.
 After implementing a base model with the main effects, the question is how to model additional terms which account for the interactions between the variables.
 Space-time interactions could range from fully independent, to each spatial unit having independent temporal patterns, to inseparable space-time variation where interactions borrow strength across neighbouring spatial units and neighbouring time periods [@knorr-heldBayesianModellingInseparable2000].
 
-However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particular for data that are already at the small-area level.
-Although interaction effects are plausible, modellers should consider whether there evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
+However, it should be considered that by breaking the population down into smaller and smaller subgroups through space, age and time period, the counts of cases become more sparse and there is a need for stronger smoothing to produce robust estimates, particularly for data that are already at the small-area level.
+Although interaction effects are plausible, modellers should consider whether there is evidence for the interaction in the data or whether they can simplify the model if the interaction effect turns out to be negligible.
 
 It should be noted that there are situations where statistical smoothing would not be appropriate.
 There might be true variability in the data which a smoothing model would conceal.
@@ -113,7 +113,7 @@ An alternative choice is _life expectancy_.
 @silcocksLifeExpectancySummary2001 explain that life expectancy is a "more intuitive and immediate measure of the mortality experience of a population, [and] is likely to have greater impact... than other measures that are incomprehensible to most people."
 
 The estimation of death rates requires two data sources: deaths counts and populations.
-Modern death registration systems are complete and accurate.
+Modern death registration systems, such as that of the UK, are complete and accurate.
 On the other hand, although usually treated as a known quantity, the population denominator is often problematic.
 Populations for small geographies are only recorded during a decennial census, and estimates are generated for the years in-between using limited survey data on births, deaths and migration.
 And although the census is considered the "gold standard", it is subject to enumeration errors, particularly for areas with special populations such as students or armed forces [@elliottSpatialEpidemiologyMethods2001].
@@ -142,9 +142,9 @@ The Small Area Health Statistics Unit (SAHSU) was established in 1987 [@elliottS
 
 Beyond producing substantive research on environment and health, a core aim of SAHSU is to develop small-area statistical methodology [@wakefieldIssuesStatisticalAnalysis1999] for:
 
-- _Point source type studies_. Is there an increased risk close to an environmental hazard? SAHSU has investigated increased mortality from mesothelioma and asbestosis near Plymouth docks [@elliottSmallAreaHealth1992]; excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999]; kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]; possible excess of several morbidities near landfill sites [@elliottRiskAdverseBirth2001; @jarupCancerRisksPopulations2002; @jarupSyndromeBirthsLandfill2007].
-- _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables? SAHSU have looked at several exposures, including a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007]; mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010]; noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013]; road traffic noise in London [@halonenRoadTrafficNoise2015]; particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
-- _Clustering_. Does a disease produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest the disease is infectious.
+- _Point source type studies_. Is there an increased risk close to an environmental hazard? SAHSU has investigated increased mortality from mesothelioma and asbestosis near Plymouth docks [@elliottSmallAreaHealth1992]; excess respiratory disease mortality near two factories in Barking and Havering [@aylinNationalFacilitySmall1999]; kidney disease mortality near chemical plants in Runcorn [@hodgsonExcessRiskKidney2004]; and possible excess of several morbidities near landfill sites [@elliottRiskAdverseBirth2001; @jarupCancerRisksPopulations2002; @jarupSyndromeBirthsLandfill2007].
+- _Geographic correlation studies_. Is there a correlation between disease risk and spatially-varying environmental variables? SAHSU have looked at several exposures, including a plume of mercury pollution [@hodgsonAssessmentExposureMercury2007]; mobile phone base stations during pregnancy [@elliottMobilePhoneBase2010]; noise from aircraft near Heathrow [@hansellAircraftNoiseCardiovascular2013]; road traffic noise in London [@halonenRoadTrafficNoise2015]; and particulate matter from incinerators during pregnancy [@parkesRiskCongenitalAnomalies2020].
+- _Clustering_. Does a disease produce non-random spatial patterns of incidence? If the aetiology is unknown, this could suggest that the disease is infectious.
 - _Disease mapping_. Summarising the spatial variation in risk.
 
 SAHSU has been at the forefront of both methodology and applications in disease mapping.
@@ -154,7 +154,7 @@ In a landmark piece bringing together work on disease mapping and environmental 
 
 Further disease mapping studies at SAHSU using spatially structured effects have also extended the methodology to look at age patterns and trends over time.
 @asariaTrendsInequalitiesCardiovascular2012 analysed cardiovascular disease death rates by fitting a spatial model for all wards in England separately for each age group and time period.
-@bennettFutureLifeExpectancy2015 designed a model to jointly forecast all-cause mortality for districts in England, age groups and years.
+@bennettFutureLifeExpectancy2015 designed a model to jointly forecast all-cause mortality for districts in England by age group and year.
 The model used BYM spatial effects and random walk effects over age and time to capture nonlinear relationships.
 
 ## Mortality from specific causes of death
@@ -162,7 +162,8 @@ The model used BYM spatial effects and random walk effects over age and time to 
 ### The Epidemiologic Transition
 
 In the mid-twentieth century, a team in the US Public Health Service, led by Iwao Moriyama, began investigating the cause-specific composition of mortality into all diseases and injuries for the first half of the century.
-Notably, @moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes, and found as the US saw an overall downward trend in mortality, the leading causes of death changed from communicable diseases, such as tuberculosis and diphtheria, toward non-communicable, "chronic diseases of older ages", such as heart diseases and cancers.
+@moriyamaStatisticalStudiesHeart1948 grouped vital registration data into primary causes.
+Notably, they found, as the US saw an overall downward trend in mortality, the leading causes of death changed from communicable diseases, such as tuberculosis and diphtheria, toward non-communicable, "chronic diseases of older ages", such as heart diseases and cancers.
 The success of the reduction – and in the case of typhoid fever, near-elimination – of infectious diseases was attributed to the strategy of the health officer in the early 1900s, who was focussed on improving water and sanitation, and public health interventions such immunisation and quarantines.
 
 By comparing vital registration data over several centuries, Abdel Omran observed this shift of mortality from communicable to non-communicable diseases (NCDs) in many countries [@omranEpidemiologicTransitionTheory1971; @omranCenturyEpidemiologicTransition1977]. Although the pace and determinants of the transition varied between countries, Omran was able to formalise three common successive stages of the shift in mortality:
@@ -172,7 +173,7 @@ By comparing vital registration data over several centuries, Abdel Omran observe
 3. _The Age of Degenerative and Man-made diseases_. Mortality declines further along with fertility, increasing the average age of population and NCDs take over as the leading causes of death.
 
 He termed this the _Epidemiologic Transition theory_.
-@omranEpidemiologicTransitionTheory1971 explained that England and Wales took the classic transition path followed by western societies, whereby socioeconomic factors such as improvements to living standards are crucial in causing easily preventable diseases to subside and shifting towards the third phase of the transition, and medical and other public health technology only help society much later in the final stage.
+@omranEpidemiologicTransitionTheory1971 explained that England and Wales took the classic transition path followed by western societies, whereby socioeconomic factors such as improvements to living standards are crucial in causing easily preventable diseases to subside and shifting towards the third phase of the transition, whilst medical and other public health technology only help society much later in the final stage.
 Later, @olshanskyFourthStageEpidemiologic1986 would propose a fourth stage to the theory, _the Age of Delayed Degenerative Diseases_, in which the structure of causes of death is stable, but the age at which degenerative diseases kill is postponed, thus decreasing older age mortality.
 There are, however, questions around the universality and unidirectionality of the theory, with many examples in which age-specific death rates for population subgroups have risen over time, most notably the HIV/AIDS pandemic [@gaylinRefocusingLensEpidemiologic1997].
 @gerstenCancerTransitionJapan2002 also criticise the lack of attention Omran's theory pays towards the role of infection in chronic and degenerative diseases, in particular certain cancers.
@@ -187,7 +188,8 @@ Preston also traced the excess deaths in older males observed in western societi
 Since its first edition in 1990, the subject of international comparisons of the cause-specific composition of mortality has been the remit of the Global Burden of Disease (GBD) studies [@murrayGlobalBurdenDisease1996].
 The studies aim to quantify and compare the burden of diseases, injuries, and risk factors, usually through cross-sectional methods but occasionally by examining trends and subnational populations [@ezzatiReversalFortunesTrends2008; @dwyer-lindgrenInequalitiesLifeExpectancy2017].
 An important innovation of the GBD study was the introduction of a hierarchical classification of groups of causes, with the broadest level divided into three groups: communicable, maternal, perinatal, and nutritional diseases (Group 1), NCDs (Group 2), and injuries (Group 3).
-@salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century, finding the majority of the change in cause structure occurred among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
+@salomonEpidemiologicTransitionRevisited2002 made use of the wide-ranging dataset and grouping from the GBD to revisit the epidemiologic transition for the second half of the twentieth century.
+They found the majority of the change in cause structure occurred among children, with a shift from Group 1 to Groups 2 and 3, and in young adults, where the role of injuries is more dominant for men.
 
 ### Modelling cause-specific mortality
 
@@ -198,7 +200,7 @@ For studies that already look at mortality for small areas and narrow age groups
 The simplest and most computationally-scalable method is to ignore any correlations between diseases and run separate regression models for each cause of death.
 This is the approach taken by GBD studies for a vast array of causes of death.
 When looking at both total mortality and a mutually exclusive, collectively exhaustive list of causes of death, studies typically constrain the cause-specific death rate estimates from separate regressions to sum to the all-cause mortality value.
-This is because estimates of all-cause mortality are more robust, as the death counts are larger and therefore lower variance, and the data do not suffer from errors in assignment of cause of death.
+This is because estimates of all-cause mortality are more robust, as the death counts are larger and therefore have lower variance, and the data do not suffer from errors in assignment of cause of death.
 The GBD studies scale death rates so that the proportions of each cause of death sum to unity.
 In the context of mortality projections, @wilmothAreMortalityProjections1995 also points out that aggregating forecasts from multiple causes of death leads to upward bias when compared to the total mortality forecast.
 
@@ -208,7 +210,7 @@ In the disease mapping literature, studies have built spatial models to look at 
 Firstly, @knorr-heldSharedComponentModel2001 considered a model (also described in @bestComparisonBayesianSpatial2005) for two diseases, with disease-specific spatial components and one shared component.
 @heldJointDiseaseMapping2005 generalised this approach to model any number of diseases as a weighted sum of shared components.
 Rather than a general approach, both @downingJointDiseaseMapping2008 and @mahakiJointSpatiotemporalShared2018 allocated the spatial components to the diseases _a priori_ based on knowledge of the common risk factors between cancers such as smoking, obesity and alcohol consumption.
-Unless the components are pre-specified based on prior knowledge, however, the required number of shared components to capture variation in the data needs to be determined through trial and error.
+However, unless the components are pre-specified based on prior knowledge, the required number of shared components to capture variation in the data needs to be determined through trial and error.
 This is especially problematic when the number of diseases in the study, and hence the possible number of combinations of shared components, increases.
 
 @foremanSmallAreaForecasts2017 modelled a larger number of causes of death to jointly forecast cause-specific mortality for states in the US.
@@ -222,7 +224,7 @@ However, it is not possible to recover absolute cause-specific death rates using
 
 ## Health inequalities in the UK
 
-While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation suffers still vast, preventable inequalities in mortality and morbidity.
+While the UK is, by global standards, a wealthy nation with relatively high life expectancy, and the breadth of health inequalities are nowhere near the extremes seen in many other countries, the nation still suffers vast, preventable inequalities in mortality and morbidity.
 Health inequalities can be reduced through, amongst other initiatives, progressive social and economic policies, better nutrition programmes, and improved health care.
 It is important to estimate and understand differences in health outcomes between population subgroups to aid the design of such policies.
 There are several ways to stratify the UK population and compare inequalities between subgroups.
@@ -234,7 +236,7 @@ The notion of class is prominent in UK society, but health outcomes between clas
 The Whitehall study of 1967 followed 17,530 men working in the civil service and recorded their mortality over a 10-year period.
 @marmotInequalitiesDeathSpecific1984 found, by classifying the civil servants into social class according to their employment grade, there was a three-fold difference in mortality between the highest class, administrators, and men in the lowest class, mainly messengers and manual workers.
 They found, in general, a strong inverse association between grade and mortality – a term Marmot has coined a "social gradient".
-The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be explained industrial exposure alone, and the gradient remained even after controlling for smoking.
+The men were working stable, sedentary jobs in the same office building in London, so the gradient could not be explained by industrial exposure alone, and the gradient remained even after controlling for smoking.
 The authors concluded there must be other factors inherent to social class (defined here by employment grade), which explain the mortality differences.
 A second cohort of Whitehall employees from 1985 to 1988, this time including women as well as men, were screened and asked to answer questions on self-reported ill-health.
 @marmotHealthInequalitiesBritish1991 found the social gradient in health had persisted in the 20 years separating the studies.
@@ -258,7 +260,7 @@ Since 2004, the standard deprivation indicator in England has been the Index of 
 The Marmot Review presented life expectancy and disability-free life expectancy against IMD at the Middle-layer Super Output Area, which exhibit strong social gradients [@marmotMarmotReviewFair2010].
 The GBD study found the 15 most deprived UTLAs had consistently raised mortality, especially for all causes, lung cancer and chronic obstructive pulmonary disease. Deprived UTLAs in London, such as Tower Hamlets, Hackney, Barking and Dagenham had lower rates of premature mortality than expected for that level of deprivation [@steelChangesHealthCountries2018].
 @bennettContributionsDiseasesInjuries2018 jointly estimated death rates by age, year and deprivation decile.
-They found since 2011, although national life expectancy has continued to increase, the rise in female life expectancy has reversed in the two most deprived deciles.
+They found that since 2011, although national life expectancy has continued to increase, the rise in female life expectancy has reversed in the two most deprived deciles.
 The second Marmot Review in 2020 also found female life expectancy declined in the most deprived decile between the periods 2010-12 and 2016-18 [@marmotMarmotReview102020].
 Digging further into these trends by region, the report found this trend was seen in all regions except London, the West Midlands and the North West, and that male life expectancy in the bottom decile also decreased in the North East, Yorkshire and the Humber, and the East of England.
 
@@ -287,4 +289,4 @@ After a decade of cuts, the UK entered the 2020s facing the greatest public heal
 Unsurprisingly, England and Wales suffered one of the highest excess deaths tolls relative to other high-income countries [@kontisMagnitudeDemographicsDynamics2020].
 
 It is important to estimate how health inequalities have changed in different areas of the country through this period of substantial change in economic, social, and healthcare policy.
-Small-area health statistics, and in particular those at high-resolutions, not only reveal the extent of the mortality differences between neighbourhoods, but can also identify the areas at highest risk, allowing public health interventions to target the most disadvantaged groups.
+Small-area health statistics, and in particular those at high resolutions, not only reveal the extent of the mortality differences between neighbourhoods, but can also identify the areas at highest risk, allowing public health interventions to target the most disadvantaged groups.
