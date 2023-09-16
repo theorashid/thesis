@@ -91,7 +91,7 @@ Before fitting any models, I explored the data visually, in this case looking at
 ![Age-specific death rates in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx.pdf){#fig-ch-3-age}
 
 The general age pattern, after aggregating all years and separating into age groups, follows a J-shape curve, with raised infant and older age mortality (@fig-ch-3-age).
-Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviour.
+Male mortality is higher at all ages, but particularly in young adulthood (15-29 years) due to injuries resulting from risky behaviours.
 
 ![Age-specific death rates for broad age groups and life expectancy in England from 2002 to 2019.](../thesis-analysis/thesis_analysis/eda/figures/age_mx_time.pdf){#fig-ch-3-age-broad}
 

@@ -4,7 +4,7 @@ Most of the content in this appendix is taken directly from @prestonDemographyMe
 
 ## Period life tables
 
-Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort as died.
+Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort has died.
 Instead, demographers use period (or "current") life tables, which consider what would happen to a hypothetical cohort that are subjected to the deaths rates in each age group at an exact period in time.
 Life tables can be constructed using discrete age bands starting at age $x$ and ending at age $x+n$.
 We supply the age-specific death rates, ${}_{n}m_{x}$, and the average person-years lived by those dying in the interval, ${}_{n}a_{x}$, and the life table calculates the mean age at death – the life expectancy, $e_x$.
@@ -29,7 +29,7 @@ $$
 T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
 $$ {#eq-app-a-life-table-2}
 
-Then, life expectancy is given by diving the number of person-years lived by the number of people who will live them
+Then, life expectancy is given by dividing the number of person-years lived by the number of people who will live them
 $$
 e_x = \frac{T_x}{l_x}.
 $$ {#eq-app-a-life-table-2}
@@ -38,7 +38,7 @@ Throughout the thesis, I only consider life expectancy at birth.
 
 ### The very young ages and the very old ages
 
-On average, it's a good approximation is to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n /2$.
+On average, it is a good approximation to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n /2$.
 But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy.
 Coale and Demeny used regression on a series of international datasets to recommend suitable values for ${}_{1}a_{0}$ and ${}_{4}a_{1}$ instead of the midpoint [@coaleRegionalModelLife1983].
 

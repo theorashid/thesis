@@ -9,8 +9,7 @@ Although the complexity of policy means it cannot be proved causally, leaders wi
 
 The declines in life expectancy were sustained over a long period of time, which serves as another example where death rates for some population subgroups run contrary to the persistent mortality decline of the third stage of the Epidemiologic Transition theory, as discussed in @gaylinRefocusingLensEpidemiologic1997 with the HIV/AIDS pandemic.
 Even if England is in the hypothesised fourth stage of the transition, the Age of Delayed Degenerative diseases [@olshanskyFourthStageEpidemiologic1986], there are subnational patterns where degenerative diseases are *not* killing at later and later ages.
-The difference in progress between districts in the last decade was largely driven by differences in these degenerative diseases.
-In particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
+The difference in progress between districts in the last decade was largely driven by differences in these degenerative diseases - in particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
 Furthermore, female mortality from infectious, maternal, perinatal and nutritional conditions (GBD group 1), which dominate the second stage of the transition, increased in many districts.
 There is also a worrying shift towards injuries (GBD group 3) contributing negatively towards life expectancy progress, particularly for men.
 This is possibly driven by a rise in "deaths of despair" [@angusIncreasesDeathsDespair2023; @caseRisingMorbidityMortality2015], although this would require further analysis by separating intentional and unintentional injuries.
@@ -19,7 +18,7 @@ It should be noted that IMPN and injuries do not play a major role in total mort
 Cancer survival outcomes in the UK are worse than those in Europe in general [@oecdOECDReviewsHealth2016].
 In this thesis, I found mortality showed huge spatial variation for a number of preventable cancers.
 Worryingly, at the same level of poverty, London performed significantly better that the rest of the country for several cancers.
-This suggests either regional differences in the quality of care, or differences in the populations living in deprived areas, which should both be the subject for policy discussions.
+This suggests either regional differences in the quality of care, or differences in the populations living in deprived areas, which should both be the subject of policy discussions.
 
 Finally, this thesis emphasises the value of small area work in informing policy.
 National trends in mortality are not spatially homogenous.

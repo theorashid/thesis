@@ -41,9 +41,9 @@ I monitored convergence using trace plots and the $\widehat{R}$ diagnostic [@veh
 For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters.
 For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.
 
-In 2017, the MSOA in Kensington and Chelsea, London where Grenfell Tower is located had 119 deaths, compared with 48 in 2016 and 51 in 2018.
+In 2017, the MSOA in Kensington and Chelsea, London, where Grenfell Tower is located had 119 deaths, compared with 48 in 2016 and 51 in 2018.
 The additional deaths were caused by a fire in a high­rise residential building.
-This outlier year led to unstable estimates of the long­term trend in life expectancy in this MSOA, and also slightly changed estimates in other MSOAs in the district.
+This outlier year led to unstable estimates of the long-­term trend in life expectancy in this MSOA, and also slightly changed estimates in other MSOAs in the district.
 To avoid this instability, when applying the statistical model, I replaced the number of deaths for this year with the mean of those in 2016 and 2018 for each age and sex group.
 When making estimates for 2017, the difference between actual and interpolated deaths was added back to the posterior estimates so that these deaths were counted in the corresponding year.
 The Grenfell Tower fire incident was, to the best of our knowledge, the only spatially-specific, heavy-tailed mortality event in England over the study period.

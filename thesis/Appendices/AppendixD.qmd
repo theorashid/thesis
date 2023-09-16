@@ -34,7 +34,7 @@ There were 196,055 deaths from ill-defined diseases.
 These were proportionately assigned between the residual groups.
 
 Causes of death with the ICD-10 code S00-S99 or T00-T99 are not valid underlying causes of death.
-These were all neonatal deaths, which are not assigned an underlying cause of death, and were imputing using the code in the first position on the death record.
+These were all neonatal deaths, which are not assigned an underlying cause of death, and were imputed using the code in the first position on the death record.
 These deaths were classified as injuries.
 
 | Cancer                             | ICD-10 codes                                           |

@@ -2,7 +2,7 @@
 
 Where previous studies found female life expectancy in the bottom deciles of deprivation declined [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020], in @sec-Chapter5, I showed there were widespread and accelerating declines, with 1 in 5 small areas for women and 1 in 9 for men observing a fall in life expectancy in 2014-19.
 However, the lack of available covariates at the MSOA level makes it difficult to suggest which social and environmental effects are driving life expectancy downwards.
-By analysing mortality for specific causes of death, which is the second objective of the thesis that I address in this chapter, we are able to suggest pathways that shape mortality profiles.
+By analysing mortality for specific causes of death, which is the second objective of the thesis and which I address in this chapter, we are able to suggest pathways that shape mortality profiles.
 
 ## Methods
 
@@ -130,7 +130,7 @@ The largest increases were Eastbourne (419.4% (314.2% to 544.5%)) for women and 
 Mortality from cancer causes of death declined in all districts and for both sexes with three exceptions: pancreatic cancer mortality, which saw increases in all districts (except a small decrease in Tower Hamlets for women), lung cancer mortality in women and oesophageal cancer mortality in men, which both saw decreases in most districts but increases elsewhere.
 Mortality from COPD also saw mixed trends, and with wider variability than the observed changes in lung cancer mortality.
 The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)).
-The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
+The largest increases for both sexes were seen in Kingston upon Hull (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
 See @sec-Chapter8 for detailed results on cancer mortality.
 
 The change in probability of dying from all other IMPN was greatly different between the sexes, with 71 (22.6%) districts seeing an increase for women, the largest in Barrow-in-Furness (55.6% (-0.8% to 135.2%)), compared to only 5 (0.02%) districts for men.
@@ -183,7 +183,7 @@ In @fig-ch-7-contribution-split-women and @fig-ch-7-contribution-split-men, I br
 This both follows the analysis for @fig-ch-5-change, but it is also the year there was a change in government, and a move in fiscal policy towards austerity.
 
 In the period 2010-19, life expectancy increase slowed in England, as discussed at the MSOA level in @sec-Chapter5, with three districts experiencing a decline in female life expectancy.
-For women, lung cancer switched from contributing negatively in most (277 (88.2%)) districts to the change in life expectancy (@fig-ch-7-contribution-women-2002-2010) to positively (312 (99.4%) districts; @fig-ch-7-contribution-women-2010-2019), unlike COPD, for which more districts (252 (80.3%)) saw negative contributions in 2010-2019 compared to 2002-2010 (95 (30.3%)).
+For women, lung cancer switched from contributing negatively in most districts (277 (88.2%)) to the change in life expectancy (@fig-ch-7-contribution-women-2002-2010) to positively (312 (99.4%) districts; @fig-ch-7-contribution-women-2010-2019), unlike COPD, for which more districts (252 (80.3%)) saw negative contributions in 2010-2019 compared to 2002-2010 (95 (30.3%)).
 The contribution for the other cancer groups was similar for the two time periods.
 All districts saw positive contributions from all other NCDs to life expectancy increase in the second period compared to the first, where only 216 (68.8%) districts contributed positively.
 The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVDs) was weaker for the second time period, with the negative forcing effect of dementias strengthening massively in all districts.
@@ -266,7 +266,7 @@ As with @bennettContributionsDiseasesInjuries2018 and the work here, the GBD gro
 They found, in general, the slowdown was driven by the disappearance of sustained annual improvements from ischaemic heart disease, strokes, as in the present results, but also to a lesser extent from colorectal cancer, lung cancer, and breast cancer.
 The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.
 
-Both these studies focus on what causes of death have driven the inequality between subgroups of the population.
+Both these studies focus on the causes of death that have driven the inequality between subgroups of the population.
 I found the causes with the clearest gradients in contribution from the best- to worst-performing districts were those with modifiable risk factors, such as ischaemic heart disease, lung cancer, COPD, and injuries, and also the residual groups of all other NCDs and all other cancers.
 There were also contributions from dementias, but these did not follow the direction from best- to worst-performing district as obviously as the aforementioned causes.
 The work in this chapter extends previous studies by also considering which causes of death have driven the _inequality in progress_ between subgroups of the population.
@@ -285,7 +285,7 @@ Furthermore, strategies to shorten pre-hospital delays between symptom onset and
 
 The burden of mortality has shifted towards dementias.
 A number of the main risk factors for dementias are the same as for CVDs (smoking, obesity, diabetes, high blood pressure, high cholesterol) [@yuEvidencebasedPreventionAlzheimer2020].
-However dementia diagnoses are also heavily influenced by age, family history and education.
+However, dementia diagnoses are also heavily influenced by age, family history and education.
 Some part of this trend may also be due to increased efforts in improving diagnosis and cause of death coding of dementias in the UK [@hayatEvaluationRoutinelyCollected2022; @mukadamDiagnosticRatesTreatment2014].
 
 These contrasting trends in mortality from ischaemic heart disease and dementias could explain the finding that these causes of death have largely driven the heterogeneity of the slowdown in life expectancy gains since around 2010 at varying rates across districts, suggesting that heterogeneous dynamics of CVD risk factors within the population have influenced the inequality in progress in recent years.
