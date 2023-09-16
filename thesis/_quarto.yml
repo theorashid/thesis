@@ -3,7 +3,7 @@ project:
   output-dir: _thesis/
 
 book:
-  title: Spatiotemporal mortality modelling
+  title: Spatiotemporal modelling of all-cause and cause-specific mortality in England
   author:
     name: Theo Alexander Omar Rashid
     url: https://theorashid.github.io/
@@ -12,22 +12,22 @@ book:
   # downloads: [pdf]
   abstract: |
     High-resolution data for changes in mortality and longevity are scarce.
-    Estimating mortality for specific combinations of spatial units, time periods, age groups, and causes of death poses computational challenges which typically results in compromises in the granularity of the results.
-    I developed Bayesian hierarchical models based on patterns of mortality over age, space, and time, to obtain robust yearly estimates of life expectancy and cause-specific mortality for small areas.
+    Estimating mortality for specific combinations of spatial units, time periods, age groups, and causes of death poses statistical and computational challenges which typically result in compromises in the granularity of the results.
+    I applied Bayesian hierarchical models based on patterns of mortality over age, space, and time, to obtain robust yearly estimates of life expectancy and cause-specific mortality for small areas.
     Using vital registration data held by the UK Small Area Health Statistics Unit, I investigated trends in mortality for subnational units in England from 2002 to 2019.
 
     I examined trends in life expectancy in England's 6791 middle-layer super output areas (MSOAs).
     In the years 2014-19, 1270 (18.7%) MSOAs for women and 784 (11.5%) MSOAs for men saw declines in life expectancy.
     The same analysis was performed for the 4835 lower-layer super output areas which comprise London.
-    At this smaller level, there were issues with the population data in the older age groups that affected the reliability of the life expectancy estimates.
+    At this smaller level, issues with the population data in the older age groups affected the reliability of the life expectancy estimates.
 
-    I modelled the cause-specific composition of mortality for 314 districts in England.
-    The inequality in life expectancy progress since 2010 was driven largely by dementias and the residual group of non-communicable diseases, as well as ischaemic heart disease in men.
+    I modelled cause-specific mortality for 314 districts in England.
+    The inequality in life expectancy increase since 2010 was driven largely by that of deaths from dementias and the residual group of non-communicable diseases, as well as ischaemic heart disease in men.
     The analysis was extended to look specifically at the top ten leading cancer causes of death.
     Preventable cancers showed the greatest spatial inequality in 2019.
     Unlike areas in the rest of the country, mortality in London from several cancers did not increase in poorer districts, suggesting that some features of London weaken the relationship between poverty and mortality.
 
-    Small area statistics on total mortality and the cause-composition of mortality are a vital tool for creating targetted initiatives to reduce inequalities in longevity.
+    England has seen increasing inequalities in all-cause mortality over the past two decades, driven by rises in mortality for a large number of communities and from several preventable causes of death.
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd

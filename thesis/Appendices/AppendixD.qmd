@@ -8,7 +8,7 @@
 | Colorectal cancers                 | C18-C21                                                |
 | Pancreatic cancer                  | C25                                                    |
 | Ovarian cancer                     | C56                                                    |
-| Lymphomas, multiple myeloma        | C81-C90, C96                                           |
+| Lymphoma and multiple myeloma      | C81-C90, C96                                           |
 | Oesophageal cancer                 | C15                                                    |
 | All other cancers                  | C00-C14, C16-C17, C22-C24, C26-C32, C37-C41, C43-C49, C51-C55, C57-C60, C62-C67, C68-C80, C91-C95, C97, D00-D48 |
 | Ischaemic heart disease            | I20-I25                                                |
@@ -45,7 +45,7 @@ These deaths were classified as injuries.
 | Colorectal cancer                  | C18-C21                                                |
 | Pancreatic cancer                  | C25                                                    |
 | Ovarian cancer                     | C56                                                    |
-| Lymphomas, multiple myeloma        | C81-C90, C96                                           |
+| Lymphoma and multiple myeloma      | C81-C90, C96                                           |
 | Oesophageal cancer                 | C15                                                    |
 | Bladder cancer                     | C67                                                    |
 | Leukaemia                          | C91-C95                                                |

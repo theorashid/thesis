@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatiotemporal mortality modelling - 4&nbsp; Modelling death rates</title>
+<title>Spatiotemporal modelling of all-cause and cause-specific mortality in England - 4&nbsp; Modelling death rates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Spatiotemporal mortality modelling</a> 
+      <a href="../">Spatiotemporal modelling of all-cause and cause-specific mortality in England</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/theorashid/thesis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -223,6 +223,7 @@ div.csl-indent {
   <li><a href="#a-model-for-smoothing-death-rates" id="toc-a-model-for-smoothing-death-rates" class="nav-link" data-scroll-target="#a-model-for-smoothing-death-rates"><span class="header-section-number">4.3</span> A model for smoothing death rates</a></li>
   <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">4.4</span> Inference</a></li>
   <li><a href="#clean-code-and-open-source" id="toc-clean-code-and-open-source" class="nav-link" data-scroll-target="#clean-code-and-open-source"><span class="header-section-number">4.5</span> Clean code and open source</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.6</span> Summary</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/theorashid/thesis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -255,7 +256,7 @@ div.csl-indent {
 <p>For each chapter, the quantity of interest is the same: mortality in each age group, spatial unit and year. Empirically, death rates can be calculated from observed data as the number of deaths divided by the population in each strata. Formally, using <span class="math inline">\(a\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(t\)</span> to index age, spatial unit and time, respectively, we write <span id="eq-death-rate"><span class="math display">\[
 \hat{m}_{ast} = \frac{\text{deaths}_{ast}}{\text{population}_{ast}},
 \tag{4.1}\]</span></span> where <span class="math inline">\(\hat{m}_{ast}\)</span> is the empirical death rate.</p>
-<p>When the number of deaths becomes small, however, the empirical death rate presents an apparent variability from year to year, or from spatial unit to spatial unit, which is larger than the true differences in the risk of death. The problem is exacerbated for the young ages or causes with lower mortality, where the number of deaths might be zero, or for smaller geographical units, where the population might be very small. As a demonstration, <a href="#fig-ch-4-sim">Figure&nbsp;<span>4.1</span></a> shows the expected and simulated number of deaths for a young age group (1-4 years) and an old age group (80-84). The simulation assumes the hypothetical spatial unit has a population of 1000 in each age group in each year, and generates deaths using a Poisson distribution and the national age-specific death rates for each year. Note, given the population sizes in <a href="Chapter3.html#tbl-ch-3-geography">Table&nbsp;<span>3.1</span></a>, the true age-specific populations for LSOAs and MSOAs will be smaller and there will be even more zeros and even more noise in the number of deaths than in this simulation. Although there are a large number of deaths in the older age group and it is easy to visualise a curve that fits the data, the death counts for the young age group are extremely sparse and it is difficult to estimate the true underlying death rate. In this thesis, I have used Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.</p>
+<p>When the number of deaths becomes small, however, the empirical death rate presents an apparent variability from year to year, or from spatial unit to spatial unit, which is larger than the true differences in the risk of death. The problem is exacerbated for the young ages or causes with lower mortality, where the number of deaths might be zero, or for smaller geographical units, where the population might be very small. As a demonstration, <a href="#fig-ch-4-sim">Figure&nbsp;<span>4.1</span></a> shows the expected and simulated number of deaths for a young age group (1-4 years) and an old age group (80-84 years). The simulation assumes the hypothetical spatial unit has a population of 1000 in each age group in each year, and generates deaths using a Poisson distribution and the national age-specific death rates for each year. Note, given the population sizes in <a href="Chapter3.html#tbl-ch-3-geography">Table&nbsp;<span>3.1</span></a>, the true age-specific populations for LSOAs and MSOAs will be smaller and there will be even more zeros and even more noise in the number of deaths than in this simulation. Although there are a large number of deaths in the older age group and it is easy to visualise a curve that fits the data, the death counts for the young age group are extremely sparse and it is difficult to estimate the true underlying death rate. In this thesis, I have used Bayesian hierarchical models to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years.</p>
 <div id="fig-ch-4-sim" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../thesis-analysis/thesis_analysis/eda/figures/age_mx_time_sim.webp" class="img-fluid figure-img"></p>
@@ -268,7 +269,7 @@ div.csl-indent {
 <section id="a-model-for-smoothing-death-rates" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="a-model-for-smoothing-death-rates"><span class="header-section-number">4.3</span> A model for smoothing death rates</h2>
 <p>Here, I will present the model for smoothing death rates used for the analysis in <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. Each chapter thereafter, I will explain how and why the model differs.</p>
-<p>I used a Bayesian hierarchical model to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years. I conducted all analyses for women and men separately because mortality and trends differ by sex. In the model, the number of deaths in age group <span class="math inline">\(a (=1,...,19)\)</span>, spatial unit <span class="math inline">\(s (=1,...,6791)\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and year <span class="math inline">\(t (= 1,...,18)\)</span> follows a negative binomial distribution <span id="eq-ch-4-likelihood-1"><span class="math display">\[
+<p>I used a Bayesian hierarchical model to obtain stable estimates of death rates by sharing information across age groups, spatial units, and years. I conducted all analyses for women and men separately because mortality levels and trends differ by sex. In the model, the number of deaths in age group <span class="math inline">\(a (=1,...,19)\)</span>, spatial unit <span class="math inline">\(s (=1,...,6791)\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and year <span class="math inline">\(t (= 1,...,18)\)</span> follows a negative binomial distribution <span id="eq-ch-4-likelihood-1"><span class="math display">\[
 \text{deaths}_{ast} \sim \text{Negative Binomial}(p_{ast}, r).
 \tag{4.2}\]</span></span> The parameter <span class="math inline">\(p_{ast}\)</span> is <span id="eq-ch-4-likelihood-2"><span class="math display">\[
 p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
@@ -292,6 +293,10 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <section id="clean-code-and-open-source" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="clean-code-and-open-source"><span class="header-section-number">4.5</span> Clean code and open source</h2>
 <p>I have paid a lot of attention to open sourcing code for all analyses during my PhD. The code is clean, version-controlled, and follows best practices for scientific software engineering. As well having contributed code to open source projects along the way, the code for <a href="https://github.com/theorashid/mortality-statsmodel">statistical models</a>, <a href="https://github.com/theorashid/thesis-analysis">plots and analysis</a>, and the <a href="https://github.com/theorashid/thesis">thesis itself</a> can be found on GitHub.</p>
+</section>
+<section id="summary" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.6</span> Summary</h2>
+<p>I presented a model for estimating death rates for small areas, using a negative binomial likelihood with intercepts and slopes for each spatial unit and age group, as well as age-space interactions and nonlinear temporal effects for each spatial unit and age group. The model contains a large number of parameters, so I have explored state-of-the-art Bayesian probabilistic programming libraries which allow sampling methods to scale to high-dimensional problems.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

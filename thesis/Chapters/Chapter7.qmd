@@ -8,7 +8,7 @@ By analysing mortality for specific causes of death, which is the second objecti
 
 ### Mortality and population data
 
-I performed a high-­resolution spatiotemporal analysis of vital registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,648,191 death records, extract date: 17$^{\text{th}}$ November 2022).
+I performed a spatiotemporal analysis of vital registration data in which I extracted de­-identified data for all deaths in England from 2002 to 2019 (8,648,191 death records, extract date: 17$^{\text{th}}$ November 2022).
 England was divided into 314 districts according to the boundaries in 2020.
 Deaths were assigned into the following age groups: 0, 1–4, 5–9, ..., 80–84, 85+ years.
 I did not use 130 death records (<0.001%) for which sex was not recorded.
@@ -19,7 +19,7 @@ There were no age­-district-year combinations in which the number of deaths fro
 Each death record in post-neonatal ages was assigned an ICD-10 code corresponding to the underlying cause of death.
 For neonates, which are not assigned an underlying cause of death, I used the ICD-10 code in the first position on the death record.
 I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
-I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have a similar history.
+I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have overlapping history.
 I used the top twelve causes of death for each sex according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other non-communicable diseases (NCDs), all other cardiovascular diseases (CVDs), all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
 Together, these form a mutually exclusive, collectively exhaustive list of causes of death (@fig-ch-7-treemap).
 
@@ -64,9 +64,9 @@ I ran four chains with a warmup of 2000 iterations and then 10,000 further itera
 The primary reporting outcome is the unconditional probability of dying between birth and 80 years of age.
 Unconditional probability is the probability of death in the absence of competing causes of death, and is calculated using life table methods from age-specific death rates from the cause of interest [@prestonDemographyMeasuringModeling2001].
 I limited the age range to 80 years because the probability of death in the absence of competing causes equals 100% when the entire life course is considered.
-The reported 95% credible intervals represent the 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of the posterior distribution of estimated probability of death.
+The reported 95% credible intervals represent the 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of the posterior distribution of estimated probabilities of death.
 
-In order to assess the effect of differences in the cause-composition of mortality between districts on inequalities in total mortality, I decomposed life expectancy differences into contributions from specific causes of death.
+In order to assess the effect of differences in cause-specific mortality between districts on inequalities in total mortality, I decomposed life expectancy differences into contributions from specific causes of death.
 This required estimates of life expectancy at the district level, for which I ran a model for a combined group of all deaths.
 Death rates for this total mortality group, and for injuries, were corrected in 2017 in Kensington and Chelsea for the Grenfell fire by imputing the mean deaths from injuries between 2016 and 2018 before running the model.
 
@@ -101,16 +101,17 @@ For women, there was large inequality in the probability of dying from the two l
 All of these causes presented similar geographies, with the highest probabilities of dying clustered in urban areas, particularly in the North West (figure in @sec-appE).
 
 With the exception of trachea, bronchus and lung cancers (referred to hereafter as _lung cancer_; 3.7-fold variation for women and 3.1-fold for men), cancers showed the least geographical inequality, all with less than 1.7-fold variation in the probability of dying.
-For both sexes, the least unequal cause of death was lymphomas and multiple myeloma (1.2-fold for both sexes).
+For both sexes, the least unequal cause of death was lymphoma and multiple myeloma (1.2-fold for both sexes).
 
 The highest probabilities of dying from diabetes for both sexes were in the east of London (@fig-app-e-map-diabetes).
 Specifically, the borough of Newham had the highest mortality for both sexes (0.01 (0.01-0.01) for women and 0.02 (0.01-0.02) for men).
-The highest probabilities of dying from injuries were in coastal areas and in the urban northwest, with the highest probability of dying for men in Blackpool at 0.04 (0.04-0.05) (@fig-app-e-map-injuries).
+The highest probabilities of dying from injuries were in coastal areas and in the urban North West, with the highest probability of dying for men in Blackpool at 0.04 (0.04-0.05) (@fig-app-e-map-injuries).
 
 ### Variation over time
 
 The largest declines from 2002 to 2019 were seen in CVDs (@fig-ch-7-change).
-The probability of dying between birth and 80 years of age from ischaemic heart disease (median decline across districts of 67.1% for women and 58.2% for men) and strokes (62.7% and 61.3%) declined in all districts for both sexes, and mortality from all other CVDs decreased in all but the districts of Isle of Wight and Hastings (41.9% for women and 40.5% for men; @fig-app-e-map-other-cvd), suggesting there are localised issues in the data.
+The probability of dying between birth and 80 years of age from ischaemic heart disease (median decline across districts of 67.1% for women and 58.2% for men) and strokes (62.7% and 61.3%) declined in all districts for both sexes, and mortality from all other CVDs decreased in all but the districts of Isle of Wight and Hastings (41.9% for women and 40.5% for men; @fig-app-e-map-other-cvd).
+These increases were clear outliers which occurred in the residual group of CVDs rather than a defined leading cause of death, suggesting there are localised issues in cause of death assignment rather than true changes in population health.
 There were also declines in all districts for each sex for diabetes mortality (43.2% and 42.9%).
 
 ::: {#fig-ch-7-change layout-ncol=1 fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the twelve leading causes of death and residual groups."}
@@ -130,11 +131,14 @@ Mortality from cancer causes of death declined in all districts and for both sex
 Mortality from COPD also saw mixed trends, and with wider variability than the observed changes in lung cancer mortality.
 The probability of dying declined in a larger proportion of districts for men (305 (97.1%)) than for women (215 (68.5%)).
 The largest increases for both sexes were seen in Kingston upon Hull for (45.9% (24.8% to 67.9%) for women and 20.6% (2.9% to 40.7%) for men).
+See @sec-Chapter8 for detailed results on cancer mortality.
 
 The change in probability of dying from all other IMPN was greatly different between the sexes, with 71 (22.6%) districts seeing an increase for women, the largest in Barrow-in-Furness (55.6% (-0.8% to 135.2%)), compared to only 5 (0.02%) districts for men.
 There were also mixed trends for lower respiratory infections (increases in 13 (4.1%) districts for women and 9 (2.9%) for men), all other NCDs (29 (9.2%) for women and 53 (16.9%) for men), and injuries (116 (36.9%) for women and 9 (2.9%) for men).
 
-Mortality from liver cirrhosis presented dramatic spatial variation in change in mortality over the period 2002-19, with a contrast between huge decreases in districts in London and increases in the majority (243 (77.4%) districts) of districts elsewhere in the country, with the largest increases in the coastal South West and East of England (@fig-app-e-map-liver-cirrhosis-men).
+Mortality from liver cirrhosis presented dramatic spatial variation in change in mortality over the period 2002-19.
+There was a contrast between huge decreases in districts in London and increases in the majority (243 (77.4%) districts) of districts elsewhere in the country.
+The largest increases were in the coastal South West and East of England (@fig-app-e-map-liver-cirrhosis-men).
 
 ### Contribution to life expectancy inequality
 
@@ -142,21 +146,22 @@ The district with the highest life expectancy for both sexes in 2019 was the Cit
 For women, the district with the lowest life expectancy was Manchester, which was 10.1 years lower than the best-performing district.
 Blackpool had the lowest life expectancy for men, 13.0 years less than the City of London.
 
-::: {#fig-ch-7-contribution-inequality layout-ncol=2 fig-scap="Contributions of deaths from specific causes to life expectancy inequality in 2019 between the district with the highest life expectancy and all other local authority districts in England."}
+::: {#fig-ch-7-contribution-inequality layout-ncol=2 fig-scap="Contributions of deaths from specific causes to the life expectancy difference in 2019 between the district with the highest life expectancy and all other local authority districts in England."}
 
 ![Women](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_inequality_2019.pdf){#fig-ch-7-contribution-inequality-women}
 
 ![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_inequality_2019.pdf){#fig-ch-7-contribution-inequality-men}
 
-Contributions of deaths from specific causes to life expectancy inequality in 2019 between the district with the highest life expectancy (City of London for both sexes) and all other local authority districts in England. The districts are ordered from the best-performing district downwards, with the side panel showing the difference in life expectancy compared to the best-performing district, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to the life expectancy difference in 2019 between the district with the highest life expectancy (City of London for both sexes) and all other local authority districts in England. The districts are ordered from the best-performing district downwards, with the side panel showing the difference in life expectancy compared to the best-performing district, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 The major contributing cause to inequality with respect to the best-performing district was dementias for women, which was the leading contributor for 254 (80.9%) districts.
-For men, the all other NCDs group was the leading cause in 220 (70.0%) districts.
+For men, the all other NCDs group was the leading cause in 220 (70.0%) districts, with dementias ranking first in 64 (20.3%) districts.
 From the groups of cancers, lung cancer and all other cancers presented clear gradients, with the largest contributions in the worst-performing districts (@fig-ch-7-contribution-inequality).
 Specifically, lung cancer had a difference in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 0.6 years for women and 0.5 years for men, and all other cancers was 0.5 years for both sexes.
+There were negative contributions from lung cancer to life expectancy inequality in 50 (15.9%) districts for women and two (0.6%) districts for men.
 There were strong gradients from the best- to worst-performing districts for all other NCDs (10$^{\text{th}}$-90$^{\text{th}}$ percentile differences of 0.9 years for women and 0.8 years for men), ischaemic heart disease (0.5 years and 0.8 years), and COPD (0.6 years and 0.5 years).
-Contributions to inequality from dementias were not as obviously directional, but the cause group had large 10$^{\text{th}}$-90$^{\text{th}}$ percentile differences of 0.8 years for women and 0.5 years for men.
+Contributions to inequality from dementias had large 10$^{\text{th}}$-90$^{\text{th}}$ percentile differences of 0.8 years for women and 0.5 years for men.
 There was a more prominent gradient for injuries in men (0.5 years) than women (0.3 years).
 
 ### Contribution to life expectancy change
@@ -165,46 +170,47 @@ From 2002 to 2019, life expectancy increased in every district for both women an
 This was driven largely by decreases in ischaemic heart disease mortality, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
 In contrast, mortality from dementias acted in the other direction, forcing life expectancy downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
 
-::: {#fig-ch-7-contribution layout-ncol=2 fig-scap="Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England."}
+::: {#fig-ch-7-contribution layout-ncol=2 fig-scap="Contributions of deaths from specific causes to the difference between the district life expectancy in 2002 and 2019 in 314 local authority districts in England."}
 
 ![Women](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2019.pdf){#fig-ch-7-contribution-women-2002-2019}
 
 ![Men](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2019.pdf){#fig-ch-7-contribution-men-2002-2019}
 
-Contributions of deaths from specific causes to life expectancy difference between the district population in 2002 and the population in 2019 in 314 local authority districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to the difference between the district life expectancy in 2002 and 2019 in 314 local authority districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 In @fig-ch-7-contribution-split-women and @fig-ch-7-contribution-split-men, I break the overall trend down into two time periods around the year 2010.
 This both follows the analysis for @fig-ch-5-change, but it is also the year there was a change in government, and a move in fiscal policy towards austerity.
 
-In the period 2010-19, life expectancy progress slowed in England, as discussed at the MSOA level in @sec-Chapter5, with three districts experiencing a decline in female life expectancy.
-For women, lung cancer switched from generally contributing negatively to the change in district life expectancy (@fig-ch-7-contribution-women-2002-2010) to positively (@fig-ch-7-contribution-women-2010-2019).
+In the period 2010-19, life expectancy increase slowed in England, as discussed at the MSOA level in @sec-Chapter5, with three districts experiencing a decline in female life expectancy.
+For women, lung cancer switched from contributing negatively in most (277 (88.2%)) districts to the change in life expectancy (@fig-ch-7-contribution-women-2002-2010) to positively (312 (99.4%) districts; @fig-ch-7-contribution-women-2010-2019), unlike COPD, for which more districts (252 (80.3%)) saw negative contributions in 2010-2019 compared to 2002-2010 (95 (30.3%)).
 The contribution for the other cancer groups was similar for the two time periods.
-There were a larger number of districts with positive contributions for all other NCDs in the second period.
-The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVDs) was weaker for the second time period as the negative forcing effect of dementias strengthened massively.
+All districts saw positive contributions from all other NCDs to life expectancy increase in the second period compared to the first, where only 216 (68.8%) districts contributed positively.
+The positive contribution from all the CVD groups (ischaemic heart disease, stroke, all other CVDs) was weaker for the second time period, with the negative forcing effect of dementias strengthening massively in all districts.
 In the years 2010 to 2019, the _inequality in progress_ between districts was driven largely by dementias and all other NCDs, both with a difference in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 3.0 years.
 
 For men, the contribution for all cancers groups, including lung cancer, maintained the same picture in each time period.
-As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from dementias.
-Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 districts contributing negatively.
+As for women, the slowdown in progress was driven by reductions in the contribution from CVDs in the second time period and the strong negative contributions from dementias in all districts.
+Injuries, which contributed positively to life expectancy increases in 2002-10 for all districts, saw a reversal with all but 19 (6.1%) districts contributing negatively in the second time period.
 In the latter period, mortality from ischaemic heart disease, dementias, and all other NCDs were driving the inequality in progress between districts, with differences in contribution between the 10$^{\text{th}}$ and 90$^{\text{th}}$ percentile districts of 2.8, 2.9 and 3.0 years respectively.
+For both sexes and in both time periods, contributions from lymphoma and multiple myeloma were the smallest in magnitude of any cause group (all <0.1 years in each sex-district-time period combination).
 
-::: {#fig-ch-7-contribution-split-women layout-ncol=2 fig-scap="Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
+::: {#fig-ch-7-contribution-split-women layout-ncol=2 fig-scap="Contributions of deaths from specific causes to difference between the district life expectancy for women in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
 
 ![Women, 2002-10](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2002_2010.pdf){#fig-ch-7-contribution-women-2002-2010}
 
 ![Women, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/female_decompose_2010_2019.pdf){#fig-ch-7-contribution-women-2010-2019}
 
-Contributions of deaths from specific causes to female life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to difference between the district life expectancy for women in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
-::: {#fig-ch-7-contribution-split-men layout-ncol=2 fig-scap="Contributions of deaths from specific causes to male life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
+::: {#fig-ch-7-contribution-split-men layout-ncol=2 fig-scap="Contributions of deaths from specific causes to difference between the district life expectancy for men in 2002 and 2010, and in 2010 and 2019, in 314 districts in England."}
 
 ![Men, 2002-10](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2002_2010.pdf){#fig-ch-7-contribution-men-2002-2010}
 
 ![Men, 2010-19](../thesis-analysis/thesis_analysis/causes/figures/male_decompose_2010_2019.pdf){#fig-ch-7-contribution-men-2010-2019}
 
-Contributions of deaths from specific causes to male life expectancy difference between the district populations in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
+Contributions of deaths from specific causes to difference between the district life expectancy for men in 2002 and 2010, and in 2010 and 2019, in 314 districts in England. The districts are ordered from the district with the largest increase in life expectancy downwards, with the side panel showing the change in life expectancy over that time, by summing over the causes. The top panel shows the contribution for each district for each cause.
 :::
 
 ## Discussion
@@ -255,7 +261,7 @@ There are two key studies in the literature which break the population of Englan
 The authors found the gap in life expectancy between the most and least deprived areas was caused by the large contributions of respiratory diseases, ischaemic heart disease, and a set of preventable and treatable cancers.
 Unlike the present work, the authors broke the results down further by age, finding that deaths in children younger than 5 years and dementias in older ages drove the inequality between the top and bottom deciles.
 
-Secondly, using data from one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered a massive 264 causes of death, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
+Secondly, using data from one of the first GBD studies of subnational populations, @steelChangesHealthCountries2018 looked at trends in mortality of 150 upper tier local authorities, which are larger than the districts used in this chapter, but considered 264 causes of death, relying heavily on covariates in the model to produce estimates for areas with little to no data on more obscure causes.
 As with @bennettContributionsDiseasesInjuries2018 and the work here, the GBD group found the rate of improvement in life expectancy had slowed since 2010.
 They found, in general, the slowdown was driven by the disappearance of sustained annual improvements from ischaemic heart disease, strokes, as in the present results, but also to a lesser extent from colorectal cancer, lung cancer, and breast cancer.
 The authors found the annual reduction in mortality attributable to most major risk factors (tobacco, dietary risks, high blood pressure etc) had declined since 1990, but has slowed since 2010, with the exception of alcohol and drug use, which has seen little change since the 2000s.
@@ -305,9 +311,9 @@ The highest male mortality from injuries was in Blackpool, which agrees with bot
 
 ## Summary
 
-I performed a high-resolution spatiotemporal analysis of vital registration data on deaths from the twelve leading causes of death by sex in England from 2002 to 2019.
+I performed a spatiotemporal analysis of vital registration data on deaths from the twelve leading causes of death by sex in England from 2002 to 2019.
 I used life table methods to calculate the probability of dying between birth and 80 years of age by sex, cause of death, district and year, as well as the cause-specific contributions to the inequality in life expectancy between different years of the study for each district.
 
 The most unequal causes of death were COPD for women (6.0-fold variation in mortality across districts) and liver cirrhosis for men (6.7-fold).
-The causes of death with the least geographical variability were lymphomas and multiple myeloma (1.2-fold for both sexes) and leukaemia (1.1-fold for women and 1.2-fold for men).
+The causes of death with the least geographical variability were lymphoma and multiple myeloma (1.2-fold for both sexes) and leukaemia (1.1-fold for women and 1.2-fold for men).
 There has been a slowdown in life expectancy gains since 2010, which has been driven largely by dementias and all other NCDs in women, and by ischaemic heart disease, dementias, and all other NCDs in men.

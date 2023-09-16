@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatiotemporal mortality modelling - Appendix A — Life table methods</title>
+<title>Spatiotemporal modelling of all-cause and cause-specific mortality in England - Appendix A — Life table methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Spatiotemporal mortality modelling</a> 
+      <a href="../">Spatiotemporal modelling of all-cause and cause-specific mortality in England</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/theorashid/thesis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -252,7 +252,7 @@ div.csl-indent {
 <section id="period-life-tables" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="period-life-tables"><span class="header-section-number">A.1</span> Period life tables</h2>
 <p>Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort as died. Instead, demographers use period (or “current”) life tables, which consider what would happen to a hypothetical cohort that are subjected to the deaths rates in each age group at an exact period in time. Life tables can be constructed using discrete age bands starting at age <span class="math inline">\(x\)</span> and ending at age <span class="math inline">\(x+n\)</span>. We supply the age-specific death rates, <span class="math inline">\({}_{n}m_{x}\)</span>, and the average person-years lived by those dying in the interval, <span class="math inline">\({}_{n}a_{x}\)</span>, and the life table calculates the mean age at death – the life expectancy, <span class="math inline">\(e_x\)</span>.</p>
-<p>We start with a hypotethical cohort of size <span class="math inline">\(l_0 = 100,000\)</span> and sequentially apply the probability of dying in each age group, calculated as <span id="eq-app-a-prob-dying"><span class="math display">\[
+<p>We start with a hypothetical cohort of size <span class="math inline">\(l_0 = 100,000\)</span> and sequentially apply the probability of dying in each age group, calculated as <span id="eq-app-a-prob-dying"><span class="math display">\[
 {}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
 \tag{A.1}\]</span></span> The open interval <span class="math inline">\({}_{\infty}q_{x} = 1\)</span>, as nobody is immortal. Using the probability of surviving in each age group, <span class="math inline">\({}_{n}p_{x} = 1 - {}_{n}q_{x}\)</span>, the number of survivors is given by <span id="eq-app-a-life-table-1"><span class="math display">\[
 l_{x+n} = l_x \cdot {}_{n}p_{x}.

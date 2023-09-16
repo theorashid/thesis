@@ -15,11 +15,11 @@ The number of units for each geography are summarised in @tbl-ch-3-geography.
 | region    | 9               | 5,934,037 (3,536,336-9,092,877)                  |
 | district  | 314             | 140,271 (68,238-380,483)                         |
 | MSOA      | 6791            | 7985 (5760–11,917)                               |
-| LSOA      | 32844           | 1620 (1235-2468)                                 |
+| LSOA      | 32,844          | 1620 (1235-2468)                                 |
 
-: The numbers of each spatial unit of England used in thesis and their populations in 2019. {#tbl-ch-3-geography}
+: The numbers of each spatial unit of England used in the thesis and their populations in 2019. {#tbl-ch-3-geography}
 
-England is divided into nine regions (London, North West, East Midlands, etc).
+England is divided into nine regions (North East, North West, Yorkshire and the Humber, East Midlands, West Midlands, East of England, South East, South West, London).
 Within these regions, there are 314 local authority districts.
 Districts are administrative geographies formed from a mixture of London boroughs, metropolitan and non-metropolitan districts, and unitary authorities.
 They are responsible for local policies, and are therefore subject to local government restructuring and boundary changes.
@@ -28,7 +28,7 @@ To ensure geographic consistency, all data were mapped to the district boundarie
 Output Areas (OAs) are the smallest building block for spatial census statistics, with between 40 and 250 households and typically 100 to 625 people, and are designed to have some socioeconomic homogeneity.
 LSOAs are a type of census geography made up of around four or five OAs.
 MSOAs are then composed of around four or five LSOAs, and these MSOAs fit within district boundaries.
-OAs, LSOAs, and MSOAs are all statistical units which are designed by the ONS purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
+OAs, LSOAs, and MSOAs are all statistical units which are designed by the Office for National Statistics (ONS) purely for analysis purposes, so researchers can use spatial units with similar, but small, population sizes.
 No policies are created using these boundaries [@officefornationalstatistics2011CensusGeographies2022].
 Again, for geographic consistency, all data were mapped to the output area hierarchy from the 2011 census.
 
@@ -41,7 +41,7 @@ This requires two data sources: counts of deaths, and population counts.
 The counts of deaths come from de-identified civil registration data for all deaths in England from 2002 to 2019.
 In other words, every death in England from 2002 to 2019.
 
-The data is extracted from the Office for National Statistics (ONS) database and held by SAHSU in a secure environment as individual death records are identifiable data.
+The data is extracted from the ONS database and held by SAHSU in a secure environment as individual death records are identifiable data.
 The data are updated every year and are mostly complete for previous years, but a handful of deaths are registered in later extracts if the ONS have been waiting on a coroner's report to identify the underlying cause of death.
 
 Each record comes with information on postcode of residence, allowing us to assign each death into a spatial unit for analysis.
@@ -51,12 +51,12 @@ Here, I focus only on the underlying cause of death, which has been assigned usi
 
 ### Population
 
-The second data sources we require are population counts.
+The second data source we require are population counts.
 These are taken from mid-year population estimates of the usual resident population by the ONS [@officefornationalstatisticsMiddleLayerSuper2021; @officefornationalstatisticsLowerLayerSuper2021].
 The ONS estimates inter-censal populations on a rolling basis, updating the previous year's value using the change in the population in GP patient registration data as an indicator of the true population change.
 The LSOA populations are fully consistent with estimates for higher levels in the nested geographical hierarchical including MSOAs, districts, regions and the national total for England [@officefornationalstatisticsPopulationEstimatesOutput2021].
 
-### Community deprivation data
+### Community deprivation
 
 I used data for the following measures of socioeconomic deprivation from the English Indices of Deprivation:
 
@@ -106,3 +106,10 @@ Likewise, life expectancy has improved throughout the study period, but has stal
 For both sexes, the picture is similar: pockets of low life expectancy in the urban North West, North East, and West Midlands.
 
 In this section, I have taken slices across each dimension, but the aim in the following chapters is to calculate death rates for each sex-age-space-time stratum.
+
+## Summary
+
+All-cause and cause-specific mortality estimates require data on deaths and populations.
+Individual death records with information of sex, age at death, cause of death, year of death, and place of residence have been taken from the ONS database and held by SAHSU in a secure environment.
+I have used small-area population estimates created by the ONS.
+I also introduced datasets on area-level deprivation and migration which will be used to put mortality estimates into context.

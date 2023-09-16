@@ -36,7 +36,7 @@ I present results from the hierarchical model for two reasons.
 First, it allows neighbouring MSOAs that fall in different districts to differ more than those within the same district, reflecting the relevance of district as a unit of resource allocation and policy implementation.
 Second, the hierarchical model was computationally less demanding, with run times about 1.4 times faster than the spatial model.
 
-Inference was performed using MCMC in `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
+Inference was performed using MCMC in `NIMBLE` [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
 I monitored convergence using trace plots and the $\widehat{R}$ diagnostic [@vehtariRanknormalizationFoldingLocalization2021] and thinned post burn-in samples to reduce memory and storage use.
 For women, I ran four chains for 150,000 iterations, discarding the first 50,000 and thinning the remainder by 400 to obtain 1,000 post-burn-in draws from the posterior distribution of model parameters.
 For men, due to slower mixing, I ran eight chains for 150,000 iterations, discarding the first 100,000 and thinning the remainder by 400.
@@ -51,17 +51,17 @@ The Grenfell Tower fire incident was, to the best of our knowledge, the only spa
 I calculated life expectancy at birth, and probability of dying at specific ages by sex and MSOA using life table methods^[See  @sec-appA for full details on demographic methods used in this thesis.].
 
 The reported 95% credible intervals (CrIs) represent the 2.5$^{\text{th}}$ to 97.5$^{\text{th}}$ percentiles of the posterior distribution of estimated life expectancies.
-I also report the posterior probability that the estimated change over time in an MSOA represents an increase versus a decrease in life expectancy.
+I also report the posterior probability that the estimated change over time in a MSOA represents an increase versus a decrease in life expectancy.
 Posterior probability represents the inherent uncertainty in life expectancy trends.
-In an MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there is a 100% posterior probability of an increase, and hence around a 0% probability of a decrease, and vice versa.
-Posterior probabilities more distant from 50% indicate more certainty.
+In a MSOA in which the entire posterior distribution of life expectancy in 2019 is greater than in 2002, there posterior probability of an increase of 1.0, and hence around a 0.0 probability of a decrease, and vice versa.
+Posterior probabilities more distant from 0.5 indicate more certainty.
 
 ## Results
 
 ### Inequalities in life expectancy
 
-In 2019, there was a 20.6 year (95% CrI 17.5–24.2) gap for women between the MSOA with the highest life expectancy (an MSOA in Camden, London; 95.4 years (92.4–98.7)) and the MSOA with the lowest life expectancy (an MSOA in Leeds; 74.7 years (73.4–76.2)).
-The gap was 27.0 years (23.4–31.1) for men, between an MSOA in Kensington and Chelsea, London (95.3 years (92.1–99.3)) and an MSOA in Blackpool (68.3 years (66.9–69.6)).
+In 2019, there was a 20.6 year (95% CrI 17.5–24.2) gap for women between the MSOA with the highest life expectancy (a MSOA in Camden, London; 95.4 years (92.4–98.7)) and the MSOA with the lowest life expectancy (a MSOA in Leeds; 74.7 years (73.4–76.2)).
+The gap was 27.0 years (23.4–31.1) for men, between a MSOA in Kensington and Chelsea, London (95.3 years (92.1–99.3)) and a MSOA in Blackpool (68.3 years (66.9–69.6)).
 The difference between the first and 99$^{\text{th}}$ percentiles of life expectancy in 2019 was 14.2 years (13.9–14.5) for women and 13.6 years (13.4–13.9) for men.
 
 ![Ranked MSOA life expectancies in 2002 and 2019. Each point shows the posterior median life expectancy estimate for each MSOA, forming a curve; error bars are 95% credible intervals. Arrows indicate national life expectancies in England and selected comparator countries with life expectancies within the range of English MSOAs. Hong Kong had the highest global female and male life expectancies. In the EU, Bulgaria had the lowest and Spain had the highest life expectancies for women; Latvia had the lowest and Switzerland had the highest life expectancies for men. Life expectancy for England was calculated from the data used here, and for other countries from World Bank estimates in 2019 [@worldbankLifeExpectancyBirth2022].](../thesis-analysis/thesis_analysis/england/figures/distribution.pdf){#fig-ch-5-distribution fig-scap="Ranked MSOA life expectancies in 2002 and 2019."}
@@ -79,7 +79,7 @@ Female and male life expectancy were correlated across MSOAs with a correlation 
 Female life expectancy was higher than male life expectancy in all but 15 MSOAs.
 The female advantage was more than 5 years in 1498 (22.1%) of 6791 MSOAs and 1–5 years in another 5187 (76.4%).
 From 2002 to 2019, a decline in life expectancy was more probable than an increase in 124 mostly urban MSOAs of 6791 (1.8% of all MSOAs) for women, with posterior probabilities of greater than 80% in 34 of these.
-The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of the estimated decline being a true decline 99.6%) occurred in an MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
+The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of the estimated decline being a true decline >0.99) occurred in a MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
 
 ![Comparison of female and male life expectancy in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-5-sex-comp}
 
@@ -88,10 +88,10 @@ The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of 
 ![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-5-map-pp-change}
 
 Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs.
-Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 64%).
+Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 0.64).
 For the other MSOAs, the increase ranged from less than 1 year in 31 MSOAs to more than 7 years in 114 MSOAs.
 The largest increases in female and male life expectancies were seen in some MSOAs in and around London (e.g., in the London Borough of Camden).
-In 5,133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (@fig-ch-5-sex-comp), leading to a closing of the life expectancy gap between female and male sexes.
+In 5133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (@fig-ch-5-sex-comp), leading to a closing of the life expectancy gap between female and male sexes.
 
 ![Distribution of MSOA life expectancies in each year from 2002 to 2019. Each point shows one MSOA. The central line shows national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/scatter_time.pdf){#fig-ch-5-scatter-time fig-scap="Distribution of MSOA life expectancies in each year from 2002 to 2019."}
 
@@ -110,7 +110,7 @@ These MSOAs tended to be places in which life expectancy was already low.
 
 ### Life expectancy and deprivation
 
-Life expectancy at birth was inversely associated with the extent of unemployment, poverty, and low education in MSOA in 2002 and 2019 (@fig-ch-5-imd).
+Life expectancy at birth was inversely associated with the extent of unemployment, poverty, and low education in MSOAs in 2002 and 2019 (@fig-ch-5-imd).
 There was substantial variation in life expectancy across MSOAs at any level of poverty or unemployment seen in the vertical spread of points in @fig-ch-5-imd.
 From 2002 to 2019, there were, on average, smaller gains in life expectancy in the MSOAs with the highest levels of unemployment, poverty, and low education than in those in the lowest levels, especially for women.
 
@@ -118,7 +118,7 @@ From 2002 to 2019, there were, on average, smaller gains in life expectancy in t
 
 ### Inequalities in probability of survival
 
-Similar to life expectancy, there were large inequalities in the probability of surviving from birth to 80 years, which ranged from 42% to 87% in women and 27% to 85% in men across MSOAs in 2019.
+Similar to life expectancy, there were large inequalities in the probability of surviving from birth to 80 years, which ranged from 0.42 to 0.87 in women and 0.27 to 0.85 in men across MSOAs in 2019.
 These large survival inequalities were present at every stage of the life­course including childhood and early adolescence (0–14 years), young adulthood (15–29 years), working ages (30–69 years), and older ages (70–79 years) (@fig-ch-5-q-change).
 Specifically, the probability of dying at different stages of the life­course in the 99$^{\text{th}}$ percentile of MSOAs was between 2.6 and 3.1 times that of the first percentile for female and male sexes in 2019.
 From 2002 to 2019, the relative inequality across MSOAs (ie, ratio of the 99$^{\text{th}}$ to the first percentile) in the probabilities of dying increased at every stage of the life course; the absolute inequality (ie, difference between the 99$^{\text{th}}$ and first percentiles) decreased slightly in all combinations except for working age women (30–69 years).
@@ -186,7 +186,7 @@ In England, these economic trends led to a larger loss of jobs in the north than
 These long-­term changes were followed by a reduction in social support and welfare payments and in funding to the local governments during the austerity period, which increased poverty, including in-­work poverty [@blundellCOVID19Inequalities2020; @alexiouLocalGovernmentFunding2021], and also had larger effects in the north than in London and southern parts of the country and worsened the effects of loss of secure employment [@davenportLevellingWhereHow2020; @alexiouLocalGovernmentFunding2021; @grayDepthsCutsUneven2018].
 Poverty and reduced funding to services increase mortality through health behaviours such as smoking and alcohol use, poor nutrition and living environment, psychosocial pathways, and lower provision or use of preventive and curative health care.
 
-### Summary
+## Summary
 
 I performed a high-resolution spatiotemporal analysis of all deaths in England from 2002 to 2019, using a Bayesian hierarchical model to obtain estimates of age-specific death rates by age, sex, and MSOA.
 I used life table methods to calculate life expectancy at birth and probabilities of death in different ages by sex and MSOA.

@@ -5,11 +5,12 @@
 Although the UK has, by global standards, a relatively high life expectancy, the country still suffers vast inequalities in mortality.
 While there have been subnational studies on trends in life expectancy in England, these have been limited in resolution to the district level [@bennettFutureLifeExpectancy2015].
 There is vast heterogeneity in health outcomes and their determinants within districts.
-As a notable example of mortality from recent years, Kensington and Chelsea, which contains both the most affluent areas in the country in its south and some of the poorest in its north, was the district containing the Grenfell Tower tragedy in 2017.
+As a notable example of mortality from recent years, the district of Kensington and Chelsea, which contains both the most affluent areas in the country in its south and some of the poorest in its north, saw a tragic fire in a high­rise residential building in a council housing complex, Grenfell Tower, in 2017.
 There is a clear need to uncover further variation in mortality below the district level.
 
 Since around 2010, although national life expectancy has continued to increase, there is evidence that the rise in female life expectancy has reversed in the most deprived deciles of the population [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
-There are likely to be important changes in the cause-specific composition of mortality that have driven this reversal.
+There is a need to identify the specific places where these declines are happening.
+There are likely to be important changes in mortality from specific causes of death in these areas that have driven this reversal.
 
 ## Objectives
 
@@ -26,6 +27,6 @@ I will then explore inequalities in the UK over the past few decades through to 
 @sec-Chapter3 presents the data sources, and @sec-Chapter4 the statistical modelling choices common to all objectives of this thesis.
 @sec-Chapter5 concerns the first objective of the thesis - estimating trends in life expectancy for very small areas in England.
 @sec-Chapter6 extends the first objective by focussing on London at a finer scale than the previous chapter in an attempt to gauge whether higher-resolution analyses are possible.
-@sec-Chapter7 addresses objective two of this thesis, breaking down total mortality in England into specific causes of deaths at a coarser scale, and looking at potential drivers of the observed trends in life expectancy.
+@sec-Chapter7 addresses objective two of this thesis, modelling specific causes of deaths at a coarser scale, and looking at potential drivers of the observed trends in life expectancy.
 @sec-Chapter8 follows the methods of @sec-Chapter7, but focussing solely on deaths from cancers.
 @sec-Chapter9 concludes with a discussion on the public health implications of the findings and areas for future research building on the work in this thesis.

@@ -63,7 +63,7 @@ Low life expectancy was spread in LSOAs throughout the city but was more common 
 ![Geography of change in life expectancy in London from 2002 to 2019.](../thesis-analysis/thesis_analysis/london/figures/map_change.pdf){#fig-ch-6-map-change}
 
 There was large variation across London in how much life expectancy increased from 2002 to 2019, ranging from <2 years in 537 (11.1%) LSOAs for women and 214 (4.4%) for men to >10 years in 220 (4.6%) for women and 211 (4.4%) for men (@fig-ch-6-map-change).
-In 134 (2.8%) LSOAs for women and 32 (0.7%) for men, life expectancy may have declined, with a posterior probability of a decline greater than 80% in 41 (0.8%) and 14 (0.3%) LSOAs for women and men, respectively.
+In 134 (2.8%) LSOAs for women and 32 (0.7%) for men, life expectancy may have declined, with a posterior probability of a decline >0.80 in 41 (0.8%) and 14 (0.3%) LSOAs for women and men, respectively.
 Life expectancy increased more in LSOAs in central and inner east and south London than in outer areas.
 
 ![Change in LSOA life expectancy in different time periods, 2002–19. Each point shows the posterior median change in one LSOA. LSOAs are coloured by their life expectancy at the beginning of each period.](../thesis-analysis/thesis_analysis/london/figures/change.pdf){#fig-ch-6-change fig-scap="Change in LSOA life expectancy in different time periods, 2002–19."}
@@ -168,7 +168,7 @@ The evolution of London, and major cities in other high-income nations and emerg
 I performed a hyper-resolution spatiotemporal analysis of all deaths in London from 2002 to 2019, using a Bayesian hierarchical model to obtain estimates of age-specific death rates by age, sex, and LSOA.
 I used life table methods to calculate life expectancy at birth by sex and LSOA.
 
-In 134 (2.8%) of London's LSOAs for women and 32 (0.7%) for men, life expectancy may have declined from 2002 to 2019, with a posterior probability of a decline >80% in 41 (0.8%, women) and 14 (0.3%, men) LSOAs.
+In 134 (2.8%) of London's LSOAs for women and 32 (0.7%) for men, life expectancy may have declined from 2002 to 2019, with a posterior probability of a decline >0.80 in 41 (0.8%, women) and 14 (0.3%, men) LSOAs.
 The life expectancy increase in other LSOAs ranged from <2 years in 537 (11.1%) LSOAs for women and 214 (4.4%) for men to >10 years in 220 (4.6%) for women and 211 (4.4%) for men.
 The 2.5$^{\text{th}}$-97.5$^{\text{th}}$ percentile life expectancy difference across LSOAs increased from 11.1 (10.7–11.5) years in 2002 to 19.1 (18.4–19.7) years for women in 2019, and from 11.6 (11.3–12.0) years to 17.2 (16.7–17.8) years for men.
 

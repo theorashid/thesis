@@ -129,7 +129,7 @@ Probability of dying from leukaemia between birth and 80 years of age in 314 loc
 
 ![Men](../thesis-analysis/thesis_analysis/cancers/figures/male_map_Lymphomas_multiple_myeloma.pdf){#fig-app-e-map-lymphomas-men}
 
-Probability of dying from lymphomas, multiple myeloma between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
+Probability of dying from lymphoma and multiple myeloma between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.
 :::
 
 ![Probability of dying for women from breast cancer between birth and 80 years of age in 314 local authority districts in England in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/cancers/figures/female_map_Breast_cancer.pdf){#fig-app-e-map-breast-women}

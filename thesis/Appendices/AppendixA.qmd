@@ -9,7 +9,7 @@ Instead, demographers use period (or "current") life tables, which consider what
 Life tables can be constructed using discrete age bands starting at age $x$ and ending at age $x+n$.
 We supply the age-specific death rates, ${}_{n}m_{x}$, and the average person-years lived by those dying in the interval, ${}_{n}a_{x}$, and the life table calculates the mean age at death – the life expectancy, $e_x$.
 
-We start with a hypotethical cohort of size $l_0 = 100,000$ and sequentially apply the probability of dying in each age group, calculated as
+We start with a hypothetical cohort of size $l_0 = 100,000$ and sequentially apply the probability of dying in each age group, calculated as
 $$
 {}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
 $$ {#eq-app-a-prob-dying}
