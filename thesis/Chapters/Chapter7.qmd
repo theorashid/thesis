@@ -169,6 +169,7 @@ There was a more prominent gradient for injuries in men (0.5 years) than women (
 From 2002 to 2019, life expectancy increased in every district for both women and men (@fig-ch-7-contribution).
 This was driven largely by decreases in ischaemic heart disease mortality, which contributed gains of between 0.7 and 1.9 years for women between 1.4 and 4.0 years for men.
 In contrast, mortality from dementias acted in the other direction, forcing life expectancy downwards by between 0.2 and 1.1 years for women and between 0.4 and 1.0 years for women.
+Districts with the greatest improvements in life expectancy had large contributions from declines in CVD mortality as well as some of the smallest contributions from increases in mortality from dementias.
 
 ::: {#fig-ch-7-contribution layout-ncol=2 fig-scap="Contributions of deaths from specific causes to the difference between the district life expectancy in 2002 and 2019 in 314 local authority districts in England."}
 
