@@ -1,0 +1,65 @@
+---
+title: Thesis corrections for "Spatiotemporal modelling of all-cause and cause-specific mortality in England"
+author: Theo Alexander Omar Rashid
+date: 01-12-2023
+format:
+  pdf:
+    mainfont: Helvetica
+    fontsize: 10pt
+    include-in-header: before-body.tex
+---
+
+::: date
+25th December, 2023
+:::
+
+Dear examiners,
+
+Thank you for taking the time to read my thesis "Spatiotemporal modelling of all-cause and cause-specific mortality in England" and for the thoughtful and enjoyable discussion we had during the viva.
+I attach my response to the corrections.
+
+Kind regards,
+
+Theo Rashid
+
+## Required corrections
+
+1. P25 (and P40): While not strictly a paper, a very classical depiction of inequalities in longevity across small areas actually comes from London (https://journals.sagepub.com/doi/abs/10.1068/a45341)
+
+2. P28: please revise the textual distinction made between areal model using spatial neighbourhood structure and those which use nested hierarchy as they are both a specific case of hierarchical models
+3. P31: Please discuss here or elsewhere that in some cases it is not appropriate to have statistical smoothing and how can someone evaluate if that is the case in a specific situation; we discussed using posterior predictive checks and abplots on death rates
+4. P32: Here or elsewhere please also discuss potential disadvantages in life expectancy as an outcome measure especially as relevant to the assumptions that you need to make in terms of its calculation
+5. P48 the idea of exploring population turnover (and therefore a measure of changing composition) is great. The only thing I’d mention is that turnover itself may be an exposure of ill health (some discussion here https://www.sciencedirect.com/science/article/abs/pii/S1353829218310700)
+6. P54: An important topic not considered in detail is model adequacy. Please add a table summarizing outcomes of model adequacy and consistency checks performed.
+7. P56: Please elaborate on your prior choices and robustness of your analyses.
+8. P57: Please reconsider your statement that “INLA scales badly” in light of the discussion during the viva and our elaboration that the number of hyperparameters are probably less than 20.
+9. P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., TOPALS): https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en and the pros and cons would merit discussion.
+10. Figure 5.1: what years are used for the country life expectancies? 2002 or 2019?
+11. P62: missing from this paper is an evaluation of the uncertainty around life expectancy. This could be measured with a sort of coefficient of variation (SD of all posterior LEs divided over the median LE). The CDC in the US has used 25% as a threshold for poor certainty in some of their papers, though this threshold may be too high.
+12. P73: On the discussion about factors driving lower life expectancy in the US (linked to deaths of despair), a recent paper blames the lack of social safety net systems (https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2788767) which would fit well with the authors narrative on the erosion of the welfare system in the UK from 2012 onwards
+13. P75: please clarify the discussion on spatial analyses of mortality rates at post code level with a greater appreciation of the pitfalls in such.
+14. P76: Please specify the mean and variance of the BetaBinomial as expressed in your parameters so that the precise choice of parameterisation is clear.
+15. P77: there appear to be a few life expectancies in the high 90s or even 100s (City of London), which seems unfeasible. There must be wide uncertainty around these, right? Alternatively, the author mentions a mismatch of population estimates due to changes in adjacent areas.
+16. P81: please clarify how the uncertainty is visualised (for instance in Fig 6.5). Is this the distribution at district level of the average posterior mean at LSOA level?
+17. P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
+18. P88: please add a description on how cause-of-death is assigned in the UK to clarify the nature of the underlying data; similarly has any uncertainty been considered in the estimated of the contributions of death from each cause and would this be important to consider possibly in future work?
+19. P88: It is not clear what the “ICD-10 code in the first position of the death record” is for the classification of deaths for neonates without underlying cause of death. Does this refer to contributory causes?
+20. P89: It is not entirely clear on where ill-defined deaths go (R chapter mostly). The chapter does not mention anything, and Table D.1 mentions those deaths being included in the residual causes (but are not listed in those). There’s also a mention to a redistribution without any details.
+21. P91: the descriptions on Arriaga’s method are very hard to follow without equations, and please lay out key assumptions also in the main body of the thesis.
+22. P91: if the causes of death cover all causes (I don’t see anything missing), why is the rescaling of cause specific mortality needed? (there’s a mention in P103 to the “total mortality rule” which I assume refers to this, but it is unclear)
+23. P97: what may be reasons of the far more common contribution of lung cancer to inequality among women compared to men?  (this is somewhat talked about in chapter 8)
+24. P109: please better justifying the need for this project. There is not much in the introduction about this.
+25. P111: as with our earlier comment above on ill-defined causes, it isn’t clear here how they are treated for this analysis.
+26. P112: The author indicates there are very few studies looking at geographic patterns and cancer. Spain has been producing reports on that for some time (See here, the newest one is in English: https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Paginas/Atlas.aspx direct link to the newest one here https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Documents/atlas/Atlas_espana_portugal.pdf )
+27. P117: reword the definition of posterior probability of a true decline
+28. P125: For the discussion on epidemiologic transitions, I suggest https://pubmed.ncbi.nlm.nih.gov/35639549/ and https://academic.oup.com/ije/article/51/4/1054/6525745 for some nuanced discussions. Injuries have definitely been a weak spot of the theory.
+29. P145: please provide a full justification of equation A.1, and under what assumptions death probabilities conditional upon survival to age x can be derived from cross-sectional, empiric mortality rates.
+30. P145: please provide a worked example to allow readers to build intuition into the approach, we suggest when n=1.
+1 P146: please explain in words how the equations ensure that the life table is closed in the sense that everyone must die at some point
+1. P146: please provide reasonable detail and assumptions behind the Kannisto-Thatcher approach so the thesis is more self-contained.
+2. P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
+
+## Other
+
+1. Add Marta's paper.
+2. Cite latest paper for chapter 8.
