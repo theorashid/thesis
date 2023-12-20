@@ -103,10 +103,10 @@ The probability of dying from a cancer before 80 years of age declined from 2002
 Districts in London achieved the largest declines.
 Among cause categories, the largest reductions in mortality were for stomach cancer, with the declines in probability of dying before 80 years of age ranging between 39.1% and 57.2% for women across districts, and between 51.5% and 58.8% for men from 2002 to 2019, all with posterior probability >0.99.
 The probability of dying from oesophageal cancer also decreased in every district for women, but varied for men from a 42.9% (27.7% to 56.0%) decrease in Plymouth to a 7.0% (-19.8% to 42.4%) increase in Gosport (@fig-ch-8-change and @fig-app-e-map-oesophagus).
-The posterior probability that the observed decline was a true decline was >0.80 in 242 (77.1%) districts for oesophageal cancer in men.
+The posterior probability that the district saw a decline in mortality from oesophageal cancer was >0.80 in 242 (77.1%) districts in men.
 Lung cancer mortality decreased everywhere for men with posterior probability >0.99, but for women, there were mixed trends.
 The largest declines were in London, the strongest seen in Newham (decrease of 29.5% (18.5% to 38.8%)), whereas the probability of dying increased in many districts in the East of England, with the largest increase of 27.0% (6.8% to 49.7%) in Tendring (@fig-ch-8-change and @fig-app-e-map-lung).
-The posterior probability that the observed decline for lung cancer in women was a true decline was >0.80 in 197 (62.7%) districts.
+The posterior probability that the district observed a decline in mortality from lung cancer in women was >0.80 in 197 (62.7%) districts.
 Women in 4 (1.3%) districts experienced an increase in lung cancer mortality with a posterior probability >0.80, and in the remaining 113 (36.0%) districts there was no clear trend at this level of posterior probability.
 
 ::: {#fig-ch-8-change layout-ncol=1 fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers."}

@@ -79,16 +79,16 @@ Female and male life expectancy were correlated across MSOAs with a correlation 
 Female life expectancy was higher than male life expectancy in all but 15 MSOAs.
 The female advantage was more than 5 years in 1498 (22.1%) of 6791 MSOAs and 1–5 years in another 5187 (76.4%).
 From 2002 to 2019, a decline in life expectancy was more probable than an increase in 124 mostly urban MSOAs of 6791 (1.8% of all MSOAs) for women, with posterior probabilities of greater than 80% in 34 of these.
-The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of the estimated decline being a true decline >0.99) occurred in a MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
+The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of a decline >0.99) occurred in a MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
 
 ![Comparison of female and male life expectancy in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-5-sex-comp}
 
 ![Geography of change in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change.pdf){#fig-ch-5-map-change}
 
-![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-5-map-pp-change}
+![Map of posterior probability that the estimated change represents an increase in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-5-map-pp-change}
 
 Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs.
-Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 0.64).
+Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of a decline 0.64).
 For the other MSOAs, the increase ranged from less than 1 year in 31 MSOAs to more than 7 years in 114 MSOAs.
 The largest increases in female and male life expectancies were seen in some MSOAs in and around London (e.g., in the London Borough of Camden).
 In 5133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (@fig-ch-5-sex-comp), leading to a closing of the life expectancy gap between female and male sexes.
