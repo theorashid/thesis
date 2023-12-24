@@ -60,10 +60,20 @@ I have reworded the sentences to avoid the phrase "true decline" (PXX, LXX).
 
 28. P125: For the discussion on epidemiologic transitions, I suggest https://pubmed.ncbi.nlm.nih.gov/35639549/ and https://academic.oup.com/ije/article/51/4/1054/6525745 for some nuanced discussions. Injuries have definitely been a weak spot of the theory.
 29. P145: please provide a full justification of equation A.1, and under what assumptions death probabilities conditional upon survival to age x can be derived from cross-sectional, empiric mortality rates.
+
+I have extended the derivation to show how equation A.1 can be derived intuitively, and have added that the results assume the mid-year population is used to approximate the number of person-years lived (PX).
+
 30. P145: please provide a worked example to allow readers to build intuition into the approach, we suggest when n=1.
-1 P146: please explain in words how the equations ensure that the life table is closed in the sense that everyone must die at some point
-1. P146: please provide reasonable detail and assumptions behind the Kannisto-Thatcher approach so the thesis is more self-contained.
-2. P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
+
+Equation A.1 is not intuitive, and there is no text in Preston (2001) (where all the life table detail is taken) or other sources that tries to build intuition - it is simply a result of algebraic manipulation.
+By providing further detail on the intuitive derivation of equation A.1 in #29, the reader is now better-placed to understand how the result has arisen.
+
+31. P146: please explain in words how the equations ensure that the life table is closed in the sense that everyone must die at some point
+
+I have extended the derivation to show how the expression for the number of survivors in the open-ended age interval has been derived intuitively using the fact that the number of deaths in the open-ended interval is equal to the number of people who survived to the final age group (PX).
+
+32.   P146: please provide reasonable detail and assumptions behind the Kannisto-Thatcher approach so the thesis is more self-contained.
+33.   P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
 
 ## Other
 
