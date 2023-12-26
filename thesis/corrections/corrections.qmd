@@ -49,7 +49,15 @@ As stated in the figure caption, the life expectancy estimates "for other countr
 19. P88: It is not clear what the “ICD-10 code in the first position of the death record” is for the classification of deaths for neonates without underlying cause of death. Does this refer to contributory causes?
 20. P89: It is not entirely clear on where ill-defined deaths go (R chapter mostly). The chapter does not mention anything, and Table D.1 mentions those deaths being included in the residual causes (but are not listed in those). There’s also a mention to a redistribution without any details.
 21. P91: the descriptions on Arriaga’s method are very hard to follow without equations, and please lay out key assumptions also in the main body of the thesis.
+
+I have supplemented the text with the equations and reiterated some details from Arriaga's method calculation in the appendix to the main text (PX).
+
 22. P91: if the causes of death cover all causes (I don’t see anything missing), why is the rescaling of cause specific mortality needed? (there’s a mention in P103 to the “total mortality rule” which I assume refers to this, but it is unclear)
+
+The rescaling of mortality was specifically for the cause-specific contribution to mortality analysis.
+I have added detail to the text explaining this and that it required so that the contributions sum exactly to the life expectancy differences (PX).
+This is reiterated in the footnote on PX.
+
 23. P97: what may be reasons of the far more common contribution of lung cancer to inequality among women compared to men?  (this is somewhat talked about in chapter 8)
 24. P109: please better justifying the need for this project. There is not much in the introduction about this.
 25. P111: as with our earlier comment above on ill-defined causes, it isn’t clear here how they are treated for this analysis.
@@ -77,6 +85,14 @@ I have extended the derivation to show how the expression for the number of surv
 I have added more detail on the Kannisto-Thatcher method, including the assumption that the method assumes the probability of dying is a logistic function of age (PX).
 
 33. P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
+
+I have clarified the phrase "subtract the probability of surviving" in section A.2 (PX).
+I have added further detail on what the terms in Arriaga's method represent (PX).
+
+The construction of the age-specific ${}_{n}\Delta_{x}$ relies only on differences in life table quantities from all-cause mortality, i.e. those used to calculate the life expectancy for each population, rather than any hypothetical cohort exposed to cause $i$ alone, which would be used to construct cause-specific life expectancies.
+For the cause-specific contributions, the main assumption is that ${}_{n}\Delta^i_{x}$ are proportional to the differences between the populations in cause-specific death rates in that age group.
+These are not cause-specific life expectancies, but cause-specific contributions to differences life expectancy (calculated from all-cause death rates) between two populations.
+I have reworded the text to clarify that these are the same life table quantities from the all-cause death rates used earlier in Appendix A (PX).
 
 ## Other
 

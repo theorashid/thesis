@@ -72,12 +72,21 @@ Death rates for this total mortality group, and for injuries, were corrected in 
 
 I calculated the contributions of deaths from each cause of death, in each age group, to both the life expectancy inequality between each district and the district with the highest life expectancy, and to the life expectancy change for each district between different time periods.
 I used Arriaga's method, which is widely used to decompose life expectancy differences between populations or population subgroups [@arriagaMeasuringExplainingChange1984].
-Arriaga's method calculates how much each age group contributes to the life expectancy difference by quantifying how much death rate differences at that age change the years of life lived both at that age and in subsequent ages through changing the number of survivors.
-It then partitions the age-specific contributions to the life expectancy gap by cause of death in proportion to the difference in cause-specific death rates between the subgroups.
-The cause-specific death rates were scaled such that the sum over all causes was equal to the estimate for total mortality.
+Arriaga's method uses quantities generated from the life tables of two populations to calculate how much each age group contributes to the life expectancy difference, ${}_{n}\Delta_{x}$, by looking at differences in the number of survivors in the hypothetical cohort of the life table at different ages.
+It then partitions the age-specific contributions to the life expectancy gap by cause of death, ${}_{n}\Delta^i_{x}$, in proportion to the difference in cause-specific death rates between the subgroups:
+$$
+{}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}.
+$$ {#eq-ch-7-arriaga-cause}
+where ${}_{n}m^i_{x}$ are age-specific death rates for cause $i$.
+Arriaga showed the sum of the age- and cause-specific contributions are equal to the difference in life expectancy,
+$$
+e_0(2) - e_0(1) = \sum_x {}_{n}\Delta_{x} = \sum_i {}_{n}\Delta^i = \sum_x \sum_i {}_{n}\Delta^i_{x}.
+$$ {#eq-ch-7-arriaga-sum}
+
+So that the cause-specific contributions summed exactly to the differences in life expectancy as in @eq-ch-7-arriaga-sum, the cause-specific death rates, which were estimated in separate model runs, were scaled such that the sum over all causes was equal to the estimate for all-cause death rate, which itself was estimated in a separate run.
 For this analysis, I used the sample mean death rate in each age-district-year-cause combination.
 
-Details on the calculations for life expectancy, the probability of dying, and Arriaga's method can be found in @sec-appA.
+Further details on the calculations for life expectancy, the probability of dying, and Arriaga's method can be found in @sec-appA.
 
 ## Results
 

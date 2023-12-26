@@ -60,7 +60,7 @@ Throughout the thesis, I only consider life expectancy at birth.
 
 ### The very young ages and the very old ages
 
-On average, it is a good approximation to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n /2$.
+On average, it is a good approximation to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n / 2$.
 But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy.
 Coale and Demeny used regression on a series of international datasets to recommend suitable values for ${}_{1}a_{0}$ and ${}_{4}a_{1}$ instead of the midpoint [@coaleRegionalModelLife1983].
 
@@ -73,17 +73,19 @@ The resulting curve is extrapolated through to 129 years before calculating the 
 ## Probability of dying
 
 The probability of dying from a specific cause of death, $i$, is calculated as in @eq-app-a-prob-dying.
-Equally, we can subtract the probability of surviving to that age group, $1 - \prod_x {}_{n}p^i_{x}$.
+Equally, we can calculate the probability of dying by subtracting the probability of surviving in each age group through to that age from unity, i.e. $1 - \prod_x {}_{n}p^i_{x}$.
 Note, even for the smallest death rates, ${}_{\infty}q^i_{x} = 1$ – if you live to infinity, you'll die of it eventually.
 
 ## Cause-specific decomposition of differences in life expectancy
 
-@arriagaMeasuringExplainingChange1984 proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as
+Using quantities generated from the life tables of two populations as above, @arriagaMeasuringExplainingChange1984 proposed a method to calculate the age-specific contributions to the difference in life expectancy between these populations as
 $$
 {}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
 $$ {#eq-app-a-arriaga-age}
+The first term on the right hand side corresponds to the "direct effect" on the life expectancy difference between the two populations in the average number of person-years lived by the survivors to that age group (${}_{n}L_{x} / l_x$).
+The second term represents the "indirect effect" on the number of survivors caused by the mortality changes within an age group.
 
-We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates:
+We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates between the two populations:
 $$
 {}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}
 $$ {#eq-app-a-arriaga-cause}
