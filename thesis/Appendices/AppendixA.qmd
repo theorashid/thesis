@@ -64,8 +64,11 @@ On average, it is a good approximation to assume deaths occur halfway through th
 But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy.
 Coale and Demeny used regression on a series of international datasets to recommend suitable values for ${}_{1}a_{0}$ and ${}_{4}a_{1}$ instead of the midpoint [@coaleRegionalModelLife1983].
 
-The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations.
-In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table and adjust ${}_{n}a_{x}$ above 70 years [@thatcherSurvivorRatioMethod2002].
+The start of the open-ended age group can be many years away from some of the ages at death, particularly in ageing populations.
+In order to produce reliable estimates of death rates at older ages, I used the Kannisto-­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table and adjust ${}_{n}a_{x}$ above 70 years [@thatcherSurvivorRatioMethod2002].
+The Kannisto-Thatcher method assumes the probability of dying is a logistic function of age.
+The logit-transformed probability of dying above 70 years is regressed upon age.
+The resulting curve is extrapolated through to 129 years before calculating the number of survivors in the cohort following the adjusted probability of dying to estimate ${}_{n}a_{x}$ above 70 years.
 
 ## Probability of dying
 

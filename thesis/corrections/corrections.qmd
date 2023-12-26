@@ -29,7 +29,7 @@ Theo Rashid
 2. P28: please revise the textual distinction made between areal model using spatial neighbourhood structure and those which use nested hierarchy as they are both a specific case of hierarchical models
 3. P31: Please discuss here or elsewhere that in some cases it is not appropriate to have statistical smoothing and how can someone evaluate if that is the case in a specific situation; we discussed using posterior predictive checks and abplots on death rates
 4. P32: Here or elsewhere please also discuss potential disadvantages in life expectancy as an outcome measure especially as relevant to the assumptions that you need to make in terms of its calculation
-5. P48 the idea of exploring population turnover (and therefore a measure of changing composition) is great. The only thing I’d mention is that turnover itself may be an exposure of ill health (some discussion here https://www.sciencedirect.com/science/article/abs/pii/S1353829218310700)
+5. P48: the idea of exploring population turnover (and therefore a measure of changing composition) is great. The only thing I’d mention is that turnover itself may be an exposure of ill health (some discussion here https://www.sciencedirect.com/science/article/abs/pii/S1353829218310700)
 6. P54: An important topic not considered in detail is model adequacy. Please add a table summarizing outcomes of model adequacy and consistency checks performed.
 7. P56: Please elaborate on your prior choices and robustness of your analyses.
 8. P57: Please reconsider your statement that “INLA scales badly” in light of the discussion during the viva and our elaboration that the number of hyperparameters are probably less than 20.
@@ -72,8 +72,11 @@ By providing further detail on the intuitive derivation of equation A.1 in #29, 
 
 I have extended the derivation to show how the expression for the number of survivors in the open-ended age interval has been derived intuitively using the fact that the number of deaths in the open-ended interval is equal to the number of people who survived to the final age group (PX).
 
-32.   P146: please provide reasonable detail and assumptions behind the Kannisto-Thatcher approach so the thesis is more self-contained.
-33.   P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
+32. P146: please provide reasonable detail and assumptions behind the Kannisto-Thatcher approach so the thesis is more self-contained.
+
+I have added more detail on the Kannisto-Thatcher method, including the assumption that the method assumes the probability of dying is a logistic function of age (PX).
+
+33. P146 Section A.2: please provide a more detailed justification with greater attention to the underlying assumptions that lead to equation A.6. We did not follow details such as “subtract the probability of surviving”. Further, it seems the construction uses D^i_x from some year t to construct a hypothetical cohort that survives to cause i alone. However there are competing deaths and if these had not occurred, D^i_x would be larger for old ages x. It seems the underpinning are strong and these render interpretation of the calculated cause-specific life expectancies challenging.
 
 ## Other
 
