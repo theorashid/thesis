@@ -105,6 +105,7 @@ There might be true variability in the data which a smoothing model would concea
 For example, certain spatial units might contain isolated populations with high mortality over a sustained period, such as counties with Native American reservations in the USA [@dwyer-lindgrenInequalitiesLifeExpectancy2017].
 There can also be spatially- and temporally-specific events that cause a spike in mortality such as the Grenfell Tower fire in 2017.
 Without accounting for these events, the models described above would either attenuate their effect on mortality, or a spike in deaths would cause estimates of mortality in nearby spatial units or years to be erroneously high.
+Beyond the use of subject matter experts, posterior predictive checks and plots of modelled death rates against the observed data can help to identify outlier spikes in mortality which are specific to a particular time or place, and which we do not want our model to smooth.
 
 ### Applications of disease mapping methods
 
