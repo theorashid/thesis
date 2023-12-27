@@ -9,7 +9,9 @@ Although the complexity of policy means it cannot be proved causally, leaders wi
 
 The declines in life expectancy were sustained over a long period of time, which serves as another example where death rates for some population subgroups run contrary to the persistent mortality decline of the third stage of the Epidemiologic Transition theory, as discussed in @gaylinRefocusingLensEpidemiologic1997 with the HIV/AIDS pandemic.
 Even if England is in the hypothesised fourth stage of the transition, the Age of Delayed Degenerative diseases [@olshanskyFourthStageEpidemiologic1986], there are subnational patterns where degenerative diseases are *not* killing at later and later ages.
-The difference in progress between districts in the last decade was largely driven by differences in these degenerative diseases - in particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
+This supports the growing evidence that Omran's theory acts only as a useful heuristic, and that there is a large amount of variability, particularly in the latter stages of the transition, between broad geographical regions [@mackenbachOmranEpidemiologicTransition2022; @sudharsananLargeVariationEpidemiological2022].
+
+The difference in progress between districts in the last decade was largely driven by differences in degenerative diseases - in particular, the rate of improvement for CVDs and all other NCDs, and the strength of the negative forcing effect of Alzheimer's and other dementias.
 Furthermore, female mortality from infectious, maternal, perinatal and nutritional conditions (GBD group 1), which dominate the second stage of the transition, increased in many districts.
 There is also a worrying shift towards injuries (GBD group 3) contributing negatively towards life expectancy progress, particularly for men.
 This is possibly driven by a rise in "deaths of despair" [@angusIncreasesDeathsDespair2023; @caseRisingMorbidityMortality2015], although this would require further analysis by separating intentional and unintentional injuries.

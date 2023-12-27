@@ -148,6 +148,7 @@ Although MSOAs have small populations and are designed to have some socioeconomi
 To understand life expectancy inequalities in relation to individual socioeconomic characteristics requires linking health and other data such as census records, education, and taxes, as done in countries like New Zealand and Sweden.
 
 The people who live in each MSOA can change due to both within­-country and international migration.
+There is some evidence that migrants tend to be healthier than those who do not move [@connollyIncreasingInequalitiesHealth2007].
 Regression of the change in life expectancy from 2002 to 2019 in each MSOA against population turnover, the proportion of households in each MSOA in 2019 who were different from those who had lived there in 2002 [@vandijkUsingLinkedConsumer2021], was not able to explain the variation in life expectancy change for women ($R^2 < 0.001$) or for men ($R^2 = 0.01$) at the national level.
 Studies in both the UK [@connollyIncreasingInequalitiesHealth2007] and USA [@ezzatiReversalFortunesTrends2008] have also shown that migration is not sufficient to explain the trends in health and health inequalities, and that these trends are largely due to real changes in population health.
 Even if rising inequalities are partly due to health-­selective migration, this phenomenon has social and economic origins that should be addressed through employment opportunities, affordable housing, high-­quality education, and health care.
