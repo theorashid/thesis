@@ -151,8 +151,9 @@ Two studies investigated trends in cancer mortality, although with limited resol
 Both studies similarly found that areas in London were exceptional, with generally lower rates of premature cancer mortality than expected for their level of deprivation [@steelChangesHealthCountries2018], attenuated inequality between the most and least deprived deciles, and lower mortality for prostate cancer [@arikSocioeconomicDisparitiesCancer2021; @arikUnevenOutcomesFindings2022].
 The latter study, which only focussed on the four leading cancers, reported that in the worst performing regions inequality between the top and bottom deciles in female lung cancer mortality was similar to the 3.7-fold gap between the top and bottom districts seen in this study.
 
-Elsewhere, cancer atlases have been limited to coarse geographical units and aggregate multiple years of data rather than presenting information on trends.
-For smaller areas, a study in the USA at the county level found that lung cancer and stomach cancer were among the cancers with the largest inequalities in mortality across counties in 2014, but there was limited variation for leukaemia, lymphoma and multiple myeloma, which is consistent with the results presented here [@mokdadTrendsPatternsDisparities2017].
+Beyond the UK, cancer atlases have been largely limited to coarse geographical units and aggregate multiple years of data rather than presenting information on trends.
+There have been examples of cancer atlases for smaller areas for Spain and Portugal [@nationalinstituteofhealthdoutorricardojorgeAtlasCancerMortality2021] and Australia [@cancercouncilqueenslandAustralianCancerAtlas2018].
+A study in the USA on trends in cancer mortality at the county level found that lung cancer and stomach cancer were among the cancers with the largest inequalities in mortality across counties in 2014, but there was limited variation for leukaemia, lymphoma and multiple myeloma, which is consistent with the results presented here [@mokdadTrendsPatternsDisparities2017].
 The study also found that the strongest increases over time were in liver cancer mortality, with nearly all counties seeing an increase.
 
 ### Explaining the variation and implications

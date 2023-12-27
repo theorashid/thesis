@@ -61,7 +61,10 @@ This is reiterated in the footnote on PX.
 23. P97: what may be reasons of the far more common contribution of lung cancer to inequality among women compared to men?  (this is somewhat talked about in chapter 8)
 24. P109: please better justifying the need for this project. There is not much in the introduction about this.
 25. P111: as with our earlier comment above on ill-defined causes, it isn’t clear here how they are treated for this analysis.
-26. P112: The author indicates there are very few studies looking at geographic patterns and cancer. Spain has been producing reports on that for some time (See here, the newest one is in English: https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Paginas/Atlas.aspx direct link to the newest one here https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Documents/atlas/Atlas_espana_portugal.pdf )
+26. P112: The author indicates there are very few studies looking at geographic patterns and cancer. Spain has been producing reports on that for some time (See [here](https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Paginas/Atlas.aspx), the newest one is in English, direct link to the newest one [here](https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesCronicas/Documents/atlas/Atlas_espana_portugal.pdf))
+
+I have now referenced this report on Spain and Portugal as well as a similar atlas from Australia (PX).
+
 27. P117: reword the definition of posterior probability of a true decline
 
 I have reworded the sentences to avoid the phrase "true decline" (PXX, LXX).
