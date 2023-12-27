@@ -256,7 +256,7 @@ In 2015, the GBD study released its first subnational estimates of mortality, st
 @steelChangesHealthCountries2018 assessed these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
 In a study on forecasting subnational life expectancy in England and Wales, @bennettFutureLifeExpectancy2015 estimated a 8.2 year range in life expectancy for men and 7.1 year range for women in 2012 between 375 districts.
 The lowest life expectancies were seen in urban northern England, and the highest in the south and London's affluent districts.
-Within London itself, male and female life expectancy showed 5-6 years of variation.
+Within London itself, @cheshireFeaturedGraphicLives2012 visualised the heterogeneity of mortality in London by assigning tube stops the life expectancy of the nearest ward, revealing that 10 years are lost between two consecutive stops, Canary Wharf and North Greenwich, on the Jubilee line.
 
 #### Deprivation {-}
 

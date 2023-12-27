@@ -9,10 +9,6 @@ format:
     include-in-header: before-body.tex
 ---
 
-::: date
-25th December, 2023
-:::
-
 Dear examiners,
 
 Thank you for taking the time to read my thesis "Spatiotemporal modelling of all-cause and cause-specific mortality in England" and for the thoughtful and enjoyable discussion we had during the viva.
@@ -24,7 +20,9 @@ Theo Rashid
 
 ## Required corrections
 
-1. P25 (and P40): While not strictly a paper, a very classical depiction of inequalities in longevity across small areas actually comes from London (https://journals.sagepub.com/doi/abs/10.1068/a45341)
+1. P25 (and P40): While not strictly a paper, a very classical depiction of inequalities in longevity across small areas actually comes from London (see [here](https://journals.sagepub.com/doi/abs/10.1068/a45341)).
+
+I have added this reference and an explanation of the visualisation to the section on spatial inequality in the UK (PX).
 
 2. P28: please revise the textual distinction made between areal model using spatial neighbourhood structure and those which use nested hierarchy as they are both a specific case of hierarchical models
 3. P31: Please discuss here or elsewhere that in some cases it is not appropriate to have statistical smoothing and how can someone evaluate if that is the case in a specific situation; we discussed using posterior predictive checks and abplots on death rates
@@ -33,7 +31,7 @@ Theo Rashid
 6. P54: An important topic not considered in detail is model adequacy. Please add a table summarizing outcomes of model adequacy and consistency checks performed.
 7. P56: Please elaborate on your prior choices and robustness of your analyses.
 8. P57: Please reconsider your statement that “INLA scales badly” in light of the discussion during the viva and our elaboration that the number of hyperparameters are probably less than 20.
-9. P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., TOPALS): https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en and the pros and cons would merit discussion.
+9.  P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., TOPALS): https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en and the pros and cons would merit discussion.
 10. Figure 5.1: what years are used for the country life expectancies? 2002 or 2019?
 
 As stated in the figure caption, the life expectancy estimates "for other countries [are] from World Bank estimates in 2019".

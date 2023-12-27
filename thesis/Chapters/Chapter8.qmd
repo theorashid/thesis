@@ -152,7 +152,7 @@ Both studies similarly found that areas in London were exceptional, with general
 The latter study, which only focussed on the four leading cancers, reported that in the worst performing regions inequality between the top and bottom deciles in female lung cancer mortality was similar to the 3.7-fold gap between the top and bottom districts seen in this study.
 
 Beyond the UK, cancer atlases have been largely limited to coarse geographical units and aggregate multiple years of data rather than presenting information on trends.
-There have been examples of cancer atlases for smaller areas for Spain and Portugal [@nationalinstituteofhealthdoutorricardojorgeAtlasCancerMortality2021] and Australia [@cancercouncilqueenslandAustralianCancerAtlas2018].
+There have been examples of cancer atlases for smaller areas for Spain and Portugal [@fernandez-navarroAtlasCancerMortality2021] and Australia [@cancercouncilqueenslandAustralianCancerAtlas2018].
 A study in the USA on trends in cancer mortality at the county level found that lung cancer and stomach cancer were among the cancers with the largest inequalities in mortality across counties in 2014, but there was limited variation for leukaemia, lymphoma and multiple myeloma, which is consistent with the results presented here [@mokdadTrendsPatternsDisparities2017].
 The study also found that the strongest increases over time were in liver cancer mortality, with nearly all counties seeing an increase.
 
