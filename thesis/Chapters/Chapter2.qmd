@@ -22,9 +22,9 @@ To overcome these issues, we can use statistical smoothing techniques to obtain 
 In small-area studies, it is common to smooth data using models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 There are three main categories for modelling spatial effects.
 First, we can treat space as a continuous surface using Gaussian processes or splines.
-Second, we can use areal models, which make use of the spatial neighbourhood structure of the units.
-Third, we can build models that exploit a nested hierarchy of geographical units, for example between state, county and census tract in the US.
-Each of these methods rely on assumptions which may make them more or less appropriate in different applications.
+Second, we can use hierarchical models for areal data, which make use of the spatial neighbourhood structure of the units.
+Third, we can again use hierarchical models for areal data but instead we can exploit a nested hierarchy of geographical units, for example between state, county and census tract in the US.
+Each of these methods, which can be used separately or in combination if the context of the problem allows, rely on assumptions which may make them more or less appropriate in different applications.
 
 #### Space as a continuous process {-}
 

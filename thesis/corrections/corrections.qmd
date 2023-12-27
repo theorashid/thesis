@@ -25,6 +25,9 @@ Theo Rashid
 I have added this reference and an explanation of the visualisation to the section on spatial inequality in the UK (PX).
 
 2. P28: please revise the textual distinction made between areal model using spatial neighbourhood structure and those which use nested hierarchy as they are both a specific case of hierarchical models
+
+I have removed the distinction and explained these are both hierarchical models for areal data (PX).
+
 3. P31: Please discuss here or elsewhere that in some cases it is not appropriate to have statistical smoothing and how can someone evaluate if that is the case in a specific situation; we discussed using posterior predictive checks and abplots on death rates
 4. P32: Here or elsewhere please also discuss potential disadvantages in life expectancy as an outcome measure especially as relevant to the assumptions that you need to make in terms of its calculation
 5. P48: the idea of exploring population turnover (and therefore a measure of changing composition) is great. The only thing I’d mention is that turnover itself may be an exposure of ill health (some discussion here https://www.sciencedirect.com/science/article/abs/pii/S1353829218310700)
