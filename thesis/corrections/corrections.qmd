@@ -51,17 +51,18 @@ As stated in the figure caption, the life expectancy estimates "for other countr
 11. P62: missing from this paper is an evaluation of the uncertainty around life expectancy. This could be measured with a sort of coefficient of variation (SD of all posterior LEs divided over the median LE). The CDC in the US has used 25% as a threshold for poor certainty in some of their papers, though this threshold may be too high.
 12. P73: On the discussion about factors driving lower life expectancy in the US (linked to deaths of despair), a [recent paper](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2788767) blames the lack of social safety net systems which would fit well with the authors narrative on the erosion of the welfare system in the UK from 2012 onwards
 
+In this discussion, the deteriorating trends US life expectancy refer to an earlier trend that was studied in Ezzati (2008), who found the trends were driven by increases in mortality from lung cancer and COPD.
+These are separate to the deaths of despair story, which is discussed in chapter 9, and so I have kept the discussions separate so as not to confuse the stories.
 
-
-13. P75: please clarify the discussion on spatial analyses of mortality rates at post code level with a greater appreciation of the pitfalls in such.
-14. P76: Please specify the mean and variance of the BetaBinomial as expressed in your parameters so that the precise choice of parameterisation is clear.
-15. P77: there appear to be a few life expectancies in the high 90s or even 100s (City of London), which seems unfeasible. There must be wide uncertainty around these, right? Alternatively, the author mentions a mismatch of population estimates due to changes in adjacent areas.
-16. P81: please clarify how the uncertainty is visualised (for instance in Fig 6.5). Is this the distribution at district level of the average posterior mean at LSOA level?
-17. P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
-18. P88: please add a description on how cause-of-death is assigned in the UK to clarify the nature of the underlying data; similarly has any uncertainty been considered in the estimated of the contributions of death from each cause and would this be important to consider possibly in future work?
-19. P88: It is not clear what the “ICD-10 code in the first position of the death record” is for the classification of deaths for neonates without underlying cause of death. Does this refer to contributory causes?
-20. P89: It is not entirely clear on where ill-defined deaths go (R chapter mostly). The chapter does not mention anything, and Table D.1 mentions those deaths being included in the residual causes (but are not listed in those). There’s also a mention to a redistribution without any details.
-21. P91: the descriptions on Arriaga’s method are very hard to follow without equations, and please lay out key assumptions also in the main body of the thesis.
+1.  P75: please clarify the discussion on spatial analyses of mortality rates at post code level with a greater appreciation of the pitfalls in such.
+2.  P76: Please specify the mean and variance of the BetaBinomial as expressed in your parameters so that the precise choice of parameterisation is clear.
+3.  P77: there appear to be a few life expectancies in the high 90s or even 100s (City of London), which seems unfeasible. There must be wide uncertainty around these, right? Alternatively, the author mentions a mismatch of population estimates due to changes in adjacent areas.
+4.  P81: please clarify how the uncertainty is visualised (for instance in Fig 6.5). Is this the distribution at district level of the average posterior mean at LSOA level?
+5.  P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
+6.  P88: please add a description on how cause-of-death is assigned in the UK to clarify the nature of the underlying data; similarly has any uncertainty been considered in the estimated of the contributions of death from each cause and would this be important to consider possibly in future work?
+7.  P88: It is not clear what the “ICD-10 code in the first position of the death record” is for the classification of deaths for neonates without underlying cause of death. Does this refer to contributory causes?
+8.  P89: It is not entirely clear on where ill-defined deaths go (R chapter mostly). The chapter does not mention anything, and Table D.1 mentions those deaths being included in the residual causes (but are not listed in those). There’s also a mention to a redistribution without any details.
+9.  P91: the descriptions on Arriaga’s method are very hard to follow without equations, and please lay out key assumptions also in the main body of the thesis.
 
 I have supplemented the text with the equations and reiterated some details from Arriaga's method calculation in the appendix to the main text (PX).
 
