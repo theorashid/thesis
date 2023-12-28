@@ -308,6 +308,7 @@ These contrasting trends in mortality from ischaemic heart disease and dementias
 The sizeable contribution to the inequality in life expectancy improvement from all other NCDs is more difficult to explain without further stratifying the cause group.
 
 The heterogeneous trends in mortality from both lung cancer, where the probability of dying declined in all districts for men and saw mixed trends for women, and from COPD, where a larger proportion of districts experienced a decrease in mortality for women than for men, reflected that the peak in female smoking rates and smoking-attributable mortality have lagged behind that in men by about 20-30 years [@thunStagesCigaretteEpidemic2012].
+This may also be responsible for the larger contributions of lung cancer and COPD mortality for women to inequality in life expectancy across districts.
 
 The geography of the change in mortality from liver cirrhosis – an advanced stage of liver damage – is perhaps indicative of the contrasting dynamics of the two main risk factors for liver cirrhosis: alcohol misuse and hepatitis B/C infection.
 Alcohol is the main cause of liver disease, and has driven a large proportion of increases in liver cirrhosis throughout Europe [@blachierBurdenLiverDisease2013].

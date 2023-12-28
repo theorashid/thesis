@@ -86,7 +86,14 @@ I have added detail to the text explaining this and that it required so that the
 This is reiterated in the footnote on PX.
 
 23. P97: what may be reasons of the far more common contribution of lung cancer to inequality among women compared to men?  (this is somewhat talked about in chapter 8)
+
+I have added a sentence on inequality to the section of the discussion in chapter 7 on the delay in the peak of smoking for women (PX).
+
 24. P109: please better justifying the need for this project. There is not much in the introduction about this.
+
+Chapter 8 has turned into a paper, which actually had an [even shorter introduction](https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(23)00530-2/fulltext) than in this thesis.
+Nonetheless, I have provided some further context from the paper explaining the lack of cancer mortality data available for small areas in England (PX).
+
 25. P111: as with our earlier comment above on ill-defined causes, it isn’t clear here how they are treated for this analysis.
 
 I have added a sentence explaining that ill-defined diseases were reassigned as in the previous chapter (PX).
@@ -135,3 +142,6 @@ I have reworded the text to clarify that these are the same life table quantitie
 
 1. Add Marta's paper.
 2. Cite latest paper for chapter 8.
+
+Chapter 8 turned into a paper, which was released on the same day as the viva.
+For completeness, I have edited the first sentence of the chapter to reference the paper (PX).
