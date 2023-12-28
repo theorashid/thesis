@@ -16,14 +16,17 @@ There were no age­-district-year combinations in which the number of deaths fro
 
 ### Grouping causes of death
 
-Each death record in post-neonatal ages was assigned an ICD-10 code corresponding to the underlying cause of death.
+Each death record in the database contains a series of ICD-10 codes from the death certificate, which have been signed off by a medical professional, containing firstly the codes corresponding to the conditions leading directly to death, and then any other codes that contributed to the death.
+Based on this list of codes, the ONS assigns each death record in post-neonatal ages an ICD-10 code corresponding to the underlying cause of death (the disease or injury that initiated the train of events directly leading to death) using standardised computer-based selection algorithms [@officefornationalstatisticsUserGuideMortality2022].
 For neonates, which are not assigned an underlying cause of death, I used the ICD-10 code in the first position on the death record.
-I used ICD-10 codes to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
+
+I used ICD-10 code for the underlying cause of death to assign each death to 136 cause groups of the WHO Global Health Estimates (GHE) study [@worldhealthorganizationWHOMethodsData2020]; these groups encompass causes of death with related aetiology and clinical and public health relevance.
 I also grouped diabetes mellitus and nephritis and nephrosis (hereafter referred to as _diabetes_) as these deaths might have overlapping history.
 I used the top twelve causes of death for each sex according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual groups comprising deaths from all other cancers, all other non-communicable diseases (NCDs), all other cardiovascular diseases (CVDs), all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries (external causes).
 Together, these form a mutually exclusive, collectively exhaustive list of causes of death (@fig-ch-7-treemap).
 
 The full list of ICD-10 codes for each cause group can be found in @tbl-ap-ch7-causes.
+Any death records with an ill-defined disease (garbage code) as the underlying final cause of death were randomly assigned to one of the residual disease groups (all other cancers, all other CVDs, all other NCDs, all other IMPN) with probability proportional to the existing age-sex-year totals in those disease groups.
 
 ![Total number of deaths for the twelve leading causes of death in England from 2002 to 2019, and the residual groups all other cancers, all other NCDs, all other CVDs, all other infections, maternal, perinatal and nutritional conditions (IMPN), and injuries. The boxes are coloured by the wider groups of CVDs; NCDs; cancers; maternal, perinatal, nutritional and infectious causes; injuries. See @tbl-ap-ch7-causes for ICD-10 codes for each category.](../thesis-analysis/thesis_analysis/causes/figures/treemap.pdf){#fig-ch-7-treemap fig-scap="Total number of deaths for the twelve leading causes of death in England from 2002 to 2019 and residual groups."}
 
@@ -241,7 +244,10 @@ This study did not look at age- _and_ cause-specific contributions to life expec
 Although this masks some variation, the groups were selected based on the total number of deaths from 2002 to 2019, and are consequently skewed towards older ages, and the age-specific contributions of (e.g.) dementias are not particularly interesting.
 
 Death records are subject to issues in the assignment of ICD-10 codes for the cause of death.
-Although the ONS use selection algorithms to improve consistency between doctors when identifying the underlying cause of death [@officefornationalstatisticsUserGuideMortality2022], the challenge of multimorbidity in older age groups makes the assignment of cause of death increasingly difficult [@mesleCausesDeathVery2021].
+The quality of the cause of death data in the UK has been given the highest rating based on completeness and a low share of deaths assigned to implausible and ill-defined codes [@worldhealthorganizationWHOMethodsData2020].
+There are national guidelines for death certification, and the ONS uses standardised coding algorithms and computer-based assignment of the cause of death, which assign the underlying cause of death uniformly to improve consistency between doctors when identifying the underlying cause of death [@officefornationalstatisticsUserGuideMortality2022].
+For example, a validation study found that that death certificates in the UK accurately identified deaths from prostate cancer [@turnerContemporaryAccuracyDeath2016].
+Despite this, the challenge of multimorbidity in older age groups makes the assignment of cause of death increasingly difficult [@mesleCausesDeathVery2021].
 We selected 80 years of age as the upper bound to partially mitigate this effect because it covers a wide age range but does not include the very oldest ages.
 However, for certain diseases such as dementias where only 96,109 (14.5% of 663,692) of deaths occur in those under 80 years, the probability of dying between birth and 80 years masks variations in the age groups where the majority of deaths occur.
 There are also specific cases of problematic cause of death assignment in the data.
