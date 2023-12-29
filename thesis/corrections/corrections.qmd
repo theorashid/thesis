@@ -49,6 +49,12 @@ I have now mentioned the "healthy migrant effect", which the suggested paper dis
 As stated in the figure caption, the life expectancy estimates "for other countries [are] from World Bank estimates in 2019".
 
 11. P62: missing from this paper is an evaluation of the uncertainty around life expectancy. This could be measured with a sort of coefficient of variation (SD of all posterior LEs divided over the median LE). The CDC in the US has used 25% as a threshold for poor certainty in some of their papers, though this threshold may be too high.
+
+I opted for a visual evaluation of uncertainty by plotting the credible interval of life expectancy against the median estimates (new figure 5.X).
+Both of these quantities are in Figure 5.1, but the new figure shows the uncertainty increasing with life expectancy more clearly, which I note on PX.
+The largest 95% credible interval is 10.6 years, which suggests the SD to median life expectancy ratios (that the CDC use) would all be below 25%.
+I did not include the CDC's metric as it is somewhat arbitrary and introducing a new metric sacrificed readability.
+
 12. P73: On the discussion about factors driving lower life expectancy in the US (linked to deaths of despair), a [recent paper](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2788767) blames the lack of social safety net systems which would fit well with the authors narrative on the erosion of the welfare system in the UK from 2012 onwards
 
 In this discussion, the deteriorating trends US life expectancy refer to an earlier trend that was studied in Ezzati (2008), who found the trends were driven by increases in mortality from lung cancer and COPD.
@@ -63,7 +69,17 @@ I have added a footnote on the disadvantages of modelling at the postcode level 
 I have done so (PX).
 
 15. P77: there appear to be a few life expectancies in the high 90s or even 100s (City of London), which seems unfeasible. There must be wide uncertainty around these, right? Alternatively, the author mentions a mismatch of population estimates due to changes in adjacent areas.
+
+As with #11, I created a new figure by plotting the credible interval of life expectancy against the median estimates (new figure 6.X).
+Indeed, there is wide uncertainty around the highest life expectancy.
+There are also some credible intervals in excess of 30 years for women, which questions the utility and plausibility of these estimates and any future estimates done at smaller spatial units.
+I have added this to the limitations in the discussion (PX) and the final discussion chapter (PX).
+As explained in the discussion of chapter 6, some of the highest life expectancies are likely due to a mismatch of population estimates, but with MSOA level estimates in London is excess of 95 years, it is plausible that LSOA level estimates can exceed 100 years.
+
 16. P81: please clarify how the uncertainty is visualised (for instance in Fig 6.5). Is this the distribution at district level of the average posterior mean at LSOA level?
+
+I have added to the figure caption that the distribution is from a density plot of the median life expectancies (Figure 6.X).
+
 17. P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
 18. P88: please add a description on how cause-of-death is assigned in the UK to clarify the nature of the underlying data; similarly has any uncertainty been considered in the estimated of the contributions of death from each cause and would this be important to consider possibly in future work?
 

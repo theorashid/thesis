@@ -59,6 +59,11 @@ The corresponding estimates for life expectancy inequality in 2019 calculated us
 Life expectancy in 2019 was highest in LSOAs in central London districts of Kensington and Chelsea, Westminster, City of London and Camden, in the southwest (Richmond upon Thames and Kingston upon Thames) and parts of the northwest (e.g., parts of Harrow and Barnet), with life expectancy in many LSOAs surpassing 90 years (@fig-ch-6-map-level).
 Low life expectancy was spread in LSOAs throughout the city but was more common in outer east and southeast London.
 
+![Median estimates of LSOA-level life expectancy in London in 2019 against the 95% credible intervals.](../thesis-analysis/thesis_analysis/london/figures/uncertainty.pdf){#fig-ch-6-uncertainty}
+
+In general, as life expectancy increased, the credible interval of life expectancy increased (@fig-ch-6-uncertainty).
+The credible interval was particularly wide for some LSOAs with the highest female life expectancy estimates, with some credible intervals exceeding 30 years.
+
 ### Change in life expectancy and inequality
 
 ![Geography of change in life expectancy in London from 2002 to 2019.](../thesis-analysis/thesis_analysis/london/figures/map_change.pdf){#fig-ch-6-map-change}
@@ -88,13 +93,13 @@ The large decline in life expectancy in Kensington and Chelsea in 2017 is due to
 There was substantial variation in the size of life expectancy increase over short distances.
 As a result of this spatial heterogeneity, life expectancy inequality increased not only in London as a whole, but also in every district in London alongside increasing average life expectancy (@fig-ch-6-geofacet and @fig-ch-6-ridges).
 
-::: {#fig-ch-6-ridges layout-ncol=1 fig-scap="Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts."}
+::: {#fig-ch-6-ridges layout-ncol=1 fig-scap="Distribution of median estimates of LSOA life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts."}
 
 ![Women](../thesis-analysis/thesis_analysis/london/figures/women_ridges.pdf){#fig-ch-6-ridges-women}
 
 ![Men](../thesis-analysis/thesis_analysis/london/figures/men_ridges.pdf){#fig-ch-6-ridges-men}
 
-Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts.
+Distribution (density plot) in 33 London districts of median estimates of LSOA life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019.
 Districts are ordered by the median life expectancy in 2002.
 :::
 
@@ -122,6 +127,7 @@ Carrying out the study at the LSOA level uncovered inequalities to a fuller exte
 
 I defined life expectancy inequality as the difference between 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of LSOA life expectancies rather than the difference between the maximum and minimum as in @sec-Chapter5.
 This was because the LSOAs with extremely low life expectancies tended to contain age­-LSOA-­year combinations in which the number of deaths exceeded the population.
+There are also some credible intervals of life expectancy in excess of 30 years for women, which questions the epidemiological plausibility of these estimates.
 Small-area population, which is the denominator of age-specific death rates, is estimated by the ONS for intercensal years, and may be subject to error.
 This is especially the case in older ages when some people live and die in a long-term care facility, and may be counted towards population (denominator of death rates) in their original LSOA of residence and towards deaths (numerator of death rates) in the LSOA where the care facility is located.
 There were a higher proportion (0.099% compared to 0.001% in @sec-Chapter5) of spatial units with this issue at the LSOA level.

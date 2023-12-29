@@ -33,7 +33,7 @@ Nevertheless, the estimates from this thesis are already being used in the press
 
 There are many possible methodological and substantive extensions to the work presented in this thesis.
 Firstly, on the methodological side, with improvements both to hardware and the rise of approximate inference algorithms to replace computationally costly sampling methods, the models can, in theory, be scaled to higher and higher spatial resolutions and we could potentially estimate mortality for the entire country for LSOAs, OAs, or even postcodes.
-However, given the data issues in @sec-Chapter5, perhaps smaller is not better when the quality of the data is lacking.
+However, given the data issues in @sec-Chapter5 and the very wide credible intervals seen for some LSOAs with high life expectancies, perhaps smaller is not better when the quality of the data is lacking.
 
 One of the major strengths of the thesis was the use of Bayesian methods, at one of the highest spatial resolutions in the literature for a model estimating mortality.
 This was largely thanks to recent developments in probabilistic programming, which allow sampling algorithms to run on GPUs rather than CPUs, and is generally faster for models with over 10,000 parameters [@laoTfpMcmcModern2020].

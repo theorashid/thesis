@@ -73,6 +73,11 @@ Many of the MSOAs with the highest life expectancy, especially for men, were in 
 
 ![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-5-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in 2019."}
 
+![Median estimates of MSOA-level life expectancy in England in 2019 against the 95% credible intervals.](../thesis-analysis/thesis_analysis/england/figures/uncertainty.pdf){#fig-ch-5-uncertainty}
+
+In general, as life expectancy increased, the credible interval of life expectancy increased (@fig-ch-5-uncertainty).
+The widest credible interval in any sex-MSOA combination in 2019 was 10.6 years.
+
 ### Change in life expectancy
 
 Female and male life expectancy were correlated across MSOAs with a correlation coefficient of 0.87 (@fig-ch-5-sex-comp).
