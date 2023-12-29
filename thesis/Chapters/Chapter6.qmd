@@ -26,9 +26,10 @@ In these cases, the population was set equal to the number of deaths.
 
 The model was largely as outlined in @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likelihood,
 $$
-\text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
+\text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{N}_{ast}),
 $$ {#eq-ch-6-likelihood}
-where $m_{ast}$ is the death rate and $\rho \geq 0$ is the overdispersion parameter.
+where $m_{ast}$ is the death rate, $\text{N}_{ast}$ is the population and $\rho \geq 0$ is the overdispersion parameter.
+The beta-binomial distribution has mean $m_{ast}\text{N}_{ast}$ and variance $\text{N}_{ast} \frac{\rho + \text{N}_{ast}}{\rho + 1} m_{ast} (1 - m_{ast})$.
 I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for @eq-ch-4-likelihood-1 that mortality is low.
 In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible.
 The beta-binomial likelihood is a generalisation of the binomial distribution that allows for overdispersion.

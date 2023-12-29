@@ -59,6 +59,9 @@ These are separate to the deaths of despair story, which is discussed in chapter
 I have added a footnote on the disadvantages of modelling at the postcode level (PX).
 
 14. P76: Please specify the mean and variance of the BetaBinomial as expressed in your parameters so that the precise choice of parameterisation is clear.
+
+I have done so (PX).
+
 15. P77: there appear to be a few life expectancies in the high 90s or even 100s (City of London), which seems unfeasible. There must be wide uncertainty around these, right? Alternatively, the author mentions a mismatch of population estimates due to changes in adjacent areas.
 16. P81: please clarify how the uncertainty is visualised (for instance in Fig 6.5). Is this the distribution at district level of the average posterior mean at LSOA level?
 17. P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
