@@ -259,7 +259,7 @@ div.csl-indent {
 </header>
 
 <p>This chapter is based on the peer-reviewed publication <em>Changes in life expectancy and house prices in London from 2002 to 2019: hyper-resolution spatiotemporal analysis of death registration and real estate data</em>, published in <em>The Lancet Regional Health Europe</em> <span class="citation" data-cites="bennettChangesLifeExpectancy2023">(<a href="../references.html#ref-bennettChangesLifeExpectancy2023" role="doc-biblioref">Bennett et al., 2023</a>)</span>, for which I was joint first author. The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited. The paper combined two main datasets: estimates of life expectancy in London at LSOA level and estimates of house prices at the OA level. Unlike the original text, I will largely focus on the life expectancy estimates, for which I was responsible, rather than the house price estimates produced by James E Bennett.</p>
-<p>Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases. And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve. From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England. In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.</p>
+<p>Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases. And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve. From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in England. In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.</p>
 <section id="methods" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="methods"><span class="header-section-number">6.1</span> Methods</h2>
 <section id="mortality-and-population-data" class="level3" data-number="6.1.1">
@@ -434,6 +434,12 @@ Vehtari A, Gelman A, Simpson D, Carpenter B, Bürkner P-C. 2021. Rank-normalizat
 Yu J, Dwyer-Lindgren L, Bennett J, Ezzati M, Gustafson P, Tran M, Brauer M. 2021. A spatiotemporal analysis of inequalities in life expectancy and 20 causes of mortality in sub-neighbourhoods of <span>Metro Vancouver</span>, <span>British Columbia</span>, <span>Canada</span>, 1990<span></span>2016. <em>Health &amp; Place</em> <strong>72</strong>:102692. doi:<a href="https://doi.org/10.1016/j.healthplace.2021.102692">10.1016/j.healthplace.2021.102692</a>
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Unlike OAs, postcodes do not align with other administrative boundaries, nor are they designed to contain similar numbers of people, which may lead to small number issues when modelling mortality.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

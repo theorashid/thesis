@@ -7,7 +7,7 @@ Unlike the original text, I will largely focus on the life expectancy estimates,
 
 Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases.
 And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve.
-From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England.
+From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes^[Unlike OAs, postcodes do not align with other administrative boundaries, nor are they designed to contain similar numbers of people, which may lead to small number issues when modelling mortality.] in England.
 In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.
 
 ## Methods
