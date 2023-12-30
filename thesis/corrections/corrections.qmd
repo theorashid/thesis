@@ -180,7 +180,10 @@ I have reworded the text to clarify that these are the same life table quantitie
 
 ## Other
 
-1. Add Marta's paper.
+1. Add Boulieri and Blangiardo paper.
+
+I have added a paper by Boulieri and Blangiardo (2020), which looks at life expectancy by district and decile of deprivation, to the discussion of chapter 5 on MSOA level life expectancy (PX).
+
 2. Cite latest paper for chapter 8.
 
 Chapter 8 turned into a paper, which was released on the same day as the viva.

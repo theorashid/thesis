@@ -169,7 +169,9 @@ The extent of this underestimation is modest; however, because a large part of l
 The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
 However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
 In terms of trends, studies that grouped small ­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
-By analysing trends at the MSOA level, I could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
+@boulieriSpatiotemporalModelEstimate2020 modelled trends in life expectancy by district and decile of deprivation, using a space-time interaction term to detect local changes in the life expectancy trend.
+Notably, they detected lower life expectancy than expected for the district of Leeds in 2 years of the study period for women and 4 years for men.
+By analysing trends at the MSOA level, I could identify the specific communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
 
 @congdonGeographicalPatternsDrugRelated2019 also used spatial models to smooth over MSOA-level data of mortality, but specifically drug-related deaths and suicides between 2012-16.
 The author singled out the district of Blackpool as containing many of the MSOAs with the most extreme relative risks of death from these causes, including the MSOA I found had the lowest life expectancy for men in 2019.

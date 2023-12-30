@@ -1,6 +1,7 @@
 # Trends in cancer mortality at the district level {#sec-Chapter8}
 
-The work in this chapter has formed the paper _Inequalities in mortality from leading cancers in districts of England from 2002 to 2019: high-resolution spatiotemporal analysis of vital registration data_, which is under review at _The Lancet Oncology_ and for which I am first author.
+The work in this chapter has formed the paper _Mortality from leading cancers in districts of England from 2002 to 2019: a population-based, spatiotemporal study_, published in _The Lancet Oncology_ and for which I am first author.
+The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
 
 As seen in the previous chapter, mortality from cancers in England has declined more slowly than from other major causes of death such as CVDs, and hence the share of deaths from cancers has steadily increased.
 In 2019, there were more deaths from cancers (144,306 (28.9% of all deaths in 2019)) than from CVDs 126,105 (25.3%), although this was less than the number of deaths from other NCDs excluding CVDs and cancers (173,323 (34.8%)) which reflects the rise in dementia deaths in recent years.
