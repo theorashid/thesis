@@ -280,7 +280,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <p><span class="math inline">\(\xi_{as}\)</span> is an age group-spatial unit interaction term, which quantifies space-specific deviations from the overall age group structure given by <span class="math inline">\(\alpha_{2a}\)</span>. This allows different spatial units to have different age-specific mortality patterns, and each age group’s death rate to have a different spatial pattern. This interaction term was modelled as <span class="math inline">\(\mathcal{N}(0, \sigma_\xi^2)\)</span>.</p>
 <p><span class="math inline">\(\nu_{st}\)</span> and <span class="math inline">\(\gamma_{at}\)</span> allow space- and age group-specific nonlinearity in the time trends. For each spatial unit and age group, I again used first-order random walk priors with <span class="math inline">\(\nu_{s1} = \gamma_{a1} = 0\)</span> so that the terms were identifiable.</p>
 <p>The spatial intercepts and slopes, <span class="math inline">\(\alpha_{1s}\)</span> and <span class="math inline">\(\beta_{1s}\)</span>, were modelled as nested hierarchical random effects. For the MSOA analysis, MSOAs were nested in districts, which were, in turn, nested in regions. For the LSOA analysis, LSOAs were nested in MSOAs, which were nested in districts. The terms for the largest spatial unit were centred on zero to allow the spatial effects to be identifiable.</p>
-<p>All standard deviation parameters of the random effects had <span class="math inline">\(\sigma \sim \mathcal{U}(0, 2)\)</span> priors. For the global intercept and slope, we used the diffuse prior <span class="math inline">\(\mathcal{N}(0, \sigma^2=10^5)\)</span>. The overdispersion parameter <span class="math inline">\(r\)</span> had the prior <span class="math inline">\(\mathcal{U}(0, 50)\)</span>.</p>
+<p>All standard deviation parameters of the random effects had <span class="math inline">\(\sigma \sim \mathcal{U}(0, 2)\)</span> priors, which were used for a previous mortality modelling study by the group <span class="citation" data-cites="bennettFutureLifeExpectancy2015">(<a href="../references.html#ref-bennettFutureLifeExpectancy2015" role="doc-biblioref">Bennett et al., 2015</a>)</span>. I performed a sensitivity analysis using the more uninformative <span class="math inline">\(\sigma \sim \mathcal{U}(0, 100)\)</span> prior, to which the model was robust (the largest inferred standard deviation parameter was for the age group intercept with a mean around 0.9). For the global intercept and slope, we used the diffuse prior <span class="math inline">\(\mathcal{N}(0, \sigma^2=10^5)\)</span>. The overdispersion parameter <span class="math inline">\(r\)</span> had the prior <span class="math inline">\(\mathcal{U}(0, 50)\)</span>.</p>
 <p><a href="../Appendices/AppendixB.html#tbl-ap-ch4-model">Table&nbsp;<span>B.1</span></a> shows all model parameters, their priors and dimensions for the MSOA-level model in <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. <a href="#tbl-ch-4-checks">Table&nbsp;<span>4.1</span></a> summarises the model adequacy and consistency checks performed for the analyses.</p>
 <div id="tbl-ch-4-checks" class="anchored">
 <table class="table">
@@ -298,7 +298,7 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <tbody>
 <tr class="odd">
 <td>Model adequacy</td>
-<td>Scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year</td>
+<td>Check all posterior death rates are between 0 and 1; scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year</td>
 </tr>
 <tr class="even">
 <td>Model bias</td>
@@ -329,6 +329,9 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bennettFutureLifeExpectancy2015" class="csl-entry" role="listitem">
+Bennett JE, Li G, Foreman K, Best N, Kontis V, Pearson C, Hambly P, Ezzati M. 2015. The future of life expectancy and life expectancy inequalities in <span>England</span> and <span>Wales</span>: <span>Bayesian</span> spatiotemporal forecasting. <em>The Lancet</em> <strong>386</strong>:163–170. doi:<a href="https://doi.org/10.1016/S0140-6736(15)60296-3">10.1016/S0140-6736(15)60296-3</a>
+</div>
 <div id="ref-devalpineNIMBLEMCMCParticle2022" class="csl-entry" role="listitem">
 de Valpine P, Paciorek CJ, Turek D, Michaud N, Anderson-Bergman C, Obermayer F, Wehrhahn Cortes C, Rodrìguez A, Lang DT, Paganin S, Hug J. 2022. <span>NIMBLE</span>: <span>MCMC</span>, <span>Particle Filtering</span>, and <span>Programmable Hierarchical Modeling</span>.
 </div>

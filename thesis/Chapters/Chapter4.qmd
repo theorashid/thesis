@@ -80,7 +80,8 @@ For the MSOA analysis, MSOAs were nested in districts, which were, in turn, nest
 For the LSOA analysis, LSOAs were nested in MSOAs, which were nested in districts.
 The terms for the largest spatial unit were centred on zero to allow the spatial effects to be identifiable.
 
-All standard deviation parameters of the random effects had $\sigma \sim \mathcal{U}(0, 2)$ priors.
+All standard deviation parameters of the random effects had $\sigma \sim \mathcal{U}(0, 2)$ priors, which were used for a previous mortality modelling study by the group [@bennettFutureLifeExpectancy2015].
+I performed a sensitivity analysis using the more uninformative $\sigma \sim \mathcal{U}(0, 100)$ prior, to which the model was robust (the largest inferred standard deviation parameter was for the age group intercept with a mean around 0.9).
 For the global intercept and slope, we used the diffuse prior $\mathcal{N}(0, \sigma^2=10^5)$.
 The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
@@ -89,7 +90,7 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 | Type of check              | Checks performed |
 | -------------------------- | ------------------------------------------------ |
-| Model adequacy             | Scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year |
+| Model adequacy             | Check all posterior death rates are between 0 and 1; scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year |
 | Model bias                 | Compare aggregated posterior predictions of deaths with uncertainty to national number of deaths from data each year; evaluate model shrinkage by inspecting the range of life expectancy between the top and bottom percentiles (aggregating 67 or 68 MSOAs) in 2002 and 2019 estimated using the model and the data |
 | Consistency between models | Aggregate posterior predictions of deaths from MSOA-level model to district-level and compare to posterior predictions of deaths from the same model run at district level (and same checks for LSOA- and national-level where appropriate) |
 
