@@ -93,6 +93,12 @@ As explained in the discussion of chapter 6, some of the highest life expectanci
 I have added to the figure caption that the distribution is from a density plot of the median life expectancies (Figure 6.X).
 
 17. P82: One thing that is not discussed is the potential for stronger spatial effects in a city like London using LSOAs as compared to the whole of England using MSOAs. The other chapter finds similar results, but segregation patterns over larger areas may differ from smaller areas.
+
+This is a possibility, but I would have no prior on there being stronger spatial effects in LSOAs in London or in MSOAs in England.
+At the LSOA level, districts in London are very diverse, with areas of social housing sitting alongside some of the most affluent areas in the country.
+There are equally plausible segregation patterns at the MSOA spatial scale.
+The model structure and treatment of spatial effects are consistent in both chapters 5 and 6 and reflects that there is no prior in either direction and that does not warrant a change to the design of the model.
+
 18. P88: please add a description on how cause-of-death is assigned in the UK to clarify the nature of the underlying data; similarly has any uncertainty been considered in the estimated of the contributions of death from each cause and would this be important to consider possibly in future work?
 
 I have added a further details of how cause-of-death is assigned and how the ONS use computer-based selection algorithms to improve consistency (PX).
