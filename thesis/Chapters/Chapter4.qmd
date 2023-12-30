@@ -96,6 +96,13 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 : Summary of model posterior checks. {#tbl-ch-4-checks}
 
+Although a random walk approach has been used here to model the J-shape age-mortality association, there are a number of alternatives.
+For example, @gonzagaEstimatingAgeSexspecific2016 use a series of linear splines over the age dimension.
+@alexanderFlexibleBayesianModel2017 describe an approach using the first three principal components of a standard mortality curves, where the first component represents baseline mortality, and the second and third components allow offsets for higher child mortality and higher adult mortality.
+However, both these approaches require the modeller to manually specify either the number of basis splines and position of the knots or the number of principal components required to accurately describe the age-mortality relationship.
+This becomes more difficult when modelling several different diseases, which might not follow a J-shape, particularly those with a skew towards older ages such as prostate cancer.
+Random walks are more flexible and require less tuning in this respect, and are also used here to model age-specific slopes over time, for which we have no such prior demographic knowledge.
+
 ## Inference
 
 The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that, under mild conditions, the sequence of samples will asymptotically converge to the true posterior distribution [@robertsGeneralStateSpace2004].

@@ -52,7 +52,10 @@ I have done so (PX).
 
 I have toned down this statement (PX).
 
-9.  P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., TOPALS): https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en and the pros and cons would merit discussion.
+9. P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., [TOPALS](https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en )) and the pros and cons would merit discussion.
+
+I have added a discussion on alternatives for modelling ages, including splines and principal components, and why random walks are an appropriate and flexible choice for both age intercepts and slopes (PX).
+
 10. Figure 5.1: what years are used for the country life expectancies? 2002 or 2019?
 
 As stated in the figure caption, the life expectancy estimates "for other countries [are] from World Bank estimates in 2019".
