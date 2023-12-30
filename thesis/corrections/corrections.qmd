@@ -41,6 +41,9 @@ I have added detail on the main disadvantage of the interpretation of life expec
 I have now mentioned the "healthy migrant effect", which the suggested paper discusses, in the discussion on chapter 5 (PXX).
 
 6. P54: An important topic not considered in detail is model adequacy. Please add a table summarizing outcomes of model adequacy and consistency checks performed.
+
+I have done so (PX).
+
 7. P56: Please elaborate on your prior choices and robustness of your analyses.
 8. P57: Please reconsider your statement that “INLA scales badly” in light of the discussion during the viva and our elaboration that the number of hyperparameters are probably less than 20.
 9.  P57: It would be useful to see a deeper discussion on the age-specific random walk priors, in light of the J-shape of all-cause mortality rates, and different age profiles of cause-specific mortality rates, as well as a discussion on independence across gender. For example, another way of modelling age (as compared to random walks) is through the use of linear splines (e.g., TOPALS): https://www.scielo.br/j/rbepop/a/9szg7XYCXck9dJrKmgBSdrf/?lang=en and the pros and cons would merit discussion.

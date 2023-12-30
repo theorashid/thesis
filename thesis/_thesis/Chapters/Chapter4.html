@@ -281,7 +281,36 @@ p_{ast} = \frac{r}{r + m_{ast} \cdot \text{Population}_{ast}}.
 <p><span class="math inline">\(\nu_{st}\)</span> and <span class="math inline">\(\gamma_{at}\)</span> allow space- and age group-specific nonlinearity in the time trends. For each spatial unit and age group, I again used first-order random walk priors with <span class="math inline">\(\nu_{s1} = \gamma_{a1} = 0\)</span> so that the terms were identifiable.</p>
 <p>The spatial intercepts and slopes, <span class="math inline">\(\alpha_{1s}\)</span> and <span class="math inline">\(\beta_{1s}\)</span>, were modelled as nested hierarchical random effects. For the MSOA analysis, MSOAs were nested in districts, which were, in turn, nested in regions. For the LSOA analysis, LSOAs were nested in MSOAs, which were nested in districts. The terms for the largest spatial unit were centred on zero to allow the spatial effects to be identifiable.</p>
 <p>All standard deviation parameters of the random effects had <span class="math inline">\(\sigma \sim \mathcal{U}(0, 2)\)</span> priors. For the global intercept and slope, we used the diffuse prior <span class="math inline">\(\mathcal{N}(0, \sigma^2=10^5)\)</span>. The overdispersion parameter <span class="math inline">\(r\)</span> had the prior <span class="math inline">\(\mathcal{U}(0, 50)\)</span>.</p>
-<p><a href="../Appendices/AppendixB.html#tbl-ap-ch4-model">Table&nbsp;<span>B.1</span></a> shows all model parameters, their priors and dimensions for the MSOA-level model in <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>.</p>
+<p><a href="../Appendices/AppendixB.html#tbl-ap-ch4-model">Table&nbsp;<span>B.1</span></a> shows all model parameters, their priors and dimensions for the MSOA-level model in <a href="Chapter5.html"><span>Chapter&nbsp;5</span></a>. <a href="#tbl-ch-4-checks">Table&nbsp;<span>4.1</span></a> summarises the model adequacy and consistency checks performed for the analyses.</p>
+<div id="tbl-ch-4-checks" class="anchored">
+<table class="table">
+<caption>Table&nbsp;4.1: Summary of model posterior checks.</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type of check</th>
+<th>Checks performed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model adequacy</td>
+<td>Scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year</td>
+</tr>
+<tr class="even">
+<td>Model bias</td>
+<td>Compare aggregated posterior predictions of deaths with uncertainty to national number of deaths from data each year; evaluate model shrinkage by inspecting the range of life expectancy between the top and bottom percentiles (aggregating 67 or 68 MSOAs) in 2002 and 2019 estimated using the model and the data</td>
+</tr>
+<tr class="odd">
+<td>Consistency between models</td>
+<td>Aggregate posterior predictions of deaths from MSOA-level model to district-level and compare to posterior predictions of deaths from the same model run at district level (and same checks for LSOA- and national-level where appropriate)</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="inference" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="inference"><span class="header-section-number">4.4</span> Inference</h2>

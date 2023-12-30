@@ -85,6 +85,15 @@ For the global intercept and slope, we used the diffuse prior $\mathcal{N}(0, \s
 The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 @tbl-ap-ch4-model shows all model parameters, their priors and dimensions for the MSOA-level model in @sec-Chapter5.
+@tbl-ch-4-checks summarises the model adequacy and consistency checks performed for the analyses.
+
+| Type of check              | Checks performed |
+| -------------------------- | ------------------------------------------------ |
+| Model adequacy             | Scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year |
+| Model bias                 | Compare aggregated posterior predictions of deaths with uncertainty to national number of deaths from data each year; evaluate model shrinkage by inspecting the range of life expectancy between the top and bottom percentiles (aggregating 67 or 68 MSOAs) in 2002 and 2019 estimated using the model and the data |
+| Consistency between models | Aggregate posterior predictions of deaths from MSOA-level model to district-level and compare to posterior predictions of deaths from the same model run at district level (and same checks for LSOA- and national-level where appropriate) |
+
+: Summary of model posterior checks. {#tbl-ch-4-checks}
 
 ## Inference
 
