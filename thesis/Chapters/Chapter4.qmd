@@ -99,7 +99,7 @@ The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 ## Inference
 
 The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that, under mild conditions, the sequence of samples will asymptotically converge to the true posterior distribution [@robertsGeneralStateSpace2004].
-Furthermore, the state-of-the-art approximate inference package for spatial models, `INLA`, scales badly with the number of hyperparameters, and hence would struggle with the high dimensionality of the models in this thesis.
+Although sampling approaches are the focus here, the `R-INLA` package, which uses approximate inference for latent Gaussian fields and has implementations of common spatial models, could also have been used.
 
 Bayesian models can be specified in a probabilistic programming language.
 The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].
