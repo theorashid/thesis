@@ -1,6 +1,6 @@
 # Trends in cancer mortality at the district level {#sec-Chapter8}
 
-The work in this chapter has formed the paper _Mortality from leading cancers in districts of England from 2002 to 2019: a population-based, spatiotemporal study_, published in _The Lancet Oncology_ and for which I am first author.
+The work in this chapter has formed the paper _Mortality from leading cancers in districts of England from 2002 to 2019: a population-based, spatiotemporal study_, published in _The Lancet Oncology_ [@rashidMortalityLeadingCancers2024] and for which I am first author.
 The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
 
 As seen in the previous chapter, mortality from cancers in England has declined more slowly than from other major causes of death such as CVDs, and hence the share of deaths from cancers has steadily increased.
