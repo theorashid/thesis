@@ -80,16 +80,33 @@ For the MSOA analysis, MSOAs were nested in districts, which were, in turn, nest
 For the LSOA analysis, LSOAs were nested in MSOAs, which were nested in districts.
 The terms for the largest spatial unit were centred on zero to allow the spatial effects to be identifiable.
 
-All standard deviation parameters of the random effects had $\sigma \sim \mathcal{U}(0, 2)$ priors.
+All standard deviation parameters of the random effects had $\sigma \sim \mathcal{U}(0, 2)$ priors, which were used for a previous mortality modelling study by the group [@bennettFutureLifeExpectancy2015].
+I performed a sensitivity analysis using the less informative $\sigma \sim \mathcal{U}(0, 100)$ prior, to which the model was robust (the largest inferred standard deviation parameter was for the age group intercept with a mean around 0.9).
 For the global intercept and slope, we used the diffuse prior $\mathcal{N}(0, \sigma^2=10^5)$.
 The overdispersion parameter $r$ had the prior $\mathcal{U}(0, 50)$.
 
 @tbl-ap-ch4-model shows all model parameters, their priors and dimensions for the MSOA-level model in @sec-Chapter5.
+@tbl-ch-4-checks summarises the model adequacy and consistency checks performed for the analyses.
+
+| Type of check              | Checks performed |
+| -------------------------- | ------------------------------------------------ |
+| Model adequacy             | Check all posterior death rates are between 0 and 1; scatter plots of posterior predictions of death rates against observed data by age group and year; inspection of residuals by age group and year |
+| Model bias                 | Compare aggregated posterior predictions of deaths with uncertainty to national number of deaths from data each year; evaluate model shrinkage by inspecting the range of life expectancy between the top and bottom percentiles (aggregating 67 or 68 MSOAs) in 2002 and 2019 estimated using the model and the data |
+| Consistency between models | Aggregate posterior predictions of deaths from MSOA-level model to district-level and compare to posterior predictions of deaths from the same model run at district level (and same checks for LSOA- and national-level where appropriate) |
+
+: Summary of model posterior checks. {#tbl-ch-4-checks}
+
+Although a random walk approach has been used here to model the J-shape age-mortality association, there are a number of alternatives.
+For example, @gonzagaEstimatingAgeSexspecific2016 use a series of linear splines over the age dimension.
+@alexanderFlexibleBayesianModel2017 describe an approach using the first three principal components of standard mortality curves, where the first component represents baseline mortality, and the second and third components allow offsets for higher child mortality and higher adult mortality.
+However, both these approaches require the modeller to manually specify either the number of basis splines and position of the knots or the number of principal components required to accurately describe the age-mortality relationship.
+This becomes more difficult when modelling several different diseases, which might not follow a J-shape, particularly those with a skew towards older ages such as prostate cancer.
+Random walks are more flexible and require less tuning in this respect, and are also used here to model age-specific slopes over time, for which we have no such prior demographic knowledge.
 
 ## Inference
 
 The decision was made early in my PhD research to use Markov chain Monte Carlo (MCMC) sampling methods for inference, as this is the "gold standard" with guarantees that, under mild conditions, the sequence of samples will asymptotically converge to the true posterior distribution [@robertsGeneralStateSpace2004].
-Furthermore, the state-of-the-art approximate inference package for spatial models, `INLA`, scales badly with the number of hyperparameters, and hence would struggle with the high dimensionality of the models in this thesis.
+Although sampling approaches are the focus here, the `R-INLA` package, which uses approximate inference for latent Gaussian fields and has implementations of common spatial models, could also have been used.
 
 Bayesian models can be specified in a probabilistic programming language.
 The starting point for this project was the `NIMBLE` package [@devalpineNIMBLEMCMCParticle2022; @devalpineProgrammingModelsWriting2017].

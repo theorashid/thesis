@@ -73,22 +73,27 @@ Many of the MSOAs with the highest life expectancy, especially for men, were in 
 
 ![Map of life expectancy and the distribution of life expectancy in 2019. The areas in white have a life expectancy equal to the national life expectancy.](../thesis-analysis/thesis_analysis/england/figures/map_level.pdf){#fig-ch-5-map-level fig-scap="Map of life expectancy and the distribution of life expectancy in 2019."}
 
+![Median estimates of MSOA-level life expectancy in England in 2019 against the 95% credible intervals.](../thesis-analysis/thesis_analysis/england/figures/uncertainty.pdf){#fig-ch-5-uncertainty}
+
+In general, as life expectancy increased, the credible interval of life expectancy increased (@fig-ch-5-uncertainty).
+The widest credible interval in any sex-MSOA combination in 2019 was 10.6 years.
+
 ### Change in life expectancy
 
 Female and male life expectancy were correlated across MSOAs with a correlation coefficient of 0.87 (@fig-ch-5-sex-comp).
 Female life expectancy was higher than male life expectancy in all but 15 MSOAs.
 The female advantage was more than 5 years in 1498 (22.1%) of 6791 MSOAs and 1–5 years in another 5187 (76.4%).
 From 2002 to 2019, a decline in life expectancy was more probable than an increase in 124 mostly urban MSOAs of 6791 (1.8% of all MSOAs) for women, with posterior probabilities of greater than 80% in 34 of these.
-The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of the estimated decline being a true decline >0.99) occurred in a MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
+The largest estimated decline of 3.0 years (0.9–5.3; posterior probability of a decline >0.99) occurred in a MSOA in Leeds (@fig-ch-5-map-change, @fig-ch-5-map-pp-change).
 
 ![Comparison of female and male life expectancy in 2019 and change from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/sex_comp.pdf){#fig-ch-5-sex-comp}
 
 ![Geography of change in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change.pdf){#fig-ch-5-map-change}
 
-![Map of posterior probability that the estimated change represents a true increase or decrease in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-5-map-pp-change}
+![Map of posterior probability that the estimated change represents an increase in life expectancy from 2002 to 2019.](../thesis-analysis/thesis_analysis/england/figures/map_change_prob.pdf){#fig-ch-5-map-pp-change}
 
 Elsewhere, median posterior change was positive, ranging from less than 1 year in 408 MSOAs to more than 7 years in 63 MSOAs.
-Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of being a true decline 0.64).
+Posterior probability of an increase in male life expectancy was more probable than a decrease in all but one MSOA in Blackpool, in which life expectancy changed by –0.4 years (–2.3 to 1.6; posterior probability of a decline 0.64).
 For the other MSOAs, the increase ranged from less than 1 year in 31 MSOAs to more than 7 years in 114 MSOAs.
 The largest increases in female and male life expectancies were seen in some MSOAs in and around London (e.g., in the London Borough of Camden).
 In 5133 (75.6%) MSOAs, male life expectancy increased more than female life expectancy (@fig-ch-5-sex-comp), leading to a closing of the life expectancy gap between female and male sexes.
@@ -148,6 +153,7 @@ Although MSOAs have small populations and are designed to have some socioeconomi
 To understand life expectancy inequalities in relation to individual socioeconomic characteristics requires linking health and other data such as census records, education, and taxes, as done in countries like New Zealand and Sweden.
 
 The people who live in each MSOA can change due to both within­-country and international migration.
+There is some evidence that migrants tend to be healthier than those who do not move [@connollyIncreasingInequalitiesHealth2007].
 Regression of the change in life expectancy from 2002 to 2019 in each MSOA against population turnover, the proportion of households in each MSOA in 2019 who were different from those who had lived there in 2002 [@vandijkUsingLinkedConsumer2021], was not able to explain the variation in life expectancy change for women ($R^2 < 0.001$) or for men ($R^2 = 0.01$) at the national level.
 Studies in both the UK [@connollyIncreasingInequalitiesHealth2007] and USA [@ezzatiReversalFortunesTrends2008] have also shown that migration is not sufficient to explain the trends in health and health inequalities, and that these trends are largely due to real changes in population health.
 Even if rising inequalities are partly due to health-­selective migration, this phenomenon has social and economic origins that should be addressed through employment opportunities, affordable housing, high-­quality education, and health care.
@@ -163,7 +169,9 @@ The extent of this underestimation is modest; however, because a large part of l
 The life expectancy estimates in specific years are similar to the snapshots presented by the ONS and Public Health England [@officefornationalstatisticsHealthExpectanciesBirth2015; @publichealthenglandLocalHealthSmall2021], with correlation coefficients of 0.92-0.95 and mean differences of –0.004 to 0.19 years.
 However, these reports could not analyse trends because data were aggregated over 5 years (2009–13, 2013–17, or 2015–19).
 In terms of trends, studies that grouped small ­area units into deciles of deprivation have detected a decline in female life expectancy in the one or two most deprived deciles [@bennettContributionsDiseasesInjuries2018; @marmotMarmotReview102020].
-By analysing trends at the MSOA level, I could identify the communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
+@boulieriSpatiotemporalModelEstimate2020 modelled trends in life expectancy by district and decile of deprivation, using a space-time interaction term to detect local changes in the life expectancy trend.
+Notably, they detected lower life expectancy than expected for the district of Leeds in 2 years of the study period for women and 4 years for men.
+By analysing trends at the MSOA level, I could identify the specific communities in which longevity is declining and show that the decline, which began around 2010 in women in some MSOAs, has spread and accelerated since 2014.
 
 @congdonGeographicalPatternsDrugRelated2019 also used spatial models to smooth over MSOA-level data of mortality, but specifically drug-related deaths and suicides between 2012-16.
 The author singled out the district of Blackpool as containing many of the MSOAs with the most extreme relative risks of death from these causes, including the MSOA I found had the lowest life expectancy for men in 2019.

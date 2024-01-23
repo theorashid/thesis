@@ -252,49 +252,61 @@ div.csl-indent {
 <section id="period-life-tables" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="period-life-tables"><span class="header-section-number">A.1</span> Period life tables</h2>
 <p>Calculating life expectancy for a cohort is possible, but you have to wait until every member of the cohort has died. Instead, demographers use period (or “current”) life tables, which consider what would happen to a hypothetical cohort that are subjected to the deaths rates in each age group at an exact period in time. Life tables can be constructed using discrete age bands starting at age <span class="math inline">\(x\)</span> and ending at age <span class="math inline">\(x+n\)</span>. We supply the age-specific death rates, <span class="math inline">\({}_{n}m_{x}\)</span>, and the average person-years lived by those dying in the interval, <span class="math inline">\({}_{n}a_{x}\)</span>, and the life table calculates the mean age at death – the life expectancy, <span class="math inline">\(e_x\)</span>.</p>
-<p>We start with a hypothetical cohort of size <span class="math inline">\(l_0 = 100,000\)</span> and sequentially apply the probability of dying in each age group, calculated as <span id="eq-app-a-prob-dying"><span class="math display">\[
+<p>The probability of dying, <span class="math inline">\({}_{n}q_{x}\)</span>, is defined as the ratio of the number of people who died in the age interval, <span class="math inline">\({}_{n}d_{x}\)</span>, to the number who survived to age <span class="math inline">\(x\)</span>, <span class="math inline">\(l_x\)</span>: <span id="eq-app-a-prob-dying-deaths"><span class="math display">\[
+{}_{n}q_{x} = \frac{{}_{n}d_{x}}{l_x}.
+\tag{A.1}\]</span></span></p>
+<p>The age-specific death rate is defined as the ratio of the number of people who died in the age interval to the total number of person-years lived, <span class="math inline">\({}_{n}L_{x}\)</span>, which is the weighted sum of the number of person-years lived (<span class="math inline">\(n\)</span>) by those who survived, which, in turn, is the difference between those who survived to age <span class="math inline">\(x\)</span> and those who died in the interval (<span class="math inline">\(l_x - {}_{n}d_{x}\)</span>), and the number of person-years lived on average (<span class="math inline">\({}_{n}a_{x}\)</span>) by those who died (<span class="math inline">\({}_{n}d_{x}\)</span>): <span id="eq-app-a-death-rate"><span class="math display">\[
+{}_{n}m_{x} = \frac{{}_{n}d_{x}}{n \cdot (l_x - {}_{n}d_{x}) + {}_{n}a_{x} \cdot {}_{n}d_{x}}.
+\tag{A.2}\]</span></span> We assume the denominator of <a href="#eq-app-a-death-rate">Equation&nbsp;<span>A.2</span></a> can be approximated by the mid-year population, <span class="math inline">\({}_{n}P_{x}\)</span>, which leads us to recover the expression for the cross-sectional, empirical death rate in <a href="../Chapters/Chapter4.html#eq-death-rate">Equation&nbsp;<span>4.1</span></a>. By rearranging the denominator to make the number of survivors the subject, we obtain <span id="eq-app-a-survivors"><span class="math display">\[
+l_x = \frac{1}{n} \left({}_{n}P_{x} + (n - {}_{n}a_{x} \cdot {}_{n}d_{x})\right).
+\tag{A.3}\]</span></span> We can substitute this expression into <a href="#eq-app-a-prob-dying-deaths">Equation&nbsp;<span>A.1</span></a> and divide by <span class="math inline">\({}_{n}P_{x}\)</span> to obtain<br>
+<span id="eq-app-a-prob-dying"><span class="math display">\[
 {}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
-\tag{A.1}\]</span></span> The open interval <span class="math inline">\({}_{\infty}q_{x} = 1\)</span>, as nobody is immortal. Using the probability of surviving in each age group, <span class="math inline">\({}_{n}p_{x} = 1 - {}_{n}q_{x}\)</span>, the number of survivors is given by <span id="eq-app-a-life-table-1"><span class="math display">\[
+\tag{A.4}\]</span></span> This expression, although unintuitive, allows us to convert from <span class="math inline">\({}_{n}m_{x}\)</span> to <span class="math inline">\({}_{n}q_{x}\)</span> with only the parameter <span class="math inline">\({}_{n}a_{x}\)</span>.</p>
+<p>In the period life table, we start with a hypothetical cohort of size <span class="math inline">\(l_0 = 100,000\)</span> and sequentially apply the probability of surviving in each age group, <span class="math inline">\({}_{n}p_{x} = 1 - {}_{n}q_{x}\)</span>, to calculate the number of survivors as <span id="eq-app-a-life-table-1"><span class="math display">\[
 l_{x+n} = l_x \cdot {}_{n}p_{x}.
-\tag{A.2}\]</span></span></p>
-<p>The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died weighted by <span class="math inline">\({}_{n}a_{x}\)</span> <span id="eq-app-a-life-table-2"><span class="math display">\[
-{}_{n}L_{x} = n \cdot l_x + {}_{n}a_{x} \cdot l_{x} \cdot {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
-\tag{A.3}\]</span></span></p>
-<p>and the total number of person-years lived above <span class="math inline">\(x\)</span> is <span id="eq-app-a-life-table-2"><span class="math display">\[
-T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
-\tag{A.4}\]</span></span></p>
-<p>Then, life expectancy is given by dividing the number of person-years lived by the number of people who will live them <span id="eq-app-a-life-table-2"><span class="math display">\[
-e_x = \frac{T_x}{l_x}.
 \tag{A.5}\]</span></span></p>
+<p>The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died (<span class="math inline">\({}_{n}d_{x} = l_{x} \cdot {}_{n}q_{x}\)</span>) weighted by <span class="math inline">\({}_{n}a_{x}\)</span> <span id="eq-app-a-life-table-2"><span class="math display">\[
+{}_{n}L_{x} = n \cdot l_x + {}_{n}a_{x} \cdot l_{x} \cdot {}_{n}q_{x}.
+\tag{A.6}\]</span></span></p>
+<p>The open interval <span class="math inline">\({}_{\infty}q_{x} = 1\)</span>, as nobody is immortal. Using <a href="#eq-app-a-prob-dying-deaths">Equation&nbsp;<span>A.1</span></a>, it follows that the number of deaths in this interval is equal to the number who survived to the final age group, i.e.&nbsp;<span class="math inline">\({{}_\infty}d_{x} = l_x\)</span>. Since the death rate from <a href="#eq-app-a-death-rate">Equation&nbsp;<span>A.2</span></a> can be rewritten using the number of person-years lived, <span class="math inline">\({}_{n}L_{x}\)</span>, as the denominator and we can substitute the number of deaths with the number surviving to the final age group, we can obtain an expression for the number of person-years lived in the open-ended age interval <span id="eq-app-a-life-table-close"><span class="math display">\[
+{}_{\infty}L_{x} = \frac{{}_{\infty}d_{x}}{{}_{\infty}m_{x}} = \frac{l_x}{{}_{\infty}m_{x}}.
+\tag{A.7}\]</span></span></p>
+<p>The total number of person-years lived above <span class="math inline">\(x\)</span> is <span id="eq-app-a-life-table-3"><span class="math display">\[
+T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
+\tag{A.8}\]</span></span></p>
+<p>Then, life expectancy is given by dividing the number of person-years lived by the number of people who will live them <span id="eq-app-a-life-table-4"><span class="math display">\[
+e_x = \frac{T_x}{l_x}.
+\tag{A.9}\]</span></span></p>
 <p>Throughout the thesis, I only consider life expectancy at birth.</p>
 <section id="the-very-young-ages-and-the-very-old-ages" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="the-very-young-ages-and-the-very-old-ages"><span class="header-section-number">A.1.1</span> The very young ages and the very old ages</h3>
-<p>On average, it is a good approximation to assume deaths occur halfway through the age interval: <span class="math inline">\({}_{n}a_{x} = n /2\)</span>. But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy. Coale and Demeny used regression on a series of international datasets to recommend suitable values for <span class="math inline">\({}_{1}a_{0}\)</span> and <span class="math inline">\({}_{4}a_{1}\)</span> instead of the midpoint <span class="citation" data-cites="coaleRegionalModelLife1983">(<a href="../references.html#ref-coaleRegionalModelLife1983" role="doc-biblioref">Coale et al., 1983</a>)</span>.</p>
-<p>The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations. In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table and adjust <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years <span class="citation" data-cites="thatcherSurvivorRatioMethod2002">(<a href="../references.html#ref-thatcherSurvivorRatioMethod2002" role="doc-biblioref">Thatcher et al., 2002</a>)</span>.</p>
+<p>On average, it is a good approximation to assume deaths occur halfway through the age interval: <span class="math inline">\({}_{n}a_{x} = n / 2\)</span>. But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy. Coale and Demeny used regression on a series of international datasets to recommend suitable values for <span class="math inline">\({}_{1}a_{0}\)</span> and <span class="math inline">\({}_{4}a_{1}\)</span> instead of the midpoint <span class="citation" data-cites="coaleRegionalModelLife1983">(<a href="../references.html#ref-coaleRegionalModelLife1983" role="doc-biblioref">Coale et al., 1983</a>)</span>.</p>
+<p>The start of the open-ended age group can be many years away from some of the ages at death, particularly in ageing populations. In order to produce reliable estimates of death rates at older ages, I used the Kannisto-­Thatcher method to expand the terminal age group (<span class="math inline">\(\geq 85\)</span> years) of the life table and adjust <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years <span class="citation" data-cites="thatcherSurvivorRatioMethod2002">(<a href="../references.html#ref-thatcherSurvivorRatioMethod2002" role="doc-biblioref">Thatcher et al., 2002</a>)</span>. The Kannisto-Thatcher method assumes the probability of dying is a logistic function of age. The logit-transformed probability of dying above 70 years is regressed upon age. The resulting curve is extrapolated through to 129 years before calculating the number of survivors in the cohort following the adjusted probability of dying to estimate <span class="math inline">\({}_{n}a_{x}\)</span> above 70 years.</p>
 </section>
 </section>
 <section id="probability-of-dying" class="level2" data-number="A.2">
 <h2 data-number="A.2" class="anchored" data-anchor-id="probability-of-dying"><span class="header-section-number">A.2</span> Probability of dying</h2>
-<p>The probability of dying from a specific cause of death, <span class="math inline">\(i\)</span>, is calculated as in <a href="#eq-app-a-prob-dying">Equation&nbsp;<span>A.1</span></a>. Equally, we can subtract the probability of surviving to that age group, <span class="math inline">\(1 - \prod_x {}_{n}p^i_{x}\)</span>. Note, even for the smallest death rates, <span class="math inline">\({}_{\infty}q^i_{x} = 1\)</span> – if you live to infinity, you’ll die of it eventually.</p>
+<p>The probability of dying from a specific cause of death, <span class="math inline">\(i\)</span>, is calculated as in <a href="#eq-app-a-prob-dying">Equation&nbsp;<span>A.4</span></a>. Equally, we can calculate the probability of dying by subtracting the probability of surviving in each age group through to that age from unity, i.e.&nbsp;<span class="math inline">\(1 - \prod_x {}_{n}p^i_{x}\)</span>. Note, even for the smallest death rates, <span class="math inline">\({}_{\infty}q^i_{x} = 1\)</span> – if you live to infinity, you’ll die of it eventually.</p>
 </section>
 <section id="cause-specific-decomposition-of-differences-in-life-expectancy" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="cause-specific-decomposition-of-differences-in-life-expectancy"><span class="header-section-number">A.3</span> Cause-specific decomposition of differences in life expectancy</h2>
-<p><span class="citation" data-cites="arriagaMeasuringExplainingChange1984">Arriaga (<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref">1984</a>)</span> proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as <span id="eq-app-a-arriaga-age"><span class="math display">\[
+<p>Using quantities generated from the life tables of two populations as above, <span class="citation" data-cites="arriagaMeasuringExplainingChange1984">Arriaga (<a href="../references.html#ref-arriagaMeasuringExplainingChange1984" role="doc-biblioref">1984</a>)</span> proposed a method to calculate the age-specific contributions to the difference in life expectancy between these populations as <span id="eq-app-a-arriaga-age"><span class="math display">\[
 {}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
-\tag{A.6}\]</span></span></p>
-<p>We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates: <span id="eq-app-a-arriaga-cause"><span class="math display">\[
+\tag{A.10}\]</span></span> The first term on the right hand side corresponds to the “direct effect” on the life expectancy difference between the two populations in the average number of person-years lived by the survivors to that age group (<span class="math inline">\({}_{n}L_{x} / l_x\)</span>). The second term represents the “indirect effect” on the number of survivors caused by the mortality changes within an age group.</p>
+<p>We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates between the two populations: <span id="eq-app-a-arriaga-cause"><span class="math display">\[
 {}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}
-\tag{A.7}\]</span></span></p>
+\tag{A.11}\]</span></span></p>
 <p>Arriaga showed the sum of the age- and cause-specific contributions are equal to the difference in life expectancy, <span id="eq-app-a-arriaga-sum"><span class="math display">\[
 e_0(2) - e_0(1) = \sum_x {}_{n}\Delta_{x} = \sum_x \sum_i {}_{n}\Delta^i_{x}.
-\tag{A.8}\]</span></span></p>
+\tag{A.12}\]</span></span></p>
 <p>So, we can collapse over age groups to get the cause-specific contributions to life expectancy as <span class="math inline">\(\sum_x {}_{n}\Delta^i_{x}\)</span>.</p>
 </section>
 <section id="mean-age-at-death" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="mean-age-at-death"><span class="header-section-number">A.4</span> Mean age at death</h2>
 <p>The mean age at death among those who died from a specific cause of death was calculated as <span id="eq-app-a-mean-age-death"><span class="math display">\[
 \text{mean age at death} = \frac{\sum_x {}_{n}d_{x} \cdot {}_{n}a_{x}}{\sum_x {}_{n}d_{x}},
-\tag{A.9}\]</span></span> where <span class="math inline">\({}_{n}d_{x}\)</span> is the number of deaths in an age band, calculated as the product of the death rate and the population.</p>
+\tag{A.13}\]</span></span> where <span class="math inline">\({}_{n}d_{x}\)</span> is the number of deaths in an age band, calculated as the product of the death rate and the population.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

@@ -1,6 +1,7 @@
 # Trends in cancer mortality at the district level {#sec-Chapter8}
 
-The work in this chapter has formed the paper _Inequalities in mortality from leading cancers in districts of England from 2002 to 2019: high-resolution spatiotemporal analysis of vital registration data_, which is under review at _The Lancet Oncology_ and for which I am first author.
+The work in this chapter has formed the paper _Mortality from leading cancers in districts of England from 2002 to 2019: a population-based, spatiotemporal study_, published in _The Lancet Oncology_ [@rashidMortalityLeadingCancers2024] and for which I am first author.
+The paper was published under the CC-BY license, which permits reproduction provided the original work is properly cited.
 
 As seen in the previous chapter, mortality from cancers in England has declined more slowly than from other major causes of death such as CVDs, and hence the share of deaths from cancers has steadily increased.
 In 2019, there were more deaths from cancers (144,306 (28.9% of all deaths in 2019)) than from CVDs 126,105 (25.3%), although this was less than the number of deaths from other NCDs excluding CVDs and cancers (173,323 (34.8%)) which reflects the rise in dementia deaths in recent years.
@@ -8,10 +9,15 @@ Compared with CVDs and other NCDs, which were dominated by their major causes (i
 With over 150 different types of cancer, each with their own anatomical and molecular subtypes, cancer is extremely complex, with a specialist workforce dedicated to each unique cancer.
 I felt I should go deeper into the cancer story, and pay further attention to a wider array of site-specific cancers.
 
+Subnational data on trends in cancer mortality are currently limited to large areas such as health boards or regions [@arikSocioeconomicDisparitiesCancer2021; @nhsdigitalCancerData2022].
+Small-area data can guide where there is a need for primary prevention strategies to reduce incidence, and for health-care planning and delivery to improve survival.
+This evidence is particularly relevant for cancers, because their incidence and survival can be affected by a range of risk factors, screening to detect precancerous lesions and early-stage disease, and effective treatments.
+
 ## Methods
 
 The methodology for this section is the same as @sec-Chapter7, but I have stratified cancer groups further.
 I used the top ten leading cancer causes of death according to the total number of deaths from 2002 to 2019 for cause-specific analysis, as well as a residual group comprising all other cancer deaths.
+The residual group also contained deaths from ill-defined diseases, which were assigned as described in @sec-Chapter7.
 
 There were 2,453,173 deaths from cancers in England from 2002 to 2019; of these, 1,533,703 (62.5%) deaths occurred before 80 years of age (@fig-ch-8-treemap).
 Of cancer deaths before 80 years of age, 697,953 (45.5%) were deaths in women and 835,750 (54.5%) in men.
@@ -103,10 +109,10 @@ The probability of dying from a cancer before 80 years of age declined from 2002
 Districts in London achieved the largest declines.
 Among cause categories, the largest reductions in mortality were for stomach cancer, with the declines in probability of dying before 80 years of age ranging between 39.1% and 57.2% for women across districts, and between 51.5% and 58.8% for men from 2002 to 2019, all with posterior probability >0.99.
 The probability of dying from oesophageal cancer also decreased in every district for women, but varied for men from a 42.9% (27.7% to 56.0%) decrease in Plymouth to a 7.0% (-19.8% to 42.4%) increase in Gosport (@fig-ch-8-change and @fig-app-e-map-oesophagus).
-The posterior probability that the observed decline was a true decline was >0.80 in 242 (77.1%) districts for oesophageal cancer in men.
+The posterior probability that the district saw a decline in mortality from oesophageal cancer was >0.80 in 242 (77.1%) districts in men.
 Lung cancer mortality decreased everywhere for men with posterior probability >0.99, but for women, there were mixed trends.
 The largest declines were in London, the strongest seen in Newham (decrease of 29.5% (18.5% to 38.8%)), whereas the probability of dying increased in many districts in the East of England, with the largest increase of 27.0% (6.8% to 49.7%) in Tendring (@fig-ch-8-change and @fig-app-e-map-lung).
-The posterior probability that the observed decline for lung cancer in women was a true decline was >0.80 in 197 (62.7%) districts.
+The posterior probability that the district observed a decline in mortality from lung cancer in women was >0.80 in 197 (62.7%) districts.
 Women in 4 (1.3%) districts experienced an increase in lung cancer mortality with a posterior probability >0.80, and in the remaining 113 (36.0%) districts there was no clear trend at this level of posterior probability.
 
 ::: {#fig-ch-8-change layout-ncol=1 fig-scap="Ranked change in probability of dying between birth and 80 years of age in 314 local authority districts in England in 2002 and 2019 for the ten leading cancers."}
@@ -151,8 +157,9 @@ Two studies investigated trends in cancer mortality, although with limited resol
 Both studies similarly found that areas in London were exceptional, with generally lower rates of premature cancer mortality than expected for their level of deprivation [@steelChangesHealthCountries2018], attenuated inequality between the most and least deprived deciles, and lower mortality for prostate cancer [@arikSocioeconomicDisparitiesCancer2021; @arikUnevenOutcomesFindings2022].
 The latter study, which only focussed on the four leading cancers, reported that in the worst performing regions inequality between the top and bottom deciles in female lung cancer mortality was similar to the 3.7-fold gap between the top and bottom districts seen in this study.
 
-Elsewhere, cancer atlases have been limited to coarse geographical units and aggregate multiple years of data rather than presenting information on trends.
-For smaller areas, a study in the USA at the county level found that lung cancer and stomach cancer were among the cancers with the largest inequalities in mortality across counties in 2014, but there was limited variation for leukaemia, lymphoma and multiple myeloma, which is consistent with the results presented here [@mokdadTrendsPatternsDisparities2017].
+Beyond the UK, cancer atlases have been largely limited to coarse geographical units and aggregate multiple years of data rather than presenting information on trends.
+There have been examples of cancer atlases for smaller areas for Spain and Portugal [@fernandez-navarroAtlasCancerMortality2021] and Australia [@cancercouncilqueenslandAustralianCancerAtlas2018].
+A study in the USA on trends in cancer mortality at the county level found that lung cancer and stomach cancer were among the cancers with the largest inequalities in mortality across counties in 2014, but there was limited variation for leukaemia, lymphoma and multiple myeloma, which is consistent with the results presented here [@mokdadTrendsPatternsDisparities2017].
 The study also found that the strongest increases over time were in liver cancer mortality, with nearly all counties seeing an increase.
 
 ### Explaining the variation and implications

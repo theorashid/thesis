@@ -9,56 +9,83 @@ Instead, demographers use period (or "current") life tables, which consider what
 Life tables can be constructed using discrete age bands starting at age $x$ and ending at age $x+n$.
 We supply the age-specific death rates, ${}_{n}m_{x}$, and the average person-years lived by those dying in the interval, ${}_{n}a_{x}$, and the life table calculates the mean age at death – the life expectancy, $e_x$.
 
-We start with a hypothetical cohort of size $l_0 = 100,000$ and sequentially apply the probability of dying in each age group, calculated as
+The probability of dying, ${}_{n}q_{x}$, is defined as the ratio of the number of people who died in the age interval, ${}_{n}d_{x}$, to the number who survived to age $x$, $l_x$:
+$$
+{}_{n}q_{x} = \frac{{}_{n}d_{x}}{l_x}.
+$$ {#eq-app-a-prob-dying-deaths}
+
+The age-specific death rate is defined as the ratio of the number of people who died in the age interval to the total number of person-years lived, ${}_{n}L_{x}$, which is the weighted sum of the number of person-years lived ($n$) by those who survived, which, in turn, is the difference between those who survived to age $x$ and those who died in the interval ($l_x - {}_{n}d_{x}$), and the number of person-years lived on average (${}_{n}a_{x}$) by those who died (${}_{n}d_{x}$):
+$$
+{}_{n}m_{x} = \frac{{}_{n}d_{x}}{n \cdot (l_x - {}_{n}d_{x}) + {}_{n}a_{x} \cdot {}_{n}d_{x}}.
+$$ {#eq-app-a-death-rate}
+We assume the denominator of @eq-app-a-death-rate can be approximated by the mid-year population, ${}_{n}P_{x}$, which leads us to recover the expression for the cross-sectional, empirical death rate in @eq-death-rate.
+By rearranging the denominator to make the number of survivors the subject, we obtain
+$$
+l_x = \frac{1}{n} \left({}_{n}P_{x} + (n - {}_{n}a_{x} \cdot {}_{n}d_{x})\right).
+$$ {#eq-app-a-survivors}
+We can substitute this expression into @eq-app-a-prob-dying-deaths and divide by ${}_{n}P_{x}$ to obtain  
 $$
 {}_{n}q_{x} = \frac{n \cdot {}_{n}m_{x}}{1 + (n - {}_{n}a_{x}) {}_{n}m_{x}}.
 $$ {#eq-app-a-prob-dying}
-The open interval ${}_{\infty}q_{x} = 1$, as nobody is immortal.
-Using the probability of surviving in each age group, ${}_{n}p_{x} = 1 - {}_{n}q_{x}$, the number of survivors is given by
+This expression, although unintuitive, allows us to convert from ${}_{n}m_{x}$ to ${}_{n}q_{x}$ with only the parameter ${}_{n}a_{x}$.
+
+In the period life table, we start with a hypothetical cohort of size $l_0 = 100,000$ and sequentially apply the probability of surviving in each age group, ${}_{n}p_{x} = 1 - {}_{n}q_{x}$, to calculate the number of survivors as
 $$
 l_{x+n} = l_x \cdot {}_{n}p_{x}.
 $$ {#eq-app-a-life-table-1}
 
-The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died weighted by ${}_{n}a_{x}$
+The number of person-years lived is the sum of the number of survivors weighted by the band width and number of people who died (${}_{n}d_{x} = l_{x} \cdot {}_{n}q_{x}$) weighted by ${}_{n}a_{x}$
 $$
-{}_{n}L_{x} = n \cdot l_x + {}_{n}a_{x} \cdot l_{x} \cdot {}_{n}q_{x} \quad {}_{\infty}L_{x} = \frac{l_x}{{}_{\infty}m_{x}},
+{}_{n}L_{x} = n \cdot l_x + {}_{n}a_{x} \cdot l_{x} \cdot {}_{n}q_{x}.
 $$ {#eq-app-a-life-table-2}
 
-and the total number of person-years lived above $x$ is
+The open interval ${}_{\infty}q_{x} = 1$, as nobody is immortal.
+Using @eq-app-a-prob-dying-deaths, it follows that the number of deaths in this interval is equal to the number who survived to the final age group, i.e. ${{}_\infty}d_{x} = l_x$.
+Since the death rate from @eq-app-a-death-rate can be rewritten using the number of person-years lived, ${}_{n}L_{x}$, as the denominator and we can substitute the number of deaths with the number surviving to the final age group, we can obtain an expression for the number of person-years lived in the open-ended age interval
+$$
+{}_{\infty}L_{x} = \frac{{}_{\infty}d_{x}}{{}_{\infty}m_{x}} = \frac{l_x}{{}_{\infty}m_{x}}.
+$$ {#eq-app-a-life-table-close}
+
+The total number of person-years lived above $x$ is
 $$
 T_{x} = \sum^{\infty}_{x = a} {}_{n}L_{x}.
-$$ {#eq-app-a-life-table-2}
+$$ {#eq-app-a-life-table-3}
 
 Then, life expectancy is given by dividing the number of person-years lived by the number of people who will live them
 $$
 e_x = \frac{T_x}{l_x}.
-$$ {#eq-app-a-life-table-2}
+$$ {#eq-app-a-life-table-4}
 
 Throughout the thesis, I only consider life expectancy at birth.
 
 ### The very young ages and the very old ages
 
-On average, it is a good approximation to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n /2$.
+On average, it is a good approximation to assume deaths occur halfway through the age interval: ${}_{n}a_{x} = n / 2$.
 But for younger ages, particularly at lower levels of mortality, the majority of infant deaths lie further towards the earliest stages of infancy.
 Coale and Demeny used regression on a series of international datasets to recommend suitable values for ${}_{1}a_{0}$ and ${}_{4}a_{1}$ instead of the midpoint [@coaleRegionalModelLife1983].
 
-The start of the open age group can be many years away from some of the ages at death, particularly in ageing populations.
-In order to produce reliable estimates of death rates at high ages, I used the Kannisto-­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table and adjust ${}_{n}a_{x}$ above 70 years [@thatcherSurvivorRatioMethod2002].
+The start of the open-ended age group can be many years away from some of the ages at death, particularly in ageing populations.
+In order to produce reliable estimates of death rates at older ages, I used the Kannisto-­Thatcher method to expand the terminal age group ($\geq 85$ years) of the life table and adjust ${}_{n}a_{x}$ above 70 years [@thatcherSurvivorRatioMethod2002].
+The Kannisto-Thatcher method assumes the probability of dying is a logistic function of age.
+The logit-transformed probability of dying above 70 years is regressed upon age.
+The resulting curve is extrapolated through to 129 years before calculating the number of survivors in the cohort following the adjusted probability of dying to estimate ${}_{n}a_{x}$ above 70 years.
 
 ## Probability of dying
 
 The probability of dying from a specific cause of death, $i$, is calculated as in @eq-app-a-prob-dying.
-Equally, we can subtract the probability of surviving to that age group, $1 - \prod_x {}_{n}p^i_{x}$.
+Equally, we can calculate the probability of dying by subtracting the probability of surviving in each age group through to that age from unity, i.e. $1 - \prod_x {}_{n}p^i_{x}$.
 Note, even for the smallest death rates, ${}_{\infty}q^i_{x} = 1$ – if you live to infinity, you'll die of it eventually.
 
 ## Cause-specific decomposition of differences in life expectancy
 
-@arriagaMeasuringExplainingChange1984 proposed a method to calculate the age-specific contributions to the difference in life expectancy between two populations as
+Using quantities generated from the life tables of two populations as above, @arriagaMeasuringExplainingChange1984 proposed a method to calculate the age-specific contributions to the difference in life expectancy between these populations as
 $$
 {}_{n}\Delta_{x} = \frac{l^1_x}{l^1_0} \left( \frac{{}_{n}L^2_{x}}{l^2_x} - \frac{{}_{n}L^1_{x}}{l^1_x} \right) + \frac{T^2_{x+n}}{l^1_0} \left( \frac{l^1_x}{l^2_x} - \frac{l^1_{x+n}}{l^2_{x+n}} \right).
 $$ {#eq-app-a-arriaga-age}
+The first term on the right hand side corresponds to the "direct effect" on the life expectancy difference between the two populations in the average number of person-years lived by the survivors to that age group (${}_{n}L_{x} / l_x$).
+The second term represents the "indirect effect" on the number of survivors caused by the mortality changes within an age group.
 
-We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates:
+We then assume the age- and cause-specific contributions are proportional to the difference in cause-specific death rates between the two populations:
 $$
 {}_{n}\Delta^i_{x} = {}_{n}\Delta_{x} \cdot \frac{{}_{n}m^i_{x}(2) - {}_{n}m^i_{x}(1)}{{}_{n}m_{x}(2) - {}_{n}m_{x}(1)}
 $$ {#eq-app-a-arriaga-cause}

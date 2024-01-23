@@ -22,9 +22,9 @@ To overcome these issues, we can use statistical smoothing techniques to obtain 
 In small-area studies, it is common to smooth data using models with explicit spatial dependence, which are designed to give more weight to nearby areas than those further away.
 There are three main categories for modelling spatial effects.
 First, we can treat space as a continuous surface using Gaussian processes or splines.
-Second, we can use areal models, which make use of the spatial neighbourhood structure of the units.
-Third, we can build models that exploit a nested hierarchy of geographical units, for example between state, county and census tract in the US.
-Each of these methods rely on assumptions which may make them more or less appropriate in different applications.
+Second, we can use hierarchical models for areal data, which make use of the spatial neighbourhood structure of the units.
+Third, we can again use hierarchical models for areal data but instead we can exploit a nested hierarchy of geographical units, for example between state, county and census tract in the US.
+Each of these methods, which can be used separately or in combination if the context of the problem allows, rely on assumptions which may make them more or less appropriate in different applications.
 
 #### Space as a continuous process {-}
 
@@ -105,6 +105,7 @@ There might be true variability in the data which a smoothing model would concea
 For example, certain spatial units might contain isolated populations with high mortality over a sustained period, such as counties with Native American reservations in the USA [@dwyer-lindgrenInequalitiesLifeExpectancy2017].
 There can also be spatially- and temporally-specific events that cause a spike in mortality such as the Grenfell Tower fire in 2017.
 Without accounting for these events, the models described above would either attenuate their effect on mortality, or a spike in deaths would cause estimates of mortality in nearby spatial units or years to be erroneously high.
+Beyond the use of subject matter experts, posterior predictive checks and plots of modelled death rates against the observed data can help to identify outlier spikes in mortality which are specific to a particular time or place, and which we do not want our model to smooth.
 
 ### Applications of disease mapping methods
 
@@ -116,6 +117,8 @@ Directly standardised methods, in contrast, require knowledge of the full age st
 Age-standardised death rates, however, suffer the same interpretability issue as the standardised mortality ratio, and are only comparable between studies if the same reference population is used.
 An alternative choice is _life expectancy_.
 @silcocksLifeExpectancySummary2001 explain that life expectancy is a "more intuitive and immediate measure of the mortality experience of a population, [and] is likely to have greater impact... than other measures that are incomprehensible to most people."
+However, although the metric appears more interpretable, life expectancy at birth constructed from a period life table is often misinterpreted as the mean length of life of the cohort into which the newborn is born.
+In fact, it measures the expectation of life assuming that the newborn will be exposed to age-specific mortality conditions throughout their life that are exactly the same as the current population.
 
 The estimation of death rates requires two data sources: deaths counts and populations.
 Modern death registration systems, such as that of the UK, are almost entirely complete and accurate.
@@ -256,7 +259,7 @@ In 2015, the GBD study released its first subnational estimates of mortality, st
 @steelChangesHealthCountries2018 assessed these data, which divided the UK into 150 regions, finding mortality from all-causes varied twofold across the country, with the highest years of life lost in Blackpool and the lowest in Wokingham.
 In a study on forecasting subnational life expectancy in England and Wales, @bennettFutureLifeExpectancy2015 estimated a 8.2 year range in life expectancy for men and 7.1 year range for women in 2012 between 375 districts.
 The lowest life expectancies were seen in urban northern England, and the highest in the south and London's affluent districts.
-Within London itself, male and female life expectancy showed 5-6 years of variation.
+Within London itself, @cheshireFeaturedGraphicLives2012 visualised the heterogeneity of mortality in London by assigning tube stops the life expectancy of the nearest ward, revealing that 10 years are lost between two consecutive stops, Canary Wharf and North Greenwich, on the Jubilee line.
 
 #### Deprivation {-}
 

@@ -7,7 +7,7 @@ Unlike the original text, I will largely focus on the life expectancy estimates,
 
 Although the models in the previous chapter took several days of computing time, runtimes will only decrease as computing power increases.
 And in theory, the models can be scaled to higher and higher spatial resolutions as both hardware and inference algorithms improve.
-From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes in England.
+From a computational perspective, we could potentially estimate mortality for all LSOAs, OAs, or even postcodes^[Unlike OAs, postcodes do not align with other administrative boundaries, nor are they designed to contain similar numbers of people, which may lead to small number issues when modelling mortality.] in England.
 In this chapter, I test this idea by modelling life expectancy at the finer LSOA level for a single region in England, its capital city London, which has a number of LSOAs of the same order of magnitude as the number of MSOAs in England.
 
 ## Methods
@@ -26,9 +26,10 @@ In these cases, the population was set equal to the number of deaths.
 
 The model was largely as outlined in @sec-Chapter4, with a few changes: First, the negative binomial likelihood from @eq-ch-4-likelihood-1 was replaced with a beta-binomial likelihood,
 $$
-\text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{Population}_{ast}).
+\text{deaths}_{ast} \sim \text{Beta-Binomial}(m_{ast} \rho, (1 - m_{ast}) \rho, \text{N}_{ast}),
 $$ {#eq-ch-6-likelihood}
-where $m_{ast}$ is the death rate and $\rho \geq 0$ is the overdispersion parameter.
+where $m_{ast}$ is the death rate, $\text{N}_{ast}$ is the population and $\rho \geq 0$ is the overdispersion parameter.
+The beta-binomial distribution has mean $m_{ast}\text{N}_{ast}$ and variance $\text{N}_{ast} \frac{\rho + \text{N}_{ast}}{\rho + 1} m_{ast} (1 - m_{ast})$.
 I found that the variability of the LSOA-level mortality data was such that death rates did near 1, violating the assumption for @eq-ch-4-likelihood-1 that mortality is low.
 In fact, when I tested a negative binomial or Poisson likelihood, I found the death rates for some age-LSOA-year combinations exceeded 1, which of course is impossible.
 The beta-binomial likelihood is a generalisation of the binomial distribution that allows for overdispersion.
@@ -57,6 +58,11 @@ The corresponding estimates for life expectancy inequality in 2019 calculated us
 
 Life expectancy in 2019 was highest in LSOAs in central London districts of Kensington and Chelsea, Westminster, City of London and Camden, in the southwest (Richmond upon Thames and Kingston upon Thames) and parts of the northwest (e.g., parts of Harrow and Barnet), with life expectancy in many LSOAs surpassing 90 years (@fig-ch-6-map-level).
 Low life expectancy was spread in LSOAs throughout the city but was more common in outer east and southeast London.
+
+![Median estimates of LSOA-level life expectancy in London in 2019 against the 95% credible intervals.](../thesis-analysis/thesis_analysis/london/figures/uncertainty.pdf){#fig-ch-6-uncertainty}
+
+In general, as life expectancy increased, the credible interval of life expectancy increased (@fig-ch-6-uncertainty).
+The credible interval was particularly wide for some LSOAs with the highest female life expectancy estimates, with some credible intervals exceeding 30 years.
 
 ### Change in life expectancy and inequality
 
@@ -87,13 +93,13 @@ The large decline in life expectancy in Kensington and Chelsea in 2017 is due to
 There was substantial variation in the size of life expectancy increase over short distances.
 As a result of this spatial heterogeneity, life expectancy inequality increased not only in London as a whole, but also in every district in London alongside increasing average life expectancy (@fig-ch-6-geofacet and @fig-ch-6-ridges).
 
-::: {#fig-ch-6-ridges layout-ncol=1 fig-scap="Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts."}
+::: {#fig-ch-6-ridges layout-ncol=1 fig-scap="Distribution of median estimates of LSOA life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts."}
 
 ![Women](../thesis-analysis/thesis_analysis/london/figures/women_ridges.pdf){#fig-ch-6-ridges-women}
 
 ![Men](../thesis-analysis/thesis_analysis/london/figures/men_ridges.pdf){#fig-ch-6-ridges-men}
 
-Distribution of estimates of Lower-layer Super Output Area (LSOA) life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019 in 33 London districts.
+Distribution (density plot) in 33 London districts of median estimates of LSOA life expectancy at birth for 2002 and 2019, and of the change from 2002 to 2019.
 Districts are ordered by the median life expectancy in 2002.
 :::
 
@@ -121,6 +127,7 @@ Carrying out the study at the LSOA level uncovered inequalities to a fuller exte
 
 I defined life expectancy inequality as the difference between 2.5$^{\text{th}}$ and 97.5$^{\text{th}}$ percentiles of LSOA life expectancies rather than the difference between the maximum and minimum as in @sec-Chapter5.
 This was because the LSOAs with extremely low life expectancies tended to contain age­-LSOA-­year combinations in which the number of deaths exceeded the population.
+There are also some credible intervals of life expectancy in excess of 30 years for women, which questions the epidemiological plausibility of these estimates.
 Small-area population, which is the denominator of age-specific death rates, is estimated by the ONS for intercensal years, and may be subject to error.
 This is especially the case in older ages when some people live and die in a long-term care facility, and may be counted towards population (denominator of death rates) in their original LSOA of residence and towards deaths (numerator of death rates) in the LSOA where the care facility is located.
 There were a higher proportion (0.099% compared to 0.001% in @sec-Chapter5) of spatial units with this issue at the LSOA level.
